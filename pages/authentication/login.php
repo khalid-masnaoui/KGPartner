@@ -133,7 +133,7 @@ function insertLoginAttempt($db, $array, $status, $detail)
             <h4>
                 <!-- Admin<span>Dashboard</span> -->
 
-                <img src="/assets/images/logo.png" alt="" srcset="" style="width: 70%;">
+                <img src="/assets/images/logo-white.png" alt="" srcset="" style="width: 70%;">
 
             </h4>
             <h5>Sign in to your admin account.</h5>
