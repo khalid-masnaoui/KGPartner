@@ -1,0 +1,11 @@
+{
+    "name": "khalid/k1sol_casio_api_partner",
+    "authors": [{
+        "name": "khalid-masnaoui",
+        "email": "elmasnaouikhalid1@gmail.com"
+    }],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.24",
+        "ezyang/htmlpurifier": "^4.16"
+    }
+}
