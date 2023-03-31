@@ -45,7 +45,7 @@ switch ($uri) {
         break;
 
     default:
-        //page not found -> 404 error page
+        // page not found -> 404 error page
         include('./pages/errors/404.php');
 
 
