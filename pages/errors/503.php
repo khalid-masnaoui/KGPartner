@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Service Unavailable</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png?v=1.00" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png?v=1.01" />
     <link rel="stylesheet" href="/assets/css/errors/503.css" />
 </head>
 

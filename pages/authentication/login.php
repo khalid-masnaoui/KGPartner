@@ -100,7 +100,7 @@ function insertLoginAttempt($db, $array, $status, $detail)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Korea Gaming LogIn</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png?v=1.00" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png?v=1.01" />
     <link rel="stylesheet" href="/assets/css/login.css?v=1.04">
 
     <style>

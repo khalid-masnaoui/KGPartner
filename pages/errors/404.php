@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Not Found</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png?v=1.00" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png?v=1.01" />
     <script src="https://kit.fontawesome.com/bd6072e88e.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/assets/css/errors/404.css" />
