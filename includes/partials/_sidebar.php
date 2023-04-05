@@ -116,7 +116,8 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                     </ul>
                 </li>
 
-                <li class=<?= strpos($_SERVER['REQUEST_URI'], 'accounts/') !== false ? "mm-active" : ""; ?>
+                <li style="display:none"
+                    class=<?= strpos($_SERVER['REQUEST_URI'], 'accounts/') !== false ? "mm-active" : ""; ?>
                     style="display:none">
                     <a href="#"
                         aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'accounts/') !== false ? "true" : "false"; ?>>
@@ -212,7 +213,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                         </li>
 
                         <li>
-                            <a href="/pages/infos/reports/invoice_list.php"
+                            <a href="/pages/infos/reports/invoice_list.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'invoice_list.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>Invoice List
@@ -220,42 +221,42 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                         </li>
 
                         <li>
-                            <a href="/pages/infos/reports/pending_event.php"
+                            <a href="/pages/infos/reports/pending_event.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'pending_event.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>Pending Event
                             </a>
                         </li>
                         <li>
-                            <a href="/pages/infos/reports/bonus_winning.php"
+                            <a href="/pages/infos/reports/bonus_winning.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'bonus_winning.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>Bonus Winning
                             </a>
                         </li>
                         <li>
-                            <a href="/pages/infos/reports/commission_report.php"
+                            <a href="/pages/infos/reports/commission_report.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'commission_report.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>Commission Report
                             </a>
                         </li>
                         <li>
-                            <a href="/pages/infos/reports/jackpot_contribution_history.php"
+                            <a href="/pages/infos/reports/jackpot_contribution_history.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'jackpot_contribution_history.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>Jackpot Contribution History
                             </a>
                         </li>
                         <li>
-                            <a href="/pages/infos/reports/tp_statements.php"
+                            <a href="/pages/infos/reports/tp_statements.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'tp_statements.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>TB Statements
                             </a>
                         </li>
                         <li>
-                            <a href="/pages/infos/reports/jackpot_tp_statement.php"
+                            <a href="/pages/infos/reports/jackpot_tp_statement.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'jackpot_tp_statement.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>Jackpot TB Statement
@@ -279,7 +280,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                             </a>
                         </li>
                         <li>
-                            <a href="/pages/infos/deposit_withdraw/deposit_withdraw_bonus.php"
+                            <a href="/pages/infos/deposit_withdraw/deposit_withdraw_bonus.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw_bonus.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>Deposit/Withdraw Bonus
@@ -287,7 +288,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                         </li>
 
                         <li>
-                            <a href="/pages/infos/deposit_withdraw/extra_charges_list.php"
+                            <a href="/pages/infos/deposit_withdraw/extra_charges_list.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'extra_charges_list.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>Extra Charges List
@@ -295,7 +296,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                         </li>
 
                         <li>
-                            <a href="/pages/infos/deposit_withdraw/manual_adjustment_list.php"
+                            <a href="/pages/infos/deposit_withdraw/manual_adjustment_list.php" style="display:none"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'manual_adjustment_list.php') !== false ? "mm-active" : ""; ?>
                                 style="display:none">
                                 <i class="metismenu-icon"> </i>Manual Adjustment List
@@ -311,7 +312,8 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
 
                     </ul>
                 </li>
-                <li class=<?= strpos($_SERVER['REQUEST_URI'], 'commissions/') !== false ? "mm-active" : ""; ?>
+                <li style="display:none"
+                    class=<?= strpos($_SERVER['REQUEST_URI'], 'commissions/') !== false ? "mm-active" : ""; ?>
                     style="display:none">
                     <a href="#"
                         aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'commissions/') !== false ? "true" : "false"; ?>>
