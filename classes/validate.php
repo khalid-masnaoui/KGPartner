@@ -137,22 +137,29 @@ class validate
                             if (is_array($rule_value)) {
                                 $user = $this->_db->get("*", $rule_value["table"], [[$column, "=", $value], ["client_id", "=", $rule_value["clientID"]]]);
                                 if ($user->count()) {
+                                    $name = $item;
                                     if ($item == "username") {
-                                        $this->addError("이미 사용중인 아이디입니다.", $item);
-
-                                    } else {
-                                        $this->addError("$item field already exist", $item);
+                                        $name = "아이디";
                                     }
+                                    if ($item == "prefix") {
+                                        $name = "프리픽스";
+                                    }
+                                    $this->addError("이미 사용중인 $name 입니다.", $item);
+                                    // $this->addError("$item field already exist", $item);
+
                                 }
                             } else {
                                 $user = $this->_db->get("*", $rule_value, [[$column, "=", $value]]);
                                 if ($user->count()) {
+                                    $name = $item;
                                     if ($item == "username") {
-                                        $this->addError("이미 사용중인 아이디입니다.", $item);
-
-                                    } else {
-                                        $this->addError("$item field already exist", $item);
+                                        $name = "아이디";
                                     }
+                                    if ($item == "prefix") {
+                                        $name = "프리픽스";
+                                    }
+                                    $this->addError("이미 사용중인 $name 입니다.", $item);
+                                    // $this->addError("$item field already exist", $item);
                                 }
                             }
                             break;
