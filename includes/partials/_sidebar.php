@@ -117,8 +117,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                 </li>
 
                 <li style="display:none"
-                    class=<?= strpos($_SERVER['REQUEST_URI'], 'accounts/') !== false ? "mm-active" : ""; ?>
-                    style="display:none">
+                    class=<?= strpos($_SERVER['REQUEST_URI'], 'accounts/') !== false ? "mm-active" : ""; ?>>
                     <a href="#"
                         aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'accounts/') !== false ? "true" : "false"; ?>>
                         <i class="metismenu-icon pe-7s-folder"></i> Accounts <span
@@ -214,129 +213,118 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
 
                         <li>
                             <a href="/pages/infos/reports/invoice_list.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'invoice_list.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
+                                class=<?= strpos($_SERVER['REQUEST_URI'], 'invoice_list.php') !== false ? "mm-active" : ""; ?>>
                                 <i class="metismenu-icon"> </i>Invoice List
                             </a>
                         </li>
 
                         <li>
                             <a href="/pages/infos/reports/pending_event.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'pending_event.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
+                                class=<?= strpos($_SERVER['REQUEST_URI'], 'pending_event.php') !== false ? "mm-active" : ""; ?>>
                                 <i class="metismenu-icon"> </i>Pending Event
                             </a>
                         </li>
                         <li>
                             <a href="/pages/infos/reports/bonus_winning.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'bonus_winning.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
+                                class=<?= strpos($_SERVER['REQUEST_URI'], 'bonus_winning.php') !== false ? "mm-active" : ""; ?>>
                                 <i class="metismenu-icon"> </i>Bonus Winning
                             </a>
                         </li>
-                        <li>
-                            <a href="/pages/infos/reports/commission_report.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'commission_report.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
-                                <i class="metismenu-icon"> </i>Commission Report
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/pages/infos/reports/jackpot_contribution_history.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'jackpot_contribution_history.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
-                                <i class="metismenu-icon"> </i>Jackpot Contribution History
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/pages/infos/reports/tp_statements.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'tp_statements.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
-                                <i class="metismenu-icon"> </i>TB Statements
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/pages/infos/reports/jackpot_tp_statement.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'jackpot_tp_statement.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
-                                <i class="metismenu-icon"> </i>Jackpot TB Statement
-                            </a>
-                        </li>
-
-                    </ul>
+                        <li></li>
+                        <a href="/pages/infos/reports/commission_report.php" style="display:none"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'commission_report.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon"> </i>Commission Report
+                        </a>
                 </li>
-                <li class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw/') !== false ? "mm-active" : ""; ?>>
-                    <a href="#"
-                        aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw/') !== false ? "true" : "false"; ?>>
-                        <i class="metismenu-icon pe-7s-wallet"></i> Deposit & withdraw
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                <li>
+                    <a href="/pages/infos/reports/jackpot_contribution_history.php" style="display:none"
+                        class=<?= strpos($_SERVER['REQUEST_URI'], 'jackpot_contribution_history.php') !== false ? "mm-active" : ""; ?>>
+                        <i class="metismenu-icon"> </i>Jackpot Contribution History
                     </a>
-                    <ul
-                        class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw/') !== false ? "mm-collapse mm-show" : ""; ?>>
-                        <li>
-                            <a href="/pages/infos/deposit_withdraw/deposit_withdraw_transaction.php"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw_transaction.php') !== false ? "mm-active" : ""; ?>>
-                                <i class="metismenu-icon"> </i>Deposit Withdraw Transaction
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/pages/infos/deposit_withdraw/deposit_withdraw_bonus.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw_bonus.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
-                                <i class="metismenu-icon"> </i>Deposit/Withdraw Bonus
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/pages/infos/deposit_withdraw/extra_charges_list.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'extra_charges_list.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
-                                <i class="metismenu-icon"> </i>Extra Charges List
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/pages/infos/deposit_withdraw/manual_adjustment_list.php" style="display:none"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'manual_adjustment_list.php') !== false ? "mm-active" : ""; ?>
-                                style="display:none">
-                                <i class="metismenu-icon"> </i>Manual Adjustment List
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/pages/infos/deposit_withdraw/wa_balance_transaction.php"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'wa_balance_transaction.php') !== false ? "mm-active" : ""; ?>>
-                                <i class="metismenu-icon"> </i>Points Transactions
-                            </a>
-                        </li>
-
-                    </ul>
                 </li>
-                <li style="display:none"
-                    class=<?= strpos($_SERVER['REQUEST_URI'], 'commissions/') !== false ? "mm-active" : ""; ?>
-                    style="display:none">
-                    <a href="#"
-                        aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'commissions/') !== false ? "true" : "false"; ?>>
-                        <i class="metismenu-icon pe-7s-cash"></i> Commissions
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                <li>
+                    <a href="/pages/infos/reports/tp_statements.php" style="display:none"
+                        class=<?= strpos($_SERVER['REQUEST_URI'], 'tp_statements.php') !== false ? "mm-active" : ""; ?>>
+                        <i class="metismenu-icon"> </i>TB Statements
                     </a>
-                    <ul
-                        class=<?= strpos($_SERVER['REQUEST_URI'], 'commissions/') !== false ? "mm-collapse mm-show" : ""; ?>>
-                        <li>
-                            <a href="/pages/infos/commissions/partners_commissions.php"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'partners_commissions.php') !== false ? "mm-active" : ""; ?>>
-                                <i class="metismenu-icon"> </i>Partners Commissions
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/pages/infos/commissions/partners_commissions_total.php"
-                                class=<?= strpos($_SERVER['REQUEST_URI'], 'partners_commissions_total.php') !== false ? "mm-active" : ""; ?>>
-                                <i class="metismenu-icon"> </i>Partners Total Commissions
-                            </a>
-                        </li>
-
-                    </ul>
                 </li>
+                <li>
+                    <a href="/pages/infos/reports/jackpot_tp_statement.php" style="display:none"
+                        class=<?= strpos($_SERVER['REQUEST_URI'], 'jackpot_tp_statement.php') !== false ? "mm-active" : ""; ?>>
+                        <i class="metismenu-icon"> </i>Jackpot TB Statement
+                    </a>
+                </li>
+
+            </ul>
+            </li>
+            <li class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw/') !== false ? "mm-active" : ""; ?>>
+                <a href="#"
+                    aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw/') !== false ? "true" : "false"; ?>>
+                    <i class="metismenu-icon pe-7s-wallet"></i> Deposit & withdraw
+                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul
+                    class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw/') !== false ? "mm-collapse mm-show" : ""; ?>>
+                    <li>
+                        <a href="/pages/infos/deposit_withdraw/deposit_withdraw_transaction.php"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw_transaction.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon"> </i>Deposit Withdraw Transaction
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/infos/deposit_withdraw/deposit_withdraw_bonus.php" style="display:none"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw_bonus.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon"> </i>Deposit/Withdraw Bonus
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pages/infos/deposit_withdraw/extra_charges_list.php" style="display:none"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'extra_charges_list.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon"> </i>Extra Charges List
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pages/infos/deposit_withdraw/manual_adjustment_list.php" style="display:none"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'manual_adjustment_list.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon"> </i>Manual Adjustment List
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pages/infos/deposit_withdraw/wa_balance_transaction.php"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'wa_balance_transaction.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon"> </i>Points Transactions
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li style="display:none"
+                class=<?= strpos($_SERVER['REQUEST_URI'], 'commissions/') !== false ? "mm-active" : ""; ?>>
+                <a href="#"
+                    aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'commissions/') !== false ? "true" : "false"; ?>>
+                    <i class="metismenu-icon pe-7s-cash"></i> Commissions
+                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul
+                    class=<?= strpos($_SERVER['REQUEST_URI'], 'commissions/') !== false ? "mm-collapse mm-show" : ""; ?>>
+                    <li>
+                        <a href="/pages/infos/commissions/partners_commissions.php"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'partners_commissions.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon"> </i>Partners Commissions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/infos/commissions/partners_commissions_total.php"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'partners_commissions_total.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon"> </i>Partners Total Commissions
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
 
 
 
