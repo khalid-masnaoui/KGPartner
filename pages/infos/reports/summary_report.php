@@ -434,16 +434,16 @@ foreach ($activeSlotProviders as $key => $value) {
                                                         if (!isset($ProvidersNameMapping[$value])) {
                                                             continue;
                                                         }
-                                                        echo '<th class="text-center">아이디</th>' . PHP_EOL;
-                                                        echo '<th class="text-center">베팅금액</th>' . PHP_EOL;
-                                                        echo '<th class="text-center">윈로스</th>' . PHP_EOL;
+                                                        echo '<th class="text-center">Wager</th>' . PHP_EOL;
+                                                        echo '<th class="text-center">Turnover</th>' . PHP_EOL;
+                                                        echo '<th class="text-center">WinLoss</th>' . PHP_EOL;
 
                                                     }
 
                                                     ?>
-                                                    <th class="text-center">베팅횟수</th>
-                                                    <th class="text-center">베팅금액</th>
-                                                    <th class="text-center">윈로스</th>
+                                                    <th class="text-center">Wager</th>
+                                                    <th class="text-center">Turnover</th>
+                                                    <th class="text-center">WinLoss</th>
 
 
                                                 </tr>
