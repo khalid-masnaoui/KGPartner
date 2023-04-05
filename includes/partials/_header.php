@@ -7,43 +7,43 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
 ?>
 
 <style>
-#user_info_mailbox {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-@media only screen and (max-width: 1320px) {
-
-    #user_info_mailbox,
-    #devider {
-        display: ''
+    #user_info_mailbox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    #language_picker {
-        margin-bottom: 0px !important;
+    @media only screen and (max-width: 1320px) {
+
+        #user_info_mailbox,
+        #devider {
+            display: ''
+        }
+
+        #language_picker {
+            margin-bottom: 0px !important;
+        }
     }
-}
 
-@media only screen and (min-width: 1321px) {
+    @media only screen and (min-width: 1321px) {
 
-    #user_info_mailbox,
-    #devider {
-        display: none
+        #user_info_mailbox,
+        #devider {
+            display: none
+        }
     }
-}
 
-@media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 991px) {
 
-    #language_picker,
-    #header_wrapper {
-        margin-right: 10px !important;
+        #language_picker,
+        #header_wrapper {
+            margin-right: 10px !important;
+        }
     }
-}
 
-.logo-src {
-    cursor: pointer;
-}
+    .logo-src {
+        cursor: pointer;
+    }
 
 </style>
 
@@ -135,7 +135,7 @@ if ($unSeenMails > 0 && strpos($_SERVER['REQUEST_URI'], 'dashboard.php') !== fal
                             <div class="widget-heading">
                                 <?= $usernamex ?>
                             </div>
-                            <div class="widget-subheading">Partner</div>
+                            <div class="widget-subheading">파트너</div>
                         </div>
                         <div class="widget-content-left">
                             <div class="btn-group">
@@ -152,7 +152,7 @@ if ($unSeenMails > 0 && strpos($_SERVER['REQUEST_URI'], 'dashboard.php') !== fal
                                             <div class="widget-heading">
                                                 <?= $usernamex ?>
                                             </div>
-                                            <div class="widget-subheading">Partner</div>
+                                            <div class="widget-subheading">파트너</div>
                                         </div>
                                         </br>
                                         <div class="widget-content-right ml-3" id='user_mailbox' unSeenReplies>
@@ -210,7 +210,7 @@ if ($unSeenMails > 0 && strpos($_SERVER['REQUEST_URI'], 'dashboard.php') !== fal
                                 
                             </select> -->
 
-                            <div class="btn-group">
+                            <div class="btn-group d-none">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn"
                                     style="font-size: 1.6rem;">
                                     <span id="current_lang">🇬🇧</span>
@@ -247,134 +247,134 @@ if ($unSeenMails > 0 && strpos($_SERVER['REQUEST_URI'], 'dashboard.php') !== fal
 
 
 <script>
-var element = document.getElementById("current_datetime");
+    var element = document.getElementById("current_datetime");
 
-function formatDate(date, format) {
-    const map = {
-        mm: ('0' + (date.getMonth() + 1)).slice(-2),
-        dd: ('0' + date.getDate()).slice(-2),
-        yy: date.getFullYear().toString().slice(-2),
-        YY: date.getFullYear(),
+    function formatDate(date, format) {
+        const map = {
+            mm: ('0' + (date.getMonth() + 1)).slice(-2),
+            dd: ('0' + date.getDate()).slice(-2),
+            yy: date.getFullYear().toString().slice(-2),
+            YY: date.getFullYear(),
 
-        hh: ('0' + (date.getHours())).slice(-2),
-        MM: ('0' + (date.getMinutes())).slice(-2),
-        ss: ('0' + (date.getSeconds())).slice(-2),
+            hh: ('0' + (date.getHours())).slice(-2),
+            MM: ('0' + (date.getMinutes())).slice(-2),
+            ss: ('0' + (date.getSeconds())).slice(-2),
 
-        M: date.toLocaleString('default', {
-            month: 'long'
-        })
+            M: date.toLocaleString('default', {
+                month: 'long'
+            })
 
+
+        }
+
+        // const map = {
+        //     mm: ('0' + (date.getUTCMonth() + 1)).slice(-2),
+        //     dd: ('0' + date.getUTCDate()).slice(-2),
+        //     yy: date.getUTCFullYear().toString().slice(-2),
+        //     YY: date.getUTCFullYear(),
+
+        //     hh: ('0' + (date.getUTCHours())).slice(-2),
+        //     MM: ('0' + (date.getUTCMinutes())).slice(-2),
+        //     ss: ('0' + (date.getUTCSeconds())).slice(-2),
+
+        //     M: date.toLocaleString('default', {
+        //         month: 'long'
+        //     })
+
+
+        // }
+
+        return format.replace(/mm|dd|yy|YY|M|MM|ss|hh/gi, matched => map[matched])
+    }
+
+    Date.prototype.addHours = function (h) {
+        this.setHours(this.getHours() + h);
+        return this;
+    }
+    Date.prototype.addMinutes = function (h) {
+        this.setMinutes(this.getMinutes() + h);
+        return this;
+    }
+    Date.prototype.substractMinutes = function (h) {
+        this.setMinutes(this.getMinutes() - h);
+        return this;
+    }
+
+    function updateDateTime() {
+
+        var date = new Date();
+
+        //specify how many hours to add/subtract 
+        var hoursMinutes = date.toString();
+
+        //Mon Mar 20 2023 17:29:50 GMT+0000 (GMT)
+
+        hoursMinutes = hoursMinutes.split("(")[0];
+        // hoursMinutes = hoursMinutes.split(")")[0];
+        hoursMinutes = hoursMinutes.split("GMT")[1];
+
+        let isAdd = 1;
+        let number = "";
+
+
+        if (hoursMinutes[0] == '-') {
+            isAdd = 0;
+            hoursMinutes = hoursMinutes.split("-")[1];
+        } else {
+            hoursMinutes = hoursMinutes.split("+")[1];
+        }
+
+        // let hours = hoursMinutes.split(":")[0];
+        // let minutes = hoursMinutes.split(":")[1];
+
+        var offset = Math.abs(date.getTimezoneOffset());
+
+        let vHours = offset / 60;
+        let hours = Math.floor(vHours);
+        var vMinutes = (vHours - hours) * 60;
+        var minutes = Math.round(vMinutes);
+
+        hours = parseInt(hours);
+        minutes = parseInt(minutes);
+
+        if (isAdd == 1) {
+            hours = 9 - hours;
+            date.addHours(hours);
+            date.substractMinutes(minutes);
+        } else {
+            hours = 9 + hours;
+            date.addHours(hours);
+            date.addMinutes(minutes);
+        }
+
+
+        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        date = formatDate(date, 'YY-mm-dd M hh:MM:ss');
+        element.innerText = date + ' GMT +9:00';
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+
+    var flags_emoji = {
+        "eng": "🇬🇧",
+        "kr": "🇰🇷"
+    }
+
+    function language(e) {
+        var val = e.currentTarget.getAttribute("data-id");
+
+
+        var emoji = flags_emoji[val];
+        document.getElementById("current_lang").innerText = emoji;
 
     }
 
-    // const map = {
-    //     mm: ('0' + (date.getUTCMonth() + 1)).slice(-2),
-    //     dd: ('0' + date.getUTCDate()).slice(-2),
-    //     yy: date.getUTCFullYear().toString().slice(-2),
-    //     YY: date.getUTCFullYear(),
+    var element = document.getElementsByClassName("logo-src");
 
-    //     hh: ('0' + (date.getUTCHours())).slice(-2),
-    //     MM: ('0' + (date.getUTCMinutes())).slice(-2),
-    //     ss: ('0' + (date.getUTCSeconds())).slice(-2),
+    element[0].addEventListener("click", function () {
 
-    //     M: date.toLocaleString('default', {
-    //         month: 'long'
-    //     })
+        window.location.href = '/'; //relative to domain
 
-
-    // }
-
-    return format.replace(/mm|dd|yy|YY|M|MM|ss|hh/gi, matched => map[matched])
-}
-
-Date.prototype.addHours = function(h) {
-    this.setHours(this.getHours() + h);
-    return this;
-}
-Date.prototype.addMinutes = function(h) {
-    this.setMinutes(this.getMinutes() + h);
-    return this;
-}
-Date.prototype.substractMinutes = function(h) {
-    this.setMinutes(this.getMinutes() - h);
-    return this;
-}
-
-function updateDateTime() {
-
-    var date = new Date();
-
-    //specify how many hours to add/subtract 
-    var hoursMinutes = date.toString();
-
-    //Mon Mar 20 2023 17:29:50 GMT+0000 (GMT)
-
-    hoursMinutes = hoursMinutes.split("(")[0];
-    // hoursMinutes = hoursMinutes.split(")")[0];
-    hoursMinutes = hoursMinutes.split("GMT")[1];
-
-    let isAdd = 1;
-    let number = "";
-
-
-    if (hoursMinutes[0] == '-') {
-        isAdd = 0;
-        hoursMinutes = hoursMinutes.split("-")[1];
-    } else {
-        hoursMinutes = hoursMinutes.split("+")[1];
-    }
-
-    // let hours = hoursMinutes.split(":")[0];
-    // let minutes = hoursMinutes.split(":")[1];
-
-    var offset = Math.abs(date.getTimezoneOffset());
-
-    let vHours = offset / 60;
-    let hours = Math.floor(vHours);
-    var vMinutes = (vHours - hours) * 60;
-    var minutes = Math.round(vMinutes);
-
-    hours = parseInt(hours);
-    minutes = parseInt(minutes);
-
-    if (isAdd == 1) {
-        hours = 9 - hours;
-        date.addHours(hours);
-        date.substractMinutes(minutes);
-    } else {
-        hours = 9 + hours;
-        date.addHours(hours);
-        date.addMinutes(minutes);
-    }
-
-
-    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    date = formatDate(date, 'YY-mm-dd M hh:MM:ss');
-    element.innerText = date + ' GMT +9:00';
-}
-
-updateDateTime();
-setInterval(updateDateTime, 1000);
-
-var flags_emoji = {
-    "eng": "🇬🇧",
-    "kr": "🇰🇷"
-}
-
-function language(e) {
-    var val = e.currentTarget.getAttribute("data-id");
-
-
-    var emoji = flags_emoji[val];
-    document.getElementById("current_lang").innerText = emoji;
-
-}
-
-var element = document.getElementsByClassName("logo-src");
-
-element[0].addEventListener("click", function() {
-
-    window.location.href = '/'; //relative to domain
-
-})
+    })
 </script>
