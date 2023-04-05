@@ -167,7 +167,8 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                 </li>
 
                 <li class="app-sidebar__heading">Infos</li>
-                <li class=<?= strpos($_SERVER['REQUEST_URI'], 'product/') !== false ? "mm-active" : ""; ?>>
+                <li style="display:none"
+                    class=<?= strpos($_SERVER['REQUEST_URI'], 'product/') !== false ? "mm-active" : ""; ?>>
                     <a href="#"
                         aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'product/') !== false ? "true" : "false"; ?>>
                         <i class="metismenu-icon pe-7s-portfolio"></i> Product
