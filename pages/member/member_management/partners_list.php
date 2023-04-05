@@ -567,7 +567,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
             $("#exampleModalLongTitle").text("Make Deposit");
-            $("#depositLabel").text("Deposit Amount (원)");
+            $("#depositLabel").text("금액 (원)");
 
             $("#clientSelectAdd").prop('disabled', false);
 
@@ -590,7 +590,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
             $("#exampleModalLongTitle").text("Deduct");
-            $("#depositLabel").text("Deduct Amount (원)");
+            $("#depositLabel").text("금액 (원)");
 
             $("#clientSelectAdd").prop('disabled', false);
 
