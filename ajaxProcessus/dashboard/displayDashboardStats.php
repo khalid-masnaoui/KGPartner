@@ -52,7 +52,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         // $partnersWaBalanceSql = "SELECT wa_balance FROM partner_users WHERE id = ?";
         // $partnersWaBalance = $db->query($partnersWaBalanceSql, [$partnerId])->first();
 
-        $dashboardStatsData["currentPartnerBalance"] = $fmtPadding->format($partner->data()["wa_balance"]);
+        $dashboardStatsData["currentPartnerBalance"] = $fmt->format($partner->data()["wa_balance"]);
 
 
         //partners commissions
