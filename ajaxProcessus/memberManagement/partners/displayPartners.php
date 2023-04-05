@@ -82,11 +82,11 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $statusHtml = '';
             if ($status == 1) {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-success">Active</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-success">정상</div>';
             } else if ($status == 0) {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-warning" style="color:white !important;">Pending</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-warning" style="color:white !important;">대기</div>';
             } else {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-danger">Blocked</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-danger">차단</div>';
             }
 
             $value["wa_balance"] = $fmt->format($value["wa_balance"]);

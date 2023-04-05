@@ -226,15 +226,15 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $statusHtml = '';
             if ($status == 'win') {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-success">Win</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-success">승</div>';
             } else if ($status == 'loss') {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-danger" style="color:white !important;">Loss</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-danger" style="color:white !important;">패</div>';
             } else if ($status == "tie") {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-primary" style="color:white !important;">Tie</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-primary" style="color:white !important;">타이</div>';
             } else if ($status == "cancel") {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-warning" style="color:white !important;">Cancel</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-warning" style="color:white !important;">취소</div>';
             } else if ($status == "pending") {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-secondary" style="color:white !important;">Pending</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-secondary" style="color:white !important;">대기</div>';
             }
 
             if ($transactionStatus == 'pending' || $value["creditAmount"] == '') {

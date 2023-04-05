@@ -66,10 +66,10 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $editBtnClass = 'success';
 
             if ($status == 1) {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-success">Active</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-success">정상</div>';
                 $editBtnClass = 'danger';
             } else if ($status == 0) {
-                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-danger" style="color:white !important;">Inactive</div>';
+                $statusHtml = '<div class="mb-2 mr-2 badge badge-pill badge-danger" style="color:white !important;">비활성</div>';
             }
 
 
