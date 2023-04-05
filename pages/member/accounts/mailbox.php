@@ -27,145 +27,145 @@ include __DIR__ . '/../../../includes/partials/_authorization.php';
     <!-- Include Quill stylesheet -->
     <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet" />
     <style>
+    .filter-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btn_wrapper {
+        margin-left: 20px;
+    }
+
+    .row_filter_wrapper {
+        flex: 2;
+        width: 100%;
+
+    }
+
+    .btn_action {
+        width: max-content;
+    }
+
+    .status_ {
+        border: none;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .btn-holder {
+        margin-top: 100px !important;
+    }
+
+    @media (max-width: 991px) {
+
+        .replyTextHolder {
+            margin-bottom: 80px !important;
+        }
+    }
+
+    @media (max-width: 740px) {
         .filter-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .clslct {
+            margin-bottom: 10px;
+        }
+
+
+    }
+
+    @media (max-width: 576px) {
+        .row_filter_wrapper>div {
+            width: 88% !important;
+            /* flex-direction:column; */
         }
 
         .btn_wrapper {
-            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 25px;
         }
 
-        .row_filter_wrapper {
-            flex: 2;
-            width: 100%;
+    }
 
+    @media (max-width: 575px) {
+        #invalidType {
+            margin-left: 20px !important;
+        }
+    }
+
+
+
+
+
+    @media (max-width: 595px) {
+        .card-header2 {
+            flex-direction: column;
+            height: 5.4rem !important;
+        }
+    }
+
+    @media (max-width: 437px) {
+
+        .replyTextHolder {
+            margin-bottom: 100px !important;
+        }
+    }
+
+    @media (max-width: 410px) {
+        .card-header2 {
+            height: 6.4rem !important;
         }
 
-        .btn_action {
-            width: max-content;
+        .card-header2 {
+            height: 6.4rem !important;
         }
 
-        .status_ {
-            border: none;
-            background: transparent;
-            margin: 0;
-            padding: 0;
-            cursor: pointer;
-        }
+        .wrapper {
+            flex-direction: column;
 
+        }
+    }
+
+
+    @media (max-width: 366px) {
+
+        .replyTextHolder {
+            margin-bottom: 120px !important;
+        }
+    }
+
+
+    @media (max-width: 352px) {
         .btn-holder {
-            margin-top: 100px !important;
+            margin-top: 150px !important;
         }
+    }
 
-        @media (max-width: 991px) {
-
-            .replyTextHolder {
-                margin-bottom: 80px !important;
-            }
+    @media (max-width: 265px) {
+        .btn-holder {
+            margin-top: 200px !important;
         }
+    }
 
-        @media (max-width: 740px) {
-            .filter-wrapper {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    .nav-tabs .nav-link.active {
+        color: #fff;
+        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
+        /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
+    }
 
-            .clslct {
-                margin-bottom: 10px;
-            }
+    .nav-tabs .nav-link.active:hover {
+        color: #fff !important;
+    }
 
-
-        }
-
-        @media (max-width: 576px) {
-            .row_filter_wrapper>div {
-                width: 88% !important;
-                /* flex-direction:column; */
-            }
-
-            .btn_wrapper {
-                margin-top: 10px;
-                margin-bottom: 10px;
-                margin-left: 25px;
-            }
-
-        }
-
-        @media (max-width: 575px) {
-            #invalidType {
-                margin-left: 20px !important;
-            }
-        }
-
-
-
-
-
-        @media (max-width: 595px) {
-            .card-header2 {
-                flex-direction: column;
-                height: 5.4rem !important;
-            }
-        }
-
-        @media (max-width: 437px) {
-
-            .replyTextHolder {
-                margin-bottom: 100px !important;
-            }
-        }
-
-        @media (max-width: 410px) {
-            .card-header2 {
-                height: 6.4rem !important;
-            }
-
-            .card-header2 {
-                height: 6.4rem !important;
-            }
-
-            .wrapper {
-                flex-direction: column;
-
-            }
-        }
-
-
-        @media (max-width: 366px) {
-
-            .replyTextHolder {
-                margin-bottom: 120px !important;
-            }
-        }
-
-
-        @media (max-width: 352px) {
-            .btn-holder {
-                margin-top: 150px !important;
-            }
-        }
-
-        @media (max-width: 265px) {
-            .btn-holder {
-                margin-top: 200px !important;
-            }
-        }
-
-        .nav-tabs .nav-link.active {
-            color: #fff;
-            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
-            /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
-        }
-
-        .nav-tabs .nav-link.active:hover {
-            color: #fff !important;
-        }
-
-        td ol li {
-            text-align: left;
-        }
+    td ol li {
+        text-align: left;
+    }
 
     </style>
 </head>
@@ -231,7 +231,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => 'Account', 'title_text' => 'Mailbox.', 'icon' => "folder")); ?>
+                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '어카운트', 'title_text' => '쪽지.', 'icon' => "folder")); ?>
 
                     <!-- main content -->
                     <section class="main">
@@ -240,20 +240,20 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                             <div class="col-md-12">
 
                                 <div class="main-card mb-3 card">
-                                    <div class="card-header" style='height: 2.5rem;'>FILTER
+                                    <div class="card-header" style='height: 2.5rem;'>검색
 
                                     </div>
                                     <div class="d-flex filter-wrapper">
                                         <div class="row mt-2 row_filter_wrapper mb-3">
                                             <div class="input-group grp2 ml-4" style="width: unset;">
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">Subject</span></div>
+                                                        class="input-group-text">쪽지제목</span></div>
                                                 <input placeholder="" id="filterSubject" type="text"
                                                     class="form-control shadow-none">
                                             </div>
                                             <div class="btn_wrapper" style="display: flex;align-items: center;">
-                                                <button class="btn btn-primary filter_btn mr-2">Apply</button>
-                                                <button class="btn btn-secondary reset_btn">Reset</button>
+                                                <button class="btn btn-primary filter_btn mr-2">검색</button>
+                                                <button class="btn btn-secondary reset_btn">리셋</button>
                                             </div>
                                         </div>
 
@@ -275,7 +275,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
                                         <span>
-                                            MailBox
+                                            쪽지내역
 
                                         </span>
                                         <div class="dropdown d-inline-block mails_number_wrapper">
@@ -325,9 +325,9 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                                     <th class="text-center"><input type='checkbox' class='selectAll'
                                                             name='selectAll'>
                                                     </th>
-                                                    <th class="text-center">Name </th>
-                                                    <th class="text-center">Subject </th>
-                                                    <th class="text-center">Date</th>
+                                                    <th class="text-center">이름 </th>
+                                                    <th class="text-center">제목 </th>
+                                                    <th class="text-center">받은날짜</th>
 
 
                                                 </tr>
@@ -346,12 +346,12 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
                                         <small>
-                                            Note: The date will be based on time zone GMT+09:00
+                                            노트: 날짜는 GMT +09:00 기준입니다.
                                         </small>
                                     </div>
                                     <div class="d-block text-left card-footer ml-0">
                                         <a href="javascript:void(0);" class="btn-wide btn-shadow btn btn-primary"
-                                            onclick=confirmMarkedMailsAsSeen()>Mark As Read</a>
+                                            onclick=confirmMarkedMailsAsSeen()>읽음으로 표시</a>
                                     </div>
 
 
@@ -395,490 +395,490 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
     <?php includeWithVariables('./../../../includes/modals/_deleteModal.php'); ?>
 
     <script>
-        // --- DISPLAY MAILS HISTORY ----
-        function displayMails(N = 1) {
-
-            var activePage = $(".navigation_mails li.page-item.active a").text();
-            var activeNumber = $(".active-mails-number").text();
-            activeNumber = activeNumber.trim();
-
-            var filterSubject = $("#filterSubject").val()
-
-            var token = $("#token_display").val();
-
-            $.ajax({
-                url: '/ajaxProcessus/memberAccounts/mails/displayMails.php',
-                type: 'POST',
-                data: {
-                    "display": true,
-                    "page": N,
-                    "number": activeNumber,
-                    filterSubject,
-                    token
-                },
-                cache: false,
-                timeout: 10000,
-                success: function (data) {
-
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-                    rese = JSON.parse(data);
-
-                    // console.log(rese[0]);
-                    let length = rese.length;
-
-
-                    if (length == 4) { //success
-                        $(".table-body-mails").html(rese[0]);
-                        $(".navigation_mails").html(rese[1]);
-
-                        // $('input[name="selectAll"]').prop('checked', false);
-
-                        $("#token_display").val(rese[3]);
-                    } else if (length == 1) { //csrf error
-                        $("#token_display").val(rese[0]);
-
-                    } else {
-                        //refresh page;
-                        location.reload();
-                    }
-
-
-
-                }
-
-
-            })
-        }
-
-
-        //NUMBERS DISPLAYED PER PAGE
-        $(".mails_number_options button").on("click", function (event) {
-
-            var number = event.currentTarget.textContent;
-            $(".active-mails-number").text(number);
-
-            displayMails(1, $status);
-        })
-
-
-
-        //filter_btn
-        $(".filter_btn").click(function (e) {
-            displayMails();
-        })
-
-        //reset_btn
-        $(".reset_btn").click(function (e) {
-            $("#filterSubject").val("");
-
-            displayMails();
-        })
-
-        $(".close-alert").click(function (event) {
-            $(".noData-alert").hide();
-        })
-
-        //mark as read
-        //select all
-        $('.selectAll:checkbox').change(function () {
-            if (this.checked) {
-                $(`input[name="mailSelected[]"]`).prop('checked', true);
-            } else {
-                $(`input[name="mailSelected[]"]`).prop('checked', false);
-            }
-        });
-
-        //confirm we have selected data
-        function confirmMarkedMailsAsSeen() {
-            var checks = $('input[name="mailSelected[]"]:checked').map(function () {
-                return $(this).attr("data-id");
-            }).get() //[...];
-
-            if (checks.length == 0) {
-
-                $(".noData-alert").show();
-
-                setTimeout(function () {
-                    $(".noData-alert").hide();
-
-                }, 5000);
-
-                return;
-            }
-
-            markMailsAsSeen(checks);
-
-        }
-
-        function markMailsAsSeen(checks) {
-
-            var token = $("#token_seen").val();
-
-            $.ajax({
-                url: '/ajaxProcessus/memberAccounts/mails/markMailsAsSeen.php',
-                type: 'POST',
-                data: {
-                    checks,
-                    token
-                },
-                cache: false,
-                timeout: 10000,
-
-                success: function (data) {
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-
-                    data = data.split("###");
-
-                    if (data.length == 2) {
-                        received_token = data[1];
-                        $("#token_seen").val(received_token);
-                    }
-                    data = data[0];
-
-                    if (data == 1) {
-                        vt.success(`You successfully Marked Those Mails As Read.`, {
-                            title: "Mails Marked As Read!",
-                            duration: 1000,
-                            closable: true,
-                            focusable: true,
-                            callback: () => {
-                                console.log("completed");
-                                location.reload(); //reload for the account/data new badge update
-                            }
-                        });
-
-
-                    } else if (data == 0) {
-                        vt.error(
-                            `This can be a CSRF error!, if you see this error please contact our support about it.`, {
-                            title: "CSRF Error",
-                            duration: 1200,
-                            closable: true,
-                            focusable: true,
-                            callback: () => {
-                                console.log("completed");
-                                location.reload();
-                            }
-                        });
-
-
-
-                    } else {
-                        vt.error(`There has been an error while processing your delete request!.`, {
-                            title: "Mails are not Marked As Read!",
-                            duration: 6000,
-                            closable: true,
-                            focusable: true,
-                            callback: () => {
-                                console.log("completed");
-                            }
-                        });
-                    }
-                }
-            })
-        }
-
-        //show mails modal info
-        function showMailDataInfo(event) {
-
-            //mail data Info
-            //reset fields:
-            $("#date").text("");
-
-            $("#cardSubject").text("");
-            $("#cardMessage").html("");
-
-            $("#previousReplies").html("");
-
-
-            let data = event.currentTarget.getAttribute("data-values");
-
-            //populating modal with data
-            data = data.replace(new RegExp("&&xx&&", "g"), " ");
-            data = JSON.parse(data);
-
-            $("#mail_id").val(data["id"]);
-
-
-            $("#date").text(data["created_at"]);
-
-            $("#cardSubject").text(data["subject"]);
-            $("#cardMessage").html(data["message"]);
-
-
-            //get the previous replies
-
-            getPreviousReplies(data["id"]);
-
-            //write-reply section
-            clearModalInvalidFeedbacks();
-
-            quill.setContents([{
-                insert: '\n'
-            }]);
-
-
-            //mark as seen
-            markOneMailAsSeen(data["id"]);
-        }
-
-        function getPreviousReplies(id) {
-
-            var token = $("#token_display_reply").val();
-
-            $.ajax({
-                url: '/ajaxProcessus/memberAccounts/mails/getPreviousReplies.php',
-                type: 'POST',
-                data: {
-                    id,
-                    token
-                },
-                cache: false,
-                timeout: 10000,
-
-                success: function (data) {
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-
-                    rese = JSON.parse(data);
-
-                    let length = rese.length;
-
-
-                    if (length == 2) { //success
-                        $("div#previousReplies").html(rese[0]);
-
-                        $("#token_display_reply").val(rese[1]);
-                    } else if (length == 1) { //csrf error
-                        $("#token_display_reply").val(rese[0]);
-                    } else {
-                        //refresh page;
-                        location.reload();
-                    }
-
-                }
-            })
-        }
-
-        function markOneMailAsSeen(id) {
-
-            var token = $("#token_seen").val();
-
-            $.ajax({
-                url: '/ajaxProcessus/memberAccounts/mails/markOneMailAsSeen.php',
-                type: 'POST',
-                data: {
-                    id,
-                    token
-                },
-                cache: false,
-                timeout: 10000,
-
-                success: function (data) {
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-
-                    data = data.split("###");
-
-                    if (data.length >= 2) {
-                        received_token = data[1];
-                        $("#token_seen").val(received_token);
-                    }
-                    dataResponse = data[0];
-
-                    if (dataResponse == 1) {
-                        //success
-
-                        //hide the new badge on the table row
-                        $(`span[data-mailNewBadge='${id}']`).css("display", "none");
-
-                        //check if need to hide account/mail new badges
-                        let unSeenMails = data[2];
-                        let unSeenNotifications = data[3];
-
-                        if (unSeenMails <= 0) {
-                            $(`.new-mails`).css("display", "none");
-
-                            if (unSeenNotifications <= 0) {
-                                $(`.new-notifs`).css("display", "none");
-                            }
-                        } else {
-                            //update header mails icon number
-                            $(".header-user-info .new-mails").text(unSeenMails);
-                            $("#user_mailbox .new-mails").text(unSeenMails);
-                        }
-
-
-
-                    } else if (dataResponse == 0) {
-                        vt.error(
-                            `There is a CSRF error!, if you see this error please contact our support about it. The page will be reloaded automatically!`, {
-                            title: "CSRF Error",
-                            duration: 1200,
-                            closable: true,
-                            focusable: true,
-                            callback: () => {
-                                console.log("completed");
-                                location.reload();
-                            }
-                        }
-                        );
-
-
-                    }
-                }
-            })
-        }
-
-        // --- SEND REPLY ---
-
-        //INITIATE THE TEXT EDITOR
-        var quill = new Quill('#replyText', {
-            modules: {
-                toolbar: [
-                    [{
-                        'font': []
-                    }, {
-                        'header': [1, 2, 3, 4, 5, 6, false]
-                    }],
-
-                    ['bold', 'italic', 'underline', 'strike'],
-                    [{
-                        'color': []
-                    }, {
-                        'background': []
-                    }],
-                    ['link', 'blockquote', 'code-block', 'image'],
-                    [{
-                        list: 'ordered'
-                    }, {
-                        list: 'bullet'
-                    }],
-                    [{
-                        'align': []
-                    }],
-                    ['clean']
-                ]
+    // --- DISPLAY MAILS HISTORY ----
+    function displayMails(N = 1) {
+
+        var activePage = $(".navigation_mails li.page-item.active a").text();
+        var activeNumber = $(".active-mails-number").text();
+        activeNumber = activeNumber.trim();
+
+        var filterSubject = $("#filterSubject").val()
+
+        var token = $("#token_display").val();
+
+        $.ajax({
+            url: '/ajaxProcessus/memberAccounts/mails/displayMails.php',
+            type: 'POST',
+            data: {
+                "display": true,
+                "page": N,
+                "number": activeNumber,
+                filterSubject,
+                token
             },
-            placeholder: 'Reply Message...',
-            theme: 'snow'
-        });
+            cache: false,
+            timeout: 10000,
+            success: function(data) {
 
-
-
-        function clearModalInvalidFeedbacks() {
-            var array = ["replyText"];
-
-            array.forEach(element => {
-                let target = $(`#${element}`);
-
-                target.next(".invalid-feedback").text("");
-                target.next(".invalid-feedback").css("display", "none");
-                target.removeClass("invalid");
-
-            });
-        }
-
-        function clearModalInvalidFeedbacksOnChange() {
-
-            quill.on('text-change', function () {
-                $("#replyText").next(".invalid-feedback").text("");
-                $("#replyText").next(".invalid-feedback").css("display", "none");
-                $("#replyText").removeClass("invalid");
-            });
-        }
-        clearModalInvalidFeedbacksOnChange();
-
-
-        // send
-        function replyMail(event) {
-            event.preventDefault();
-
-            //getting data
-            var replyText = quill.getText();
-            var replyTextHtml = quill.root.innerHTML;
-
-            var mailId = $("#mail_id").val();
-
-            var token = $("#token_reply").val();
-
-
-            //validating & sanitizing data
-            var constraints = {
-                replyText: {
-                    presence: {
-                        allowEmpty: false
-                    },
-                },
-            };
-
-
-            var errors = validate({
-                replyText,
-            }, constraints);
-
-            if (typeof errors != undefined && errors != undefined) {
-
-                // console.log(errors);
-                for (var key in errors) {
-                    $(`#${key}`).addClass("invalid");
-                    $(`#${key}`).next(".invalid-feedback").text(errors[key]);
-                    $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                if (data == 'unauthorized' || data == '') {
+                    window.location.href = '/pages/errors/403.php';
+                    return;
                 }
-            } else {
-                //sanitize
+                rese = JSON.parse(data);
 
-                mailId = DOMPurify.sanitize(mailId, {
-                    SAFE_FOR_JQUERY: true
-                });
-                replyTextHtml = DOMPurify.sanitize(replyTextHtml, {
-                    SAFE_FOR_JQUERY: true
-                });
-                replyText = DOMPurify.sanitize(replyText, {
-                    SAFE_FOR_JQUERY: true
-                });
+                // console.log(rese[0]);
+                let length = rese.length;
 
-                $.ajax({
-                    url: '/ajaxProcessus/memberAccounts/mails/replyMail.php',
-                    type: 'POST',
-                    data: {
-                        "mail": replyTextHtml,
-                        "mailPlain": replyText,
-                        mailId,
-                        token
-                    },
-                    cache: false,
-                    timeout: 10000,
 
-                    success: function (data) {
-                        if (data == 'unauthorized' || data == '') {
-                            window.location.href = '/pages/errors/403.php';
-                            return;
+                if (length == 4) { //success
+                    $(".table-body-mails").html(rese[0]);
+                    $(".navigation_mails").html(rese[1]);
+
+                    // $('input[name="selectAll"]').prop('checked', false);
+
+                    $("#token_display").val(rese[3]);
+                } else if (length == 1) { //csrf error
+                    $("#token_display").val(rese[0]);
+
+                } else {
+                    //refresh page;
+                    location.reload();
+                }
+
+
+
+            }
+
+
+        })
+    }
+
+
+    //NUMBERS DISPLAYED PER PAGE
+    $(".mails_number_options button").on("click", function(event) {
+
+        var number = event.currentTarget.textContent;
+        $(".active-mails-number").text(number);
+
+        displayMails(1, $status);
+    })
+
+
+
+    //filter_btn
+    $(".filter_btn").click(function(e) {
+        displayMails();
+    })
+
+    //reset_btn
+    $(".reset_btn").click(function(e) {
+        $("#filterSubject").val("");
+
+        displayMails();
+    })
+
+    $(".close-alert").click(function(event) {
+        $(".noData-alert").hide();
+    })
+
+    //mark as read
+    //select all
+    $('.selectAll:checkbox').change(function() {
+        if (this.checked) {
+            $(`input[name="mailSelected[]"]`).prop('checked', true);
+        } else {
+            $(`input[name="mailSelected[]"]`).prop('checked', false);
+        }
+    });
+
+    //confirm we have selected data
+    function confirmMarkedMailsAsSeen() {
+        var checks = $('input[name="mailSelected[]"]:checked').map(function() {
+            return $(this).attr("data-id");
+        }).get() //[...];
+
+        if (checks.length == 0) {
+
+            $(".noData-alert").show();
+
+            setTimeout(function() {
+                $(".noData-alert").hide();
+
+            }, 5000);
+
+            return;
+        }
+
+        markMailsAsSeen(checks);
+
+    }
+
+    function markMailsAsSeen(checks) {
+
+        var token = $("#token_seen").val();
+
+        $.ajax({
+            url: '/ajaxProcessus/memberAccounts/mails/markMailsAsSeen.php',
+            type: 'POST',
+            data: {
+                checks,
+                token
+            },
+            cache: false,
+            timeout: 10000,
+
+            success: function(data) {
+                if (data == 'unauthorized' || data == '') {
+                    window.location.href = '/pages/errors/403.php';
+                    return;
+                }
+
+                data = data.split("###");
+
+                if (data.length == 2) {
+                    received_token = data[1];
+                    $("#token_seen").val(received_token);
+                }
+                data = data[0];
+
+                if (data == 1) {
+                    vt.success(`You successfully Marked Those Mails As Read.`, {
+                        title: "Mails Marked As Read!",
+                        duration: 1000,
+                        closable: true,
+                        focusable: true,
+                        callback: () => {
+                            console.log("completed");
+                            location.reload(); //reload for the account/data new badge update
                         }
-                        rese = JSON.parse(data);
-                        var response = rese.response
-                        var received_token = rese.token
-                        var serverValidationErrors = rese.errors
-                        // return;
+                    });
 
 
-                        if (response == 1) { //added
+                } else if (data == 0) {
+                    vt.error(
+                        `This can be a CSRF error!, if you see this error please contact our support about it.`, {
+                            title: "CSRF Error",
+                            duration: 1200,
+                            closable: true,
+                            focusable: true,
+                            callback: () => {
+                                console.log("completed");
+                                location.reload();
+                            }
+                        });
 
 
-                            $("button.close").trigger("click");
-                            $("#token_reply").val(received_token);
-                            vt.success(
-                                `You successfully Replied to this Mail.`, {
+
+                } else {
+                    vt.error(`There has been an error while processing your delete request!.`, {
+                        title: "Mails are not Marked As Read!",
+                        duration: 6000,
+                        closable: true,
+                        focusable: true,
+                        callback: () => {
+                            console.log("completed");
+                        }
+                    });
+                }
+            }
+        })
+    }
+
+    //show mails modal info
+    function showMailDataInfo(event) {
+
+        //mail data Info
+        //reset fields:
+        $("#date").text("");
+
+        $("#cardSubject").text("");
+        $("#cardMessage").html("");
+
+        $("#previousReplies").html("");
+
+
+        let data = event.currentTarget.getAttribute("data-values");
+
+        //populating modal with data
+        data = data.replace(new RegExp("&&xx&&", "g"), " ");
+        data = JSON.parse(data);
+
+        $("#mail_id").val(data["id"]);
+
+
+        $("#date").text(data["created_at"]);
+
+        $("#cardSubject").text(data["subject"]);
+        $("#cardMessage").html(data["message"]);
+
+
+        //get the previous replies
+
+        getPreviousReplies(data["id"]);
+
+        //write-reply section
+        clearModalInvalidFeedbacks();
+
+        quill.setContents([{
+            insert: '\n'
+        }]);
+
+
+        //mark as seen
+        markOneMailAsSeen(data["id"]);
+    }
+
+    function getPreviousReplies(id) {
+
+        var token = $("#token_display_reply").val();
+
+        $.ajax({
+            url: '/ajaxProcessus/memberAccounts/mails/getPreviousReplies.php',
+            type: 'POST',
+            data: {
+                id,
+                token
+            },
+            cache: false,
+            timeout: 10000,
+
+            success: function(data) {
+                if (data == 'unauthorized' || data == '') {
+                    window.location.href = '/pages/errors/403.php';
+                    return;
+                }
+
+                rese = JSON.parse(data);
+
+                let length = rese.length;
+
+
+                if (length == 2) { //success
+                    $("div#previousReplies").html(rese[0]);
+
+                    $("#token_display_reply").val(rese[1]);
+                } else if (length == 1) { //csrf error
+                    $("#token_display_reply").val(rese[0]);
+                } else {
+                    //refresh page;
+                    location.reload();
+                }
+
+            }
+        })
+    }
+
+    function markOneMailAsSeen(id) {
+
+        var token = $("#token_seen").val();
+
+        $.ajax({
+            url: '/ajaxProcessus/memberAccounts/mails/markOneMailAsSeen.php',
+            type: 'POST',
+            data: {
+                id,
+                token
+            },
+            cache: false,
+            timeout: 10000,
+
+            success: function(data) {
+                if (data == 'unauthorized' || data == '') {
+                    window.location.href = '/pages/errors/403.php';
+                    return;
+                }
+
+                data = data.split("###");
+
+                if (data.length >= 2) {
+                    received_token = data[1];
+                    $("#token_seen").val(received_token);
+                }
+                dataResponse = data[0];
+
+                if (dataResponse == 1) {
+                    //success
+
+                    //hide the new badge on the table row
+                    $(`span[data-mailNewBadge='${id}']`).css("display", "none");
+
+                    //check if need to hide account/mail new badges
+                    let unSeenMails = data[2];
+                    let unSeenNotifications = data[3];
+
+                    if (unSeenMails <= 0) {
+                        $(`.new-mails`).css("display", "none");
+
+                        if (unSeenNotifications <= 0) {
+                            $(`.new-notifs`).css("display", "none");
+                        }
+                    } else {
+                        //update header mails icon number
+                        $(".header-user-info .new-mails").text(unSeenMails);
+                        $("#user_mailbox .new-mails").text(unSeenMails);
+                    }
+
+
+
+                } else if (dataResponse == 0) {
+                    vt.error(
+                        `There is a CSRF error!, if you see this error please contact our support about it. The page will be reloaded automatically!`, {
+                            title: "CSRF Error",
+                            duration: 1200,
+                            closable: true,
+                            focusable: true,
+                            callback: () => {
+                                console.log("completed");
+                                location.reload();
+                            }
+                        }
+                    );
+
+
+                }
+            }
+        })
+    }
+
+    // --- SEND REPLY ---
+
+    //INITIATE THE TEXT EDITOR
+    var quill = new Quill('#replyText', {
+        modules: {
+            toolbar: [
+                [{
+                    'font': []
+                }, {
+                    'header': [1, 2, 3, 4, 5, 6, false]
+                }],
+
+                ['bold', 'italic', 'underline', 'strike'],
+                [{
+                    'color': []
+                }, {
+                    'background': []
+                }],
+                ['link', 'blockquote', 'code-block', 'image'],
+                [{
+                    list: 'ordered'
+                }, {
+                    list: 'bullet'
+                }],
+                [{
+                    'align': []
+                }],
+                ['clean']
+            ]
+        },
+        placeholder: 'Reply Message...',
+        theme: 'snow'
+    });
+
+
+
+    function clearModalInvalidFeedbacks() {
+        var array = ["replyText"];
+
+        array.forEach(element => {
+            let target = $(`#${element}`);
+
+            target.next(".invalid-feedback").text("");
+            target.next(".invalid-feedback").css("display", "none");
+            target.removeClass("invalid");
+
+        });
+    }
+
+    function clearModalInvalidFeedbacksOnChange() {
+
+        quill.on('text-change', function() {
+            $("#replyText").next(".invalid-feedback").text("");
+            $("#replyText").next(".invalid-feedback").css("display", "none");
+            $("#replyText").removeClass("invalid");
+        });
+    }
+    clearModalInvalidFeedbacksOnChange();
+
+
+    // send
+    function replyMail(event) {
+        event.preventDefault();
+
+        //getting data
+        var replyText = quill.getText();
+        var replyTextHtml = quill.root.innerHTML;
+
+        var mailId = $("#mail_id").val();
+
+        var token = $("#token_reply").val();
+
+
+        //validating & sanitizing data
+        var constraints = {
+            replyText: {
+                presence: {
+                    allowEmpty: false
+                },
+            },
+        };
+
+
+        var errors = validate({
+            replyText,
+        }, constraints);
+
+        if (typeof errors != undefined && errors != undefined) {
+
+            // console.log(errors);
+            for (var key in errors) {
+                $(`#${key}`).addClass("invalid");
+                $(`#${key}`).next(".invalid-feedback").text(errors[key]);
+                $(`#${key}`).next(".invalid-feedback").css("display", "block");
+            }
+        } else {
+            //sanitize
+
+            mailId = DOMPurify.sanitize(mailId, {
+                SAFE_FOR_JQUERY: true
+            });
+            replyTextHtml = DOMPurify.sanitize(replyTextHtml, {
+                SAFE_FOR_JQUERY: true
+            });
+            replyText = DOMPurify.sanitize(replyText, {
+                SAFE_FOR_JQUERY: true
+            });
+
+            $.ajax({
+                url: '/ajaxProcessus/memberAccounts/mails/replyMail.php',
+                type: 'POST',
+                data: {
+                    "mail": replyTextHtml,
+                    "mailPlain": replyText,
+                    mailId,
+                    token
+                },
+                cache: false,
+                timeout: 10000,
+
+                success: function(data) {
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
+                    }
+                    rese = JSON.parse(data);
+                    var response = rese.response
+                    var received_token = rese.token
+                    var serverValidationErrors = rese.errors
+                    // return;
+
+
+                    if (response == 1) { //added
+
+
+                        $("button.close").trigger("click");
+                        $("#token_reply").val(received_token);
+                        vt.success(
+                            `You successfully Replied to this Mail.`, {
                                 title: "Mail Sent!",
                                 duration: 6000,
                                 closable: true,
@@ -889,15 +889,15 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                             });
 
 
-                            displayMails();
-                            clearModalInvalidFeedbacks();
+                        displayMails();
+                        clearModalInvalidFeedbacks();
 
-                        } else if (response == 2) { //csrf error
-                            $("button.close").trigger("click");
-                            $("#token_reply").val(received_token);
+                    } else if (response == 2) { //csrf error
+                        $("button.close").trigger("click");
+                        $("#token_reply").val(received_token);
 
-                            vt.error(
-                                `This can be a CSRF error!, if you see this error please contact our support about it.`, {
+                        vt.error(
+                            `This can be a CSRF error!, if you see this error please contact our support about it.`, {
                                 title: "CSRF Error",
                                 duration: 6000,
                                 closable: true,
@@ -906,13 +906,13 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                        } else if (response == 4) { //db error
-                            $("button.close").trigger("click");
-                            $("#token_reply").val(received_token);
+                    } else if (response == 4) { //db error
+                        $("button.close").trigger("click");
+                        $("#token_reply").val(received_token);
 
 
-                            vt.error(
-                                `We could not process your request due to an unknown error!, please try again.`, {
+                        vt.error(
+                            `We could not process your request due to an unknown error!, please try again.`, {
                                 title: "Unknown error",
                                 duration: 6000,
                                 closable: true,
@@ -921,31 +921,31 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                        } else if (response == 0) { //serverValidationErrors
-                            // $("button.close").trigger("click");
-                            $("#token_reply").val(received_token);
+                    } else if (response == 0) { //serverValidationErrors
+                        // $("button.close").trigger("click");
+                        $("#token_reply").val(received_token);
 
-                            for (var key in serverValidationErrors) {
-                                var msg = serverValidationErrors[key];
+                        for (var key in serverValidationErrors) {
+                            var msg = serverValidationErrors[key];
 
-                                $(`#${key}`).addClass("invalid");
-                                $(`#${key}`).next(".invalid-feedback").text(msg);
-                                $(`#${key}`).next(".invalid-feedback").css("display", "block");
-                            }
+                            $(`#${key}`).addClass("invalid");
+                            $(`#${key}`).next(".invalid-feedback").text(msg);
+                            $(`#${key}`).next(".invalid-feedback").css("display", "block");
                         }
                     }
-                })
-            }
+                }
+            })
         }
+    }
 
 
 
 
-        document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('DOMContentLoaded', (event) => {
 
-            displayMails(0);
+        displayMails(0);
 
-        });
+    });
     </script>
 </body>
 

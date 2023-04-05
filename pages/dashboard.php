@@ -88,8 +88,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                 <div class=" card mb-3 widget-content bg-premium-dark">
                                 <div class="widget-content-wrapper text-white">
                                     <div class="widget-content-left">
-                                        <div class="widget-heading">Clients Deposit</div>
-                                        <div class="widget-subheading">Total Clients Deposit</div>
+                                        <div class="widget-heading">충전 포인트</div>
+                                        <div class="widget-subheading"> 총 충전 포인트</div>
                                     </div>
                                     <div class="widget-content-right">
                                         <div class="widget-numbers text-warning"><span class='clients-deposit'>-</span>
@@ -366,23 +366,23 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                 <ul class="nav">
                                     <li class="nav-item"><a href="javascript:void(0);"
                                             class="active nav-link second-tab-toggle turnover turnover-current"
-                                            data-period='current'>Current</a>
+                                            data-period='current'>측정하다</a>
                                     </li>
                                     <li class="nav-item"><a href="javascript:void(0);"
-                                            class="nav-link turnover turnover-last" data-period='last'>Last</a>
+                                            class="nav-link turnover turnover-last" data-period='last'>지난주</a>
                                     </li>
 
                                     <li class="nav-item"><a href="javascript:void(0);"
                                             class="nav-link third-tab-toggle turnover turnover-weekly"
-                                            data-period='weekly'>weekly</a>
+                                            data-period='weekly'>주별</a>
                                     </li>
 
                                     <li class="nav-item"><a href="javascript:void(0);"
                                             class="nav-link fourth-tab-toggle"><select type="select" id="categorySelect"
                                                 name="categorySelect" class="custom-select">
-                                                <option value="all">All</option>
-                                                <option value="casino">Casinos</option>
-                                                <option value="slot">Slots</option>
+                                                <option value="all">전체</option>
+                                                <option value="casino">카지노</option>
+                                                <option value="slot">슬롯</option>
                                             </select></a></li>
 
                                 </ul>
@@ -412,24 +412,24 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                 <ul class="nav">
                                     <li class="nav-item"><a href="javascript:void(0);"
                                             class="active nav-link second-tab-toggle winloss winloss-current"
-                                            data-period='current'>Current</a>
+                                            data-period='current'>이번주</a>
                                     </li>
                                     <li class="nav-item"><a href="javascript:void(0);"
-                                            class="nav-link winloss winloss-last" data-period='last'>Last</a>
+                                            class="nav-link winloss winloss-last" data-period='last'>지난주</a>
                                     </li>
 
                                     <li class="nav-item"><a href="javascript:void(0);"
                                             class="nav-link third-tab-toggle winloss winloss-weekly"
-                                            data-period='weekly'>weekly</a>
+                                            data-period='weekly'>주별</a>
                                     </li>
 
                                     <li class="nav-item"><a href="javascript:void(0);"
                                             class="nav-link fourth-tab-toggle"><select type="select"
                                                 id="categorySelectWinLoss" name="categorySelectWinLoss"
                                                 class="custom-select">
-                                                <option value="all">All</option>
-                                                <option value="casino">Casinos</option>
-                                                <option value="slot">Slots</option>
+                                                <option value="all">전체</option>
+                                                <option value="casino">카지노</option>
+                                                <option value="slot">슬롯</option>
                                             </select></a></li>
 
                                 </ul>
@@ -821,12 +821,12 @@ include __DIR__ . '/../includes/partials/_authorization.php';
             //turnover
             ctx.font = window.innerWidth > 1450 ? '20px serif' : (window.innerWidth > 910 ? '15px serif' :
                 '10px serif');
-            ctx.fillText('측정하다 : 10k', xOffset, yOffset);
+            // ctx.fillText('측정하다 : 10k', xOffset, yOffset);
             //winloss
             ctxWinLoss.font = window.innerWidth > 1450 ? '20px serif' : (window.innerWidth > 910 ?
                 '15px serif' :
                 '10px serif');
-            ctxWinLoss.fillText('측정하다 : 2k', xOffset, yOffset);
+            // ctxWinLoss.fillText('측정하다 : 2k', xOffset, yOffset);
         }
     });
 
