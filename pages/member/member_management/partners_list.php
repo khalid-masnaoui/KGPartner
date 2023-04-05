@@ -179,7 +179,7 @@ $modal_body = '<form class="">
 
 	
 <fieldset class="position-relative row form-group">
-    <div class="legend col-sm-2">    <legend class="col-form-label col-sm-2">상태</legend>    </div>
+    <div class="legend col-sm-2">    <legend class="col-form-label col-sm-2" style="max-width:max-width: 50% !important;">상태</legend>    </div>
     <div class="col-sm-10">
         <div class="position-relative form-check"><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" value="0"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-warning" style="color:white !important;">대기</div></label></div>
         <div class="position-relative form-check"><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" checked value="1"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-success">정상</div></label></div>
@@ -401,7 +401,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                                     <th class="text-center">요율</th>
                                                     <th class="text-center">상위파트너</th>
                                                     <th class="text-center">상태 </th>
-                                                    <th class="text-center">Action</th>
+                                                    <th class="text-center">Edit</th>
                                                 </tr>
                                             </thead>
                                             <tbody class='table-body-partners'>

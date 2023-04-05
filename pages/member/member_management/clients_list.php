@@ -40,104 +40,104 @@ foreach ($clients as $key => $value) {
 
     <?php include __DIR__ . '/../../../includes/files/_stylesheets.php'; ?>
     <style>
+    .filter-wrapper {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        width: 30%;
+    }
+
+    .filter_btn {
+        margin-left: 20px;
+    }
+
+    .btn_action {
+        width: max-content;
+    }
+
+    @media (max-width: 1500px) {
+        .filter-wrapper {
+            width: 40%;
+        }
+    }
+
+    @media (max-width: 1070px) {
+        .filter-wrapper {
+            width: 60%;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .filter-wrapper {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 540px) {
         .filter-wrapper {
             margin-top: 20px;
             margin-bottom: 20px;
-            margin-left: 20px;
-            width: 30%;
+            margin-left: 5px;
+            margin-right: 5px;
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .filter-wrapper {
+            width: 94%;
+        }
+    }
+
+    .invalid {
+        border-color: #d92550;
+        padding-right: 2.25rem;
+        background-repeat: no-repeat;
+        background-position: center right calc(2.25rem / 4);
+        background-size: calc(2.25rem / 2) calc(2.25rem / 2);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+    }
+
+    .valid {
+        border-color: #3ac47d;
+        padding-right: 2.25rem;
+        background-repeat: no-repeat;
+        background-position: center right calc(2.25rem / 4);
+        background-size: calc(2.25rem / 2) calc(2.25rem / 2);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+
+    }
+
+    .status_ {
+        border: none;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    @media (max-width: 510px) {
+        .card-header2 {
+            flex-direction: column;
+            height: 5.4rem !important;
         }
 
         .filter_btn {
-            margin-left: 20px;
-        }
-
-        .btn_action {
-            width: max-content;
-        }
-
-        @media (max-width: 1500px) {
-            .filter-wrapper {
-                width: 40%;
-            }
-        }
-
-        @media (max-width: 1070px) {
-            .filter-wrapper {
-                width: 60%;
-            }
-        }
-
-        @media (max-width: 650px) {
-            .filter-wrapper {
-                width: 90%;
-            }
-        }
-
-        @media (max-width: 540px) {
-            .filter-wrapper {
-                margin-top: 20px;
-                margin-bottom: 20px;
-                margin-left: 5px;
-                margin-right: 5px;
-                width: 90%;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .filter-wrapper {
-                width: 94%;
-            }
-        }
-
-        .invalid {
-            border-color: #d92550;
-            padding-right: 2.25rem;
-            background-repeat: no-repeat;
-            background-position: center right calc(2.25rem / 4);
-            background-size: calc(2.25rem / 2) calc(2.25rem / 2);
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
-        }
-
-        .valid {
-            border-color: #3ac47d;
-            padding-right: 2.25rem;
-            background-repeat: no-repeat;
-            background-position: center right calc(2.25rem / 4);
-            background-size: calc(2.25rem / 2) calc(2.25rem / 2);
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+            margin-left: 5px !important;
 
         }
+    }
 
-        .status_ {
-            border: none;
-            background: transparent;
-            margin: 0;
-            padding: 0;
-            cursor: pointer;
+    @media (max-width: 410px) {
+        .card-header2 {
+            height: 6.4rem !important;
         }
 
-        @media (max-width: 510px) {
-            .card-header2 {
-                flex-direction: column;
-                height: 5.4rem !important;
-            }
+        .status_number_wrapper {
+            flex-direction: column;
 
-            .filter_btn {
-                margin-left: 5px !important;
-
-            }
         }
-
-        @media (max-width: 410px) {
-            .card-header2 {
-                height: 6.4rem !important;
-            }
-
-            .status_number_wrapper {
-                flex-direction: column;
-
-            }
-        }
+    }
 
     </style>
 </head>
@@ -184,7 +184,7 @@ $modal_body = '<form class="">
 
 	
 <fieldset class="position-relative row form-group">
-    <div class="legend col-sm-2">    <legend class="col-form-label col-sm-2">상태</legend>    </div>
+    <div class="legend col-sm-2">    <legend class="col-form-label col-sm-2" style="max-width:max-width: 50% !important;">상태</legend>    </div>
     <div class="col-sm-10">
         <div class="position-relative form-check"><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" value="0"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-warning" style="color:white !important;">대기</div></label></div>
         <div class="position-relative form-check"><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" checked value="1"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-success">정상</div></label></div>
@@ -468,588 +468,588 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
     <?php includeWithVariables('./../../../includes/modals/_deleteModal.php'); ?>
 
     <script>
-        function clearModalInvalidFeedbacks() {
-            var array = ["username", "password", "name", "client_prefix", "end_point", "partnerRate"];
+    function clearModalInvalidFeedbacks() {
+        var array = ["username", "password", "name", "client_prefix", "end_point", "partnerRate"];
 
-            array.forEach(element => {
-                let target = $(`#${element}`);
+        array.forEach(element => {
+            let target = $(`#${element}`);
 
-                target.next(".invalid-feedback").text("");
-                target.next(".invalid-feedback").css("display", "none");
-                target.removeClass("invalid");
+            target.next(".invalid-feedback").text("");
+            target.next(".invalid-feedback").css("display", "none");
+            target.removeClass("invalid");
 
-            });
-        }
+        });
+    }
 
-        function clearModalInvalidFeedbacksOnKeyUp() {
+    function clearModalInvalidFeedbacksOnKeyUp() {
 
-            $("#username, #password, #name, #client_prefix, #end_point, #partnerRate").keyup(function (e) {
+        $("#username, #password, #name, #client_prefix, #end_point, #partnerRate").keyup(function(e) {
 
-                $(this).next(".invalid-feedback").text("");
-                $(this).next(".invalid-feedback").css("display", "none");
-                $(this).removeClass("invalid");
-            })
-        }
+            $(this).next(".invalid-feedback").text("");
+            $(this).next(".invalid-feedback").css("display", "none");
+            $(this).removeClass("invalid");
+        })
+    }
 
-        clearModalInvalidFeedbacksOnKeyUp();
+    clearModalInvalidFeedbacksOnKeyUp();
 
 
-        function hideEditableInputsAndShow() {
+    function hideEditableInputsAndShow() {
 
-            clearModalInvalidFeedbacks();
+        clearModalInvalidFeedbacks();
 
 
-            $(".password").show();
-            $(".end_point").show();
-            // $(".whitelist_ips").show();
-            //$("fieldset").show();
+        $(".password").show();
+        $(".end_point").show();
+        // $(".whitelist_ips").show();
+        //$("fieldset").show();
 
 
 
 
-            //reset
-            $("#username").val('');
-            $("#password").val('');
-            $("#name").val('');
-            $("#client_prefix").val('');
-            $("#end_point").val('');
-            $("#partnerRate").val('');
-            $("#skinSelect").val('1');
+        //reset
+        $("#username").val('');
+        $("#password").val('');
+        $("#name").val('');
+        $("#client_prefix").val('');
+        $("#end_point").val('');
+        $("#partnerRate").val('');
+        $("#skinSelect").val('1');
 
 
-            // $("#whitelist_ips").val('');
-            $("input[name=status][value=1]").prop('checked', true); //active
+        // $("#whitelist_ips").val('');
+        $("input[name=status][value=1]").prop('checked', true); //active
 
-            $("button#add_client").show();
-            $("button#edit_client").hide();
+        $("button#add_client").show();
+        $("button#edit_client").hide();
 
-            $("#exampleModalLongTitle").text("Add Client");
+        $("#exampleModalLongTitle").text("Add Client");
 
-            $("#username").prop('disabled', false);
-            $("#name").prop('disabled', false);
-            $("#client_prefix").prop('disabled', false);
+        $("#username").prop('disabled', false);
+        $("#name").prop('disabled', false);
+        $("#client_prefix").prop('disabled', false);
 
 
-        }
+    }
 
-        function showEditableInputsAndHide() {
+    function showEditableInputsAndHide() {
 
-            clearModalInvalidFeedbacks();
+        clearModalInvalidFeedbacks();
 
-            $(".password").hide();
-            $(".end_point").hide();
-            // $(".whitelist_ips").hide();
-            //$("fieldset").hide();
+        $(".password").hide();
+        $(".end_point").hide();
+        // $(".whitelist_ips").hide();
+        //$("fieldset").hide();
 
 
 
 
-            $("button#add_client").hide();
-            $("button#edit_client").show();
+        $("button#add_client").hide();
+        $("button#edit_client").show();
 
-            $("#exampleModalLongTitle").text("Edit Client's Rate");
+        $("#exampleModalLongTitle").text("Edit Client's Rate");
 
 
-            $("#username").prop('disabled', true);
-            $("#name").prop('disabled', true);
-            $("#client_prefix").prop('disabled', true);
+        $("#username").prop('disabled', true);
+        $("#name").prop('disabled', true);
+        $("#client_prefix").prop('disabled', true);
 
 
-        }
+    }
 
-        function clearModalInvalidFeedbacks2() {
-            var array = ["clientSelectAdd", "depositAmount"];
+    function clearModalInvalidFeedbacks2() {
+        var array = ["clientSelectAdd", "depositAmount"];
 
-            array.forEach(element => {
-                let target = $(`#${element}`);
+        array.forEach(element => {
+            let target = $(`#${element}`);
 
-                target.next(".invalid-feedback").text("");
-                target.next(".invalid-feedback").css("display", "none");
-                target.removeClass("invalid");
-            });
-        }
+            target.next(".invalid-feedback").text("");
+            target.next(".invalid-feedback").css("display", "none");
+            target.removeClass("invalid");
+        });
+    }
 
 
-        function clearModalInvalidFeedbacksOnKeyUp2() {
+    function clearModalInvalidFeedbacksOnKeyUp2() {
 
-            $("#depositAmount").keyup(function (e) {
+        $("#depositAmount").keyup(function(e) {
 
-                $(this).next(".invalid-feedback").text("");
-                $(this).next(".invalid-feedback").css("display", "none");
-                $(this).removeClass("invalid");
-            })
-            $("#clientSelectAdd").change(function (e) {
+            $(this).next(".invalid-feedback").text("");
+            $(this).next(".invalid-feedback").css("display", "none");
+            $(this).removeClass("invalid");
+        })
+        $("#clientSelectAdd").change(function(e) {
 
-                $(this).next(".invalid-feedback").text("");
-                $(this).next(".invalid-feedback").css("display", "none");
-                $(this).removeClass("invalid");
-            })
-
-        }
-        clearModalInvalidFeedbacksOnKeyUp2();
-
-
-        function hideEditableInputsAndShow2() {
-
-            clearModalInvalidFeedbacks2();
-
-            //reset
-            $("#clientSelectAdd").val('');
-            $("#clientSelectAdd").select2().select2('val', '');
-            $("#depositAmount").val('0.00');
-
-
-            $("button#add_deposit").show();
-            $("button#edit_deposit").hide();
-            $("button#deduct").hide();
-
-            $("#exampleModalLongTitle").text("Make Deposit");
-            $("#depositLabel").text("금액 (원)");
-
-
-            $("#clientSelectAdd").prop('disabled', false);
-
-
-        }
-
-        function hideEditableInputsAndShowDeduct() {
-
-            clearModalInvalidFeedbacks2();
-
-            //reset
-            // $("#clientSelectAdd").val('');
-            $("#clientSelectAdd").select2().select2('val', '');
-            $("#depositAmount").val('0.00');
-
-
-            $("button#add_deposit").hide();
-            $("button#edit_deposit").hide();
-            $("button#deduct").show();
-
-
-            $("#exampleModalLongTitle").text("Deduct");
-            $("#depositLabel").text("금액 (원)");
-
-            $("#clientSelectAdd").prop('disabled', false);
-
-
-        }
-
-
-
-        function ValidateIPaddress(ipAddress) {
-
-            let ipv46_regex =
-                /(?:^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$)|(?:^(?:(?:[a-fA-F\d]{1,4}:){7}(?:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){5}(?::(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,2}|:)|(?:[a-fA-F\d]{1,4}:){4}(?:(?::[a-fA-F\d]{1,4}){0,1}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,3}|:)|(?:[a-fA-F\d]{1,4}:){3}(?:(?::[a-fA-F\d]{1,4}){0,2}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,4}|:)|(?:[a-fA-F\d]{1,4}:){2}(?:(?::[a-fA-F\d]{1,4}){0,3}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,5}|:)|(?:[a-fA-F\d]{1,4}:){1}(?:(?::[a-fA-F\d]{1,4}){0,4}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,6}|:)|(?::(?:(?::[a-fA-F\d]{1,4}){0,5}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,7}|:)))(?:%[0-9a-zA-Z]{1,})?$)/gm;
-
-            if (ipv46_regex.test(ipAddress)) {
-                return (true)
-            }
-            return (false)
-        }
-
-        function number_format(number, decimals, dec_point, thousands_sep) {
-            // Strip all characters but numerical ones.
-            number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
-            var n = !isFinite(+number) ? 0 : +number,
-                prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-                sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-                dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
-                s = '',
-                toFixedFix = function (n, prec) {
-                    var k = Math.pow(10, prec);
-                    return '' + Math.round(n * k) / k;
-                };
-            // Fix for IE parseFloat(0.55).toFixed(0) = 0;
-            s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
-            if (s[0].length > 3) {
-                s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
-            }
-            if ((s[1] || '').length < prec) {
-                s[1] = s[1] || '';
-                s[1] += new Array(prec - s[1].length + 1).join('0');
-            }
-            return s.join(dec);
-        }
-
-
-        $("#partnerRate").focusout(function (event) {
-            var number = $(this).val();
-
-            if (number == '') {
-                $(this).val("0.00");
-            } else {
-                var d = number_format(number, 2, ".", "");
-
-                $(this).val(d);
-            }
-
+            $(this).next(".invalid-feedback").text("");
+            $(this).next(".invalid-feedback").css("display", "none");
+            $(this).removeClass("invalid");
         })
 
-        $("#depositAmount").focusout(function (event) {
-            var number = $(this).val();
-
-            if (number == '') {
-                $(this).val("0.00");
-
-            } else {
-                var d = number_format(number, 2, ".", ",");
-
-                $(this).val(d);
-            }
-
-        })
+    }
+    clearModalInvalidFeedbacksOnKeyUp2();
 
 
+    function hideEditableInputsAndShow2() {
+
+        clearModalInvalidFeedbacks2();
+
+        //reset
+        $("#clientSelectAdd").val('');
+        $("#clientSelectAdd").select2().select2('val', '');
+        $("#depositAmount").val('0.00');
 
 
-        // --- DISPLAY CLIENTS ----
-        function displayClients(N = 1, status = '') {
+        $("button#add_deposit").show();
+        $("button#edit_deposit").hide();
+        $("button#deduct").hide();
 
-            var activePage = $(".navigation_clients li.page-item.active a").text();
-            var activeNumber = $(".active-clients-number").text();
-            activeNumber = activeNumber.trim();
-
-            var text = $("#client_name_filtered").val();
-
-            var token = $("#token_display").val();
-
-            $.ajax({
-                url: '/ajaxProcessus/memberManagement/displayClients.php',
-                type: 'POST',
-                data: {
-                    "display": true,
-                    "page": N,
-                    "number": activeNumber,
-                    "nameFilter": text,
-                    "status": status,
-                    token
-                },
-
-                cache: false,
-                timeout: 10000,
-
-                success: function (data) {
-
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-                    rese = JSON.parse(data);
-
-                    let length = rese.length;
+        $("#exampleModalLongTitle").text("Make Deposit");
+        $("#depositLabel").text("금액 (원)");
 
 
-                    if (length == 4) { //success
-                        $(".table-body-clients").html(rese[0]);
-                        $(".navigation_clients").html(rese[1]);
+        $("#clientSelectAdd").prop('disabled', false);
 
-                        $("#token_display").val(rese[3]);
-                    } else if (length == 1) { //csrf error
-                        $("#token_display").val(rese[0]);
 
-                    } else {
-                        //refresh page;
-                        location.reload();
-                    }
+    }
+
+    function hideEditableInputsAndShowDeduct() {
+
+        clearModalInvalidFeedbacks2();
+
+        //reset
+        // $("#clientSelectAdd").val('');
+        $("#clientSelectAdd").select2().select2('val', '');
+        $("#depositAmount").val('0.00');
+
+
+        $("button#add_deposit").hide();
+        $("button#edit_deposit").hide();
+        $("button#deduct").show();
+
+
+        $("#exampleModalLongTitle").text("Deduct");
+        $("#depositLabel").text("금액 (원)");
+
+        $("#clientSelectAdd").prop('disabled', false);
+
+
+    }
 
 
 
+    function ValidateIPaddress(ipAddress) {
+
+        let ipv46_regex =
+            /(?:^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$)|(?:^(?:(?:[a-fA-F\d]{1,4}:){7}(?:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){6}(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|:[a-fA-F\d]{1,4}|:)|(?:[a-fA-F\d]{1,4}:){5}(?::(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,2}|:)|(?:[a-fA-F\d]{1,4}:){4}(?:(?::[a-fA-F\d]{1,4}){0,1}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,3}|:)|(?:[a-fA-F\d]{1,4}:){3}(?:(?::[a-fA-F\d]{1,4}){0,2}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,4}|:)|(?:[a-fA-F\d]{1,4}:){2}(?:(?::[a-fA-F\d]{1,4}){0,3}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,5}|:)|(?:[a-fA-F\d]{1,4}:){1}(?:(?::[a-fA-F\d]{1,4}){0,4}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,6}|:)|(?::(?:(?::[a-fA-F\d]{1,4}){0,5}:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:\\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}|(?::[a-fA-F\d]{1,4}){1,7}|:)))(?:%[0-9a-zA-Z]{1,})?$)/gm;
+
+        if (ipv46_regex.test(ipAddress)) {
+            return (true)
+        }
+        return (false)
+    }
+
+    function number_format(number, decimals, dec_point, thousands_sep) {
+        // Strip all characters but numerical ones.
+        number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+        var n = !isFinite(+number) ? 0 : +number,
+            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+            sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+            dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+            s = '',
+            toFixedFix = function(n, prec) {
+                var k = Math.pow(10, prec);
+                return '' + Math.round(n * k) / k;
+            };
+        // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+        s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+        if (s[0].length > 3) {
+            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+        }
+        if ((s[1] || '').length < prec) {
+            s[1] = s[1] || '';
+            s[1] += new Array(prec - s[1].length + 1).join('0');
+        }
+        return s.join(dec);
+    }
+
+
+    $("#partnerRate").focusout(function(event) {
+        var number = $(this).val();
+
+        if (number == '') {
+            $(this).val("0.00");
+        } else {
+            var d = number_format(number, 2, ".", "");
+
+            $(this).val(d);
+        }
+
+    })
+
+    $("#depositAmount").focusout(function(event) {
+        var number = $(this).val();
+
+        if (number == '') {
+            $(this).val("0.00");
+
+        } else {
+            var d = number_format(number, 2, ".", ",");
+
+            $(this).val(d);
+        }
+
+    })
+
+
+
+
+    // --- DISPLAY CLIENTS ----
+    function displayClients(N = 1, status = '') {
+
+        var activePage = $(".navigation_clients li.page-item.active a").text();
+        var activeNumber = $(".active-clients-number").text();
+        activeNumber = activeNumber.trim();
+
+        var text = $("#client_name_filtered").val();
+
+        var token = $("#token_display").val();
+
+        $.ajax({
+            url: '/ajaxProcessus/memberManagement/displayClients.php',
+            type: 'POST',
+            data: {
+                "display": true,
+                "page": N,
+                "number": activeNumber,
+                "nameFilter": text,
+                "status": status,
+                token
+            },
+
+            cache: false,
+            timeout: 10000,
+
+            success: function(data) {
+
+                if (data == 'unauthorized' || data == '') {
+                    window.location.href = '/pages/errors/403.php';
+                    return;
+                }
+                rese = JSON.parse(data);
+
+                let length = rese.length;
+
+
+                if (length == 4) { //success
+                    $(".table-body-clients").html(rese[0]);
+                    $(".navigation_clients").html(rese[1]);
+
+                    $("#token_display").val(rese[3]);
+                } else if (length == 1) { //csrf error
+                    $("#token_display").val(rese[0]);
+
+                } else {
+                    //refresh page;
+                    location.reload();
                 }
 
 
-            })
+
+            }
+
+
+        })
+    }
+
+    //NUMBERS DISPLAYED PER PAGE
+    $(".clients_number_options button").on("click", function(event) {
+
+        var number = event.currentTarget.textContent;
+        $(".active-clients-number").text(number);
+
+        let id = $(".status_.active").attr("id");
+
+        let status = '';
+
+        if (id == "status_active") {
+            status = 1;
+        } else if (id == "status_pending") {
+            status = 0;
+        } else if (id == "status_blocked") {
+            status = 3;
         }
 
-        //NUMBERS DISPLAYED PER PAGE
-        $(".clients_number_options button").on("click", function (event) {
+        displayClients(1, status);
+    })
 
-            var number = event.currentTarget.textContent;
-            $(".active-clients-number").text(number);
+    function resetStatusFilter() {
+        $(".status_").css("opacity", 1);
+        $(".status_").removeClass("active");
+        $("#status_all").addClass("active");
+    }
 
-            let id = $(".status_.active").attr("id");
+    //USERNAME FILTER
+    $(".filter_clients").on("click", function(event) {
+        resetStatusFilter();
 
-            let status = '';
+        displayClients(1);
+
+    })
+
+    //RESET FILTERS
+    $(".filter_clients_reset").on("click", function(event) {
+        resetStatusFilter();
+
+        $("#client_name_filtered").val('');
+
+
+        displayClients(1);
+
+    })
+
+
+
+    //status filter
+    $(".status_").click(function(event) {
+        let status = '';
+        let id = $(event.currentTarget).attr("id");
+        if (id == "status_all") {
+            $(".status_").css("opacity", 1);
+
+            $(".status_").removeClass("active");
+            $(this).addClass("active");
+
+        } else {
+            $(".status_").css("opacity", 0.2);
+            $(this).css("opacity", 1);
 
             if (id == "status_active") {
                 status = 1;
             } else if (id == "status_pending") {
                 status = 0;
-            } else if (id == "status_blocked") {
+            } else {
                 status = 3;
             }
 
-            displayClients(1, status);
-        })
 
-        function resetStatusFilter() {
-            $(".status_").css("opacity", 1);
             $(".status_").removeClass("active");
-            $("#status_all").addClass("active");
+            $(this).addClass("active");
         }
 
-        //USERNAME FILTER
-        $(".filter_clients").on("click", function (event) {
-            resetStatusFilter();
+        displayClients(1, status);
 
-            displayClients(1);
-
-        })
-
-        //RESET FILTERS
-        $(".filter_clients_reset").on("click", function (event) {
-            resetStatusFilter();
-
-            $("#client_name_filtered").val('');
+    })
 
 
-            displayClients(1);
+    // ---ADD---
+    function addClient(event) {
+        event.preventDefault();
 
-        })
+        //getting data
+        var username = $("#username").val().trim();
+        var password = $("#password").val().trim();
+        var name = $("#name").val().trim();
+        var client_prefix = $("#client_prefix").val().trim();
+        var end_point = $("#end_point").val().trim();
+        // var whitelist_ips = $("#whitelist_ips").val().trim();
+        var status = $(".status:checked").val();
+        var token = $("#token").val();
+        var partnerRate = $("#partnerRate").val().trim();
 
+        var skinSelect = $("#skinSelect").val();
 
+        // console.log(status);
 
-        //status filter
-        $(".status_").click(function (event) {
-            let status = '';
-            let id = $(event.currentTarget).attr("id");
-            if (id == "status_all") {
-                $(".status_").css("opacity", 1);
+        //validating & sanitazing data
 
-                $(".status_").removeClass("active");
-                $(this).addClass("active");
-
-            } else {
-                $(".status_").css("opacity", 0.2);
-                $(this).css("opacity", 1);
-
-                if (id == "status_active") {
-                    status = 1;
-                } else if (id == "status_pending") {
-                    status = 0;
-                } else {
-                    status = 3;
+        var constraints = {
+            username: {
+                presence: true,
+                length: {
+                    minimum: 1,
+                    maximum: 30,
+                    message: "Field is required and should be {1 to 30} characters long."
+                },
+            },
+            password: {
+                presence: true,
+                length: {
+                    minimum: 8,
+                    maximum: 30,
+                    message: "Field is required and should be {8 to 30} characters long."
+                },
+            },
+            name: {
+                presence: true,
+                length: {
+                    minimum: 1,
+                    maximum: 20,
+                    message: "Field is required and should be {1 to 20} characters long."
+                },
+            },
+            client_prefix: {
+                presence: true,
+                length: {
+                    minimum: 1,
+                    maximum: 8,
+                    message: "Field is required and should be {1 to 8} characters long."
+                },
+                format: {
+                    pattern: "^[A-Za-z][A-Za-z0-9]{1,8}$",
+                    message: "MUST Begins with a letter and the characters ALLOWED are numbers , latin letters {uppercase and lowercase}"
                 }
+            },
+            end_point: {
+                presence: true,
+                length: {
+                    minimum: 1,
+                    maximum: 100,
+                    message: "Field is required and should be {1 to 100} characters long",
+                },
+                url: {
+                    allowDataUrl: false,
+                    message: "not a valid URL. The value should start with schema http(s)://"
+
+                }
+            },
+            partnerRate: {
+                presence: true,
+                numericality: {
+                    greaterThanOrEqualTo: 0,
+                    lessThanOrEqualTo: 100,
+                },
+                format: {
+                    pattern: "^[0-9]{1,2}\.[0-9]{2}$",
+                    message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
+                }
+            },
 
 
-                $(".status_").removeClass("active");
-                $(this).addClass("active");
+        };
+
+
+        //validate whitelist ips
+        var validated_ips = 1;
+        var invalidated_ips_value = '';
+        // whitelist_ips = whitelist_ips.trim();
+
+        // if (whitelist_ips != '') {
+        //     var array = whitelist_ips.split(",");
+        //     for (let index = 0; index < array.length; index++) {
+        //         let element = array[index];
+        //         element = element.trim();
+
+        //         if (!ValidateIPaddress(element)) {
+        //             validated_ips = 0;
+        //             invalidated_ips_value = element;
+        //             break;
+        //         }
+        //     }
+        // }
+
+        var errors = validate({
+            username,
+            name,
+            password,
+            client_prefix,
+            end_point,
+            partnerRate
+        }, constraints);
+        if (typeof errors != undefined && errors != undefined) {
+
+            // console.log(errors);
+            for (var key in errors) {
+                $(`#${key}`).addClass("invalid");
+                $(`#${key}`).next(".invalid-feedback").text(errors[key]);
+                $(`#${key}`).next(".invalid-feedback").css("display", "block");
             }
+        } else if (validated_ips == 0) {
+            var error_text =
+                `This field contains some invalidated ip addresses values: "${invalidated_ips_value}". Only ipv4/ipv6 values are allowed`;
+            $(`#whitelist_ips`).addClass("invalid");
+            $(`#whitelist_ips`).next(".invalid-feedback").text(error_text);
+            $(`#whitelist_ips`).next(".invalid-feedback").css("display", "block");
+        } else {
+            //sanitize
 
-            displayClients(1, status);
+            username = DOMPurify.sanitize(username, {
+                SAFE_FOR_JQUERY: true
+            });
+            password = DOMPurify.sanitize(password, {
+                SAFE_FOR_JQUERY: true
+            });
+            client_prefix = DOMPurify.sanitize(client_prefix, {
+                SAFE_FOR_JQUERY: true
+            });
+            end_point = DOMPurify.sanitize(end_point, {
+                SAFE_FOR_JQUERY: true
+            });
+            name = DOMPurify.sanitize(name, {
+                SAFE_FOR_JQUERY: true
+            });
+            // whitelist_ips = DOMPurify.sanitize(whitelist_ips, {
+            //     SAFE_FOR_JQUERY: true
+            // });
+            partnerRate = DOMPurify.sanitize(partnerRate, {
+                SAFE_FOR_JQUERY: true
+            });
 
-        })
-
-
-        // ---ADD---
-        function addClient(event) {
-            event.preventDefault();
-
-            //getting data
-            var username = $("#username").val().trim();
-            var password = $("#password").val().trim();
-            var name = $("#name").val().trim();
-            var client_prefix = $("#client_prefix").val().trim();
-            var end_point = $("#end_point").val().trim();
-            // var whitelist_ips = $("#whitelist_ips").val().trim();
-            var status = $(".status:checked").val();
-            var token = $("#token").val();
-            var partnerRate = $("#partnerRate").val().trim();
-
-            var skinSelect = $("#skinSelect").val();
-
-            // console.log(status);
-
-            //validating & sanitazing data
-
-            var constraints = {
-                username: {
-                    presence: true,
-                    length: {
-                        minimum: 1,
-                        maximum: 30,
-                        message: "Field is required and should be {1 to 30} characters long."
-                    },
+            $.ajax({
+                url: '/ajaxProcessus/memberManagement/addClient.php',
+                type: 'POST',
+                data: {
+                    username,
+                    password,
+                    "prefix": client_prefix,
+                    end_point,
+                    name,
+                    // whitelist_ips,
+                    status,
+                    token,
+                    partnerRate,
+                    skinSelect
                 },
-                password: {
-                    presence: true,
-                    length: {
-                        minimum: 8,
-                        maximum: 30,
-                        message: "Field is required and should be {8 to 30} characters long."
-                    },
-                },
-                name: {
-                    presence: true,
-                    length: {
-                        minimum: 1,
-                        maximum: 20,
-                        message: "Field is required and should be {1 to 20} characters long."
-                    },
-                },
-                client_prefix: {
-                    presence: true,
-                    length: {
-                        minimum: 1,
-                        maximum: 8,
-                        message: "Field is required and should be {1 to 8} characters long."
-                    },
-                    format: {
-                        pattern: "^[A-Za-z][A-Za-z0-9]{1,8}$",
-                        message: "MUST Begins with a letter and the characters ALLOWED are numbers , latin letters {uppercase and lowercase}"
+                cache: false,
+                timeout: 10000,
+
+                success: function(data) {
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
                     }
-                },
-                end_point: {
-                    presence: true,
-                    length: {
-                        minimum: 1,
-                        maximum: 100,
-                        message: "Field is required and should be {1 to 100} characters long",
-                    },
-                    url: {
-                        allowDataUrl: false,
-                        message: "not a valid URL. The value should start with schema http(s)://"
-
-                    }
-                },
-                partnerRate: {
-                    presence: true,
-                    numericality: {
-                        greaterThanOrEqualTo: 0,
-                        lessThanOrEqualTo: 100,
-                    },
-                    format: {
-                        pattern: "^[0-9]{1,2}\.[0-9]{2}$",
-                        message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
-                    }
-                },
+                    rese = JSON.parse(data);
+                    var response = rese.response
+                    var received_token = rese.token
+                    var serverGeneratedErrors = rese.errors
 
 
-            };
+                    if (response == 1) { //added
 
 
-            //validate whitelist ips
-            var validated_ips = 1;
-            var invalidated_ips_value = '';
-            // whitelist_ips = whitelist_ips.trim();
+                        $("button.close").trigger("click");
+                        $("#token").val(received_token);
+                        vt.success(`You successfully added a new Client : ${username}.`, {
+                            title: "New Client Added!",
+                            duration: 6000,
+                            closable: true,
+                            focusable: true,
+                            callback: () => {
+                                console.log("completed");
+                            }
+                        });
 
-            // if (whitelist_ips != '') {
-            //     var array = whitelist_ips.split(",");
-            //     for (let index = 0; index < array.length; index++) {
-            //         let element = array[index];
-            //         element = element.trim();
+                        var activePage = $(".navigation_clients li.page-item.active a").text();
+                        displayClients(activePage);
+                        clearModalInvalidFeedbacks();
 
-            //         if (!ValidateIPaddress(element)) {
-            //             validated_ips = 0;
-            //             invalidated_ips_value = element;
-            //             break;
-            //         }
-            //     }
-            // }
+                        resetStatusFilter();
 
-            var errors = validate({
-                username,
-                name,
-                password,
-                client_prefix,
-                end_point,
-                partnerRate
-            }, constraints);
-            if (typeof errors != undefined && errors != undefined) {
+                    } else if (response == 2) { //csrf error
+                        $("button.close").trigger("click");
+                        $("#token").val(received_token);
 
-                // console.log(errors);
-                for (var key in errors) {
-                    $(`#${key}`).addClass("invalid");
-                    $(`#${key}`).next(".invalid-feedback").text(errors[key]);
-                    $(`#${key}`).next(".invalid-feedback").css("display", "block");
-                }
-            } else if (validated_ips == 0) {
-                var error_text =
-                    `This field contains some invalidated ip addresses values: "${invalidated_ips_value}". Only ipv4/ipv6 values are allowed`;
-                $(`#whitelist_ips`).addClass("invalid");
-                $(`#whitelist_ips`).next(".invalid-feedback").text(error_text);
-                $(`#whitelist_ips`).next(".invalid-feedback").css("display", "block");
-            } else {
-                //sanitize
-
-                username = DOMPurify.sanitize(username, {
-                    SAFE_FOR_JQUERY: true
-                });
-                password = DOMPurify.sanitize(password, {
-                    SAFE_FOR_JQUERY: true
-                });
-                client_prefix = DOMPurify.sanitize(client_prefix, {
-                    SAFE_FOR_JQUERY: true
-                });
-                end_point = DOMPurify.sanitize(end_point, {
-                    SAFE_FOR_JQUERY: true
-                });
-                name = DOMPurify.sanitize(name, {
-                    SAFE_FOR_JQUERY: true
-                });
-                // whitelist_ips = DOMPurify.sanitize(whitelist_ips, {
-                //     SAFE_FOR_JQUERY: true
-                // });
-                partnerRate = DOMPurify.sanitize(partnerRate, {
-                    SAFE_FOR_JQUERY: true
-                });
-
-                $.ajax({
-                    url: '/ajaxProcessus/memberManagement/addClient.php',
-                    type: 'POST',
-                    data: {
-                        username,
-                        password,
-                        "prefix": client_prefix,
-                        end_point,
-                        name,
-                        // whitelist_ips,
-                        status,
-                        token,
-                        partnerRate,
-                        skinSelect
-                    },
-                    cache: false,
-                    timeout: 10000,
-
-                    success: function (data) {
-                        if (data == 'unauthorized' || data == '') {
-                            window.location.href = '/pages/errors/403.php';
-                            return;
-                        }
-                        rese = JSON.parse(data);
-                        var response = rese.response
-                        var received_token = rese.token
-                        var serverGeneratedErrors = rese.errors
-
-
-                        if (response == 1) { //added
-
-
-                            $("button.close").trigger("click");
-                            $("#token").val(received_token);
-                            vt.success(`You successfully added a new Client : ${username}.`, {
-                                title: "New Client Added!",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
-
-                            var activePage = $(".navigation_clients li.page-item.active a").text();
-                            displayClients(activePage);
-                            clearModalInvalidFeedbacks();
-
-                            resetStatusFilter();
-
-                        } else if (response == 2) { //csrf error
-                            $("button.close").trigger("click");
-                            $("#token").val(received_token);
-
-                            vt.error(
-                                `This can be a CSRF error!, if you see this error please contact our support about it.`, {
+                        vt.error(
+                            `This can be a CSRF error!, if you see this error please contact our support about it.`, {
                                 title: "CSRF Error",
                                 duration: 6000,
                                 closable: true,
@@ -1058,13 +1058,13 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                        } else if (response == 4) { //db error
-                            $("button.close").trigger("click");
-                            $("#token").val(received_token);
+                    } else if (response == 4) { //db error
+                        $("button.close").trigger("click");
+                        $("#token").val(received_token);
 
 
-                            vt.error(
-                                `We could not process your request due to an unknown error!, please try again.`, {
+                        vt.error(
+                            `We could not process your request due to an unknown error!, please try again.`, {
                                 title: "Unknown error",
                                 duration: 6000,
                                 closable: true,
@@ -1073,141 +1073,141 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                        } else if (response == 0) { //serverGeneratedErrors error
-                            // $("button.close").trigger("click");
-                            $("#token").val(received_token);
+                    } else if (response == 0) { //serverGeneratedErrors error
+                        // $("button.close").trigger("click");
+                        $("#token").val(received_token);
 
-                            for (var key in serverGeneratedErrors) {
-                                var msg = serverGeneratedErrors[key];
-                                if (key == "prefix") {
-                                    key = "client_prefix";
-                                }
-                                // console.log($(`#${key}`));
-                                $(`#${key}`).addClass("invalid");
-                                $(`#${key}`).next(".invalid-feedback").text(msg);
-                                $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                        for (var key in serverGeneratedErrors) {
+                            var msg = serverGeneratedErrors[key];
+                            if (key == "prefix") {
+                                key = "client_prefix";
                             }
+                            // console.log($(`#${key}`));
+                            $(`#${key}`).addClass("invalid");
+                            $(`#${key}`).next(".invalid-feedback").text(msg);
+                            $(`#${key}`).next(".invalid-feedback").css("display", "block");
                         }
-
-
                     }
 
 
-
-                })
-
+                }
 
 
 
+            })
 
-            }
+
 
 
 
         }
 
-        // ---ADD---
-        function addDeposit(event) {
-            event.preventDefault();
 
-            //getting data
-            var client = $("#clientSelectAdd").val();
-            var depositAmount = $("#depositAmount").val().replace(/,/g, '');
-            var token = $("#token_make").val();
 
-            //validating & sanitizing data
+    }
 
-            var constraints = {
-                clientSelectAdd: {
-                    presence: {
-                        allowEmpty: false
-                    },
+    // ---ADD---
+    function addDeposit(event) {
+        event.preventDefault();
 
+        //getting data
+        var client = $("#clientSelectAdd").val();
+        var depositAmount = $("#depositAmount").val().replace(/,/g, '');
+        var token = $("#token_make").val();
+
+        //validating & sanitizing data
+
+        var constraints = {
+            clientSelectAdd: {
+                presence: {
+                    allowEmpty: false
                 },
-                depositAmount: {
-                    numericality: {
-                        greaterThan: 0,
-                    },
-                    format: {
-                        pattern: "^[0-9]+\.[0-9]{2}$",
-                        message: "Is Not a valid deposit amount!"
+
+            },
+            depositAmount: {
+                numericality: {
+                    greaterThan: 0,
+                },
+                format: {
+                    pattern: "^[0-9]+\.[0-9]{2}$",
+                    message: "Is Not a valid deposit amount!"
+                }
+            }
+        };
+
+
+        var errors = validate({
+            "clientSelectAdd": client,
+            depositAmount
+
+        }, constraints);
+        if (typeof errors != undefined && errors != undefined) {
+
+            // console.log(errors);
+            for (var key in errors) {
+                let key2 = key;
+
+                $(`#${key2}`).addClass("invalid");
+                $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
+                $(`#${key2}`).next(".invalid-feedback").css("display", "block");
+            }
+        } else {
+            //sanitize
+
+            client = DOMPurify.sanitize(client, {
+                SAFE_FOR_JQUERY: true
+            });
+            depositAmount = DOMPurify.sanitize(depositAmount, {
+                SAFE_FOR_JQUERY: true
+            });
+
+
+            $.ajax({
+                url: '/ajaxProcessus/depositWithdraw/makeDeposit.php',
+                type: 'POST',
+                data: {
+                    depositAmount,
+                    client,
+                    token
+                },
+                cache: false,
+                timeout: 10000,
+
+                success: function(data) {
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
                     }
-                }
-            };
+                    rese = JSON.parse(data);
+                    var response = rese.response
+                    var received_token = rese.token
+                    var serverGeneratedErrors = rese.errors
+
+                    if (response == 1) { //added
 
 
-            var errors = validate({
-                "clientSelectAdd": client,
-                depositAmount
+                        $("button.close").trigger("click");
+                        $("#token_make").val(received_token);
+                        vt.success(`You successfully added a new Deposit for the Client : ${client}.`, {
+                            title: "New Deposit Added!",
+                            duration: 6000,
+                            closable: true,
+                            focusable: true,
+                            callback: () => {
+                                console.log("completed");
+                            }
+                        });
 
-            }, constraints);
-            if (typeof errors != undefined && errors != undefined) {
+                        var activePage = $(".navigation_clients li.page-item.active a").text();
+                        displayClients(activePage);
+                        // clearModalInvalidFeedbacks();
 
-                // console.log(errors);
-                for (var key in errors) {
-                    let key2 = key;
+                    } else if (response == 2) { //csrf error
+                        $("button.close").trigger("click");
+                        $("#token_make").val(received_token);
 
-                    $(`#${key2}`).addClass("invalid");
-                    $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
-                    $(`#${key2}`).next(".invalid-feedback").css("display", "block");
-                }
-            } else {
-                //sanitize
-
-                client = DOMPurify.sanitize(client, {
-                    SAFE_FOR_JQUERY: true
-                });
-                depositAmount = DOMPurify.sanitize(depositAmount, {
-                    SAFE_FOR_JQUERY: true
-                });
-
-
-                $.ajax({
-                    url: '/ajaxProcessus/depositWithdraw/makeDeposit.php',
-                    type: 'POST',
-                    data: {
-                        depositAmount,
-                        client,
-                        token
-                    },
-                    cache: false,
-                    timeout: 10000,
-
-                    success: function (data) {
-                        if (data == 'unauthorized' || data == '') {
-                            window.location.href = '/pages/errors/403.php';
-                            return;
-                        }
-                        rese = JSON.parse(data);
-                        var response = rese.response
-                        var received_token = rese.token
-                        var serverGeneratedErrors = rese.errors
-
-                        if (response == 1) { //added
-
-
-                            $("button.close").trigger("click");
-                            $("#token_make").val(received_token);
-                            vt.success(`You successfully added a new Deposit for the Client : ${client}.`, {
-                                title: "New Deposit Added!",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
-
-                            var activePage = $(".navigation_clients li.page-item.active a").text();
-                            displayClients(activePage);
-                            // clearModalInvalidFeedbacks();
-
-                        } else if (response == 2) { //csrf error
-                            $("button.close").trigger("click");
-                            $("#token_make").val(received_token);
-
-                            vt.error(
-                                `This can be a CSRF error!, if this error persists,  please contact our support about it.`, {
+                        vt.error(
+                            `This can be a CSRF error!, if this error persists,  please contact our support about it.`, {
                                 title: "CSRF Error",
                                 duration: 6000,
                                 closable: true,
@@ -1216,14 +1216,14 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                            location.reload();
-                        } else if (response == 4) { //db error
-                            $("button.close").trigger("click");
-                            $("#token_make").val(received_token);
+                        location.reload();
+                    } else if (response == 4) { //db error
+                        $("button.close").trigger("click");
+                        $("#token_make").val(received_token);
 
 
-                            vt.error(
-                                `We could not process your request due to an unknown error!, please try again.`, {
+                        vt.error(
+                            `We could not process your request due to an unknown error!, please try again.`, {
                                 title: "Unknown error",
                                 duration: 6000,
                                 closable: true,
@@ -1232,108 +1232,108 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                        } else if (response == 0) { //serverGeneratedErrors
-                            // $("button.close").trigger("click");
-                            $("#token_make").val(received_token);
+                    } else if (response == 0) { //serverGeneratedErrors
+                        // $("button.close").trigger("click");
+                        $("#token_make").val(received_token);
 
-                            for (var key in serverGeneratedErrors) {
-                                var msg = serverGeneratedErrors[key];
+                        for (var key in serverGeneratedErrors) {
+                            var msg = serverGeneratedErrors[key];
 
-                                // console.log($(`#${key}`));
-                                $(`#${key}`).addClass("invalid");
-                                $(`#${key}`).next(".invalid-feedback").text(msg);
-                                $(`#${key}`).next(".invalid-feedback").css("display", "block");
-                            }
+                            // console.log($(`#${key}`));
+                            $(`#${key}`).addClass("invalid");
+                            $(`#${key}`).next(".invalid-feedback").text(msg);
+                            $(`#${key}`).next(".invalid-feedback").css("display", "block");
                         }
                     }
-                })
-            }
+                }
+            })
         }
+    }
 
-        //DEDUCT
-        function deductAmount(event) {
-            event.preventDefault();
+    //DEDUCT
+    function deductAmount(event) {
+        event.preventDefault();
 
-            //getting data
-            var client = $("#clientSelectAdd").val();
-            var depositAmount = $("#depositAmount").val().replace(/,/g, '');
-            var token = $("#token_deduct").val();
+        //getting data
+        var client = $("#clientSelectAdd").val();
+        var depositAmount = $("#depositAmount").val().replace(/,/g, '');
+        var token = $("#token_deduct").val();
 
-            //validating & sanitizing data
+        //validating & sanitizing data
 
-            var constraints = {
-                clientSelectAdd: {
-                    presence: {
-                        allowEmpty: false
-                    },
-
+        var constraints = {
+            clientSelectAdd: {
+                presence: {
+                    allowEmpty: false
                 },
-                depositAmount: {
-                    numericality: {
-                        greaterThan: 0,
-                    },
-                    format: {
-                        pattern: "^[0-9]+\.[0-9]{2}$",
-                        message: "Is Not a valid deposit amount!"
+
+            },
+            depositAmount: {
+                numericality: {
+                    greaterThan: 0,
+                },
+                format: {
+                    pattern: "^[0-9]+\.[0-9]{2}$",
+                    message: "Is Not a valid deposit amount!"
+                }
+            }
+        };
+
+
+        var errors = validate({
+            "clientSelectAdd": client,
+            depositAmount
+
+        }, constraints);
+        if (typeof errors != undefined && errors != undefined) {
+
+            // console.log(errors);
+            for (var key in errors) {
+                let key2 = key;
+
+                $(`#${key2}`).addClass("invalid");
+                $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
+                $(`#${key2}`).next(".invalid-feedback").css("display", "block");
+            }
+        } else {
+            //sanitize
+
+            client = DOMPurify.sanitize(client, {
+                SAFE_FOR_JQUERY: true
+            });
+            depositAmount = DOMPurify.sanitize(depositAmount, {
+                SAFE_FOR_JQUERY: true
+            });
+
+
+            $.ajax({
+                url: '/ajaxProcessus/depositWithdraw/deduct.php',
+                type: 'POST',
+                data: {
+                    depositAmount,
+                    client,
+                    token
+                },
+                cache: false,
+                timeout: 10000,
+
+                success: function(data) {
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
                     }
-                }
-            };
+                    rese = JSON.parse(data);
+                    var response = rese.response
+                    var received_token = rese.token
+                    var serverGeneratedErrors = rese.errors
+
+                    if (response == 1) { //added
 
 
-            var errors = validate({
-                "clientSelectAdd": client,
-                depositAmount
-
-            }, constraints);
-            if (typeof errors != undefined && errors != undefined) {
-
-                // console.log(errors);
-                for (var key in errors) {
-                    let key2 = key;
-
-                    $(`#${key2}`).addClass("invalid");
-                    $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
-                    $(`#${key2}`).next(".invalid-feedback").css("display", "block");
-                }
-            } else {
-                //sanitize
-
-                client = DOMPurify.sanitize(client, {
-                    SAFE_FOR_JQUERY: true
-                });
-                depositAmount = DOMPurify.sanitize(depositAmount, {
-                    SAFE_FOR_JQUERY: true
-                });
-
-
-                $.ajax({
-                    url: '/ajaxProcessus/depositWithdraw/deduct.php',
-                    type: 'POST',
-                    data: {
-                        depositAmount,
-                        client,
-                        token
-                    },
-                    cache: false,
-                    timeout: 10000,
-
-                    success: function (data) {
-                        if (data == 'unauthorized' || data == '') {
-                            window.location.href = '/pages/errors/403.php';
-                            return;
-                        }
-                        rese = JSON.parse(data);
-                        var response = rese.response
-                        var received_token = rese.token
-                        var serverGeneratedErrors = rese.errors
-
-                        if (response == 1) { //added
-
-
-                            $("button.close").trigger("click");
-                            $("#token_deduct").val(received_token);
-                            vt.success(
-                                `You successfully deduct the amount from the Client : ${client}.`, {
+                        $("button.close").trigger("click");
+                        $("#token_deduct").val(received_token);
+                        vt.success(
+                            `You successfully deduct the amount from the Client : ${client}.`, {
                                 title: "Deduction Success!",
                                 duration: 6000,
                                 closable: true,
@@ -1343,16 +1343,16 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                 }
                             });
 
-                            var activePage = $(".navigation_clients li.page-item.active a").text();
-                            displayClients(activePage);
-                            // clearModalInvalidFeedbacks();
+                        var activePage = $(".navigation_clients li.page-item.active a").text();
+                        displayClients(activePage);
+                        // clearModalInvalidFeedbacks();
 
-                        } else if (response == 2) { //csrf error
-                            $("button.close").trigger("click");
-                            $("#token_deduct").val(received_token);
+                    } else if (response == 2) { //csrf error
+                        $("button.close").trigger("click");
+                        $("#token_deduct").val(received_token);
 
-                            vt.error(
-                                `This can be a CSRF error!, if this error persists, please contact our support about it.`, {
+                        vt.error(
+                            `This can be a CSRF error!, if this error persists, please contact our support about it.`, {
                                 title: "CSRF Error",
                                 duration: 6000,
                                 closable: true,
@@ -1361,14 +1361,14 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                            location.reload();
-                        } else if (response == 4) { //db error
-                            $("button.close").trigger("click");
-                            $("#token_deduct").val(received_token);
+                        location.reload();
+                    } else if (response == 4) { //db error
+                        $("button.close").trigger("click");
+                        $("#token_deduct").val(received_token);
 
 
-                            vt.error(
-                                `We could not process your request due to an unknown error!, please try again.`, {
+                        vt.error(
+                            `We could not process your request due to an unknown error!, please try again.`, {
                                 title: "Unknown error",
                                 duration: 6000,
                                 closable: true,
@@ -1377,170 +1377,170 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                        } else if (response == 0) { //serverGeneratedErrors
-                            // $("button.close").trigger("click");
-                            $("#token_deduct").val(received_token);
+                    } else if (response == 0) { //serverGeneratedErrors
+                        // $("button.close").trigger("click");
+                        $("#token_deduct").val(received_token);
 
-                            for (var key in serverGeneratedErrors) {
-                                var msg = serverGeneratedErrors[key];
+                        for (var key in serverGeneratedErrors) {
+                            var msg = serverGeneratedErrors[key];
 
-                                // console.log($(`#${key}`));
-                                $(`#${key}`).addClass("invalid");
-                                $(`#${key}`).next(".invalid-feedback").text(msg);
-                                $(`#${key}`).next(".invalid-feedback").css("display", "block");
-                            }
+                            // console.log($(`#${key}`));
+                            $(`#${key}`).addClass("invalid");
+                            $(`#${key}`).next(".invalid-feedback").text(msg);
+                            $(`#${key}`).next(".invalid-feedback").css("display", "block");
                         }
                     }
-                })
-            }
-        }
-
-
-
-        // ----EDIT----
-        function showClientData(event) {
-            showEditableInputsAndHide();
-
-            let data = event.currentTarget.getAttribute("data-values");
-
-            //populating modal with data
-
-            data = data.replace(new RegExp("&&xx&&", "g"), " ");
-
-            data = JSON.parse(data);
-
-
-            $("#partnerRate").val(data["rate"]);
-
-            $("#username").val(data["username"]);
-            $("#name").val(data["name"]);
-            $("#client_prefix").val(data["prefix"]);
-
-            $("#client_id").val(data["id"]);
-
-            $("input[name=status][value=" + data["status"] + "]").prop('checked', true);
-
-            $("#skinSelect").val(data["spadeEvoSkin"]);
-
-        }
-
-        function editClient(event) {
-            event.preventDefault();
-
-            //getting data
-            var partnerRate = $("#partnerRate").val().trim();
-            var username = $("#username").val().trim();
-            var status = $(".status:checked").val();
-
-
-
-            var id = $("#client_id").val();
-
-            var token = $("#token").val();
-
-            var skinSelect = $("#skinSelect").val().trim();
-
-            // console.log(status);
-
-            //validating & sanitizing data
-
-            var constraints = {
-                partnerRate: {
-                    presence: true,
-                    numericality: {
-                        greaterThanOrEqualTo: 0,
-                        lessThanOrEqualTo: 100,
-                    },
-                    format: {
-                        pattern: "^[0-9]{1,2}\.[0-9]{2}$",
-                        message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
-                    }
-                },
-            };
-
-
-
-
-            var errors = validate({
-                partnerRate
-            }, constraints);
-            if (typeof errors != undefined && errors != undefined) {
-
-                // console.log(errors);
-                for (var key in errors) {
-                    $(`#${key}`).addClass("invalid");
-                    $(`#${key}`).next(".invalid-feedback").text(errors[key]);
-                    $(`#${key}`).next(".invalid-feedback").css("display", "block");
                 }
-            } else {
-                //sanitize
+            })
+        }
+    }
 
-                partnerRate = DOMPurify.sanitize(partnerRate, {
-                    SAFE_FOR_JQUERY: true
-                });
-                token = DOMPurify.sanitize(token, {
-                    SAFE_FOR_JQUERY: true
-                });
-                id = DOMPurify.sanitize(id, {
-                    SAFE_FOR_JQUERY: true
-                });
-                username = DOMPurify.sanitize(username, {
-                    SAFE_FOR_JQUERY: true
-                });
-                status = DOMPurify.sanitize(status, {
-                    SAFE_FOR_JQUERY: true
-                });
 
-                $.ajax({
-                    url: '/ajaxProcessus/memberManagement/editClient.php',
-                    type: 'POST',
-                    data: {
-                        id,
-                        token,
-                        partnerRate,
-                        status,
-                        skinSelect
-                    },
-                    cache: false,
-                    timeout: 10000,
 
-                    success: function (data) {
+    // ----EDIT----
+    function showClientData(event) {
+        showEditableInputsAndHide();
 
-                        if (data == 'unauthorized' || data == '') {
-                            window.location.href = '/pages/errors/403.php';
-                            return;
-                        }
-                        rese = JSON.parse(data);
-                        var response = rese.response
-                        var received_token = rese.token
-                        var serverGeneratedErrors = rese.errors
+        let data = event.currentTarget.getAttribute("data-values");
 
-                        if (response == 1) { //updated
+        //populating modal with data
 
-                            $("button.close").trigger("click");
-                            $("#token").val(received_token);
-                            vt.success(`You successfully updated the client's Rate : ${username}.`, {
-                                title: "Client's Rate Updated!",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
+        data = data.replace(new RegExp("&&xx&&", "g"), " ");
 
-                            var activePage = $(".navigation_clients li.page-item.active a").text();
-                            displayClients(activePage);
-                            clearModalInvalidFeedbacks();
+        data = JSON.parse(data);
 
-                            resetStatusFilter();
 
-                        } else if (response == 2) { //csrf error
-                            $("button.close").trigger("click");
-                            $("#token").val(received_token);
+        $("#partnerRate").val(data["rate"]);
 
-                            vt.error(
-                                `This can be a CSRF error!, if you see this error please contact our support about it.`, {
+        $("#username").val(data["username"]);
+        $("#name").val(data["name"]);
+        $("#client_prefix").val(data["prefix"]);
+
+        $("#client_id").val(data["id"]);
+
+        $("input[name=status][value=" + data["status"] + "]").prop('checked', true);
+
+        $("#skinSelect").val(data["spadeEvoSkin"]);
+
+    }
+
+    function editClient(event) {
+        event.preventDefault();
+
+        //getting data
+        var partnerRate = $("#partnerRate").val().trim();
+        var username = $("#username").val().trim();
+        var status = $(".status:checked").val();
+
+
+
+        var id = $("#client_id").val();
+
+        var token = $("#token").val();
+
+        var skinSelect = $("#skinSelect").val().trim();
+
+        // console.log(status);
+
+        //validating & sanitizing data
+
+        var constraints = {
+            partnerRate: {
+                presence: true,
+                numericality: {
+                    greaterThanOrEqualTo: 0,
+                    lessThanOrEqualTo: 100,
+                },
+                format: {
+                    pattern: "^[0-9]{1,2}\.[0-9]{2}$",
+                    message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
+                }
+            },
+        };
+
+
+
+
+        var errors = validate({
+            partnerRate
+        }, constraints);
+        if (typeof errors != undefined && errors != undefined) {
+
+            // console.log(errors);
+            for (var key in errors) {
+                $(`#${key}`).addClass("invalid");
+                $(`#${key}`).next(".invalid-feedback").text(errors[key]);
+                $(`#${key}`).next(".invalid-feedback").css("display", "block");
+            }
+        } else {
+            //sanitize
+
+            partnerRate = DOMPurify.sanitize(partnerRate, {
+                SAFE_FOR_JQUERY: true
+            });
+            token = DOMPurify.sanitize(token, {
+                SAFE_FOR_JQUERY: true
+            });
+            id = DOMPurify.sanitize(id, {
+                SAFE_FOR_JQUERY: true
+            });
+            username = DOMPurify.sanitize(username, {
+                SAFE_FOR_JQUERY: true
+            });
+            status = DOMPurify.sanitize(status, {
+                SAFE_FOR_JQUERY: true
+            });
+
+            $.ajax({
+                url: '/ajaxProcessus/memberManagement/editClient.php',
+                type: 'POST',
+                data: {
+                    id,
+                    token,
+                    partnerRate,
+                    status,
+                    skinSelect
+                },
+                cache: false,
+                timeout: 10000,
+
+                success: function(data) {
+
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
+                    }
+                    rese = JSON.parse(data);
+                    var response = rese.response
+                    var received_token = rese.token
+                    var serverGeneratedErrors = rese.errors
+
+                    if (response == 1) { //updated
+
+                        $("button.close").trigger("click");
+                        $("#token").val(received_token);
+                        vt.success(`You successfully updated the client's Rate : ${username}.`, {
+                            title: "Client's Rate Updated!",
+                            duration: 6000,
+                            closable: true,
+                            focusable: true,
+                            callback: () => {
+                                console.log("completed");
+                            }
+                        });
+
+                        var activePage = $(".navigation_clients li.page-item.active a").text();
+                        displayClients(activePage);
+                        clearModalInvalidFeedbacks();
+
+                        resetStatusFilter();
+
+                    } else if (response == 2) { //csrf error
+                        $("button.close").trigger("click");
+                        $("#token").val(received_token);
+
+                        vt.error(
+                            `This can be a CSRF error!, if you see this error please contact our support about it.`, {
                                 title: "CSRF Error",
                                 duration: 6000,
                                 closable: true,
@@ -1549,13 +1549,13 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                        } else if (response == 4) { //db error
-                            $("button.close").trigger("click");
-                            $("#token").val(received_token);
+                    } else if (response == 4) { //db error
+                        $("button.close").trigger("click");
+                        $("#token").val(received_token);
 
 
-                            vt.error(
-                                `We could not process your request due to an unknown error!, please try again.`, {
+                        vt.error(
+                            `We could not process your request due to an unknown error!, please try again.`, {
                                 title: "Unknown error",
                                 duration: 6000,
                                 closable: true,
@@ -1564,31 +1564,31 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                        } else if (response == 0) { //serverGeneratedErrors
-                            // $("button.close").trigger("click");
-                            $("#token").val(received_token);
+                    } else if (response == 0) { //serverGeneratedErrors
+                        // $("button.close").trigger("click");
+                        $("#token").val(received_token);
 
-                            for (var key in serverGeneratedErrors) {
-                                var msg = serverGeneratedErrors[key];
+                        for (var key in serverGeneratedErrors) {
+                            var msg = serverGeneratedErrors[key];
 
-                                $(`#${key}`).addClass("invalid");
-                                $(`#${key}`).next(".invalid-feedback").text(msg);
-                                $(`#${key}`).next(".invalid-feedback").css("display", "block");
-                            }
+                            $(`#${key}`).addClass("invalid");
+                            $(`#${key}`).next(".invalid-feedback").text(msg);
+                            $(`#${key}`).next(".invalid-feedback").css("display", "block");
                         }
                     }
-                })
-            }
+                }
+            })
         }
+    }
 
-        document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('DOMContentLoaded', (event) => {
 
-            displayClients(0);
-            // clearModalInvalidFeedbacks();
+        displayClients(0);
+        // clearModalInvalidFeedbacks();
 
 
 
-        });
+    });
     </script>
 
 

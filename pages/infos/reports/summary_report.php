@@ -241,7 +241,7 @@ foreach ($activeSlotProviders as $key => $value) {
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => 'Reports', 'title_text' => 'Summary Report.', 'icon' => "news-paper")); ?>
+                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '정산관리', 'title_text' => 'Summary Report.', 'icon' => "news-paper")); ?>
 
                     <!-- main content -->
                     <section class="main">
@@ -261,7 +261,7 @@ foreach ($activeSlotProviders as $key => $value) {
                                             <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5  col-10 col-lg-4 col-xl-3 mt-2  ml-1 pl-0 pr-0 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">StartDate</span></div>
+                                                        class="input-group-text">시작일</span></div>
                                                 <input placeholder="" type="date"
                                                     class="form-control shadow-none startdate"
                                                     value=<?= date("Y-m-d") ?>>
@@ -271,7 +271,7 @@ foreach ($activeSlotProviders as $key => $value) {
                                             <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3 col-10  mt-2  ml-1 pl-0 pr-0 ml-4 ml-xl-1"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">EndDate</span></div>
+                                                        class="input-group-text">종료일</span></div>
                                                 <input placeholder="" type="date"
                                                     class="form-control shadow-none enddate" value=<?= date("Y-m-d") ?>>
                                             </div>
@@ -279,9 +279,8 @@ foreach ($activeSlotProviders as $key => $value) {
                                             <div
                                                 class="select-status input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3 col-10 mt-2 pl-0 pr-0 ml-4 ml-xl-1">
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">Category</span></div> <select
-                                                    type="select" id="categorySelect" name="categorySelect"
-                                                    class="custom-select">
+                                                        class="input-group-text">카테고리</span></div> <select type="select"
+                                                    id="categorySelect" name="categorySelect" class="custom-select">
                                                     <option value="casino">Casinos</option>
                                                     <option value="slot">Slots</option>
                                                 </select>
@@ -290,9 +289,8 @@ foreach ($activeSlotProviders as $key => $value) {
                                             <div
                                                 class="select-provider input-group  d-flexml-1 pl-0 pr-0 col-md-5  col-10 col-lg-4 col-xl-3 mt-2  ml-1 pl-0 pr-0 ml-4">
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">Provider</span></div> <select
-                                                    type="select" id="providerSelect" name="providerSelect"
-                                                    class="custom-select">
+                                                        class="input-group-text">게임사</span></div> <select type="select"
+                                                    id="providerSelect" name="providerSelect" class="custom-select">
                                                     <?= $providersCasinoOptions; ?>
                                                 </select>
                                             </div>
@@ -302,7 +300,7 @@ foreach ($activeSlotProviders as $key => $value) {
 
 
                                             <button
-                                                class="btn btn-primary filter_summary filter_btn mt-2 ml-4 mr-4">Submit</button>
+                                                class="btn btn-primary filter_summary filter_btn mt-2 ml-4 mr-4">검색</button>
 
                                         </div>
 
@@ -428,24 +426,24 @@ foreach ($activeSlotProviders as $key => $value) {
                                                 </tr>
                                                 <tr>
                                                     <th class="text-center 3f-cells">UID</th>
-                                                    <th class="text-center 3f-cells">Username</th>
-                                                    <th class="text-center 3f-cells">Client</th>
-                                                    <th class="text-center 3f-cells">Parent</th>
+                                                    <th class="text-center 3f-cells">아이디</th>
+                                                    <th class="text-center 3f-cells">고객사</th>
+                                                    <th class="text-center 3f-cells">상위 파트너 </th>
                                                     <?php
                                                     foreach ($activeProviders as $key => $value) {
                                                         if (!isset($ProvidersNameMapping[$value])) {
                                                             continue;
                                                         }
-                                                        echo '<th class="text-center">Wager</th>' . PHP_EOL;
-                                                        echo '<th class="text-center">Turnover</th>' . PHP_EOL;
-                                                        echo '<th class="text-center">WinLoss</th>' . PHP_EOL;
+                                                        echo '<th class="text-center">아이디</th>' . PHP_EOL;
+                                                        echo '<th class="text-center">베팅금액</th>' . PHP_EOL;
+                                                        echo '<th class="text-center">윈로스</th>' . PHP_EOL;
 
                                                     }
 
                                                     ?>
-                                                    <th class="text-center">Wager</th>
-                                                    <th class="text-center">Turnover</th>
-                                                    <th class="text-center">WinLoss</th>
+                                                    <th class="text-center">베팅횟수</th>
+                                                    <th class="text-center">베팅금액</th>
+                                                    <th class="text-center">윈로스</th>
 
 
                                                 </tr>
