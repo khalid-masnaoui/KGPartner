@@ -557,106 +557,106 @@ include __DIR__ . '/../includes/partials/_authorization.php';
 </body>
 
 <script>
-    //formatting numbers
-    function number_format(number, decimals, dec_point, thousands_sep) {
-        // Strip all characters but numerical ones.
-        number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
-        var n = !isFinite(+number) ? 0 : +number,
-            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-            sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-            dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
-            s = '',
-            toFixedFix = function (n, prec) {
-                var k = Math.pow(10, prec);
-                return '' + Math.round(n * k) / k;
-            };
-        // Fix for IE parseFloat(0.55).toFixed(0) = 0;
-        s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
-        if (s[0].length > 3) {
-            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
-        }
-        if ((s[1] || '').length < prec) {
-            s[1] = s[1] || '';
-            s[1] += new Array(prec - s[1].length + 1).join('0');
-        }
-        return s.join(dec);
+//formatting numbers
+function number_format(number, decimals, dec_point, thousands_sep) {
+    // Strip all characters but numerical ones.
+    number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function(n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
+    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
     }
-    //-----DISPLAY DASHBOARD STATS--------
-    function displayDashboardStats(N = 1) {
+    if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+}
+//-----DISPLAY DASHBOARD STATS--------
+function displayDashboardStats(N = 1) {
 
-        var token = $("#token_display_stats").val();
+    var token = $("#token_display_stats").val();
 
-        $.ajax({
-            url: '/ajaxProcessus/dashboard/displayDashboardStats.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                token
-            },
-            cache: false,
-            timeout: 10000,
-            success: function (data) {
+    $.ajax({
+        url: '/ajaxProcessus/dashboard/displayDashboardStats.php',
+        type: 'POST',
+        data: {
+            "display": true,
+            token
+        },
+        cache: false,
+        timeout: 10000,
+        success: function(data) {
 
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
-                }
-                rese = JSON.parse(data);
+            if (data == 'unauthorized' || data == '') {
+                window.location.href = '/pages/errors/403.php';
+                return;
+            }
+            rese = JSON.parse(data);
 
-                // console.log(rese[0]);
-                let length = rese.length;
-
-
-                if (length == 2) { //success
-                    let statsData = rese[0];
-                    // console.log(statsData);
-
-                    //first row
-                    // $(".clients-balance").text(`₩${statsData.clientsBalance}`);
-                    $(".partners-balance").text(`${statsData.currentPartnerBalance}`);
-                    $(".clients-deposit").text(`₩${statsData.clientsDeposit}`);
-                    $(".partners-commissions").text(`₩${statsData.partnersBalance}`);
-
-                    //second row
-                    //first sub-row
-                    $(".clients-count").text(`${statsData.clientsCount}`);
-                    $(".clients-active").text(`${statsData.activeClientsPercentage} %`);
-                    $(".partners-count").text(`${statsData.partnersCount}`);
-
-                    //second sub-row
-                    $(".players-count").text(`${statsData.playersCount}`);
-                    $(".bet-count").text(`${statsData.betTransactionsCount}`);
-                    $(".transactions-canceled").text(`${statsData.canceledBetTransactionsPercentage} %`);
+            // console.log(rese[0]);
+            let length = rese.length;
 
 
+            if (length == 2) { //success
+                let statsData = rese[0];
+                // console.log(statsData);
 
+                //first row
+                // $(".clients-balance").text(`₩${statsData.clientsBalance}`);
+                $(".partners-balance").text(`${statsData.currentPartnerBalance}`);
+                $(".clients-deposit").text(`₩${statsData.clientsDeposit}`);
+                $(".partners-commissions").text(`₩${statsData.partnersBalance}`);
 
-                    $("#token_display_stats").val(rese[1]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display_stats").val(rese[0]);
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
+                //second row
+                //first sub-row
+                $(".clients-count").text(`${statsData.clientsCount}`);
+                $(".clients-active").text(`${statsData.activeClientsPercentage} %`);
+                $(".partners-count").text(`${statsData.partnersCount}`);
+
+                //second sub-row
+                $(".players-count").text(`${statsData.playersCount}`);
+                $(".bet-count").text(`${statsData.betTransactionsCount}`);
+                $(".transactions-canceled").text(`${statsData.canceledBetTransactionsPercentage} %`);
 
 
 
+
+                $("#token_display_stats").val(rese[1]);
+            } else if (length == 1) { //csrf error
+                $("#token_display_stats").val(rese[0]);
+            } else {
+                //refresh page;
+                location.reload();
             }
 
 
-        })
-    }
 
-    //----------CHARTS--------------
-    const ctx = document.getElementById('turnOverChart').getContext('2d');
-    const ctxWinLoss = document.getElementById('winLossChart').getContext('2d');
+        }
 
 
+    })
+}
 
-    //setup
-    const data = {
-        labels: [],
-        datasets: [{
+//----------CHARTS--------------
+const ctx = document.getElementById('turnOverChart').getContext('2d');
+const ctxWinLoss = document.getElementById('winLossChart').getContext('2d');
+
+
+
+//setup
+const data = {
+    labels: [],
+    datasets: [{
             label: '',
             data: [],
             backgroundColor: "",
@@ -675,401 +675,401 @@ include __DIR__ . '/../includes/partials/_authorization.php';
             stack: "",
 
         },
-        ]
-    };
-    //config turnover
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {
-            title: {
-                display: true,
-                text: 'Turnovers (KRW)',
-                fontSize: window.innerWidth > 1450 ? 30 : (window.innerWidth > 910 ? 20 : 12),
-            },
-            legend: {
-                display: true,
-                position: "bottom",
-            },
-            tooltips: {
-                callbacks: {
-                    // labelColor: function(tooltipItem, chart) {
-                    //     return {
-                    //         borderColor: 'rgb(255, 0, 0)',
-                    //         backgroundColor: 'rgb(255, 0, 0)'
-                    //     };
-                    // },
-                    // labelTextColor: function(tooltipItem, chart) {
-                    //     return '#543453';
-                    // },
-                    footer: function (tooltipItems) {
-                        let sum = 0;
+    ]
+};
+//config turnover
+const config = {
+    type: 'bar',
+    data: data,
+    options: {
+        title: {
+            display: true,
+            text: '베팅금액 (KRW)',
+            fontSize: window.innerWidth > 1450 ? 30 : (window.innerWidth > 910 ? 20 : 12),
+        },
+        legend: {
+            display: true,
+            position: "bottom",
+        },
+        tooltips: {
+            callbacks: {
+                // labelColor: function(tooltipItem, chart) {
+                //     return {
+                //         borderColor: 'rgb(255, 0, 0)',
+                //         backgroundColor: 'rgb(255, 0, 0)'
+                //     };
+                // },
+                // labelTextColor: function(tooltipItem, chart) {
+                //     return '#543453';
+                // },
+                footer: function(tooltipItems) {
+                    let sum = 0;
 
-                        tooltipItems.forEach(function (tooltipItem) {
-                            sum += tooltipItem.yLabel;
-                        });
-                        return 'Total: ' + sum;
-                    },
-                }
-            },
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        maxRotation: 90,
-                        minRotation: 0,
-                    }
-                }],
-                yAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        // labelString: 'Measure : 10k'
-                    },
-                    ticks: {
-                        beginAtZero: true,
-                        stepSize: 10000,
-                        // min: 0,
-                        // max: 300,
-                        userCallback: function (value, index, values) {
-                            //2 decimals , {, thousands separators},
-                            //newValue = number_format(newValue, 0, "", "");
-                            let newValue = value / 1000;
-                            return newValue + 'k';
-
-                        }
-                    }
-                }]
-            },
-            animation: {
-                duration: 1,
+                    tooltipItems.forEach(function(tooltipItem) {
+                        sum += tooltipItem.yLabel;
+                    });
+                    return 'Total: ' + sum;
+                },
             }
+        },
+        responsive: true,
+        scales: {
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    maxRotation: 90,
+                    minRotation: 0,
+                }
+            }],
+            yAxes: [{
+                scaleLabel: {
+                    display: true,
+                    // labelString: 'Measure : 10k'
+                },
+                ticks: {
+                    beginAtZero: true,
+                    stepSize: 10000,
+                    // min: 0,
+                    // max: 300,
+                    userCallback: function(value, index, values) {
+                        //2 decimals , {, thousands separators},
+                        //newValue = number_format(newValue, 0, "", "");
+                        let newValue = value / 1000;
+                        return newValue + 'k';
+
+                    }
+                }
+            }]
+        },
+        animation: {
+            duration: 1,
+        }
+
+    }
+};
+
+//config winloss
+const configWinLoss = {
+    type: 'bar',
+    data: data,
+    options: {
+        title: {
+            display: true,
+            text: '윈로스 (KRW)',
+            fontSize: window.innerWidth > 1450 ? 30 : (window.innerWidth > 910 ? 20 : 12),
+        },
+        legend: {
+            display: true,
+            position: "bottom",
+        },
+        tooltips: {
+            callbacks: {
+                // labelColor: function(tooltipItem, chart) {
+                //     return {
+                //         borderColor: 'rgb(255, 0, 0)',
+                //         backgroundColor: 'rgb(255, 0, 0)'
+                //     };
+                // },
+                // labelTextColor: function(tooltipItem, chart) {
+                //     return '#543453';
+                // },
+                footer: function(tooltipItems) {
+                    let sum = 0;
+
+                    tooltipItems.forEach(function(tooltipItem) {
+                        sum += tooltipItem.yLabel;
+                    });
+                    return 'Total: ' + sum;
+                },
+            }
+        },
+        responsive: true,
+        scales: {
+            xAxes: [{
+                ticks: {
+                    // beginAtZero: true,
+                    maxRotation: 90,
+                    minRotation: 0,
+                }
+            }],
+            yAxes: [{
+                scaleLabel: {
+                    display: true,
+                    // labelString: 'Measure : 10k'
+                },
+                ticks: {
+                    // beginAtZero: true,
+                    stepSize: 2000,
+                    // min: 0,
+                    // max: 300,
+                    userCallback: function(value, index, values) {
+                        //2 decimals , {, thousands separators},
+                        //newValue = number_format(newValue, 0, "", "");
+                        let newValue = value / 1000;
+                        return newValue + 'k';
+
+                    }
+                }
+            }]
+        },
+        animation: {
+            duration: 1,
+        }
+
+    }
+};
+//render turnover chart
+const myChart = new Chart(ctx, config);
+
+//render winLOss chart
+const myChartWinLoss = new Chart(ctxWinLoss, configWinLoss);
+
+
+
+//y-axis label on top 
+var myBarExtend = Chart.controllers.bar.prototype.draw;
+
+Chart.helpers.extend(Chart.controllers.bar.prototype, {
+    draw: function() {
+        myBarExtend.apply(this, arguments);
+        var controller = this.chart.controller;
+        var chart = controller.chart;
+        var yAxis = controller.scales['y-axis-0'];
+        var xOffset = chart.width - (chart.width - 5);
+        var yOffset = chart.height - (chart.height - 18);
+        //turnover
+        ctx.font = window.innerWidth > 1450 ? '20px serif' : (window.innerWidth > 910 ? '15px serif' :
+            '10px serif');
+        ctx.fillText('측정하다 : 10k', xOffset, yOffset);
+        //winloss
+        ctxWinLoss.font = window.innerWidth > 1450 ? '20px serif' : (window.innerWidth > 910 ?
+            '15px serif' :
+            '10px serif');
+        ctxWinLoss.fillText('측정하다 : 2k', xOffset, yOffset);
+    }
+});
+
+//chart actions
+//-----turnover----
+//time period modifiers
+$(".turnover").click(function(e) {
+    $(".turnover").removeClass("active");
+    $(this).addClass("active");
+
+    renderTurnoverChart();
+})
+//casino/slots modifiers
+$("#categorySelect").change(function(e) {
+    renderTurnoverChart();
+})
+
+
+//-----winloss----
+//time period modifiers
+$(".winloss").click(function(e) {
+    $(".winloss").removeClass("active");
+    $(this).addClass("active");
+
+    renderWinLossChart();
+})
+//casino/slots modifiers
+$("#categorySelectWinLoss").change(function(e) {
+    renderWinLossChart();
+})
+
+//render charts
+//turnover chart
+function renderTurnoverChart() {
+    var timePeriod = $(".turnover.active").attr("data-period");
+    var category = $("#categorySelect").val();
+    var token = $("#token_display_turnover_chart").val();
+
+    $.ajax({
+        url: '/ajaxProcessus/dashboard/displayTurnoverChart.php',
+        type: 'POST',
+        data: {
+            "display": true,
+            category,
+            'period': timePeriod,
+            token
+        },
+        cache: false,
+        timeout: 10000,
+        success: function(data) {
+
+            if (data == 'unauthorized' || data == '') {
+                window.location.href = '/pages/errors/403.php';
+                return;
+            }
+            rese = JSON.parse(data);
+
+            // console.log(rese[0]);
+            let length = rese.length;
+
+
+            if (length == 3) { //success
+                // console.log(rese[1]); //labels
+                // console.log(rese[0]); //data
+                let labels = [];
+                if (timePeriod !== "weekly") {
+                    labels = rese[1];
+                } else {
+                    Object.values(rese[1]).forEach(element => {
+                        labels.push([element[0], '- ' + element[1]]);
+                    });
+
+                }
+
+                //setup for chart
+                const data = {
+                    labels: labels,
+                    datasets: rese[0],
+                }
+
+                myChart.data = data;
+                // re-render the chart
+                myChart.update();
+
+
+                $("#token_display_turnover_chart").val(rese[2]);
+            } else if (length == 1) { //csrf error
+                $("#token_display_turnover_chart").val(rese[0]);
+
+            } else {
+                //refresh page;
+                location.reload();
+            }
+
+
 
         }
-    };
 
-    //config winloss
-    const configWinLoss = {
-        type: 'bar',
-        data: data,
-        options: {
-            title: {
-                display: true,
-                text: 'WinLoss (KRW)',
-                fontSize: window.innerWidth > 1450 ? 30 : (window.innerWidth > 910 ? 20 : 12),
-            },
-            legend: {
-                display: true,
-                position: "bottom",
-            },
-            tooltips: {
-                callbacks: {
-                    // labelColor: function(tooltipItem, chart) {
-                    //     return {
-                    //         borderColor: 'rgb(255, 0, 0)',
-                    //         backgroundColor: 'rgb(255, 0, 0)'
-                    //     };
-                    // },
-                    // labelTextColor: function(tooltipItem, chart) {
-                    //     return '#543453';
-                    // },
-                    footer: function (tooltipItems) {
-                        let sum = 0;
 
-                        tooltipItems.forEach(function (tooltipItem) {
-                            sum += tooltipItem.yLabel;
-                        });
-                        return 'Total: ' + sum;
-                    },
-                }
-            },
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        // beginAtZero: true,
-                        maxRotation: 90,
-                        minRotation: 0,
-                    }
-                }],
-                yAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        // labelString: 'Measure : 10k'
-                    },
-                    ticks: {
-                        // beginAtZero: true,
-                        stepSize: 2000,
-                        // min: 0,
-                        // max: 300,
-                        userCallback: function (value, index, values) {
-                            //2 decimals , {, thousands separators},
-                            //newValue = number_format(newValue, 0, "", "");
-                            let newValue = value / 1000;
-                            return newValue + 'k';
+    })
+}
 
-                        }
-                    }
-                }]
-            },
-            animation: {
-                duration: 1,
+//turnover chart
+function renderWinLossChart() {
+    var timePeriod = $(".winloss.active").attr("data-period");
+    var category = $("#categorySelectWinLoss").val();
+    var token = $("#token_display_winloss_chart").val();
+
+    $.ajax({
+        url: '/ajaxProcessus/dashboard/displayWinLossChart.php',
+        type: 'POST',
+        data: {
+            "display": true,
+            category,
+            'period': timePeriod,
+            token
+        },
+        cache: false,
+        timeout: 10000,
+        success: function(data) {
+
+            if (data == 'unauthorized' || data == '') {
+                window.location.href = '/pages/errors/403.php';
+                return;
             }
+            rese = JSON.parse(data);
+
+            // console.log(rese[0]);
+            let length = rese.length;
+
+
+            if (length == 3) { //success
+                // console.log(rese[1]); //labels
+                // console.log(rese[0]); //data
+
+                let labels = [];
+                if (timePeriod !== "weekly") {
+                    labels = rese[1];
+                } else {
+                    Object.values(rese[1]).forEach(element => {
+                        labels.push([element[0], '- ' + element[1]]);
+                    });
+
+                }
+
+                //setup for chart
+                const data = {
+                    labels: labels,
+                    datasets: rese[0],
+                }
+
+                myChartWinLoss.data = data;
+                // re-render the chart
+                myChartWinLoss.update();
+
+
+                $("#token_display_winloss_chart").val(rese[2]);
+            } else if (length == 1) { //csrf error
+                $("#token_display_winloss_chart").val(rese[0]);
+
+            } else {
+                //refresh page;
+                location.reload();
+            }
+
+
 
         }
-    };
-    //render turnover chart
-    const myChart = new Chart(ctx, config);
-
-    //render winLOss chart
-    const myChartWinLoss = new Chart(ctxWinLoss, configWinLoss);
 
 
+    })
+}
 
-    //y-axis label on top 
-    var myBarExtend = Chart.controllers.bar.prototype.draw;
+// --- DISPLAY NOTIFICATIONS HISTORY ----
+function displayNotifications(N = 1) {
 
-    Chart.helpers.extend(Chart.controllers.bar.prototype, {
-        draw: function () {
-            myBarExtend.apply(this, arguments);
-            var controller = this.chart.controller;
-            var chart = controller.chart;
-            var yAxis = controller.scales['y-axis-0'];
-            var xOffset = chart.width - (chart.width - 5);
-            var yOffset = chart.height - (chart.height - 18);
-            //turnover
-            ctx.font = window.innerWidth > 1450 ? '20px serif' : (window.innerWidth > 910 ? '15px serif' :
-                '10px serif');
-            ctx.fillText('Measure : 10k', xOffset, yOffset);
-            //winloss
-            ctxWinLoss.font = window.innerWidth > 1450 ? '20px serif' : (window.innerWidth > 910 ?
-                '15px serif' :
-                '10px serif');
-            ctxWinLoss.fillText('Measure : 2k', xOffset, yOffset);
+    var token = $("#token_display").val();
+
+    $.ajax({
+        url: '/ajaxProcessus/dashboard/displayNotifications.php',
+        type: 'POST',
+        data: {
+            "display": true,
+            token
+        },
+        cache: false,
+        timeout: 10000,
+        success: function(data) {
+
+            if (data == 'unauthorized' || data == '') {
+                window.location.href = '/pages/errors/403.php';
+                return;
+            }
+            rese = JSON.parse(data);
+
+            // console.log(rese[0]);
+            let length = rese.length;
+
+
+            if (length == 4) { //success
+                $(".table-body-notifications").html(rese[0]);
+
+                $("#token_display").val(rese[3]);
+            } else if (length == 1) { //csrf error
+                $("#token_display").val(rese[0]);
+
+            } else {
+                //refresh page;
+                location.reload();
+            }
+
+
+
         }
-    });
 
-    //chart actions
-    //-----turnover----
-    //time period modifiers
-    $(".turnover").click(function (e) {
-        $(".turnover").removeClass("active");
-        $(this).addClass("active");
 
-        renderTurnoverChart();
     })
-    //casino/slots modifiers
-    $("#categorySelect").change(function (e) {
-        renderTurnoverChart();
-    })
-
-
-    //-----winloss----
-    //time period modifiers
-    $(".winloss").click(function (e) {
-        $(".winloss").removeClass("active");
-        $(this).addClass("active");
-
-        renderWinLossChart();
-    })
-    //casino/slots modifiers
-    $("#categorySelectWinLoss").change(function (e) {
-        renderWinLossChart();
-    })
-
-    //render charts
-    //turnover chart
-    function renderTurnoverChart() {
-        var timePeriod = $(".turnover.active").attr("data-period");
-        var category = $("#categorySelect").val();
-        var token = $("#token_display_turnover_chart").val();
-
-        $.ajax({
-            url: '/ajaxProcessus/dashboard/displayTurnoverChart.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                category,
-                'period': timePeriod,
-                token
-            },
-            cache: false,
-            timeout: 10000,
-            success: function (data) {
-
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
-                }
-                rese = JSON.parse(data);
-
-                // console.log(rese[0]);
-                let length = rese.length;
-
-
-                if (length == 3) { //success
-                    // console.log(rese[1]); //labels
-                    // console.log(rese[0]); //data
-                    let labels = [];
-                    if (timePeriod !== "weekly") {
-                        labels = rese[1];
-                    } else {
-                        Object.values(rese[1]).forEach(element => {
-                            labels.push([element[0], '- ' + element[1]]);
-                        });
-
-                    }
-
-                    //setup for chart
-                    const data = {
-                        labels: labels,
-                        datasets: rese[0],
-                    }
-
-                    myChart.data = data;
-                    // re-render the chart
-                    myChart.update();
-
-
-                    $("#token_display_turnover_chart").val(rese[2]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display_turnover_chart").val(rese[0]);
-
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
-
-
-
-            }
-
-
-        })
-    }
-
-    //turnover chart
-    function renderWinLossChart() {
-        var timePeriod = $(".winloss.active").attr("data-period");
-        var category = $("#categorySelectWinLoss").val();
-        var token = $("#token_display_winloss_chart").val();
-
-        $.ajax({
-            url: '/ajaxProcessus/dashboard/displayWinLossChart.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                category,
-                'period': timePeriod,
-                token
-            },
-            cache: false,
-            timeout: 10000,
-            success: function (data) {
-
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
-                }
-                rese = JSON.parse(data);
-
-                // console.log(rese[0]);
-                let length = rese.length;
-
-
-                if (length == 3) { //success
-                    // console.log(rese[1]); //labels
-                    // console.log(rese[0]); //data
-
-                    let labels = [];
-                    if (timePeriod !== "weekly") {
-                        labels = rese[1];
-                    } else {
-                        Object.values(rese[1]).forEach(element => {
-                            labels.push([element[0], '- ' + element[1]]);
-                        });
-
-                    }
-
-                    //setup for chart
-                    const data = {
-                        labels: labels,
-                        datasets: rese[0],
-                    }
-
-                    myChartWinLoss.data = data;
-                    // re-render the chart
-                    myChartWinLoss.update();
-
-
-                    $("#token_display_winloss_chart").val(rese[2]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display_winloss_chart").val(rese[0]);
-
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
-
-
-
-            }
-
-
-        })
-    }
-
-    // --- DISPLAY NOTIFICATIONS HISTORY ----
-    function displayNotifications(N = 1) {
-
-        var token = $("#token_display").val();
-
-        $.ajax({
-            url: '/ajaxProcessus/dashboard/displayNotifications.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                token
-            },
-            cache: false,
-            timeout: 10000,
-            success: function (data) {
-
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
-                }
-                rese = JSON.parse(data);
-
-                // console.log(rese[0]);
-                let length = rese.length;
-
-
-                if (length == 4) { //success
-                    $(".table-body-notifications").html(rese[0]);
-
-                    $("#token_display").val(rese[3]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display").val(rese[0]);
-
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
-
-
-
-            }
-
-
-        })
-    }
-    document.addEventListener('DOMContentLoaded', (event) => {
-        displayDashboardStats();
-        displayNotifications();
-        renderTurnoverChart();
-        renderWinLossChart();
-    });
+}
+document.addEventListener('DOMContentLoaded', (event) => {
+    displayDashboardStats();
+    displayNotifications();
+    renderTurnoverChart();
+    renderWinLossChart();
+});
 </script>
 
 </html>
