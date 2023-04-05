@@ -40,8 +40,8 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $clientsBalanceAndDepositSql = "SELECT sum(cb.balance) as balanceTotal , sum(cb.deposit) as depositTotal FROM clients_balance cb JOIN clients cl ON cb.client_id = cl.id WHERE cl.pt_id = ?";
         $balanceAndDepositData = $db->query($clientsBalanceAndDepositSql, $parametersQuery)->first();
 
-        $dashboardStatsData["clientsBalance"] = $fmtPadding->format($balanceAndDepositData["balanceTotal"]);
-        $dashboardStatsData["clientsDeposit"] = $fmtPadding->format($balanceAndDepositData["depositTotal"]);
+        $dashboardStatsData["clientsBalance"] = $fmt->format($balanceAndDepositData["balanceTotal"]);
+        $dashboardStatsData["clientsDeposit"] = $fmt->format($balanceAndDepositData["depositTotal"]);
 
         //current partner balance --- TO CHANGE TO WA BALANCE
         // $partnersBalanceSql = "SELECT sum(pb.balance) as balanceTotal FROM partners_balance pb WHERE pb.partner_id = ?";
@@ -57,10 +57,10 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         //partners commissions
         // $partnersBalanceSql = "SELECT sum(pb.balance) as balanceTotal FROM partners_balance pb JOIN partner_users pu ON pb.partner_id = pu.id WHERE pu.pt_id = ? or pu.pt_id like ?";
-        $partnersBalanceSql = "SELECT sum(pb.balance) as balanceTotal FROM partners_balance pb JOIN partner_users pu ON pb.partner_id = pu.id WHERE pu.pt_id = ?";
-        $balanceData = $db->query($partnersBalanceSql, $parametersQuery)->first();
+        // $partnersBalanceSql = "SELECT sum(pb.balance) as balanceTotal FROM partners_balance pb JOIN partner_users pu ON pb.partner_id = pu.id WHERE pu.pt_id = ?";
+        // $balanceData = $db->query($partnersBalanceSql, $parametersQuery)->first();
 
-        $dashboardStatsData["partnersBalance"] = $fmtPadding->format($balanceData["balanceTotal"]);
+        // $dashboardStatsData["partnersBalance"] = $fmtPadding->format($balanceData["balanceTotal"]);
 
         //clients count
         $clientsCountSql = "SELECT count(*) as clientsTotal FROM clients WHERE pt_id = ?";

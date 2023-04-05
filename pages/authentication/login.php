@@ -104,20 +104,20 @@ function insertLoginAttempt($db, $array, $status, $detail)
     <link rel="stylesheet" href="/assets/css/login.css?v=1.04">
 
     <style>
-    @media (max-width: 410px) {
-        .btn1 {
-            left: 4%;
+        @media (max-width: 410px) {
+            .btn1 {
+                left: 4%;
+            }
+
+            .container {
+                width: 360px;
+            }
         }
 
-        .container {
-            width: 360px;
+        .vt-col.top-left,
+        .vt-col.top-right {
+            display: none !important;
         }
-    }
-
-    .vt-col.top-left,
-    .vt-col.top-right {
-        display: none !important;
-    }
 
     </style>
 
@@ -138,7 +138,7 @@ function insertLoginAttempt($db, $array, $status, $detail)
             </h4>
             <h5>Sign in to your admin account.</h5>
             <div class="username">
-                <input type="text" name="username" placeholder="Username" autocomplete="off" id="username"
+                <input type="text" name="username" placeholder="아이디" autocomplete="off" id="username"
                     value="<?php echo escape(input::get('username')); ?>"
                     style="margin-bottom:<?= isset($_GLOBALS["ERR"]["username"]) ? "0px;" : "" ?>">
                 <?php
@@ -151,7 +151,7 @@ function insertLoginAttempt($db, $array, $status, $detail)
             <div class="password" style="margin-bottom:<?= isset($_GLOBALS["ERR"]["password"]) ? "30px;" : "" ?>">
 
                 <i class="typcn typcn-eye" id="eye"></i>
-                <input type="password" name="password" placeholder="Passsword" id="pwd" id="password" autocomplete="off"
+                <input type="password" name="password" placeholder="비밀번호" id="pwd" id="password" autocomplete="off"
                     style="margin-bottom:<?= isset($_GLOBALS["ERR"]["password"]) ? "0px;" : "" ?>">
                 <?php
                 if (isset($_GLOBALS["ERR"]["password"])) {
@@ -165,10 +165,10 @@ function insertLoginAttempt($db, $array, $status, $detail)
 
                 <input type="checkbox" name="remember">
                 <span></span>
-                <small class="rmb">Remember me</small>
+                <small class="rmb">로그인 상태 유지</small>
             </label>
-            <a href="#" class="forgetpass">Forget Password?</a>
-            <input type="submit" value="Sign in" class="btn1" style='margin-top: 40px;'>
+            <a href="#" class="forgetpass d-none">Forget Password?</a>
+            <input type="submit" value="로그인" class="btn1" style='margin-top: 40px;'>
         </form>
         <!-- <a href="#" class="dnthave">Don’t have an account? Sign up</a> -->
     </div>
@@ -182,62 +182,62 @@ function insertLoginAttempt($db, $array, $status, $detail)
 
 
 <script>
-document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('DOMContentLoaded', (event) => {
 
-    $("#username").keyup((e) => {
-        var $this = $(e.currentTarget);
-        // console.log($this.next(".invalid_back"));
-        $this.next("small").css("display", "none");
+        $("#username").keyup((e) => {
+            var $this = $(e.currentTarget);
+            // console.log($this.next(".invalid_back"));
+            $this.next("small").css("display", "none");
 
-    })
-    $("#password").keyup((e) => {
-        var $this = $(e.currentTarget);
-        // console.log($this.next(".invalid_back"));
-        $this.next("small").css("display", "none");
-        $("#re_pass").next("small").css("display", "none");
-    })
+        })
+        $("#password").keyup((e) => {
+            var $this = $(e.currentTarget);
+            // console.log($this.next(".invalid_back"));
+            $this.next("small").css("display", "none");
+            $("#re_pass").next("small").css("display", "none");
+        })
 
 
-});
+    });
 
-var flash_message = <?php echo json_encode($msg, JSON_HEX_TAG); ?>; // Don't forget the extra semicolon!
-if (flash_message != '') {
-    var type = Object.keys(flash_message)[0]
-    console.log(type);
-    var msg = flash_message[Object.keys(flash_message)[0]];
-    if (type == "authorization") {
-        vt.warn(msg, {
-            title: "Authorization is not granted",
-            duration: 6000,
-            closable: true,
-            focusable: true,
-            callback: () => {
-                console.log("completed");
-            }
-        });
-    } else if (type == "logged" || type == "logged_already") {
-        vt.success(msg, {
-            title: "Logged In",
-            duration: 6000,
-            closable: true,
-            focusable: true,
-            callback: () => {
-                console.log("completed");
-            }
-        });
-    } else if (type == "loggedout") {
-        vt.success(msg, {
-            title: "Logged Out",
-            duration: 6000,
-            closable: true,
-            focusable: true,
-            callback: () => {
-                console.log("completed");
-            }
-        });
+    var flash_message = <?php echo json_encode($msg, JSON_HEX_TAG); ?>; // Don't forget the extra semicolon!
+    if (flash_message != '') {
+        var type = Object.keys(flash_message)[0]
+        console.log(type);
+        var msg = flash_message[Object.keys(flash_message)[0]];
+        if (type == "authorization") {
+            vt.warn(msg, {
+                title: "Authorization is not granted",
+                duration: 6000,
+                closable: true,
+                focusable: true,
+                callback: () => {
+                    console.log("completed");
+                }
+            });
+        } else if (type == "logged" || type == "logged_already") {
+            vt.success(msg, {
+                title: "Logged In",
+                duration: 6000,
+                closable: true,
+                focusable: true,
+                callback: () => {
+                    console.log("completed");
+                }
+            });
+        } else if (type == "loggedout") {
+            vt.success(msg, {
+                title: "Logged Out",
+                duration: 6000,
+                closable: true,
+                focusable: true,
+                callback: () => {
+                    console.log("completed");
+                }
+            });
+        }
+
     }
-
-}
 </script>
 
 </html>
