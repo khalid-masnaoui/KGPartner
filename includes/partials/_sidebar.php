@@ -327,6 +327,22 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                 </ul>
             </li>
 
+            <li class=<?= strpos($_SERVER['REQUEST_URI'], 'settings/') !== false ? "mm-active" : ""; ?>>
+                <a href="#"
+                    aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'settings/') !== false ? "true" : "false"; ?>>
+                    <i class="metismenu-icon pe-7s-settings"></i> API Settings
+                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul class=<?= strpos($_SERVER['REQUEST_URI'], 'settings/') !== false ? "mm-collapse mm-show" : ""; ?>>
+                    <li>
+                        <a href="/pages/settings/products.php"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'products.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon pe-7s-photo-gallery"> </i>Products List
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
 
 
             </ul>
