@@ -50,7 +50,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables(__DIR__ . '/../includes/partials/_innerheader.php', array('title' => '대시보드', 'title_text' => 'DDashboard contains some of the most important Information, Statistics & Analyses..', 'icon' => "home")); ?>
+                    <?php includeWithVariables(__DIR__ . '/../includes/partials/_innerheader.php', array('title' => '대시보드', 'title_text' => '정보 및 분석', 'icon' => "home")); ?>
 
                     <input type="hidden" name="token_display_stats" id="token_display_stats"
                         value="<?= token::generate("dashboard_display_stats") ?>">

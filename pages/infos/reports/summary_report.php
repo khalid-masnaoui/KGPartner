@@ -44,6 +44,8 @@ $ProvidersNameMapping = config::get("providersNameMappings");
 
 $providersCasinoOptions = "";
 $providersSlotOptions = "";
+$providersOptions = "<option value='all'>All</option>";
+
 
 
 foreach ($activeCasinoProviders as $key => $value) {
@@ -281,8 +283,9 @@ foreach ($activeSlotProviders as $key => $value) {
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">카테고리</span></div> <select type="select"
                                                     id="categorySelect" name="categorySelect" class="custom-select">
-                                                    <option value="casino">Casinos</option>
-                                                    <option value="slot">Slots</option>
+                                                    <option value='all'>전체</option>
+                                                    <option value="casino">카지노</option>
+                                                    <option value="slot">슬롯</option>
                                                 </select>
                                             </div>
 
@@ -291,7 +294,7 @@ foreach ($activeSlotProviders as $key => $value) {
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">게임사</span></div> <select type="select"
                                                     id="providerSelect" name="providerSelect" class="custom-select">
-                                                    <?= $providersCasinoOptions; ?>
+                                                    <?= $providersOptions . $providersCasinoOptions . $providersSlotOptions; ?>
                                                 </select>
                                             </div>
 
@@ -574,12 +577,20 @@ foreach ($activeSlotProviders as $key => $value) {
     //Category change -> change providers lists
     $("#categorySelect").on("change", function(event) {
         let category = $(this).val();
+
         if (category == "casino") {
-            $("#providerSelect").html("<?= $providersCasinoOptions; ?>")
+            $("#providerSelect").html("<?= $providersOptions . $providersCasinoOptions; ?>")
         }
 
         if (category == "slot") {
-            $("#providerSelect").html("<?= $providersSlotOptions; ?>")
+            $("#providerSelect").html("<?= $providersOptions . $providersSlotOptions; ?>")
+        }
+
+        if (category == "all") {
+            $("#providerSelect").html(
+                "<?= $providersOptions . $providersCasinoOptions . $providersSlotOptions; ?>")
+            $('#providerSelect option[value="evo"]').prop('selected', true);
+
         }
 
     })
