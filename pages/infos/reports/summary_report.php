@@ -241,7 +241,7 @@ foreach ($activeSlotProviders as $key => $value) {
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '정산관리', 'title_text' => 'Summary Report.', 'icon' => "news-paper")); ?>
+                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '정산관리', 'title_text' => '서머리 리포트', 'icon' => "news-paper")); ?>
 
                     <!-- main content -->
                     <section class="main">
@@ -250,7 +250,7 @@ foreach ($activeSlotProviders as $key => $value) {
                             <div class="col-md-12">
 
                                 <div class="main-card mb-3 card">
-                                    <div class="card-header" style='height: 2.5rem;'>FILTER
+                                    <div class="card-header" style='height: 2.5rem;'>필터
 
                                     </div>
                                     <div class="d-flex filter-wrapper">
@@ -337,9 +337,9 @@ foreach ($activeSlotProviders as $key => $value) {
                                         <span>
 
 
-                                            Summary Reports
+                                            서머리 리포트
 
-                                            <button class="mb-0 ml-2 btn btn-light ExcelBtn">Download Excel<span
+                                            <button class="mb-0 ml-2 btn btn-light ExcelBtn">엑셀 다운로드<span
                                                     class="badge badge-pill badge-light"><i
                                                         class="pe-7s-cloud-download"> </i></span></button>
 
@@ -350,19 +350,19 @@ foreach ($activeSlotProviders as $key => $value) {
                                             <div class="d-flex">
                                                 <button id="status_win" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-success">
-                                                        Win</div>
+                                                        승</div>
                                                 </button>
                                                 <button id="status_loss" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-danger"
-                                                        style="color:white !important;">Loss</div>
+                                                        style="color:white !important;">패</div>
                                                 </button>
                                                 <button id="status_tie" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-primary"
-                                                        style="color:white !important;">Tie</div>
+                                                        style="color:white !important;">타이</div>
                                                 </button>
                                                 <button id="status_all" class='status_ active align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-focus">
-                                                        All</div>
+                                                        모두</div>
                                                 </button>
 
 

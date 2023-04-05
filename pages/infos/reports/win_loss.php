@@ -164,7 +164,7 @@ foreach ($clients as $key => $value) {
                             <div class="col-md-12">
 
                                 <div class="main-card mb-3 card">
-                                    <div class="card-header" style='height: 2.5rem;'>FILTER
+                                    <div class="card-header" style='height: 2.5rem;'>필터
 
                                     </div>
                                     <div class="d-flex filter-wrapper">
@@ -241,19 +241,19 @@ foreach ($clients as $key => $value) {
                                             <div class="d-flex">
                                                 <button id="status_win" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-success">
-                                                        Win</div>
+                                                        승</div>
                                                 </button>
                                                 <button id="status_loss" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-danger"
-                                                        style="color:white !important;">Loss</div>
+                                                        style="color:white !important;">패</div>
                                                 </button>
                                                 <button id="status_tie" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-primary"
-                                                        style="color:white !important;">Tie</div>
+                                                        style="color:white !important;">타이</div>
                                                 </button>
                                                 <button id="status_all" class='status_ active align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-focus">
-                                                        All</div>
+                                                        모두</div>
                                                 </button>
 
 

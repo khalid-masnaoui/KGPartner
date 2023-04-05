@@ -157,7 +157,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
         if ($tableBody == '') {
-            $tableBody = '<tr> <td class="text-center" colspan="10">No Data Available!</td> </tr>';
+            $tableBody = '<tr> <td class="text-center" colspan="10">데이터 없음!</td> </tr>';
         }
 
 

@@ -294,7 +294,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         if ($tableBody == '') {
             $rowSpan = count($activeProviders) * 3 + 7;
-            $tableBody = '<tr> <td class="text-center" rowspan=2 colspan="' . $rowSpan . '"  style="font-weight:bold">No Records Found!</td> </tr>';
+            $tableBody = '<tr> <td class="text-center" rowspan=2 colspan="' . $rowSpan . '"  style="font-weight:bold">기록을 찾을 수 없음!</td> </tr>';
         } else {
             //totals
             $tableBody .= '<tr class="total-row bg-sunny-morning">';

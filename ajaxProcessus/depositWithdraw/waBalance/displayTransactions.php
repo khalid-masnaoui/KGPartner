@@ -197,7 +197,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         if ($tableBody == '') {
             $j = 7;
-            $tableBody = '<tr> <td class="text-center" colspan="' . $j . '">No Data Available!</td> </tr>';
+            $tableBody = '<tr> <td class="text-center" colspan="' . $j . '">데이터 없음!</td> </tr>';
         } else {
             $pageTotalAmount = $fmt->format($pageTotalAmount);
 

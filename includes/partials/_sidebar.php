@@ -296,7 +296,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                     <li>
                         <a href="/pages/infos/deposit_withdraw/wa_balance_transaction.php"
                             class=<?= strpos($_SERVER['REQUEST_URI'], 'wa_balance_transaction.php') !== false ? "mm-active" : ""; ?>>
-                            <i class="metismenu-icon"> </i>Points Transactions
+                            <i class="metismenu-icon"> </i>포인트 거래
                         </a>
                     </li>
 

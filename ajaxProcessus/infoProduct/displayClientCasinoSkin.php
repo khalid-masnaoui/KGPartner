@@ -175,7 +175,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         if ($tableBody == '') {
             $j = 3;
             $j += count(config::get("display/activeProviders"));
-            $tableBody = '<tr> <td class="text-center" colspan="' . $j . '">No Records Found!</td> </tr>';
+            $tableBody = '<tr> <td class="text-center" colspan="' . $j . '">기록을 찾을 수 없음!</td> </tr>';
         }
 
         $token = token::generate("display_skins");

@@ -347,7 +347,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
         if ($tableBody == '') {
-            $tableBody = '<tr> <td class="text-center" colspan="13">No Records Found!</td> </tr>';
+            $tableBody = '<tr> <td class="text-center" colspan="13">기록을 찾을 수 없음!</td> </tr>';
         }
 
         $token = token::generate("display_transaction");

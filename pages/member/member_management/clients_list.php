@@ -211,7 +211,7 @@ $modal_body = '<form class="">
         <button class="btn btn-secondary" id="add_client" onclick="addClient(event)">저장</button>
     </div>
     <div class="col-sm-10 text-center text-sm-left">
-    <button class="btn btn-secondary" id="edit_client" onclick="editClient(event)">Edit Client</button>
+    <button class="btn btn-secondary" id="edit_client" onclick="editClient(event)">클라이언트 수정</button>
 </div>
 </div>
 </form> ';
@@ -293,7 +293,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                             <div class="col-md-12">
 
                                 <div class="main-card mb-3 card">
-                                    <div class="card-header" style='height: 2.5rem;'>FILTER
+                                    <div class="card-header" style='height: 2.5rem;'>필터
 
                                     </div>
                                     <div class="filter-wrapper">

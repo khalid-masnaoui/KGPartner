@@ -262,7 +262,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
         if ($tableBody == '') {
-            $tableBody = '<tr> <td class="text-center" colspan="12">No Records Found!</td> </tr>';
+            $tableBody = '<tr> <td class="text-center" colspan="12">기록을 찾을 수 없음!</td> </tr>';
         } else {
             $pageTotalAmount = array_sum(array_column($bonusHistoryPartial, 'amount'));
 

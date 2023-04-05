@@ -232,7 +232,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                             <div class="col-md-12">
 
                                 <div class="main-card mb-3 card">
-                                    <div class="card-header" style='height: 2.5rem;'>FILTER
+                                    <div class="card-header" style='height: 2.5rem;'>필터
 
                                     </div>
                                     <div class="row mt-2 row_filter_wrapper mb-3">
