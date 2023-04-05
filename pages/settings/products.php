@@ -137,7 +137,7 @@ include __DIR__ . '/../../includes/partials/_authorization.php';
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables('./../../includes/partials/_innerheader.php', array('title' => 'API Settings', 'title_text' => 'Products List.', 'icon' => "photo-gallery")); ?>
+                    <?php includeWithVariables('./../../includes/partials/_innerheader.php', array('title' => ' API 정보', 'title_text' => '게임사 리스트.', 'icon' => "photo-gallery")); ?>
 
                     <!-- main content -->
                     <section class="main">
@@ -155,7 +155,7 @@ include __DIR__ . '/../../includes/partials/_authorization.php';
                                             <div
                                                 class="select-status input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3 col-10 mt-2 pl-0 pr-0 ml-4">
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">Category</span>
+                                                        class="input-group-text">카테고리</span>
                                                 </div>
                                                 <select type="select" id="categorySelect" name="categorySelect"
                                                     class="custom-select">
@@ -165,7 +165,7 @@ include __DIR__ . '/../../includes/partials/_authorization.php';
                                                 </select>
                                             </div>
                                             <button
-                                                class="btn btn-primary filter_productslist filter_btn mt-2 ml-4 mr-4">Submit</button>
+                                                class="btn btn-primary filter_productslist filter_btn mt-2 ml-4 mr-4">검색</button>
 
                                         </div>
 
@@ -186,7 +186,7 @@ include __DIR__ . '/../../includes/partials/_authorization.php';
                                         <span>
 
 
-                                            Products List
+                                            게임사 리스트
 
 
                                         </span>
@@ -249,11 +249,11 @@ include __DIR__ . '/../../includes/partials/_authorization.php';
                                             <thead>
                                                 <tr>
                                                     <th class="text-center">#</th>
-                                                    <th class="text-center">Product Id</th>
-                                                    <th class="text-center">Product Name</th>
-                                                    <th class="text-center">Product Name Korean</th>
-                                                    <th class="text-center">Product Type</th>
-                                                    <th class="text-center">Status</th>
+                                                    <th class="text-center"> 게임사 ID</th>
+                                                    <th class="text-center">게임사(영문)</th>
+                                                    <th class="text-center">게임사(한글)</th>
+                                                    <th class="text-center">Type</th>
+                                                    <th class="text-center">상태</th>
                                                 </tr>
                                             </thead>
                                             <tbody class='table-body-productslist'>
