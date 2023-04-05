@@ -54,107 +54,107 @@ foreach ($activeProviders as $key => $value) {
 
     <?php include __DIR__ . '/../../../includes/files/_stylesheets.php'; ?>
     <style>
-        .filter-wrapper {
-            /* margin-top: 20px;
+    .filter-wrapper {
+        /* margin-top: 20px;
         margin-bottom: 20px;
         margin-left: 20px; */
-            /* width:100%; */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        /* width:100%; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
 
-        }
+    }
 
-        .row_filter_wrapper {
-            flex: 2;
-            width: 100%;
+    .row_filter_wrapper {
+        flex: 2;
+        width: 100%;
 
+    }
+
+    .clslct {
+        margin-right: 10px;
+
+    }
+
+    .filter_btn {
+        margin-left: 20px;
+    }
+
+    .btn_action {
+        width: max-content;
+    }
+
+    .status_ {
+        border: none;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1500px) {
+        .filter-wrapper {
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .clslct {
-            margin-right: 10px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+
+        }
+    }
+
+    @media (max-width: 767px) {
+        .f-user {
+            margin-top: 0.5rem !important;
 
         }
 
-        .filter_btn {
-            margin-left: 20px;
+    }
+
+    @media (max-width: 576px) {
+        .row_filter_wrapper>div {
+
+
+            width: 88% !important;
+            /* flex-direction:column; */
         }
 
-        .btn_action {
-            width: max-content;
+    }
+
+    @media (max-width: 595px) {
+        .card-header2 {
+            flex-direction: column;
+            height: 5.4rem !important;
+        }
+    }
+
+    @media (max-width: 410px) {
+        .card-header2 {
+            height: 6.4rem !important;
         }
 
-        .status_ {
-            border: none;
-            background: transparent;
-            margin: 0;
-            padding: 0;
-            cursor: pointer;
+        .card-header2 {
+            height: 6.4rem !important;
         }
 
-        @media (max-width: 1500px) {
-            .filter-wrapper {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .clslct {
-                margin-bottom: 20px;
-                margin-left: 10px;
-
-            }
-        }
-
-        @media (max-width: 767px) {
-            .f-user {
-                margin-top: 0.5rem !important;
-
-            }
+        .status_number_wrapper {
+            flex-direction: column;
 
         }
+    }
 
-        @media (max-width: 576px) {
-            .row_filter_wrapper>div {
+    .nav-tabs .nav-link.active {
+        color: #fff;
+        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
+        /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
+    }
 
-
-                width: 88% !important;
-                /* flex-direction:column; */
-            }
-
-        }
-
-        @media (max-width: 595px) {
-            .card-header2 {
-                flex-direction: column;
-                height: 5.4rem !important;
-            }
-        }
-
-        @media (max-width: 410px) {
-            .card-header2 {
-                height: 6.4rem !important;
-            }
-
-            .card-header2 {
-                height: 6.4rem !important;
-            }
-
-            .status_number_wrapper {
-                flex-direction: column;
-
-            }
-        }
-
-        .nav-tabs .nav-link.active {
-            color: #fff;
-            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
-            /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
-        }
-
-        .nav-tabs .nav-link.active:hover {
-            color: #fff !important;
-        }
+    .nav-tabs .nav-link.active:hover {
+        color: #fff !important;
+    }
 
     </style>
 </head>
@@ -179,7 +179,7 @@ foreach ($activeProviders as $key => $value) {
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => 'Reports', 'title_text' => 'Transactions History.', 'icon' => "news-paper")); ?>
+                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '정산관리', 'title_text' => '게임내역', 'icon' => "news-paper")); ?>
 
                     <!-- main content -->
                     <section class="main">
@@ -197,9 +197,8 @@ foreach ($activeProviders as $key => $value) {
                                             <div
                                                 class="select-provider input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3 col-10  ml-1 pl-0 pr-0 ml-4">
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">Provider</span></div> <select
-                                                    type="select" id="providerSelect" name="providerSelect"
-                                                    class="custom-select">
+                                                        class="input-group-text">게임사</span></div> <select type="select"
+                                                    id="providerSelect" name="providerSelect" class="custom-select">
                                                     <?= $providersOptions; ?>
                                                 </select>
                                             </div>
@@ -207,15 +206,15 @@ foreach ($activeProviders as $key => $value) {
                                             <div class="f1 f-user input-group col-md-5 col-lg-4 col-xl-3 col-10 ml-1 pl-0 pr-0  mt-2 mt-sm-0 ml-4 ml-xl-1"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">Username</span></div>
+                                                        class="input-group-text">아이디</span></div>
                                                 <input placeholder="" type="text" id='player_name_filtered'
                                                     class="form-control shadow-none">
                                             </div>
 
                                             <div class="f1 input-group col-md-5 col-lg-4 col-xl-3 col-10 ml-1 pl-0 pr-0  mt-2 mt-xl-0 ml-4 ml-xl-1"
                                                 style='width:unset;'>
-                                                <div class="input-group-prepend"><span
-                                                        class="input-group-text">Transaction ID</span></div>
+                                                <div class="input-group-prepend"><span class="input-group-text"> 트랜잭션
+                                                        ID</span></div>
                                                 <input placeholder="" type="text" id='transaction_filtered'
                                                     class="form-control shadow-none">
                                             </div>
@@ -223,16 +222,17 @@ foreach ($activeProviders as $key => $value) {
                                             <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5  col-10 col-lg-4 col-xl-3 mt-2  ml-1 pl-0 pr-0 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">StartDate</span></div>
+                                                        class="input-group-text">시작일</span></div>
                                                 <input placeholder="" type="date"
-                                                    class="form-control shadow-none startdate" value=<?= date("Y-m-d") ?>>
+                                                    class="form-control shadow-none startdate"
+                                                    value=<?= date("Y-m-d") ?>>
                                             </div>
 
 
                                             <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3 col-10  mt-2  ml-1 pl-0 pr-0 ml-4 ml-xl-1"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">EndDate</span></div>
+                                                        class="input-group-text">종료일</span></div>
                                                 <input placeholder="" type="date"
                                                     class="form-control shadow-none enddate" value=<?= date("Y-m-d") ?>>
                                             </div>
@@ -240,9 +240,8 @@ foreach ($activeProviders as $key => $value) {
                                             <div
                                                 class="select-status input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3 col-10 mt-2 pl-0 pr-0 ml-4 ml-xl-1">
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">Status</span></div> <select
-                                                    type="select" id="statusSelect" name="statusSelect"
-                                                    class="custom-select">
+                                                        class="input-group-text">상태</span></div> <select type="select"
+                                                    id="statusSelect" name="statusSelect" class="custom-select">
                                                     <option value="all">All</option>
                                                     <option value="pending">Pending</option>
                                                     <option value="proceeded">Proceeded</option>
@@ -250,7 +249,7 @@ foreach ($activeProviders as $key => $value) {
                                             </div>
 
                                             <button
-                                                class="btn btn-primary filter_transaction filter_btn mt-2 ml-4 mr-4">Submit</button>
+                                                class="btn btn-primary filter_transaction filter_btn mt-2 ml-4 mr-4">검색</button>
 
                                         </div>
 
@@ -287,7 +286,7 @@ foreach ($activeProviders as $key => $value) {
                                         <span>
 
 
-                                            Transaction History
+                                            게임내역
 
 
                                         </span>
@@ -358,18 +357,18 @@ foreach ($activeProviders as $key => $value) {
                                             <thead>
                                                 <tr>
                                                     <th class="text-center">#</th>
-                                                    <th class="text-center">Transaction Id</th>
-                                                    <th class="text-center">Client</th>
-                                                    <th class="text-center">Parent</th>
-                                                    <th class="text-center">Player ID</th>
-                                                    <th class="text-center">Prefix_Username</th>
-                                                    <th class="text-center">Provider</th>
-                                                    <th class="text-center">Game Name</th>
-                                                    <th class="text-center">AG Response</th>
-                                                    <th class="text-center">Bet Result </th>
-                                                    <th class="text-center">Debit</th>
-                                                    <th class="text-center">Credit</th>
-                                                    <th class="text-center">Date</th>
+                                                    <th class="text-center">트랜잭션 ID</th>
+                                                    <th class="text-center">소속 고객사</th>
+                                                    <th class="text-center">상위 파트너</th>
+                                                    <th class="text-center">회원 ID</th>
+                                                    <th class="text-center">프리픽스_아이디</th>
+                                                    <th class="text-center">게임사</th>
+                                                    <th class="text-center">게임명</th>
+                                                    <th class="text-center">상태</th>
+                                                    <th class="text-center">결과 </th>
+                                                    <th class="text-center">베팅금액</th>
+                                                    <th class="text-center">당첨금액</th>
+                                                    <th class="text-center">일시</th>
                                                 </tr>
                                             </thead>
                                             <tbody class='table-body-transaction'>
@@ -412,103 +411,152 @@ foreach ($activeProviders as $key => $value) {
     <?php include __DIR__ . '/../../../includes/files/_scripts.php'; ?>
 
     <script>
-        // document.querySelector(".startdate").value="2022-03-05";
-        // document.querySelector(".enddate").value="2022-03-05";
+    // document.querySelector(".startdate").value="2022-03-05";
+    // document.querySelector(".enddate").value="2022-03-05";
 
 
-        // --- DISPLAY WIN/LOSS TRANSACTIONS ----
-        function displayTransactions(N = 1, status = 'all') {
+    // --- DISPLAY WIN/LOSS TRANSACTIONS ----
+    function displayTransactions(N = 1, status = 'all') {
 
-            var activePage = $(".navigation_transaction li.page-item.active a").text();
-            var activeNumber = $(".active-transaction-number").text();
-            activeNumber = activeNumber.trim();
+        var activePage = $(".navigation_transaction li.page-item.active a").text();
+        var activeNumber = $(".active-transaction-number").text();
+        activeNumber = activeNumber.trim();
 
-            // if (N == true) {
-            //     N = activePage;
-            // }
-            var provider = $("#providerSelect").val();
-            var transaction = $("#transaction_filtered").val();
-            var text = $("#player_name_filtered").val();
-            var startDate = $(".startdate").val();
-            var endDate = $(".enddate").val();
+        // if (N == true) {
+        //     N = activePage;
+        // }
+        var provider = $("#providerSelect").val();
+        var transaction = $("#transaction_filtered").val();
+        var text = $("#player_name_filtered").val();
+        var startDate = $(".startdate").val();
+        var endDate = $(".enddate").val();
 
-            var transactionStatus = $("#statusSelect").val();
+        var transactionStatus = $("#statusSelect").val();
 
-            var client = $("#clientSelect").val()
-
-
-            var token = $("#token_display").val();
-
-            $.ajax({
-                url: '/ajaxProcessus/infoReports/displayTransaction.php',
-                type: 'POST',
-                data: {
-                    "display": true,
-                    "page": N,
-                    "number": activeNumber,
-                    provider,
-                    transaction,
-                    "nameFilter": text,
-                    startDate,
-                    endDate,
-                    transactionStatus,
-                    client,
-                    status,
-                    token
-                },
-                // contentType: false,
-                // processData: false, 
-                cache: false,
-                timeout: 10000,
-                // cache: false,
-                // dataType: 'json', 
-
-                success: function (data) {
-                    // var num = data.indexOf("<!DOCTYPE html>");
-                    // var rese = data.substr(0, num);
-                    // rese = rese.trim();
-                    // console.log(data);
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-                    rese = JSON.parse(data);
-
-                    // console.log(rese[0]);
-                    let length = rese.length;
+        var client = $("#clientSelect").val()
 
 
-                    if (length == 4) { //success
-                        $(".table-body-transaction").html(rese[0]);
-                        $(".navigation_transaction").html(rese[1]);
+        var token = $("#token_display").val();
 
-                        $("#token_display").val(rese[3]);
-                    } else if (length == 1) { //csrf error
-                        $("#token_display").val(rese[0]);
+        $.ajax({
+            url: '/ajaxProcessus/infoReports/displayTransaction.php',
+            type: 'POST',
+            data: {
+                "display": true,
+                "page": N,
+                "number": activeNumber,
+                provider,
+                transaction,
+                "nameFilter": text,
+                startDate,
+                endDate,
+                transactionStatus,
+                client,
+                status,
+                token
+            },
+            // contentType: false,
+            // processData: false, 
+            cache: false,
+            timeout: 10000,
+            // cache: false,
+            // dataType: 'json', 
 
-                    } else {
-                        //refresh page;
-                        location.reload();
-                    }
+            success: function(data) {
+                // var num = data.indexOf("<!DOCTYPE html>");
+                // var rese = data.substr(0, num);
+                // rese = rese.trim();
+                // console.log(data);
+                if (data == 'unauthorized' || data == '') {
+                    window.location.href = '/pages/errors/403.php';
+                    return;
+                }
+                rese = JSON.parse(data);
+
+                // console.log(rese[0]);
+                let length = rese.length;
 
 
+                if (length == 4) { //success
+                    $(".table-body-transaction").html(rese[0]);
+                    $(".navigation_transaction").html(rese[1]);
 
+                    $("#token_display").val(rese[3]);
+                } else if (length == 1) { //csrf error
+                    $("#token_display").val(rese[0]);
+
+                } else {
+                    //refresh page;
+                    location.reload();
                 }
 
 
-            })
+
+            }
+
+
+        })
+    }
+
+
+    //NUMBERS DISPLAYED PER PAGE
+    $(".transaction_number_options button").on("click", function(event) {
+
+        var number = event.currentTarget.textContent;
+        $(".active-transaction-number").text(number);
+
+        let id = $(".status_.active").attr("id");
+
+        let status = 'all';
+
+        if (id == "status_win") {
+            status = "win";
+        } else if (id == "status_loss") {
+            status = "loss";
+        } else if (id == "status_tie") {
+            status = "tie";
+
+        } else if (id == "status_cancel") {
+            status = "cancel";
+
         }
 
+        displayTransactions(1, status);
+    })
 
-        //NUMBERS DISPLAYED PER PAGE
-        $(".transaction_number_options button").on("click", function (event) {
+    function resetStatusFilter() {
+        $(".status_").css("opacity", 1);
+        $(".status_").removeClass("active");
+        $("#status_all").addClass("active");
+    }
 
-            var number = event.currentTarget.textContent;
-            $(".active-transaction-number").text(number);
+    //FILTERs
+    $(".filter_transaction").on("click", function(event) {
+        resetStatusFilter();
 
-            let id = $(".status_.active").attr("id");
+        displayTransactions();
+    })
 
-            let status = 'all';
+    //CLIENT SELECT
+    $("#clientSelect").change(function(event) {
+        displayTransactions();
+    })
+
+    //status filter
+    $(".status_").click(function(event) {
+        let status = '';
+        let id = $(event.currentTarget).attr("id");
+        if (id == "status_all") {
+            $(".status_").css("opacity", 1);
+
+            $(".status_").removeClass("active");
+            $(this).addClass("active");
+
+            status = "all";
+
+        } else {
+            $(".status_").css("opacity", 0.2);
+            $(this).css("opacity", 1);
 
             if (id == "status_win") {
                 status = "win";
@@ -516,73 +564,24 @@ foreach ($activeProviders as $key => $value) {
                 status = "loss";
             } else if (id == "status_tie") {
                 status = "tie";
-
             } else if (id == "status_cancel") {
                 status = "cancel";
 
             }
 
-            displayTransactions(1, status);
-        })
-
-        function resetStatusFilter() {
-            $(".status_").css("opacity", 1);
             $(".status_").removeClass("active");
-            $("#status_all").addClass("active");
+            $(this).addClass("active");
         }
 
-        //FILTERs
-        $(".filter_transaction").on("click", function (event) {
-            resetStatusFilter();
+        displayTransactions(1, status);
 
-            displayTransactions();
-        })
+    })
 
-        //CLIENT SELECT
-        $("#clientSelect").change(function (event) {
-            displayTransactions();
-        })
+    document.addEventListener('DOMContentLoaded', (event) => {
 
-        //status filter
-        $(".status_").click(function (event) {
-            let status = '';
-            let id = $(event.currentTarget).attr("id");
-            if (id == "status_all") {
-                $(".status_").css("opacity", 1);
+        displayTransactions(0);
 
-                $(".status_").removeClass("active");
-                $(this).addClass("active");
-
-                status = "all";
-
-            } else {
-                $(".status_").css("opacity", 0.2);
-                $(this).css("opacity", 1);
-
-                if (id == "status_win") {
-                    status = "win";
-                } else if (id == "status_loss") {
-                    status = "loss";
-                } else if (id == "status_tie") {
-                    status = "tie";
-                } else if (id == "status_cancel") {
-                    status = "cancel";
-
-                }
-
-                $(".status_").removeClass("active");
-                $(this).addClass("active");
-            }
-
-            displayTransactions(1, status);
-
-        })
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-
-            displayTransactions(0);
-
-        });
+    });
     </script>
 </body>
 

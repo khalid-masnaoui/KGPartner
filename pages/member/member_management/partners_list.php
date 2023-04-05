@@ -154,22 +154,22 @@ foreach ($partners as $key => $value) {
 
 <?php include __DIR__ . '/../../../includes/partials/_flash_msg.php'; ?>
 <?php
-$modal_title = 'Add Partner';
+$modal_title = '신규 파트너 생성';
 $modal_body = '<form class="">
-<div class="position-relative row form-group"><label for="username" class="col-sm-2 col-form-label">Username</label>
-    <div class="col-sm-10"><input name="username" id="username" placeholder="username" type="text" class="form-control shadow-none">
+<div class="position-relative row form-group"><label for="username" class="col-sm-2 col-form-label">아이디</label>
+    <div class="col-sm-10"><input name="username" id="username" placeholder="아이디" type="text" class="form-control shadow-none">
                         <div class="invalid-feedback"></div>
     </div>
 </div>
-<div class="position-relative row form-group password"><label for="password" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10"><input name="password" id="password" placeholder="password" type="text" class="form-control shadow-none">
+<div class="position-relative row form-group password"><label for="password" class="col-sm-2 col-form-label">비밀번호</label>
+    <div class="col-sm-10"><input name="password" id="password" placeholder="비밀번호" type="text" class="form-control shadow-none">
                         <div class="invalid-feedback"></div>
     </div>
 </div>
 
 
-<div  class="position-relative row form-group partnerRate" ><label for="partnerRate" class="col-sm-2 col-form-label">Commission Rate (%)</label>
-    <div class="col-sm-10"><input name="partnerRate" id="partnerRate" placeholder="Partner Commission Rate..." type="text" class="form-control shadow-none">
+<div  class="position-relative row form-group partnerRate" ><label for="partnerRate" class="col-sm-2 col-form-label">요율 (%)</label>
+    <div class="col-sm-10"><input name="partnerRate" id="partnerRate" placeholder="요율" type="text" class="form-control shadow-none">
     <div class="invalid-feedback"></div>
     </div>
 </div>
@@ -179,17 +179,17 @@ $modal_body = '<form class="">
 
 	
 <fieldset class="position-relative row form-group">
-    <div class="legend col-sm-2">    <legend class="col-form-label col-sm-2">Status</legend>    </div>
+    <div class="legend col-sm-2">    <legend class="col-form-label col-sm-2">상태</legend>    </div>
     <div class="col-sm-10">
-        <div class="position-relative form-check"><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" value="0"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-warning" style="color:white !important;">Pending</div></label></div>
-        <div class="position-relative form-check"><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" checked value="1"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-success">Active</div></label></div>
-        <div class="position-relative form-check "><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" value="3"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-danger">Blocked</div></label></div>
+        <div class="position-relative form-check"><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" value="0"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-warning" style="color:white !important;">대기</div></label></div>
+        <div class="position-relative form-check"><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" checked value="1"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-success">정상</div></label></div>
+        <div class="position-relative form-check "><label class="form-check-label"><input name="status" class="status" type="radio" class="form-check-input" value="3"><div class="ml-2 mb-2 mr-2 badge badge-pill badge-danger">차단</div></label></div>
     </div>
 </fieldset>
 
 <div class="position-relative row form-check">
     <div class="col-sm-10 text-center text-sm-left">
-        <button class="btn btn-secondary" id="add_partner" onclick="addPartner(event)">Add Partner</button>
+        <button class="btn btn-secondary" id="add_partner" onclick="addPartner(event)">저장</button>
     </div>
     <div class="col-sm-10 text-center text-sm-left">
         <button class="btn btn-secondary" id="edit_partner" onclick="confirmEditPartner(event)">Edit Partner</button>
@@ -206,22 +206,22 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
 <?php
-$modal_title = 'Make Deposit';
+$modal_title = '포인트(알) 전송';
 $modal_body = '<form class="">
 
 
-<div class="position-relative row form-group clientSelectAdd"><label for="Client" class="col-sm-2 col-form-label">Partner</label>
+<div class="position-relative row form-group clientSelectAdd"><label for="Client" class="col-sm-2 col-form-label">파트너</label>
     <div class="col-sm-10">
         <select type="select" class="selectDeposit" id="clientSelectAdd" name="clientSelectAdd"
             class="custom-select">
-            <option value="">Pick A Partner</option>
+            <option value="">파트너 선택</option>
             ' . $optionsDropDown . '
         </select>
         <div class="invalid-feedback"></div>
     </div>
 </div>
 
-<div class="position-relative row form-group"><label for="deposit"  id="depositLabel" class="col-sm-2 col-form-label">Deposit Amount (원)</label>
+<div class="position-relative row form-group"><label for="deposit"  id="depositLabel" class="col-sm-2 col-form-label">금액 (원)</label>
     <div class="col-sm-10"><input name="depositAmount" id="depositAmount" placeholder="deposit amount..." type="text" class="form-control shadow-none">
                         <div class="invalid-feedback"></div>
     </div>
@@ -235,10 +235,10 @@ $modal_body = '<form class="">
 
 <div class="position-relative row form-check">
     <div class="col-sm-10 text-center text-sm-left">
-        <button class="btn btn-secondary" id="add_deposit" onclick="addDeposit(event)">Make Deposit</button>
+        <button class="btn btn-secondary" id="add_deposit" onclick="addDeposit(event)">지급</button>
     </div>
     <div class="col-sm-10 text-center text-sm-left">
-        <button class="btn btn-secondary" id="deduct" onclick="deductAmount(event)">Deduct</button>
+        <button class="btn btn-secondary" id="deduct" onclick="deductAmount(event)">차감</button>
     </div>
 </div>
 </form> ';
@@ -266,7 +266,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => 'Member Management', 'title_text' => 'Partners List', 'icon' => "users")); ?>
+                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '회원관리', 'title_text' => '파트너 리스트', 'icon' => "users")); ?>
 
                     <!-- main content -->
                     <section class="main">
@@ -280,13 +280,13 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     </div>
                                     <div class="filter-wrapper">
                                         <div class="input-group">
-                                            <div class="input-group-prepend"><span
-                                                    class="input-group-text">Username</span></div>
+                                            <div class="input-group-prepend"><span class="input-group-text">아이디</span>
+                                            </div>
                                             <input placeholder="" type="text" class="form-control shadow-none"
                                                 id='partner_name_filtered'>
-                                            <button class="btn btn-primary filter_btn filter_partners">Submit</button>
+                                            <button class="btn btn-primary filter_btn filter_partners">검색</button>
                                             <button
-                                                class="btn btn-secondary filter_btn filter_partners_reset">Reset</button>
+                                                class="btn btn-secondary filter_btn filter_partners_reset">초기화</button>
 
                                         </div>
                                     </div>
@@ -308,26 +308,26 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
                                         <span>
-                                            Partners List
+                                            파트너 리스트
 
                                         </span>
                                         <div class="d-flex status_number_wrapper">
                                             <div class="d-flex">
                                                 <button id="status_active" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-success">
-                                                        Active</div>
+                                                        정상</div>
                                                 </button>
                                                 <button id="status_pending" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-warning"
-                                                        style="color:white !important;">Pending</div>
+                                                        style="color:white !important;">대기</div>
                                                 </button>
                                                 <button id="status_blocked" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-danger">
-                                                        Blocked</div>
+                                                        차단</div>
                                                 </button>
                                                 <button id="status_all" class='status_ active align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-focus">
-                                                        All</div>
+                                                        모두</div>
                                                 </button>
 
 
@@ -363,15 +363,15 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     </div>
                                     <div class="btn_read ml-3">
                                         <button class="mb-2 mt-2 ml-2 btn btn-success active" data-toggle="modal"
-                                            data-target=".add_partner" onclick=hideEditableInputsAndShow()>Add
-                                            Partner</button>
+                                            data-target=".add_partner" onclick=hideEditableInputsAndShow()> 신규 파트너
+                                            생성</button>
 
                                         <button class="mb-2 mt-2 ml-2 btn btn-light active" data-toggle="modal"
-                                            data-target=".add_deposit" onclick=hideEditableInputsAndShow2()>Make
-                                            Deposit <span style="font-weight: bolder;color: black;">+</span></button>
+                                            data-target=".add_deposit" onclick=hideEditableInputsAndShow2()>포인트 지급 <span
+                                                style="font-weight: bolder;color: black;">+</span></button>
 
                                         <button class="mb-2 mt-2 ml-2 btn btn-light active" data-toggle="modal"
-                                            data-target=".add_deposit" onclick=hideEditableInputsAndShowDeduct()>Deduct
+                                            data-target=".add_deposit" onclick=hideEditableInputsAndShowDeduct()>포인트 차감
                                             <span style="font-weight: bolder;color: black;">-</span> </button>
                                     </div>
                                     <div class="table-responsive mb-3">
@@ -396,11 +396,11 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                             <thead>
                                                 <tr>
                                                     <th class="text-center">#</th>
-                                                    <th class="text-center">Username</th>
-                                                    <th class="text-center">Points </th>
-                                                    <th class="text-center">Rate</th>
-                                                    <th class="text-center">Parent</th>
-                                                    <th class="text-center">Status </th>
+                                                    <th class="text-center">아이디</th>
+                                                    <th class="text-center">포인트(알) </th>
+                                                    <th class="text-center">요율</th>
+                                                    <th class="text-center">상위파트너</th>
+                                                    <th class="text-center">상태 </th>
                                                     <th class="text-center">Action</th>
                                                 </tr>
                                             </thead>

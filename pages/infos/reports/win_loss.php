@@ -41,96 +41,96 @@ foreach ($clients as $key => $value) {
 
     <?php include __DIR__ . '/../../../includes/files/_stylesheets.php'; ?>
     <style>
+    .filter-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+
+    .row_filter_wrapper {
+        flex: 2;
+        width: 100%;
+
+    }
+
+    .clslct {
+        margin-right: 10px;
+
+    }
+
+    .filter_btn {
+        margin-left: 20px;
+    }
+
+    .btn_action {
+        width: max-content;
+    }
+
+    .status_ {
+        border: none;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1500px) {
         .filter-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-
-        }
-
-        .row_filter_wrapper {
-            flex: 2;
-            width: 100%;
-
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .clslct {
-            margin-right: 10px;
+            margin-bottom: 20px;
+            margin-left: 10px;
 
         }
+    }
 
-        .filter_btn {
-            margin-left: 20px;
+
+    @media (max-width: 576px) {
+        .row_filter_wrapper>div {
+
+
+            width: 88% !important;
+            /* flex-direction:column; */
         }
 
-        .btn_action {
-            width: max-content;
+    }
+
+    @media (max-width: 540px) {
+        .card-header2 {
+            flex-direction: column;
+            height: 5.4rem !important;
+        }
+    }
+
+    @media (max-width: 440px) {
+        .card-header2 {
+            height: 6.4rem !important;
         }
 
-        .status_ {
-            border: none;
-            background: transparent;
-            margin: 0;
-            padding: 0;
-            cursor: pointer;
+        .card-header2 {
+            height: 6.4rem !important;
         }
 
-        @media (max-width: 1500px) {
-            .filter-wrapper {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .clslct {
-                margin-bottom: 20px;
-                margin-left: 10px;
-
-            }
-        }
-
-
-        @media (max-width: 576px) {
-            .row_filter_wrapper>div {
-
-
-                width: 88% !important;
-                /* flex-direction:column; */
-            }
+        .status_number_wrapper {
+            flex-direction: column;
 
         }
+    }
 
-        @media (max-width: 540px) {
-            .card-header2 {
-                flex-direction: column;
-                height: 5.4rem !important;
-            }
-        }
+    .nav-tabs .nav-link.active {
+        color: #fff;
+        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
+        /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
+    }
 
-        @media (max-width: 440px) {
-            .card-header2 {
-                height: 6.4rem !important;
-            }
-
-            .card-header2 {
-                height: 6.4rem !important;
-            }
-
-            .status_number_wrapper {
-                flex-direction: column;
-
-            }
-        }
-
-        .nav-tabs .nav-link.active {
-            color: #fff;
-            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
-            /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
-        }
-
-        .nav-tabs .nav-link.active:hover {
-            color: #fff !important;
-        }
+    .nav-tabs .nav-link.active:hover {
+        color: #fff !important;
+    }
 
     </style>
 </head>
@@ -155,7 +155,7 @@ foreach ($clients as $key => $value) {
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => 'Reports', 'title_text' => 'Winning & Losing Reports.', 'icon' => "news-paper")); ?>
+                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '정산관리', 'title_text' => '윈로스 보고서', 'icon' => "news-paper")); ?>
 
                     <!-- main content -->
                     <section class="main">
@@ -173,28 +173,29 @@ foreach ($clients as $key => $value) {
                                             <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3  ml-1 pl-0 pr-0 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">StartDate</span></div>
+                                                        class="input-group-text">시작일</span></div>
                                                 <input placeholder="" type="date"
-                                                    class="form-control shadow-none startdate" value=<?= date("Y-m-d") ?>>
+                                                    class="form-control shadow-none startdate"
+                                                    value=<?= date("Y-m-d") ?>>
                                             </div>
 
 
                                             <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3  mt-2 mt-sm-0 ml-1 pl-0 pr-0 ml-4 ml-sm-1"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">EndDate</span></div>
+                                                        class="input-group-text">종료일</span></div>
                                                 <input placeholder="" type="date"
                                                     class="form-control shadow-none enddate" value=<?= date("Y-m-d") ?>>
                                             </div>
                                             <div class="f1 input-group col-md-5 col-lg-4 col-xl-3 ml-1 pl-0 pr-0  mt-2 mt-xl-0 ml-4 ml-xl-1"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
-                                                        class="input-group-text">Username</span></div>
+                                                        class="input-group-text">아이디</span></div>
                                                 <input placeholder="" type="text" id='player_name_filtered'
                                                     class="form-control shadow-none">
                                             </div>
                                             <button
-                                                class="btn btn-primary filter_winloss filter_btn mt-2 ml-4 mt-xl-0">Submit</button>
+                                                class="btn btn-primary filter_winloss filter_btn mt-2 ml-4 mt-xl-0">검색</button>
 
                                         </div>
 
@@ -231,7 +232,7 @@ foreach ($clients as $key => $value) {
                                         <span>
 
 
-                                            Win Loss Details
+                                            윈로스 내역
 
 
                                         </span>
@@ -298,16 +299,16 @@ foreach ($clients as $key => $value) {
                                             <thead>
                                                 <tr>
                                                     <th class="text-center">#</th>
-                                                    <th class="text-center">Player Id</th>
-                                                    <th class="text-center">Prefix_Username</th>
-                                                    <th class="text-center">Client</th>
-                                                    <th class="text-center">Parent</th>
-                                                    <th class="text-center">Wager Count</th>
-                                                    <th class="text-center">Turnover</th>
-                                                    <th class="text-center">Member Win</th>
-                                                    <th class="text-center">AG Win </th>
-                                                    <th class="text-center">Company</th>
-                                                    <th class="text-center">JackBot Contribution</th>
+                                                    <th class="text-center">회원 ID</th>
+                                                    <th class="text-center">프리픽스_아이디</th>
+                                                    <th class="text-center">소속 고객사</th>
+                                                    <th class="text-center">상위 파트너</th>
+                                                    <th class="text-center">베팅횟수</th>
+                                                    <th class="text-center"> 베팅금액</th>
+                                                    <th class="text-center">회원승 (KRW)</th>
+                                                    <th class="text-center"> 파트너승 (KRW) </th>
+                                                    <th class="text-center">본사승 (KRW)</th>
+                                                    <th class="text-center">잭팟 컨트리뷰선 (KRW)</th>
 
                                                 </tr>
                                             </thead>
@@ -351,96 +352,141 @@ foreach ($clients as $key => $value) {
     <?php include __DIR__ . '/../../../includes/files/_scripts.php'; ?>
 
     <script>
-        // document.querySelector(".startdate").value="2022-03-05";
-        // document.querySelector(".enddate").value="2022-03-05";
+    // document.querySelector(".startdate").value="2022-03-05";
+    // document.querySelector(".enddate").value="2022-03-05";
 
 
-        // --- DISPLAY WIN/LOSS TRANSACTIONS ----
-        function displayWinLoss(N = 1, status = 'all') {
+    // --- DISPLAY WIN/LOSS TRANSACTIONS ----
+    function displayWinLoss(N = 1, status = 'all') {
 
-            var activePage = $(".navigation_winloss li.page-item.active a").text();
-            var activeNumber = $(".active-winloss-number").text();
-            activeNumber = activeNumber.trim();
+        var activePage = $(".navigation_winloss li.page-item.active a").text();
+        var activeNumber = $(".active-winloss-number").text();
+        activeNumber = activeNumber.trim();
 
-            // if (N == true) {
-            //     N = activePage;
-            // }
-            var text = $("#player_name_filtered").val();
-            var startDate = $(".startdate").val();
-            var endDate = $(".enddate").val();
+        // if (N == true) {
+        //     N = activePage;
+        // }
+        var text = $("#player_name_filtered").val();
+        var startDate = $(".startdate").val();
+        var endDate = $(".enddate").val();
 
-            var client = $("#clientSelect").val()
-
-
-            var token = $("#token_display").val();
-
-            $.ajax({
-                url: '/ajaxProcessus/infoReports/displayWinLoss.php',
-                type: 'POST',
-                data: {
-                    "display": true,
-                    "page": N,
-                    "number": activeNumber,
-                    "nameFilter": text,
-                    startDate,
-                    endDate,
-                    client,
-                    "status": status,
-                    token
-                },
-                // contentType: false,
-                // processData: false, 
-                cache: false,
-                timeout: 10000,
-                // cache: false,
-                // dataType: 'json', 
-
-                success: function (data) {
-                    // var num = data.indexOf("<!DOCTYPE html>");
-                    // var rese = data.substr(0, num);
-                    // rese = rese.trim();
-                    // console.log(data);
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-                    rese = JSON.parse(data);
-
-                    // console.log(rese[0]);
-                    let length = rese.length;
+        var client = $("#clientSelect").val()
 
 
-                    if (length == 4) { //success
-                        $(".table-body-winloss").html(rese[0]);
-                        $(".navigation_winloss").html(rese[1]);
+        var token = $("#token_display").val();
 
-                        $("#token_display").val(rese[3]);
-                    } else if (length == 1) { //csrf error
-                        $("#token_display").val(rese[0]);
+        $.ajax({
+            url: '/ajaxProcessus/infoReports/displayWinLoss.php',
+            type: 'POST',
+            data: {
+                "display": true,
+                "page": N,
+                "number": activeNumber,
+                "nameFilter": text,
+                startDate,
+                endDate,
+                client,
+                "status": status,
+                token
+            },
+            // contentType: false,
+            // processData: false, 
+            cache: false,
+            timeout: 10000,
+            // cache: false,
+            // dataType: 'json', 
 
-                    } else {
-                        //refresh page;
-                        location.reload();
-                    }
+            success: function(data) {
+                // var num = data.indexOf("<!DOCTYPE html>");
+                // var rese = data.substr(0, num);
+                // rese = rese.trim();
+                // console.log(data);
+                if (data == 'unauthorized' || data == '') {
+                    window.location.href = '/pages/errors/403.php';
+                    return;
+                }
+                rese = JSON.parse(data);
+
+                // console.log(rese[0]);
+                let length = rese.length;
 
 
+                if (length == 4) { //success
+                    $(".table-body-winloss").html(rese[0]);
+                    $(".navigation_winloss").html(rese[1]);
 
+                    $("#token_display").val(rese[3]);
+                } else if (length == 1) { //csrf error
+                    $("#token_display").val(rese[0]);
+
+                } else {
+                    //refresh page;
+                    location.reload();
                 }
 
 
-            })
+
+            }
+
+
+        })
+    }
+
+
+    //NUMBERS DISPLAYED PER PAGE
+    $(".winloss_number_options button").on("click", function(event) {
+
+        var number = event.currentTarget.textContent;
+        $(".active-winloss-number").text(number);
+
+        let id = $(".status_.active").attr("id");
+
+        let status = 'all';
+
+        if (id == "status_win") {
+            status = "win";
+        } else if (id == "status_loss") {
+            status = "loss";
+        } else if (id == "status_tie") {
+            status = "tie";
         }
 
+        displayWinLoss(1, status);
+    })
 
-        //NUMBERS DISPLAYED PER PAGE
-        $(".winloss_number_options button").on("click", function (event) {
+    function resetStatusFilter() {
+        $(".status_").css("opacity", 1);
+        $(".status_").removeClass("active");
+        $("#status_all").addClass("active");
+    }
 
-            var number = event.currentTarget.textContent;
-            $(".active-winloss-number").text(number);
+    //USERNAME FILTER
+    $(".filter_winloss").on("click", function(event) {
+        resetStatusFilter();
 
-            let id = $(".status_.active").attr("id");
+        displayWinLoss();
+    })
 
-            let status = 'all';
+    //CLIENT SELECT
+    $("#clientSelect").change(function(event) {
+        displayWinLoss();
+    })
+
+    //status filter
+    $(".status_").click(function(event) {
+        let status = '';
+        let id = $(event.currentTarget).attr("id");
+        if (id == "status_all") {
+            $(".status_").css("opacity", 1);
+
+            $(".status_").removeClass("active");
+            $(this).addClass("active");
+
+            status = "all";
+
+        } else {
+            $(".status_").css("opacity", 0.2);
+            $(this).css("opacity", 1);
 
             if (id == "status_win") {
                 status = "win";
@@ -450,67 +496,22 @@ foreach ($clients as $key => $value) {
                 status = "tie";
             }
 
-            displayWinLoss(1, status);
-        })
-
-        function resetStatusFilter() {
-            $(".status_").css("opacity", 1);
             $(".status_").removeClass("active");
-            $("#status_all").addClass("active");
+            $(this).addClass("active");
         }
 
-        //USERNAME FILTER
-        $(".filter_winloss").on("click", function (event) {
-            resetStatusFilter();
+        displayWinLoss(1, status);
 
-            displayWinLoss();
-        })
+    })
 
-        //CLIENT SELECT
-        $("#clientSelect").change(function (event) {
-            displayWinLoss();
-        })
+    document.addEventListener('DOMContentLoaded', (event) => {
 
-        //status filter
-        $(".status_").click(function (event) {
-            let status = '';
-            let id = $(event.currentTarget).attr("id");
-            if (id == "status_all") {
-                $(".status_").css("opacity", 1);
-
-                $(".status_").removeClass("active");
-                $(this).addClass("active");
-
-                status = "all";
-
-            } else {
-                $(".status_").css("opacity", 0.2);
-                $(this).css("opacity", 1);
-
-                if (id == "status_win") {
-                    status = "win";
-                } else if (id == "status_loss") {
-                    status = "loss";
-                } else if (id == "status_tie") {
-                    status = "tie";
-                }
-
-                $(".status_").removeClass("active");
-                $(this).addClass("active");
-            }
-
-            displayWinLoss(1, status);
-
-        })
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-
-            displayWinLoss(0);
-            // clearModalInvalidFeedbacks();
+        displayWinLoss(0);
+        // clearModalInvalidFeedbacks();
 
 
 
-        });
+    });
     </script>
 </body>
 

@@ -193,7 +193,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             // add page Total
             $tableBody .= '<tr style="font-weight:bold" class="bg-sunny-morning">';
 
-            $tableBody .= '<td class="text-left">Page Total</td>';
+            $tableBody .= '<td class="text-left">페이지 합계</td>';
             $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center"></td>';
@@ -213,7 +213,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $tableBody .= '<tr style="font-weight:bold" class="bg-sunny-morning">';
 
-            $tableBody .= '<td class="text-left">Total</td>';
+            $tableBody .= '<td class="text-left">총 합계</td>';
             $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center"></td>';

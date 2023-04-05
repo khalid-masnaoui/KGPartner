@@ -95,7 +95,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                 <li class=<?= strpos($_SERVER['REQUEST_URI'], 'member_management/') !== false ? "mm-active" : ""; ?>>
                     <a href="#"
                         aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'member_management/') !== false ? "true" : "false"; ?>>
-                        <i class="metismenu-icon pe-7s-users"></i> Member Management
+                        <i class="metismenu-icon pe-7s-users"></i> 회원관리
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
 
@@ -104,13 +104,13 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                         <li>
                             <a href="/pages/member/member_management/partners_list.php"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'partners_list.php') !== false ? "mm-active" : ""; ?>>
-                                <i class="metismenu-icon"></i> Partners List
+                                <i class="metismenu-icon"></i> 파트너 리스트
                             </a>
                         </li>
                         <li>
                             <a href="/pages/member/member_management/clients_list.php"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'clients_list.php') !== false ? "mm-active" : ""; ?>>
-                                <i class="metismenu-icon"></i> Clients List
+                                <i class="metismenu-icon"></i> 고객사 리스트
                             </a>
                         </li>
                     </ul>
@@ -187,7 +187,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                 <li class=<?= strpos($_SERVER['REQUEST_URI'], 'reports/') !== false ? "mm-active" : ""; ?>>
                     <a href="#"
                         aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'reports/') !== false ? "true" : "false"; ?>>
-                        <i class="metismenu-icon pe-7s-news-paper"></i> Reports
+                        <i class="metismenu-icon pe-7s-news-paper"></i> 정산관리
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul
@@ -195,20 +195,20 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                         <li>
                             <a href="/pages/infos/reports/win_loss.php"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'win_loss.php') !== false ? "mm-active" : ""; ?>>
-                                <i class="metismenu-icon"> </i>Win Loss
+                                <i class="metismenu-icon"> </i>윈로스
                             </a>
                         </li>
                         <li>
                             <a href="/pages/infos/reports/transaction_history.php"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'transaction_history.php') !== false ? "mm-active" : ""; ?>>
-                                <i class="metismenu-icon"> </i>Transaction History
+                                <i class="metismenu-icon"> </i>게임내역
                             </a>
                         </li>
 
                         <li>
                             <a href="/pages/infos/reports/summary_report.php"
                                 class=<?= strpos($_SERVER['REQUEST_URI'], 'summary_report.php') !== false ? "mm-active" : ""; ?>>
-                                <i class="metismenu-icon"> </i>Summary Report
+                                <i class="metismenu-icon"> </i>요약보고서
                             </a>
                         </li>
 
@@ -261,7 +261,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
             <li class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw/') !== false ? "mm-active" : ""; ?>>
                 <a href="#"
                     aria-expanded=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw/') !== false ? "true" : "false"; ?>>
-                    <i class="metismenu-icon pe-7s-wallet"></i> Deposit & withdraw
+                    <i class="metismenu-icon pe-7s-wallet"></i> 포인트관리
                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                 </a>
                 <ul
@@ -269,7 +269,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                     <li>
                         <a href="/pages/infos/deposit_withdraw/deposit_withdraw_transaction.php"
                             class=<?= strpos($_SERVER['REQUEST_URI'], 'deposit_withdraw_transaction.php') !== false ? "mm-active" : ""; ?>>
-                            <i class="metismenu-icon"> </i>Deposit Withdraw Transaction
+                            <i class="metismenu-icon"> </i>포인트 이동 내역
                         </a>
                     </li>
                     <li>
