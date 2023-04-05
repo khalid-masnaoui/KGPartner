@@ -242,9 +242,9 @@ foreach ($activeProviders as $key => $value) {
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">상태</span></div> <select type="select"
                                                     id="statusSelect" name="statusSelect" class="custom-select">
-                                                    <option value="all">All</option>
-                                                    <option value="pending">Pending</option>
-                                                    <option value="proceeded">Proceeded</option>
+                                                    <option value="all">전체</option>
+                                                    <option value="pending">대기</option>
+                                                    <option value="proceeded">정상</option>
                                                 </select>
                                             </div>
 
