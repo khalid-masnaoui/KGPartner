@@ -50,7 +50,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables(__DIR__ . '/../includes/partials/_innerheader.php', array('title' => 'Dashboard', 'title_text' => 'Dashboard conatins some of the most important informations.', 'icon' => "home")); ?>
+                    <?php includeWithVariables(__DIR__ . '/../includes/partials/_innerheader.php', array('title' => '대시보드', 'title_text' => 'Dashboard contains some of the most important informations.', 'icon' => "home")); ?>
 
                     <input type="hidden" name="token_display_stats" id="token_display_stats"
                         value="<?= token::generate("dashboard_display_stats") ?>">
@@ -73,8 +73,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                 <div class="card mb-3 widget-content bg-premium-dark">
                                     <div class="widget-content-wrapper text-white">
                                         <div class="widget-content-left">
-                                            <div class="widget-heading">Points</div>
-                                            <div class="widget-subheading">Total Points</div>
+                                            <div class="widget-heading">포인트</div>
+                                            <div class="widget-subheading">총 보유 포인트</div>
                                         </div>
                                         <div class="widget-content-right">
                                             <div class="widget-numbers text-warning">
@@ -102,8 +102,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                 <div class="card mb-3 widget-content bg-premium-dark">
                                     <div class="widget-content-wrapper text-white">
                                         <div class="widget-content-left">
-                                            <div class="widget-heading">Commissions</div>
-                                            <div class="widget-subheading">Total Commissions</div>
+                                            <div class="widget-heading">커미션</div>
+                                            <div class="widget-subheading">총 커미션</div>
                                         </div>
                                         <div class="widget-content-right">
                                             <div class="widget-numbers text-warning"><span
@@ -127,8 +127,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                                     <div class="widget-content-outer">
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">Clients</div>
-                                                                <div class="widget-subheading">Total Clients Count</div>
+                                                                <div class="widget-heading">클라이언트</div>
+                                                                <div class="widget-subheading">총 클라이언트 수</div>
                                                             </div>
                                                             <div class="widget-content-right">
                                                                 <div class="widget-numbers text-success"> <span
@@ -143,8 +143,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                                     <div class="widget-content-outer">
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">Players</div>
-                                                                <div class="widget-subheading">Total Players Count
+                                                                <div class="widget-heading">유저</div>
+                                                                <div class="widget-subheading">총 유저 수
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-right">
@@ -166,8 +166,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                                     <div class="widget-content-outer">
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">Active Clients</div>
-                                                                <div class="widget-subheading">Percentage
+                                                                <div class="widget-heading">활동 클라이언트</div>
+                                                                <div class="widget-subheading">퍼센트
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-right"
@@ -184,8 +184,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                                     <div class="widget-content-outer">
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">Bet Transactions</div>
-                                                                <div class="widget-subheading">Total Bet Transactions
+                                                                <div class="widget-heading"> 베팅 거래</div>
+                                                                <div class="widget-subheading">총 베팅 거래
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-right">
@@ -207,8 +207,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                                     <div class="widget-content-outer">
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">Partners</div>
-                                                                <div class="widget-subheading">Total Partners Count
+                                                                <div class="widget-heading">파트너</div>
+                                                                <div class="widget-subheading"> 총 파트너 수
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-right">
@@ -224,8 +224,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                                     <div class="widget-content-outer">
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">Canceled Transactions</div>
-                                                                <div class="widget-subheading">Percentage
+                                                                <div class="widget-heading">취소 거래 </div>
+                                                                <div class="widget-subheading">퍼센트
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-right"
@@ -476,13 +476,13 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                     <div class="card-header-tab card-header-tab-animation card-header">
                                         <div class="card-header-title">
                                             <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
-                                            Notifications
+                                            공지사항
                                         </div>
                                         <ul class="nav">
                                             <li class="nav-item"><a href="/pages/member/accounts/notifications.php"
                                                     class="nav-link">
-                                                    <button class="mb-2 mr-2 btn-transition btn btn-outline-info">View
-                                                        More
+                                                    <button class="mb-2 mr-2 btn-transition btn btn-outline-info">
+                                                        더보기
                                                     </button></a></li>
                                         </ul>
                                     </div>
@@ -495,9 +495,9 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                                     <thead>
                                                         <tr>
                                                             <th class="text-center">#</th>
-                                                            <th class="text-center">UserName</th>
-                                                            <th class="text-center">Notification </th>
-                                                            <th class="text-center">Created At</th>
+                                                            <th class="text-center">유저네임</th>
+                                                            <th class="text-center">공지 </th>
+                                                            <th class="text-center">작성일</th>
 
 
                                                         </tr>
@@ -509,7 +509,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                             </div>
                                         </div>
                                         <div class="tab-footer">
-                                            <small>Note: The date will be based on time zone GMT+09:00 </small>
+                                            <small>노트: 날짜는 GMT +09:00 기준입니다.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -527,7 +527,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                         style='display: flex;justify-content: left;align-items: flex-start;'>
                                         <div class="tab-content">
                                             <div class="tab-pane fade show active text-center" id="tabs-eg-77">
-                                                No record(s) found!
+                                                기록을 찾을 수 없음!
 
 
                                             </div>

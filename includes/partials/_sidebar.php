@@ -84,7 +84,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
     <div class="scrollbar-sidebar" style='overflow: scroll;'>
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-                <li class="app-sidebar__heading">Dashboards</li>
+                <li class="app-sidebar__heading">대시보드</li>
                 <li>
                     <a href="/pages/dashboard.php"
                         class=<?= strpos($_SERVER['REQUEST_URI'], 'dashboard.php') !== false ? "mm-active" : ""; ?>>
