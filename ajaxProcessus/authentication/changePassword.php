@@ -32,7 +32,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                     "pass_matches" => "partner_users",
                 ],
                 "newPassword" => [
-                    "pattern" => ["rule" => '/^.{8,30}$/', "msg" => 'Field is required and should be {8 to 30} characters long.']
+                    "pattern" => ["rule" => '/^.{8,30}$/', "msg" => '8~30자를 입력하세요.']
                 ],
                 "confirmPassword" => [
                     "matches" => "newPassword"
