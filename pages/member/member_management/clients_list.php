@@ -917,7 +917,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                 numericality: {
                     greaterThanOrEqualTo: 0,
                     lessThanOrEqualTo: 100,
-                    message: "^"
+                    message: "we"
                 },
                 format: {
                     pattern: "^[0-9]{1,2}\.[0-9]{2}$",
