@@ -9,7 +9,7 @@ require_once __DIR__ . "/../../functions/encryptDecrypt.php";
 
 if (session::exists(config::get("session/login_name"))) {
 
-    session::flash("messages", array("logged_already" => "you are already logged in, enjoy!"));
+    session::flash("messages", array("logged_already" => "로그인 되었습니다."));
 
     redirect::to("/pages/dashboard.php"); //to home page
 }
@@ -60,7 +60,7 @@ if (input::exists("post")) {
                 //Login Attempts
                 insertLoginAttempt($db, $array, 1, "succeeded");
 
-                session::flash("messages", array("logged" => "you have been successfully logged in, enjoy!"));
+                session::flash("messages", array("logged" => "로그인 되었습니다."));
                 redirect::to("/pages/dashboard.php"); //home_page
 
             } else {
@@ -104,20 +104,20 @@ function insertLoginAttempt($db, $array, $status, $detail)
     <link rel="stylesheet" href="/assets/css/login.css?v=1.04">
 
     <style>
-        @media (max-width: 410px) {
-            .btn1 {
-                left: 4%;
-            }
-
-            .container {
-                width: 360px;
-            }
+    @media (max-width: 410px) {
+        .btn1 {
+            left: 4%;
         }
 
-        .vt-col.top-left,
-        .vt-col.top-right {
-            display: none !important;
+        .container {
+            width: 360px;
         }
+    }
+
+    .vt-col.top-left,
+    .vt-col.top-right {
+        display: none !important;
+    }
 
     </style>
 
@@ -182,62 +182,62 @@ function insertLoginAttempt($db, $array, $status, $detail)
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', (event) => {
 
-        $("#username").keyup((e) => {
-            var $this = $(e.currentTarget);
-            // console.log($this.next(".invalid_back"));
-            $this.next("small").css("display", "none");
+    $("#username").keyup((e) => {
+        var $this = $(e.currentTarget);
+        // console.log($this.next(".invalid_back"));
+        $this.next("small").css("display", "none");
 
-        })
-        $("#password").keyup((e) => {
-            var $this = $(e.currentTarget);
-            // console.log($this.next(".invalid_back"));
-            $this.next("small").css("display", "none");
-            $("#re_pass").next("small").css("display", "none");
-        })
+    })
+    $("#password").keyup((e) => {
+        var $this = $(e.currentTarget);
+        // console.log($this.next(".invalid_back"));
+        $this.next("small").css("display", "none");
+        $("#re_pass").next("small").css("display", "none");
+    })
 
 
-    });
+});
 
-    var flash_message = <?php echo json_encode($msg, JSON_HEX_TAG); ?>; // Don't forget the extra semicolon!
-    if (flash_message != '') {
-        var type = Object.keys(flash_message)[0]
-        console.log(type);
-        var msg = flash_message[Object.keys(flash_message)[0]];
-        if (type == "authorization") {
-            vt.warn(msg, {
-                title: "Authorization is not granted",
-                duration: 6000,
-                closable: true,
-                focusable: true,
-                callback: () => {
-                    console.log("completed");
-                }
-            });
-        } else if (type == "logged" || type == "logged_already") {
-            vt.success(msg, {
-                title: "Logged In",
-                duration: 6000,
-                closable: true,
-                focusable: true,
-                callback: () => {
-                    console.log("completed");
-                }
-            });
-        } else if (type == "loggedout") {
-            vt.success(msg, {
-                title: "Logged Out",
-                duration: 6000,
-                closable: true,
-                focusable: true,
-                callback: () => {
-                    console.log("completed");
-                }
-            });
-        }
-
+var flash_message = <?php echo json_encode($msg, JSON_HEX_TAG); ?>; // Don't forget the extra semicolon!
+if (flash_message != '') {
+    var type = Object.keys(flash_message)[0]
+    console.log(type);
+    var msg = flash_message[Object.keys(flash_message)[0]];
+    if (type == "authorization") {
+        vt.warn(msg, {
+            title: "Authorization is not granted",
+            duration: 6000,
+            closable: true,
+            focusable: true,
+            callback: () => {
+                console.log("completed");
+            }
+        });
+    } else if (type == "logged" || type == "logged_already") {
+        vt.success(msg, {
+            title: "Log In",
+            duration: 6000,
+            closable: true,
+            focusable: true,
+            callback: () => {
+                console.log("completed");
+            }
+        });
+    } else if (type == "loggedout") {
+        vt.success(msg, {
+            title: "Log Out",
+            duration: 6000,
+            closable: true,
+            focusable: true,
+            callback: () => {
+                console.log("completed");
+            }
+        });
     }
+
+}
 </script>
 
 </html>

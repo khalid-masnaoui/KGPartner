@@ -19,39 +19,39 @@
 
 
 <script>
-    var flash_message = <?php echo json_encode($msg, JSON_HEX_TAG); ?>; // Don't forget the extra semicolon!
-    if (flash_message != '') {
-        var type = Object.keys(flash_message)[0]
-        console.log(type);
-        var msg = flash_message[Object.keys(flash_message)[0]];
-        if (type == "authorization") {
-            vt.warn(msg, {
-                title: "Authorization is not granted",
-                duration: 6000,
-                closable: true,
-                focusable: true,
-                callback: () => {
-                    console.log("completed");
-                }
-            });
-        } else if (type == "logged" || type == "logged_already" || type == "welcome_again") {
-            vt.success(msg, {
-                title: "Logged In",
-                duration: 6000,
-                closable: true,
-                focusable: true,
-                callback: () => {
-                    console.log("completed");
-                }
-            });
-        }
-
+var flash_message = <?php echo json_encode($msg, JSON_HEX_TAG); ?>; // Don't forget the extra semicolon!
+if (flash_message != '') {
+    var type = Object.keys(flash_message)[0]
+    console.log(type);
+    var msg = flash_message[Object.keys(flash_message)[0]];
+    if (type == "authorization") {
+        vt.warn(msg, {
+            title: "Authorization is not granted",
+            duration: 6000,
+            closable: true,
+            focusable: true,
+            callback: () => {
+                console.log("completed");
+            }
+        });
+    } else if (type == "logged" || type == "logged_already" || type == "welcome_again") {
+        vt.success(msg, {
+            title: "Log In",
+            duration: 6000,
+            closable: true,
+            focusable: true,
+            callback: () => {
+                console.log("completed");
+            }
+        });
     }
 
-    $(document).ajaxSend(function () {
-        $(".loader-spin").fadeIn(250);
-    });
-    $(document).ajaxComplete(function () {
-        $(".loader-spin").fadeOut(250);
-    });
+}
+
+$(document).ajaxSend(function() {
+    $(".loader-spin").fadeIn(250);
+});
+$(document).ajaxComplete(function() {
+    $(".loader-spin").fadeOut(250);
+});
 </script>
