@@ -50,104 +50,104 @@ foreach ($partners as $key => $value) {
 
     <?php include __DIR__ . '/../../../includes/files/_stylesheets.php'; ?>
     <style>
-    .filter-wrapper {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 20px;
-        width: 30%;
-    }
-
-    .filter_btn {
-        margin-left: 20px;
-    }
-
-    .btn_action {
-        width: max-content;
-    }
-
-    @media (max-width: 1500px) {
-        .filter-wrapper {
-            width: 40%;
-        }
-    }
-
-    @media (max-width: 1070px) {
-        .filter-wrapper {
-            width: 60%;
-        }
-    }
-
-    @media (max-width: 650px) {
-        .filter-wrapper {
-            width: 90%;
-        }
-    }
-
-    @media (max-width: 540px) {
         .filter-wrapper {
             margin-top: 20px;
             margin-bottom: 20px;
-            margin-left: 5px;
-            margin-right: 5px;
-            width: 90%;
-        }
-    }
-
-    @media (max-width: 380px) {
-        .filter-wrapper {
-            width: 94%;
-        }
-    }
-
-    .invalid {
-        border-color: #d92550;
-        padding-right: 2.25rem;
-        background-repeat: no-repeat;
-        background-position: center right calc(2.25rem / 4);
-        background-size: calc(2.25rem / 2) calc(2.25rem / 2);
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
-    }
-
-    .valid {
-        border-color: #3ac47d;
-        padding-right: 2.25rem;
-        background-repeat: no-repeat;
-        background-position: center right calc(2.25rem / 4);
-        background-size: calc(2.25rem / 2) calc(2.25rem / 2);
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
-
-    }
-
-    .status_ {
-        border: none;
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-    }
-
-    @media (max-width: 510px) {
-        .card-header2 {
-            flex-direction: column;
-            height: 5.4rem !important;
+            margin-left: 20px;
+            width: 30%;
         }
 
         .filter_btn {
-            margin-left: 5px !important;
-
-        }
-    }
-
-    @media (max-width: 410px) {
-        .card-header2 {
-            height: 6.4rem !important;
+            margin-left: 20px;
         }
 
-        .status_number_wrapper {
-            flex-direction: column;
+        .btn_action {
+            width: max-content;
+        }
+
+        @media (max-width: 1500px) {
+            .filter-wrapper {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 1070px) {
+            .filter-wrapper {
+                width: 60%;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .filter-wrapper {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .filter-wrapper {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 5px;
+                margin-right: 5px;
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .filter-wrapper {
+                width: 94%;
+            }
+        }
+
+        .invalid {
+            border-color: #d92550;
+            padding-right: 2.25rem;
+            background-repeat: no-repeat;
+            background-position: center right calc(2.25rem / 4);
+            background-size: calc(2.25rem / 2) calc(2.25rem / 2);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+        }
+
+        .valid {
+            border-color: #3ac47d;
+            padding-right: 2.25rem;
+            background-repeat: no-repeat;
+            background-position: center right calc(2.25rem / 4);
+            background-size: calc(2.25rem / 2) calc(2.25rem / 2);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
 
         }
-    }
+
+        .status_ {
+            border: none;
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        @media (max-width: 510px) {
+            .card-header2 {
+                flex-direction: column;
+                height: 5.4rem !important;
+            }
+
+            .filter_btn {
+                margin-left: 5px !important;
+
+            }
+        }
+
+        @media (max-width: 410px) {
+            .card-header2 {
+                height: 6.4rem !important;
+            }
+
+            .status_number_wrapper {
+                flex-direction: column;
+
+            }
+        }
 
     </style>
 </head>
@@ -449,485 +449,487 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
     <?php includeWithVariables('./../../../includes/modals/_deleteModal.php'); ?>
 
     <script>
-    $(function() {
-        $(".selectDeposit").select2({
-            dropdownParent: $('.modal')
+        $(function () {
+            $(".selectDeposit").select2({
+                dropdownParent: $('.modal')
+            });
         });
-    });
 
-    function clearModalInvalidFeedbacks() {
-        var array = ["username", "password", "partnerRate"];
+        function clearModalInvalidFeedbacks() {
+            var array = ["username", "password", "partnerRate"];
 
-        array.forEach(element => {
-            let target = $(`#${element}`);
+            array.forEach(element => {
+                let target = $(`#${element}`);
 
-            target.next(".invalid-feedback").text("");
-            target.next(".invalid-feedback").css("display", "none");
-            target.removeClass("invalid");
+                target.next(".invalid-feedback").text("");
+                target.next(".invalid-feedback").css("display", "none");
+                target.removeClass("invalid");
 
-        });
-    }
-
-    function clearModalInvalidFeedbacksOnKeyUp() {
-
-        $("#username, #password, #partnerRate").keyup(function(e) {
-
-            $(this).next(".invalid-feedback").text("");
-            $(this).next(".invalid-feedback").css("display", "none");
-            $(this).removeClass("invalid");
-        })
-    }
-
-    function hideEditableInputsAndShow() {
-
-        clearModalInvalidFeedbacks();
-
-
-        $(".password").show();
-
-
-        //reset
-        $("#username").val('');
-        $("#password").val('');
-        $("#partnerRate").val('');
-        $("input[name=status][value=1]").prop('checked', true); //active
-
-
-
-        $("button#add_partner").show();
-        $("button#edit_partner").hide();
-
-        $("#exampleModalLongTitle").text("파트너 추가");
-
-        $("#username").prop('disabled', false);
-
-
-
-    }
-
-    function showEditableInputsAndHide() {
-
-        clearModalInvalidFeedbacks();
-
-        $(".password").hide();
-
-        $("button#add_partner").hide();
-        $("button#edit_partner").show();
-
-        $("#exampleModalLongTitle").text("파트너 요율 수정");
-
-        $("#username").prop('disabled', true);
-
-
-    }
-
-    function clearModalInvalidFeedbacks2() {
-        var array = ["clientSelectAdd", "depositAmount"];
-
-        array.forEach(element => {
-            let target = $(`#${element}`);
-
-            target.next(".invalid-feedback").text("");
-            target.next(".invalid-feedback").css("display", "none");
-            target.removeClass("invalid");
-        });
-    }
-
-    function clearModalInvalidFeedbacksOnKeyUp2() {
-
-        $("#depositAmount").keyup(function(e) {
-
-            $(this).next(".invalid-feedback").text("");
-            $(this).next(".invalid-feedback").css("display", "none");
-            $(this).removeClass("invalid");
-        })
-        $("#clientSelectAdd").change(function(e) {
-
-            $(this).next(".invalid-feedback").text("");
-            $(this).next(".invalid-feedback").css("display", "none");
-            $(this).removeClass("invalid");
-        })
-
-    }
-
-    //add-deduct
-    function hideEditableInputsAndShow2() {
-
-        clearModalInvalidFeedbacks2();
-
-        //reset
-        // $("#clientSelectAdd").val('');
-        $("#clientSelectAdd").select2().select2('val', '');
-        $("#depositAmount").val('0.00');
-
-
-        $("button#add_deposit").show();
-        $("button#edit_deposit").hide();
-        $("button#deduct").hide();
-
-
-        $("#exampleModalLongTitle").text(" 포인트(알) 전송");
-        $("#depositLabel").text("금액 (원)");
-
-        $("#clientSelectAdd").prop('disabled', false);
-
-
-    }
-
-    function hideEditableInputsAndShowDeduct() {
-
-        clearModalInvalidFeedbacks2();
-
-        //reset
-        // $("#clientSelectAdd").val('');
-        $("#clientSelectAdd").select2().select2('val', '');
-        $("#depositAmount").val('0.00');
-
-
-        $("button#add_deposit").hide();
-        $("button#edit_deposit").hide();
-        $("button#deduct").show();
-
-
-        $("#exampleModalLongTitle").text("포인트(알) 차감");
-        $("#depositLabel").text("금액 (원)");
-
-        $("#clientSelectAdd").prop('disabled', false);
-
-
-    }
-
-    function number_format(number, decimals, dec_point, thousands_sep) {
-        // Strip all characters but numerical ones.
-        number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
-        var n = !isFinite(+number) ? 0 : +number,
-            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-            sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-            dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
-            s = '',
-            toFixedFix = function(n, prec) {
-                var k = Math.pow(10, prec);
-                return '' + Math.round(n * k) / k;
-            };
-        // Fix for IE parseFloat(0.55).toFixed(0) = 0;
-        s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
-        if (s[0].length > 3) {
-            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
-        }
-        if ((s[1] || '').length < prec) {
-            s[1] = s[1] || '';
-            s[1] += new Array(prec - s[1].length + 1).join('0');
-        }
-        return s.join(dec);
-    }
-
-    $("#partnerRate").focusout(function(event) {
-        var number = $(this).val();
-
-        if (number == '') {
-            $(this).val("0.00");
-        } else {
-            var d = number_format(number, 2, ".", "");
-
-            $(this).val(d);
+            });
         }
 
-    })
+        function clearModalInvalidFeedbacksOnKeyUp() {
 
-    $("#depositAmount").focusout(function(event) {
-        var number = $(this).val();
+            $("#username, #password, #partnerRate").keyup(function (e) {
 
-        if (number == '') {
-            $(this).val("0.00");
-
-        } else {
-            var d = number_format(number, 2, ".", ",");
-
-            $(this).val(d);
+                $(this).next(".invalid-feedback").text("");
+                $(this).next(".invalid-feedback").css("display", "none");
+                $(this).removeClass("invalid");
+            })
         }
 
-    })
+        function hideEditableInputsAndShow() {
+
+            clearModalInvalidFeedbacks();
+
+
+            $(".password").show();
+
+
+            //reset
+            $("#username").val('');
+            $("#password").val('');
+            $("#partnerRate").val('');
+            $("input[name=status][value=1]").prop('checked', true); //active
 
 
 
+            $("button#add_partner").show();
+            $("button#edit_partner").hide();
 
-    clearModalInvalidFeedbacksOnKeyUp();
-    clearModalInvalidFeedbacksOnKeyUp2();
+            $("#exampleModalLongTitle").text("파트너 추가");
 
-
-    // --- DISPLAY PARTNERS ----
-    function displayPartners(N = 1, status = '') {
-
-        var activePage = $(".navigation_partners li.page-item.active a").text();
-        var activeNumber = $(".active-partners-number").text();
-        activeNumber = activeNumber.trim();
-
-        var text = $("#partner_name_filtered").val();
-
-        var token = $("#token_display").val();
-
-        $.ajax({
-            url: '/ajaxProcessus/memberManagement/partners/displayPartners.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                "page": N,
-                "number": activeNumber,
-                "nameFilter": text,
-                "status": status,
-                token
-            },
-
-            cache: false,
-            timeout: 10000,
-
-            success: function(data) {
-
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
-                }
-                rese = JSON.parse(data);
-
-                let length = rese.length;
-
-
-                if (length == 4) { //success
-                    $(".table-body-partners").html(rese[0]);
-                    $(".navigation_partners").html(rese[1]);
-
-                    $("#token_display").val(rese[3]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display").val(rese[0]);
-
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
+            $("#username").prop('disabled', false);
 
 
 
+        }
+
+        function showEditableInputsAndHide() {
+
+            clearModalInvalidFeedbacks();
+
+            $(".password").hide();
+
+            $("button#add_partner").hide();
+            $("button#edit_partner").show();
+
+            $("#exampleModalLongTitle").text("파트너 요율 수정");
+
+            $("#username").prop('disabled', true);
+
+
+        }
+
+        function clearModalInvalidFeedbacks2() {
+            var array = ["clientSelectAdd", "depositAmount"];
+
+            array.forEach(element => {
+                let target = $(`#${element}`);
+
+                target.next(".invalid-feedback").text("");
+                target.next(".invalid-feedback").css("display", "none");
+                target.removeClass("invalid");
+            });
+        }
+
+        function clearModalInvalidFeedbacksOnKeyUp2() {
+
+            $("#depositAmount").keyup(function (e) {
+
+                $(this).next(".invalid-feedback").text("");
+                $(this).next(".invalid-feedback").css("display", "none");
+                $(this).removeClass("invalid");
+            })
+            $("#clientSelectAdd").change(function (e) {
+
+                $(this).next(".invalid-feedback").text("");
+                $(this).next(".invalid-feedback").css("display", "none");
+                $(this).removeClass("invalid");
+            })
+
+        }
+
+        //add-deduct
+        function hideEditableInputsAndShow2() {
+
+            clearModalInvalidFeedbacks2();
+
+            //reset
+            // $("#clientSelectAdd").val('');
+            $("#clientSelectAdd").select2().select2('val', '');
+            $("#depositAmount").val('0.00');
+
+
+            $("button#add_deposit").show();
+            $("button#edit_deposit").hide();
+            $("button#deduct").hide();
+
+
+            $("#exampleModalLongTitle").text(" 포인트(알) 전송");
+            $("#depositLabel").text("금액 (원)");
+
+            $("#clientSelectAdd").prop('disabled', false);
+
+
+        }
+
+        function hideEditableInputsAndShowDeduct() {
+
+            clearModalInvalidFeedbacks2();
+
+            //reset
+            // $("#clientSelectAdd").val('');
+            $("#clientSelectAdd").select2().select2('val', '');
+            $("#depositAmount").val('0.00');
+
+
+            $("button#add_deposit").hide();
+            $("button#edit_deposit").hide();
+            $("button#deduct").show();
+
+
+            $("#exampleModalLongTitle").text("포인트(알) 차감");
+            $("#depositLabel").text("금액 (원)");
+
+            $("#clientSelectAdd").prop('disabled', false);
+
+
+        }
+
+        function number_format(number, decimals, dec_point, thousands_sep) {
+            // Strip all characters but numerical ones.
+            number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+            var n = !isFinite(+number) ? 0 : +number,
+                prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+                sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+                dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+                s = '',
+                toFixedFix = function (n, prec) {
+                    var k = Math.pow(10, prec);
+                    return '' + Math.round(n * k) / k;
+                };
+            // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+            s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+            if (s[0].length > 3) {
+                s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
             }
-
-
-        })
-    }
-
-    //NUMBERS DISPLAYED PER PAGE
-    $(".partners_number_options button").on("click", function(event) {
-
-        var number = event.currentTarget.textContent;
-        $(".active-partners-number").text(number);
-
-        let id = $(".status_.active").attr("id");
-
-        let status = '';
-
-        if (id == "status_active") {
-            status = 1;
-        } else if (id == "status_pending") {
-            status = 0;
-        } else if (id == "status_blocked") {
-            status = 3;
+            if ((s[1] || '').length < prec) {
+                s[1] = s[1] || '';
+                s[1] += new Array(prec - s[1].length + 1).join('0');
+            }
+            return s.join(dec);
         }
 
-        displayPartners(1, status);
-    })
+        $("#partnerRate").focusout(function (event) {
+            var number = $(this).val();
 
-    function resetStatusFilter() {
-        $(".status_").css("opacity", 1);
-        $(".status_").removeClass("active");
-        $("#status_all").addClass("active");
-    }
-
-    //USERNAME FILTER
-    $(".filter_partners").on("click", function(event) {
-        resetStatusFilter();
-
-        displayPartners(1);
-
-    })
-
-    //RESET FILTERS
-    $(".filter_partners_reset").on("click", function(event) {
-        resetStatusFilter();
-
-        $("#partner_name_filtered").val('');
-
-
-        displayPartners(1);
-
-    })
-
-
-
-    //status filter
-    $(".status_").click(function(event) {
-        let status = '';
-        let id = $(event.currentTarget).attr("id");
-        if (id == "status_all") {
-            $(".status_").css("opacity", 1);
-
-            $(".status_").removeClass("active");
-            $(this).addClass("active");
-
-        } else {
-            $(".status_").css("opacity", 0.2);
-            $(this).css("opacity", 1);
-
-            if (id == "status_active") {
-                status = 1;
-            } else if (id == "status_pending") {
-                status = 0;
+            if (number == '') {
+                $(this).val("0.00");
             } else {
-                status = 3;
+                var d = number_format(number, 2, ".", "");
+
+                $(this).val(d);
             }
 
+        })
 
-            $(".status_").removeClass("active");
-            $(this).addClass("active");
-        }
+        $("#depositAmount").focusout(function (event) {
+            var number = $(this).val();
 
-        displayPartners(1, status);
+            if (number == '') {
+                $(this).val("0.00");
 
-    })
+            } else {
+                var d = number_format(number, 2, ".", ",");
 
-
-    // ---ADD---
-    function addPartner(event) {
-        event.preventDefault();
-
-        //getting data
-        var username = $("#username").val().trim();
-        var password = $("#password").val().trim();
-        var partnerRate = $("#partnerRate").val().trim();
-
-        var status = $(".status:checked").val();
-        var token = $("#token_add").val();
-
-        // console.log(status);
-
-        //validating & sanitazing data
-
-        var constraints = {
-            username: {
-                presence: true,
-                length: {
-                    minimum: 1,
-                    maximum: 30,
-                    // message: "Field is required and should be {1 to 30} characters long."
-                    message: "^1~30자를 입력하세요."
-                },
-            },
-            password: {
-                presence: true,
-                length: {
-                    minimum: 8,
-                    maximum: 30,
-                    // message: "Field is required and should be {8 to 30} characters long."
-                    message: "^ 8~30자를 입력하세요"
-                },
-            },
-            partnerRate: {
-                presence: true,
-                numericality: {
-                    greaterThanOrEqualTo: 0,
-                    lessThanOrEqualTo: 100,
-                },
-                format: {
-                    pattern: "^[0-9]{1,2}\.[0-9]{2}$",
-                    // message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
-                    message: "^본인의 요율보다 같거나 높게 입력해 주세요."
-                }
-            },
-        };
-
-
-        var errors = validate({
-            username,
-            partnerRate,
-            password,
-        }, constraints);
-
-        if (typeof errors != undefined && errors != undefined) {
-
-            // console.log(errors);
-            for (var key in errors) {
-                $(`#${key}`).addClass("invalid");
-                $(`#${key}`).next(".invalid-feedback").text(errors[key]);
-                $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                $(this).val(d);
             }
-        } else {
-            //sanitize
 
-            username = DOMPurify.sanitize(username, {
-                SAFE_FOR_JQUERY: true
-            });
-            password = DOMPurify.sanitize(password, {
-                SAFE_FOR_JQUERY: true
-            });
-            partnerRate = DOMPurify.sanitize(partnerRate, {
-                SAFE_FOR_JQUERY: true
-            });
-            status = DOMPurify.sanitize(status, {
-                SAFE_FOR_JQUERY: true
-            });
-            token = DOMPurify.sanitize(token, {
-                SAFE_FOR_JQUERY: true
-            });
+        })
+
+
+
+
+        clearModalInvalidFeedbacksOnKeyUp();
+        clearModalInvalidFeedbacksOnKeyUp2();
+
+
+        // --- DISPLAY PARTNERS ----
+        function displayPartners(N = 1, status = '') {
+
+            var activePage = $(".navigation_partners li.page-item.active a").text();
+            var activeNumber = $(".active-partners-number").text();
+            activeNumber = activeNumber.trim();
+
+            var text = $("#partner_name_filtered").val();
+
+            var token = $("#token_display").val();
 
             $.ajax({
-                url: '/ajaxProcessus/memberManagement/partners/addPartner.php',
+                url: '/ajaxProcessus/memberManagement/partners/displayPartners.php',
                 type: 'POST',
                 data: {
-                    username,
-                    password,
-                    partnerRate,
-                    status,
+                    "display": true,
+                    "page": N,
+                    "number": activeNumber,
+                    "nameFilter": text,
+                    "status": status,
                     token
                 },
+
                 cache: false,
                 timeout: 10000,
 
-                success: function(data) {
+                success: function (data) {
+
                     if (data == 'unauthorized' || data == '') {
                         window.location.href = '/pages/errors/403.php';
                         return;
                     }
                     rese = JSON.parse(data);
-                    var response = rese.response
-                    var received_token = rese.token
-                    var serverGeneratedErrors = rese.errors
+
+                    let length = rese.length;
+
+
+                    if (length == 4) { //success
+                        $(".table-body-partners").html(rese[0]);
+                        $(".navigation_partners").html(rese[1]);
+
+                        $("#token_display").val(rese[3]);
+                    } else if (length == 1) { //csrf error
+                        $("#token_display").val(rese[0]);
+
+                    } else {
+                        //refresh page;
+                        location.reload();
+                    }
 
 
 
-                    if (response == 1) { //added
+                }
 
 
-                        $("button.close").trigger("click");
-                        $("#token_add").val(received_token);
-                        vt.success(`신규 파트너 ${username} 가 추가 완료 되었습니다.`, {
-                            title: "신규 파트너 추가 완료!",
-                            duration: 6000,
-                            closable: true,
-                            focusable: true,
-                            callback: () => {
-                                console.log("completed");
-                            }
-                        });
+            })
+        }
 
-                        var activePage = $(".navigation_partner li.page-item.active a").text();
-                        displayPartners(activePage);
-                        clearModalInvalidFeedbacks();
+        //NUMBERS DISPLAYED PER PAGE
+        $(".partners_number_options button").on("click", function (event) {
 
-                        resetStatusFilter();
+            var number = event.currentTarget.textContent;
+            $(".active-partners-number").text(number);
 
-                    } else if (response == 2) { //csrf error
-                        $("button.close").trigger("click");
-                        $("#token_add").val(received_token);
+            let id = $(".status_.active").attr("id");
 
-                        vt.error(
-                            `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+            let status = '';
+
+            if (id == "status_active") {
+                status = 1;
+            } else if (id == "status_pending") {
+                status = 0;
+            } else if (id == "status_blocked") {
+                status = 3;
+            }
+
+            displayPartners(1, status);
+        })
+
+        function resetStatusFilter() {
+            $(".status_").css("opacity", 1);
+            $(".status_").removeClass("active");
+            $("#status_all").addClass("active");
+        }
+
+        //USERNAME FILTER
+        $(".filter_partners").on("click", function (event) {
+            resetStatusFilter();
+
+            displayPartners(1);
+
+        })
+
+        //RESET FILTERS
+        $(".filter_partners_reset").on("click", function (event) {
+            resetStatusFilter();
+
+            $("#partner_name_filtered").val('');
+
+
+            displayPartners(1);
+
+        })
+
+
+
+        //status filter
+        $(".status_").click(function (event) {
+            let status = '';
+            let id = $(event.currentTarget).attr("id");
+            if (id == "status_all") {
+                $(".status_").css("opacity", 1);
+
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
+
+            } else {
+                $(".status_").css("opacity", 0.2);
+                $(this).css("opacity", 1);
+
+                if (id == "status_active") {
+                    status = 1;
+                } else if (id == "status_pending") {
+                    status = 0;
+                } else {
+                    status = 3;
+                }
+
+
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
+            }
+
+            displayPartners(1, status);
+
+        })
+
+
+        // ---ADD---
+        function addPartner(event) {
+            event.preventDefault();
+
+            //getting data
+            var username = $("#username").val().trim();
+            var password = $("#password").val().trim();
+            var partnerRate = $("#partnerRate").val().trim();
+
+            var status = $(".status:checked").val();
+            var token = $("#token_add").val();
+
+            // console.log(status);
+
+            //validating & sanitazing data
+
+            var constraints = {
+                username: {
+                    presence: true,
+                    length: {
+                        minimum: 1,
+                        maximum: 30,
+                        // message: "Field is required and should be {1 to 30} characters long."
+                        message: "^1~30자를 입력하세요."
+                    },
+                },
+                password: {
+                    presence: true,
+                    length: {
+                        minimum: 8,
+                        maximum: 30,
+                        // message: "Field is required and should be {8 to 30} characters long."
+                        message: "^ 8~30자를 입력하세요"
+                    },
+                },
+                partnerRate: {
+                    presence: true,
+                    numericality: {
+                        greaterThanOrEqualTo: 0,
+                        lessThanOrEqualTo: 100,
+                        message: "^"
+
+                    },
+                    format: {
+                        pattern: "^[0-9]{1,2}\.[0-9]{2}$",
+                        // message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
+                        message: "^본인의 요율보다 같거나 높게 입력해 주세요."
+                    }
+                },
+            };
+
+
+            var errors = validate({
+                username,
+                partnerRate,
+                password,
+            }, constraints);
+
+            if (typeof errors != undefined && errors != undefined) {
+
+                // console.log(errors);
+                for (var key in errors) {
+                    $(`#${key}`).addClass("invalid");
+                    $(`#${key}`).next(".invalid-feedback").text(errors[key]);
+                    $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                }
+            } else {
+                //sanitize
+
+                username = DOMPurify.sanitize(username, {
+                    SAFE_FOR_JQUERY: true
+                });
+                password = DOMPurify.sanitize(password, {
+                    SAFE_FOR_JQUERY: true
+                });
+                partnerRate = DOMPurify.sanitize(partnerRate, {
+                    SAFE_FOR_JQUERY: true
+                });
+                status = DOMPurify.sanitize(status, {
+                    SAFE_FOR_JQUERY: true
+                });
+                token = DOMPurify.sanitize(token, {
+                    SAFE_FOR_JQUERY: true
+                });
+
+                $.ajax({
+                    url: '/ajaxProcessus/memberManagement/partners/addPartner.php',
+                    type: 'POST',
+                    data: {
+                        username,
+                        password,
+                        partnerRate,
+                        status,
+                        token
+                    },
+                    cache: false,
+                    timeout: 10000,
+
+                    success: function (data) {
+                        if (data == 'unauthorized' || data == '') {
+                            window.location.href = '/pages/errors/403.php';
+                            return;
+                        }
+                        rese = JSON.parse(data);
+                        var response = rese.response
+                        var received_token = rese.token
+                        var serverGeneratedErrors = rese.errors
+
+
+
+                        if (response == 1) { //added
+
+
+                            $("button.close").trigger("click");
+                            $("#token_add").val(received_token);
+                            vt.success(`신규 파트너 ${username} 가 추가 완료 되었습니다.`, {
+                                title: "신규 파트너 추가 완료!",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+
+                            var activePage = $(".navigation_partner li.page-item.active a").text();
+                            displayPartners(activePage);
+                            clearModalInvalidFeedbacks();
+
+                            resetStatusFilter();
+
+                        } else if (response == 2) { //csrf error
+                            $("button.close").trigger("click");
+                            $("#token_add").val(received_token);
+
+                            vt.error(
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
                                 title: "CSRF 에러.",
                                 duration: 6000,
                                 closable: true,
@@ -936,13 +938,13 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                    } else if (response == 4) { //db error
-                        $("button.close").trigger("click");
-                        $("#token_add").val(received_token);
+                        } else if (response == 4) { //db error
+                            $("button.close").trigger("click");
+                            $("#token_add").val(received_token);
 
 
-                        vt.error(
-                            `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                            vt.error(
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
                                 title: "알수 없는 에러",
                                 duration: 6000,
                                 closable: true,
@@ -951,106 +953,106 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                    } else if (response == 0) { //unicity error
-                        // $("button.close").trigger("click");
-                        $("#token_add").val(received_token);
+                        } else if (response == 0) { //unicity error
+                            // $("button.close").trigger("click");
+                            $("#token_add").val(received_token);
 
-                        for (var key in serverGeneratedErrors) {
-                            var msg = serverGeneratedErrors[key];
-                            $(`#${key}`).addClass("invalid");
-                            $(`#${key}`).next(".invalid-feedback").text(msg);
-                            $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                            for (var key in serverGeneratedErrors) {
+                                var msg = serverGeneratedErrors[key];
+                                $(`#${key}`).addClass("invalid");
+                                $(`#${key}`).next(".invalid-feedback").text(msg);
+                                $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                            }
                         }
                     }
-                }
-            })
+                })
+            }
         }
-    }
 
-    // ---ADD---
-    function addDeposit(event) {
-        event.preventDefault();
+        // ---ADD---
+        function addDeposit(event) {
+            event.preventDefault();
 
-        //getting data
-        var client = $("#clientSelectAdd").val();
-        var depositAmount = $("#depositAmount").val().replace(/,/g, '');
-        var token = $("#token_make").val();
+            //getting data
+            var client = $("#clientSelectAdd").val();
+            var depositAmount = $("#depositAmount").val().replace(/,/g, '');
+            var token = $("#token_make").val();
 
-        //validating & sanitizing data
+            //validating & sanitizing data
 
-        var constraints = {
-            clientSelectAdd: {
-                presence: {
-                    allowEmpty: false
+            var constraints = {
+                clientSelectAdd: {
+                    presence: {
+                        allowEmpty: false
+                    },
+
                 },
-
-            },
-            depositAmount: {
-                numericality: {
-                    greaterThan: 0,
-                },
-                format: {
-                    pattern: "^[0-9]+\.[0-9]{2}$",
-                    message: "Is Not a valid deposit amount!"
-                }
-            }
-        };
-
-
-        var errors = validate({
-            "clientSelectAdd": client,
-            depositAmount
-
-        }, constraints);
-        if (typeof errors != undefined && errors != undefined) {
-
-            // console.log(errors);
-            for (var key in errors) {
-                let key2 = key;
-
-                $(`#${key2}`).addClass("invalid");
-                $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
-                $(`#${key2}`).next(".invalid-feedback").css("display", "block");
-            }
-        } else {
-            //sanitize
-
-            client = DOMPurify.sanitize(client, {
-                SAFE_FOR_JQUERY: true
-            });
-            depositAmount = DOMPurify.sanitize(depositAmount, {
-                SAFE_FOR_JQUERY: true
-            });
-
-
-            $.ajax({
-                url: '/ajaxProcessus/depositWithdraw/waBalance/makeWaBalanceDeposit.php',
-                type: 'POST',
-                data: {
-                    depositAmount,
-                    client,
-                    token
-                },
-                cache: false,
-                timeout: 10000,
-
-                success: function(data) {
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
+                depositAmount: {
+                    numericality: {
+                        greaterThan: 0,
+                    },
+                    format: {
+                        pattern: "^[0-9]+\.[0-9]{2}$",
+                        message: "Is Not a valid deposit amount!"
                     }
-                    rese = JSON.parse(data);
-                    var response = rese.response
-                    var received_token = rese.token
-                    var serverGeneratedErrors = rese.errors
-
-                    if (response == 1) { //added
+                }
+            };
 
 
-                        $("button.close").trigger("click");
-                        $("#token_make").val(received_token);
-                        vt.success(
-                            `${client} 충전 완료 되었습니다.`, {
+            var errors = validate({
+                "clientSelectAdd": client,
+                depositAmount
+
+            }, constraints);
+            if (typeof errors != undefined && errors != undefined) {
+
+                // console.log(errors);
+                for (var key in errors) {
+                    let key2 = key;
+
+                    $(`#${key2}`).addClass("invalid");
+                    $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
+                    $(`#${key2}`).next(".invalid-feedback").css("display", "block");
+                }
+            } else {
+                //sanitize
+
+                client = DOMPurify.sanitize(client, {
+                    SAFE_FOR_JQUERY: true
+                });
+                depositAmount = DOMPurify.sanitize(depositAmount, {
+                    SAFE_FOR_JQUERY: true
+                });
+
+
+                $.ajax({
+                    url: '/ajaxProcessus/depositWithdraw/waBalance/makeWaBalanceDeposit.php',
+                    type: 'POST',
+                    data: {
+                        depositAmount,
+                        client,
+                        token
+                    },
+                    cache: false,
+                    timeout: 10000,
+
+                    success: function (data) {
+                        if (data == 'unauthorized' || data == '') {
+                            window.location.href = '/pages/errors/403.php';
+                            return;
+                        }
+                        rese = JSON.parse(data);
+                        var response = rese.response
+                        var received_token = rese.token
+                        var serverGeneratedErrors = rese.errors
+
+                        if (response == 1) { //added
+
+
+                            $("button.close").trigger("click");
+                            $("#token_make").val(received_token);
+                            vt.success(
+                                `${client} 충전 완료 되었습니다.`, {
                                 title: "충전 완료!",
                                 duration: 6000,
                                 closable: true,
@@ -1060,16 +1062,16 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                 }
                             });
 
-                        var activePage = $(".navigation_partner li.page-item.active a").text();
-                        displayPartners(activePage);
-                        // clearModalInvalidFeedbacks();
+                            var activePage = $(".navigation_partner li.page-item.active a").text();
+                            displayPartners(activePage);
+                            // clearModalInvalidFeedbacks();
 
-                    } else if (response == 2) { //csrf error
-                        $("button.close").trigger("click");
-                        $("#token_make").val(received_token);
+                        } else if (response == 2) { //csrf error
+                            $("button.close").trigger("click");
+                            $("#token_make").val(received_token);
 
-                        vt.error(
-                            `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+                            vt.error(
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
                                 title: "CSRF 에러.",
                                 duration: 6000,
                                 closable: true,
@@ -1078,14 +1080,14 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                        location.reload();
-                    } else if (response == 4) { //db error
-                        $("button.close").trigger("click");
-                        $("#token_make").val(received_token);
+                            location.reload();
+                        } else if (response == 4) { //db error
+                            $("button.close").trigger("click");
+                            $("#token_make").val(received_token);
 
 
-                        vt.error(
-                            `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                            vt.error(
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
                                 title: "알수 없는 에러",
                                 duration: 6000,
                                 closable: true,
@@ -1094,334 +1096,126 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                    } else if (response == 0) { //serverGeneratedErrors
-                        // $("button.close").trigger("click");
-                        $("#token_make").val(received_token);
+                        } else if (response == 0) { //serverGeneratedErrors
+                            // $("button.close").trigger("click");
+                            $("#token_make").val(received_token);
 
-                        for (var key in serverGeneratedErrors) {
-                            var msg = serverGeneratedErrors[key];
+                            for (var key in serverGeneratedErrors) {
+                                var msg = serverGeneratedErrors[key];
 
-                            // console.log($(`#${key}`));
-                            $(`#${key}`).addClass("invalid");
-                            $(`#${key}`).next(".invalid-feedback").text(msg);
-                            $(`#${key}`).next(".invalid-feedback").css("display", "block");
-                        }
-                    }
-                }
-            })
-        }
-    }
-
-    //DEDUCT
-    function deductAmount(event) {
-        event.preventDefault();
-
-        //getting data
-        var client = $("#clientSelectAdd").val();
-        var depositAmount = $("#depositAmount").val().replace(/,/g, '');
-        var token = $("#token_deduct").val();
-
-        //validating & sanitizing data
-
-        var constraints = {
-            clientSelectAdd: {
-                presence: {
-                    allowEmpty: false
-                },
-
-            },
-            depositAmount: {
-                numericality: {
-                    greaterThan: 0,
-                },
-                format: {
-                    pattern: "^[0-9]+\.[0-9]{2}$",
-                    message: "Is Not a valid deposit amount!"
-                }
-            }
-        };
-
-
-        var errors = validate({
-            "clientSelectAdd": client,
-            depositAmount
-
-        }, constraints);
-        if (typeof errors != undefined && errors != undefined) {
-
-            // console.log(errors);
-            for (var key in errors) {
-                let key2 = key;
-
-                $(`#${key2}`).addClass("invalid");
-                $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
-                $(`#${key2}`).next(".invalid-feedback").css("display", "block");
-            }
-        } else {
-            //sanitize
-
-            client = DOMPurify.sanitize(client, {
-                SAFE_FOR_JQUERY: true
-            });
-            depositAmount = DOMPurify.sanitize(depositAmount, {
-                SAFE_FOR_JQUERY: true
-            });
-
-
-            $.ajax({
-                url: '/ajaxProcessus/depositWithdraw/waBalance/deduct.php',
-                type: 'POST',
-                data: {
-                    depositAmount,
-                    client,
-                    token
-                },
-                cache: false,
-                timeout: 10000,
-
-                success: function(data) {
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-                    rese = JSON.parse(data);
-                    var response = rese.response
-                    var received_token = rese.token
-                    var serverGeneratedErrors = rese.errors
-
-                    if (response == 1) { //added
-
-
-                        $("button.close").trigger("click");
-                        $("#token_deduct").val(received_token);
-                        vt.success(`${client} 차감 완료 되었습니다.`, {
-                            title: "차감 완료!",
-                            duration: 6000,
-                            closable: true,
-                            focusable: true,
-                            callback: () => {
-                                console.log("completed");
+                                // console.log($(`#${key}`));
+                                $(`#${key}`).addClass("invalid");
+                                $(`#${key}`).next(".invalid-feedback").text(msg);
+                                $(`#${key}`).next(".invalid-feedback").css("display", "block");
                             }
-                        });
-
-                        var activePage = $(".navigation_partner li.page-item.active a").text();
-                        displayPartners(activePage);
-                        // clearModalInvalidFeedbacks();
-
-                    } else if (response == 2) { //csrf error
-                        $("button.close").trigger("click");
-                        $("#token_deduct").val(received_token);
-
-                        vt.error(
-                            `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
-                                title: "CSRF 에러.",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
-                        location.reload();
-                    } else if (response == 4) { //db error
-                        $("button.close").trigger("click");
-                        $("#token_deduct").val(received_token);
-
-
-                        vt.error(
-                            `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
-                                title: "알수 없는 에러",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
-                    } else if (response == 0) { //serverGeneratedErrors
-                        // $("button.close").trigger("click");
-                        $("#token_deduct").val(received_token);
-
-                        for (var key in serverGeneratedErrors) {
-                            var msg = serverGeneratedErrors[key];
-
-                            // console.log($(`#${key}`));
-                            $(`#${key}`).addClass("invalid");
-                            $(`#${key}`).next(".invalid-feedback").text(msg);
-                            $(`#${key}`).next(".invalid-feedback").css("display", "block");
                         }
                     }
-                }
-            })
-        }
-    }
-
-
-    // ----EDIT----
-    function showPartnerData(event) {
-        showEditableInputsAndHide();
-
-        let data = event.currentTarget.getAttribute("data-values");
-
-        //populating modal with data
-
-        data = data.replace(new RegExp("&&xx&&", "g"), " ");
-
-        data = JSON.parse(data);
-
-        // console.log(data);
-        // console.log(data["register_date"])
-
-        $("#username").val(data["username"]);
-        $("#partnerRate").val(data["rate"]);
-
-        $("#partner_id").val(data["id"]);
-
-        $("input[name=status][value=" + data["status"] + "]").prop('checked', true);
-
-    }
-
-    function confirmEditPartner(e) {
-        e.preventDefault();
-
-        $("#delete_modal button.btn_confirmed_action").hide();
-        $("#delete_modal button.edit_partner").show();
-
-        $("#delete_modal #text").text("Do you really want to Edit This Partner Information?.");
-
-        $(".modal-confirm .icon-box").css("border", "0px solid #3ac47d");
-        $(".modal-confirm .icon-box i").css("color", "#3ac47d");
-        $(".modal-confirm .btn-danger").css("background", "#3ac47d");
-        $(".modal-confirm .icon-box i").attr("class", "pe-7s-check");
-
-        $("#delete_modal").addClass("show");
-        $("#delete_modal").removeClass("d-none");
-
-    }
-
-    function editPartner(event) {
-        event.preventDefault();
-
-        //getting data
-        var username = $("#username").val().trim();
-        var partnerRate = $("#partnerRate").val().trim();
-
-        var status = $(".status:checked").val();
-
-        var id = $("#partner_id").val();
-
-        var token = $("#token_edit").val();
-
-        // console.log(status);
-
-        //validating & sanitazing data
-        var constraints = {
-            username: {
-                presence: true,
-                length: {
-                    minimum: 1,
-                    maximum: 30,
-                    message: "Field is required and should be {1 to 30} characters long."
-                },
-            },
-            partnerRate: {
-                presence: true,
-                numericality: {
-                    greaterThanOrEqualTo: 0,
-                    lessThanOrEqualTo: 100,
-                },
-                format: {
-                    pattern: "^[0-9]{1,2}\.[0-9]{2}$",
-                    message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
-                }
-            },
-        };
-
-
-        var errors = validate({
-            username,
-            partnerRate,
-        }, constraints);
-
-        if (typeof errors != undefined && errors != undefined) {
-
-            // console.log(errors);
-            for (var key in errors) {
-                $(`#${key}`).addClass("invalid");
-                $(`#${key}`).next(".invalid-feedback").text(errors[key]);
-                $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                })
             }
-        } else {
-            //sanitize
+        }
 
-            username = DOMPurify.sanitize(username, {
-                SAFE_FOR_JQUERY: true
-            });
-            partnerRate = DOMPurify.sanitize(partnerRate, {
-                SAFE_FOR_JQUERY: true
-            });
-            status = DOMPurify.sanitize(status, {
-                SAFE_FOR_JQUERY: true
-            });
-            id = DOMPurify.sanitize(id, {
-                SAFE_FOR_JQUERY: true
-            });
-            token = DOMPurify.sanitize(token, {
-                SAFE_FOR_JQUERY: true
-            });
+        //DEDUCT
+        function deductAmount(event) {
+            event.preventDefault();
 
-            $.ajax({
-                url: '/ajaxProcessus/memberManagement/partners/editPartner.php',
-                type: 'POST',
-                data: {
-                    id,
-                    partnerRate,
-                    status,
-                    token
+            //getting data
+            var client = $("#clientSelectAdd").val();
+            var depositAmount = $("#depositAmount").val().replace(/,/g, '');
+            var token = $("#token_deduct").val();
+
+            //validating & sanitizing data
+
+            var constraints = {
+                clientSelectAdd: {
+                    presence: {
+                        allowEmpty: false
+                    },
+
                 },
-                cache: false,
-                timeout: 10000,
-
-                success: function(data) {
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
+                depositAmount: {
+                    numericality: {
+                        greaterThan: 0,
+                    },
+                    format: {
+                        pattern: "^[0-9]+\.[0-9]{2}$",
+                        message: "Is Not a valid deposit amount!"
                     }
-                    rese = JSON.parse(data);
-                    var response = rese.response
-                    var received_token = rese.token
-                    var serverGeneratedErrors = rese.errors
-
-                    $("#delete_modal").removeClass("show");
-                    $("#delete_modal").addClass("d-none");
+                }
+            };
 
 
-                    if (response == 1) { //updated
+            var errors = validate({
+                "clientSelectAdd": client,
+                depositAmount
 
-                        $("button.close").trigger("click");
-                        $("#token_edit").val(received_token);
-                        vt.success(`파트너 '${username}'  수정이 완료 되었습니다.`, {
-                            title: "파트너 수정 완료!",
-                            duration: 6000,
-                            closable: true,
-                            focusable: true,
-                            callback: () => {
-                                console.log("completed");
-                            }
-                        });
+            }, constraints);
+            if (typeof errors != undefined && errors != undefined) {
 
-                        var activePage = $(".navigation_partners li.page-item.active a").text();
-                        displayPartners(activePage);
-                        clearModalInvalidFeedbacks();
+                // console.log(errors);
+                for (var key in errors) {
+                    let key2 = key;
 
-                        resetStatusFilter();
+                    $(`#${key2}`).addClass("invalid");
+                    $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
+                    $(`#${key2}`).next(".invalid-feedback").css("display", "block");
+                }
+            } else {
+                //sanitize
 
-                    } else if (response == 2) { //csrf error
-                        $("button.close").trigger("click");
-                        $("#token_edit").val(received_token);
+                client = DOMPurify.sanitize(client, {
+                    SAFE_FOR_JQUERY: true
+                });
+                depositAmount = DOMPurify.sanitize(depositAmount, {
+                    SAFE_FOR_JQUERY: true
+                });
 
-                        vt.error(
-                            `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+
+                $.ajax({
+                    url: '/ajaxProcessus/depositWithdraw/waBalance/deduct.php',
+                    type: 'POST',
+                    data: {
+                        depositAmount,
+                        client,
+                        token
+                    },
+                    cache: false,
+                    timeout: 10000,
+
+                    success: function (data) {
+                        if (data == 'unauthorized' || data == '') {
+                            window.location.href = '/pages/errors/403.php';
+                            return;
+                        }
+                        rese = JSON.parse(data);
+                        var response = rese.response
+                        var received_token = rese.token
+                        var serverGeneratedErrors = rese.errors
+
+                        if (response == 1) { //added
+
+
+                            $("button.close").trigger("click");
+                            $("#token_deduct").val(received_token);
+                            vt.success(`${client} 차감 완료 되었습니다.`, {
+                                title: "차감 완료!",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+
+                            var activePage = $(".navigation_partner li.page-item.active a").text();
+                            displayPartners(activePage);
+                            // clearModalInvalidFeedbacks();
+
+                        } else if (response == 2) { //csrf error
+                            $("button.close").trigger("click");
+                            $("#token_deduct").val(received_token);
+
+                            vt.error(
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
                                 title: "CSRF 에러.",
                                 duration: 6000,
                                 closable: true,
@@ -1430,13 +1224,14 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                    } else if (response == 4) { //db error
-                        $("button.close").trigger("click");
-                        $("#token_edit").val(received_token);
+                            location.reload();
+                        } else if (response == 4) { //db error
+                            $("button.close").trigger("click");
+                            $("#token_deduct").val(received_token);
 
 
-                        vt.error(
-                            `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                            vt.error(
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
                                 title: "알수 없는 에러",
                                 duration: 6000,
                                 closable: true,
@@ -1445,31 +1240,238 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     console.log("completed");
                                 }
                             });
-                    } else if (response == 0) { //unicity error
-                        // $("button.close").trigger("click");
-                        $("#token_edit").val(received_token);
+                        } else if (response == 0) { //serverGeneratedErrors
+                            // $("button.close").trigger("click");
+                            $("#token_deduct").val(received_token);
 
-                        for (var key in serverGeneratedErrors) {
-                            var msg = serverGeneratedErrors[key];
+                            for (var key in serverGeneratedErrors) {
+                                var msg = serverGeneratedErrors[key];
 
-                            $(`#${key}`).addClass("invalid");
-                            $(`#${key}`).next(".invalid-feedback").text(msg);
-                            $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                                // console.log($(`#${key}`));
+                                $(`#${key}`).addClass("invalid");
+                                $(`#${key}`).next(".invalid-feedback").text(msg);
+                                $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                            }
                         }
                     }
-                }
-            })
+                })
+            }
         }
-    }
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-
-        displayPartners(0);
-        // clearModalInvalidFeedbacks();
 
 
+        // ----EDIT----
+        function showPartnerData(event) {
+            showEditableInputsAndHide();
 
-    });
+            let data = event.currentTarget.getAttribute("data-values");
+
+            //populating modal with data
+
+            data = data.replace(new RegExp("&&xx&&", "g"), " ");
+
+            data = JSON.parse(data);
+
+            // console.log(data);
+            // console.log(data["register_date"])
+
+            $("#username").val(data["username"]);
+            $("#partnerRate").val(data["rate"]);
+
+            $("#partner_id").val(data["id"]);
+
+            $("input[name=status][value=" + data["status"] + "]").prop('checked', true);
+
+        }
+
+        function confirmEditPartner(e) {
+            e.preventDefault();
+
+            $("#delete_modal button.btn_confirmed_action").hide();
+            $("#delete_modal button.edit_partner").show();
+
+            $("#delete_modal #text").text("Do you really want to Edit This Partner Information?.");
+
+            $(".modal-confirm .icon-box").css("border", "0px solid #3ac47d");
+            $(".modal-confirm .icon-box i").css("color", "#3ac47d");
+            $(".modal-confirm .btn-danger").css("background", "#3ac47d");
+            $(".modal-confirm .icon-box i").attr("class", "pe-7s-check");
+
+            $("#delete_modal").addClass("show");
+            $("#delete_modal").removeClass("d-none");
+
+        }
+
+        function editPartner(event) {
+            event.preventDefault();
+
+            //getting data
+            var username = $("#username").val().trim();
+            var partnerRate = $("#partnerRate").val().trim();
+
+            var status = $(".status:checked").val();
+
+            var id = $("#partner_id").val();
+
+            var token = $("#token_edit").val();
+
+            // console.log(status);
+
+            //validating & sanitazing data
+            var constraints = {
+                username: {
+                    presence: true,
+                    length: {
+                        minimum: 1,
+                        maximum: 30,
+                        message: "Field is required and should be {1 to 30} characters long."
+                    },
+                },
+                partnerRate: {
+                    presence: true,
+                    numericality: {
+                        greaterThanOrEqualTo: 0,
+                        lessThanOrEqualTo: 100,
+                    },
+                    format: {
+                        pattern: "^[0-9]{1,2}\.[0-9]{2}$",
+                        message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
+                    }
+                },
+            };
+
+
+            var errors = validate({
+                username,
+                partnerRate,
+            }, constraints);
+
+            if (typeof errors != undefined && errors != undefined) {
+
+                // console.log(errors);
+                for (var key in errors) {
+                    $(`#${key}`).addClass("invalid");
+                    $(`#${key}`).next(".invalid-feedback").text(errors[key]);
+                    $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                }
+            } else {
+                //sanitize
+
+                username = DOMPurify.sanitize(username, {
+                    SAFE_FOR_JQUERY: true
+                });
+                partnerRate = DOMPurify.sanitize(partnerRate, {
+                    SAFE_FOR_JQUERY: true
+                });
+                status = DOMPurify.sanitize(status, {
+                    SAFE_FOR_JQUERY: true
+                });
+                id = DOMPurify.sanitize(id, {
+                    SAFE_FOR_JQUERY: true
+                });
+                token = DOMPurify.sanitize(token, {
+                    SAFE_FOR_JQUERY: true
+                });
+
+                $.ajax({
+                    url: '/ajaxProcessus/memberManagement/partners/editPartner.php',
+                    type: 'POST',
+                    data: {
+                        id,
+                        partnerRate,
+                        status,
+                        token
+                    },
+                    cache: false,
+                    timeout: 10000,
+
+                    success: function (data) {
+                        if (data == 'unauthorized' || data == '') {
+                            window.location.href = '/pages/errors/403.php';
+                            return;
+                        }
+                        rese = JSON.parse(data);
+                        var response = rese.response
+                        var received_token = rese.token
+                        var serverGeneratedErrors = rese.errors
+
+                        $("#delete_modal").removeClass("show");
+                        $("#delete_modal").addClass("d-none");
+
+
+                        if (response == 1) { //updated
+
+                            $("button.close").trigger("click");
+                            $("#token_edit").val(received_token);
+                            vt.success(`파트너 '${username}'  수정이 완료 되었습니다.`, {
+                                title: "파트너 수정 완료!",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+
+                            var activePage = $(".navigation_partners li.page-item.active a").text();
+                            displayPartners(activePage);
+                            clearModalInvalidFeedbacks();
+
+                            resetStatusFilter();
+
+                        } else if (response == 2) { //csrf error
+                            $("button.close").trigger("click");
+                            $("#token_edit").val(received_token);
+
+                            vt.error(
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+                                title: "CSRF 에러.",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+                        } else if (response == 4) { //db error
+                            $("button.close").trigger("click");
+                            $("#token_edit").val(received_token);
+
+
+                            vt.error(
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                                title: "알수 없는 에러",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+                        } else if (response == 0) { //unicity error
+                            // $("button.close").trigger("click");
+                            $("#token_edit").val(received_token);
+
+                            for (var key in serverGeneratedErrors) {
+                                var msg = serverGeneratedErrors[key];
+
+                                $(`#${key}`).addClass("invalid");
+                                $(`#${key}`).next(".invalid-feedback").text(msg);
+                                $(`#${key}`).next(".invalid-feedback").css("display", "block");
+                            }
+                        }
+                    }
+                })
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+            displayPartners(0);
+            // clearModalInvalidFeedbacks();
+
+
+
+        });
     </script>
 
 
