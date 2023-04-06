@@ -190,6 +190,9 @@
 
                 <button type="button" class="btn btn-danger btn_confirmed_action delete_deposit" data-id=''
                     onclick=deleteDeposit(event)>Delete</button>
+
+                <button type="button" class="btn btn-danger btn_confirmed_action edit_password" data-id=''
+                    onclick=editPassword(event)>Confirm</button>
             </div>
         </div>
     </div>
