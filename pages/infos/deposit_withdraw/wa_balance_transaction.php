@@ -232,7 +232,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '포인트관리', 'title_text' => '포인트 거래', 'icon' => "wallet")); ?>
+                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '포인트관리', 'title_text' => '포인트 이동내역 (파트너)', 'icon' => "wallet")); ?>
 
                     <!-- main content -->
                     <section class="main">
@@ -376,6 +376,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                                     <th class="text-center">#</th>
                                                     <th class="text-center">파트너 ID</th>
                                                     <th class="text-center">아이디</th>
+                                                    <th class="text-center">상위파트너</th>
                                                     <th class="text-center">포인트 금액 </th>
                                                     <th class="text-center">이동자</th>
                                                     <th class="text-center">일시</th>

@@ -59,7 +59,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
 
-        $sql = "SELECT pu.username , d.* FROM wa_balance_deposits d JOIN partner_users pu ON d.partner_id = pu.id WHERE 1=1 {$filterQuery} ORDER BY d.id desc LIMIT $offset, $limit";
+        $sql = "SELECT pu.username , pu.pt_id , d.* FROM wa_balance_deposits d JOIN partner_users pu ON d.partner_id = pu.id WHERE 1=1 {$filterQuery} ORDER BY d.id desc LIMIT $offset, $limit";
 
         $depositBuilder = new Deposits();
         $depositsData = $depositBuilder->getAllDepositsCustom($sql, $parametersQuery);
@@ -99,12 +99,24 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                 $balanceColor = 'red';
             }
 
+            $parentName = 'site';
+            $partnerId = $value["pt_id"];
+            if (strpos($partnerId, "/") !== false) {
+                $parentsArray = explode("/", $partnerId);
+                $length = count($parentsArray);
+
+                $parent = $parentsArray[$length - 2];
+                $parentName = $db->get("username", "partner_users", array(["id", "=", $parent]))->first()["username"];
+
+            }
+
 
             $tableBody .= '<tr>';
 
             $tableBody .= '<td class="text-center text-muted">' . $i . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["partner_id"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["username"]) . '</td>';
+            $tableBody .= '<td class="text-center">' . escape($parentName) . '</td>';
             $tableBody .= '<td class="text-center" style="font-weight: bold;color:' . $balanceColor . '">' . escape($value["amount"]) . ' 원</td>';
             $tableBody .= '<td class="text-center">' . escape($issuer) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["created_at"]) . '</td>';
@@ -196,7 +208,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
         if ($tableBody == '') {
-            $j = 7;
+            $j = 8;
             $tableBody = '<tr> <td class="text-center" colspan="' . $j . '">데이터 없음!</td> </tr>';
         } else {
             $pageTotalAmount = $fmt->format($pageTotalAmount);
@@ -204,7 +216,8 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             // add page Total
             $tableBody .= '<tr style="font-weight:bold" class="bg-sunny-morning">';
 
-            $tableBody .= '<td class="text-left">Page Total</td>';
+            $tableBody .= '<td class="text-left">페이지 합계</td>';
+            $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center">' . $pageTotalAmount . ' 원</td>';
@@ -224,7 +237,8 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $tableBody .= '<tr style="font-weight:bold" class="bg-sunny-morning">';
 
-            $tableBody .= '<td class="text-left">Total</td>';
+            $tableBody .= '<td class="text-left">총 합계	</td>';
+            $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center"></td>';
             $tableBody .= '<td class="text-center">' . $totalAmount . ' 원</td>';
