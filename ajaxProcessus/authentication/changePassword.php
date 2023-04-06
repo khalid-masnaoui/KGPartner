@@ -13,11 +13,11 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
     if (token::check(input::get(config::get("session/token_name")), "edit_password")) {
 
-        $admin = new user();
-        $admin_id = $admin->data()["id"];
-        $adminUserName = $admin->data()["username"];
+        $partner = new user();
+        $partner_id = $partner->data()["id"];
+        $partnerUserName = $partner->data()["username"];
 
-        $_POST["username"] = $adminUserName;
+        $_POST["username"] = $partnerUserName;
 
         $validate = new validate();
 
@@ -25,7 +25,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $_POST,
             array(
                 "oldPassword" => [
-                    "pass_matches" => "admin_users",
+                    "pass_matches" => "partner_users",
                 ],
                 "newPassword" => [
                     "pattern" => ["rule" => '/^.{8,30}$/', "msg" => 'Field is required and should be {8 to 30} characters long.']
@@ -50,7 +50,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $array = ["password" => $hashed_password];
 
 
-            $inserted = $db->update('admin_users', [["id", "=", $admin_id]], $array);
+            $inserted = $db->update('partner_users', [["id", "=", $partner_id]], $array);
             if ($inserted->error()) {
                 $data = json_encode(["response" => 4, "errors" => [], "token" => token::generate("edit_password")]);
                 print_r($data);
@@ -62,7 +62,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $log = new ActivityLogger();
 
             $action = "Password changed";
-            $description = "Admin's Password changed";
+            $description = "Partner's Password changed";
             $logged = $log->addLog($action, $description);
 
             //call function for showing the data on table without refreshing
