@@ -414,7 +414,7 @@ foreach ($activeSlotProviders as $key => $value) {
                                             class="align-middle mb-0 table table-bordered table-striped table-hover summary">
                                             <thead>
                                                 <tr>
-                                                    <th class="text-center" colspan="4"></th>
+                                                    <th class="text-center" colspan="3"></th>
                                                     <?php
                                                     foreach ($activeProviders as $key => $value) {
                                                         if (!isset($ProvidersNameMapping[$value])) {
