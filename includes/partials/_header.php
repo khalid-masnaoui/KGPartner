@@ -168,7 +168,8 @@ if ($unSeenMails > 0 && strpos($_SERVER['REQUEST_URI'], 'dashboard.php') !== fal
 
                                     </button>
                                     <div tabindex="-1" class="dropdown-divider" id="devider"></div>
-                                    <button type="button" tabindex="0" class="dropdown-item">
+                                    <button type="button" tabindex="0" class="dropdown-item"
+                                        onclick="location.href='/pages/authentication/change_password.php'">
                                         <i class="metismenu-icon  pe-7s-door-lock"
                                             style="text-align: center;width: 34px;height: 34px;line-height: 34px;position: absolute;left: 5px;top: 50%;margin-top: -17px;font-size: 1.5rem;opacity: .5;transition: color 300ms;"></i>
                                         <span style="margin-left: 20px;">비밀번호 변경</span>
