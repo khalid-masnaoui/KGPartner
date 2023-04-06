@@ -444,9 +444,9 @@ foreach ($activeSlotProviders as $key => $value) {
                                                     }
 
                                                     ?>
-                                                    <th class="text-center">Wager</th>
-                                                    <th class="text-center">Turnover</th>
-                                                    <th class="text-center">WinLoss</th>
+                                                    <th class="text-center">베팅횟수</th>
+                                                    <th class="text-center">베팅금액</th>
+                                                    <th class="text-center">윈로스</th>
 
 
                                                 </tr>
