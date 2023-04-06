@@ -429,8 +429,8 @@ foreach ($activeSlotProviders as $key => $value) {
                                                 </tr>
                                                 <tr>
                                                     <th class="text-center 3f-cells">UID</th>
-                                                    <th class="text-center 3f-cells">Username</th>
-                                                    <th class="text-center 3f-cells">Client</th>
+                                                    <th class="text-center 3f-cells">아이디</th>
+                                                    <th class="text-center 3f-cells">고객사</th>
                                                     <!-- <th class="text-center 3f-cells">Parent</th> -->
                                                     <?php
                                                     foreach ($activeProviders as $key => $value) {
