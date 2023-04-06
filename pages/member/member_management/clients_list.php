@@ -523,7 +523,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         $("button#add_client").show();
         $("button#edit_client").hide();
 
-        $("#exampleModalLongTitle").text("고객 추가");
+        $("#exampleModalLongTitle").text("고객 추가ss");
 
         $("#username").prop('disabled', false);
         $("#name").prop('disabled', false);
@@ -547,7 +547,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         $("button#add_client").hide();
         $("button#edit_client").show();
 
-        $("#exampleModalLongTitle").text("고객사 요율 수정cc");
+        $("#exampleModalLongTitle").text("고객사 요율 수정");
 
 
         $("#username").prop('disabled', true);
