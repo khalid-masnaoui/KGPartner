@@ -626,7 +626,6 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         $("button#edit_deposit").hide();
         $("button#deduct").show();
 
-        console.log("deduct")
 
         $("#exampleModalLongTitle").text("포인트(알) 차감");
         $("#depositLabel").text("금액 (원)");

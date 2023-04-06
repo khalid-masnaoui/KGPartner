@@ -122,8 +122,6 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $summaryHistory = array_merge($summaryHistory, $summaryHistoryData);
 
 
-
-
         }
 
         // Array
@@ -169,14 +167,14 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $playerName = $summaryPlayerData["evo"]["username"];
             $clientName = $summaryPlayerData["evo"]["clientName"];
 
-            $parentName = $db->get("username", "partner_users", array(["id", "=", $summaryPlayerData["evo"]["parentId"]]))->first()["username"];
+            // $parentName = $db->get("username", "partner_users", array(["id", "=", $summaryPlayerData["evo"]["parentId"]]))->first()["username"];
 
 
             $tableBody .= '<tr>';
             $tableBody .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($playerRaw) . '</td>';
             $tableBody .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($playerName) . '</td>';
             $tableBody .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($clientName) . '</td>';
-            $tableBody .= '<td class="text-center">' . escape($parentName) . '</td>';
+            // $tableBody .= '<td class="text-center">' . escape($parentName) . '</td>';
 
 
 
@@ -298,7 +296,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         } else {
             //totals
             $tableBody .= '<tr class="total-row bg-sunny-morning">';
-            $tableBody .= '<td class="text-center 3f-cells" style="font-weight:bold" colspan=4>Totals</td>';
+            $tableBody .= '<td class="text-center 3f-cells" style="font-weight:bold" colspan=3>총 합계</td>';
 
             $totalOfTotalWagerCount = 0;
             $totalOfTotalTurnover = 0;

@@ -425,13 +425,13 @@ foreach ($activeSlotProviders as $key => $value) {
 
                                                     ?>
 
-                                                    <th class="text-center" colspan="3">Total</th>
+                                                    <th class="text-center" colspan="3">총 합계</th>
                                                 </tr>
                                                 <tr>
                                                     <th class="text-center 3f-cells">UID</th>
                                                     <th class="text-center 3f-cells">Username</th>
                                                     <th class="text-center 3f-cells">Client</th>
-                                                    <th class="text-center 3f-cells">Parent</th>
+                                                    <!-- <th class="text-center 3f-cells">Parent</th> -->
                                                     <?php
                                                     foreach ($activeProviders as $key => $value) {
                                                         if (!isset($ProvidersNameMapping[$value])) {
