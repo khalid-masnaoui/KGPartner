@@ -256,7 +256,7 @@ foreach ($activeProviders as $key => $value) {
                                         <div class="clslct">
                                             <select type="select" id="clientSelect" name="clientSelect"
                                                 class="custom-select">
-                                                <option value="all">All</option>
+                                                <option value="all">전체</option>
                                                 <?php
                                                 echo $options;
 
@@ -303,7 +303,7 @@ foreach ($activeProviders as $key => $value) {
                                                 </button>
                                                 <button id="status_tie" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-primary"
-                                                        style="color:white !important;">Tie</div>
+                                                        style="color:white !important;">타이</div>
                                                 </button>
                                                 <button id="status_cancel" class='status_ align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-warning"
@@ -311,7 +311,7 @@ foreach ($activeProviders as $key => $value) {
                                                 </button>
                                                 <button id="status_all" class='status_ active align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-focus">
-                                                        모두</div>
+                                                        전체</div>
                                                 </button>
 
 

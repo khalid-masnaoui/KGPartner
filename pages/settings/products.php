@@ -23,96 +23,96 @@ include __DIR__ . '/../../includes/partials/_authorization.php';
 
     <?php include __DIR__ . '/../../includes/files/_stylesheets.php'; ?>
     <style>
+    .filter-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+
+    .row_filter_wrapper {
+        flex: 2;
+        width: 100%;
+
+    }
+
+    .clslct {
+        margin-right: 10px;
+
+    }
+
+    .filter_btn {
+        margin-left: 20px;
+    }
+
+    .btn_action {
+        width: max-content;
+    }
+
+    .status_ {
+        border: none;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1500px) {
         .filter-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-
-        }
-
-        .row_filter_wrapper {
-            flex: 2;
-            width: 100%;
-
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .clslct {
-            margin-right: 10px;
+            margin-bottom: 20px;
+            margin-left: 10px;
 
         }
+    }
 
-        .filter_btn {
-            margin-left: 20px;
+
+    @media (max-width: 576px) {
+        .row_filter_wrapper>div {
+
+
+            width: 88% !important;
+            /* flex-direction:column; */
         }
 
-        .btn_action {
-            width: max-content;
+    }
+
+    @media (max-width: 540px) {
+        .card-header2 {
+            flex-direction: column;
+            height: 5.4rem !important;
+        }
+    }
+
+    @media (max-width: 440px) {
+        .card-header2 {
+            height: 6.4rem !important;
         }
 
-        .status_ {
-            border: none;
-            background: transparent;
-            margin: 0;
-            padding: 0;
-            cursor: pointer;
+        .card-header2 {
+            height: 6.4rem !important;
         }
 
-        @media (max-width: 1500px) {
-            .filter-wrapper {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .clslct {
-                margin-bottom: 20px;
-                margin-left: 10px;
-
-            }
-        }
-
-
-        @media (max-width: 576px) {
-            .row_filter_wrapper>div {
-
-
-                width: 88% !important;
-                /* flex-direction:column; */
-            }
+        .status_number_wrapper {
+            flex-direction: column;
 
         }
+    }
 
-        @media (max-width: 540px) {
-            .card-header2 {
-                flex-direction: column;
-                height: 5.4rem !important;
-            }
-        }
+    .nav-tabs .nav-link.active {
+        color: #fff;
+        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
+        /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
+    }
 
-        @media (max-width: 440px) {
-            .card-header2 {
-                height: 6.4rem !important;
-            }
-
-            .card-header2 {
-                height: 6.4rem !important;
-            }
-
-            .status_number_wrapper {
-                flex-direction: column;
-
-            }
-        }
-
-        .nav-tabs .nav-link.active {
-            color: #fff;
-            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
-            /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
-        }
-
-        .nav-tabs .nav-link.active:hover {
-            color: #fff !important;
-        }
+    .nav-tabs .nav-link.active:hover {
+        color: #fff !important;
+    }
 
     </style>
 </head>
@@ -203,7 +203,7 @@ include __DIR__ . '/../../includes/partials/_authorization.php';
                                                 </button>
                                                 <button id="status_all" class='status_ active align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-focus">
-                                                        모두</div>
+                                                        전체</div>
                                                 </button>
 
 
@@ -300,83 +300,115 @@ include __DIR__ . '/../../includes/partials/_authorization.php';
     <?php includeWithVariables('./../../includes/modals/_deleteModal.php'); ?>
 
     <script>
-        // --- DISPLAY WIN/LOSS TRANSACTIONS ----
-        function displayProductsList(N = 1, status = 'all') {
+    // --- DISPLAY WIN/LOSS TRANSACTIONS ----
+    function displayProductsList(N = 1, status = 'all') {
 
-            var activePage = $(".navigation_productslist li.page-item.active a").text();
-            var activeNumber = $(".active-productslist-number").text();
-            activeNumber = activeNumber.trim();
+        var activePage = $(".navigation_productslist li.page-item.active a").text();
+        var activeNumber = $(".active-productslist-number").text();
+        activeNumber = activeNumber.trim();
 
-            var category = $("#categorySelect").val();
-            var token = $("#token_display").val();
+        var category = $("#categorySelect").val();
+        var token = $("#token_display").val();
 
-            $.ajax({
-                url: '/ajaxProcessus/settings/displayProductsList.php',
-                type: 'POST',
-                data: {
-                    "display": true,
-                    "page": N,
-                    "number": activeNumber,
-                    category,
-                    status,
-                    token
-                },
+        $.ajax({
+            url: '/ajaxProcessus/settings/displayProductsList.php',
+            type: 'POST',
+            data: {
+                "display": true,
+                "page": N,
+                "number": activeNumber,
+                category,
+                status,
+                token
+            },
 
-                cache: false,
-                timeout: 10000,
+            cache: false,
+            timeout: 10000,
 
-                success: function (data) {
+            success: function(data) {
 
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-                    rese = JSON.parse(data);
+                if (data == 'unauthorized' || data == '') {
+                    window.location.href = '/pages/errors/403.php';
+                    return;
+                }
+                rese = JSON.parse(data);
 
-                    // console.log(rese[0]);
-                    let length = rese.length;
-
-
-                    if (length == 4) { //success
-                        $(".table-body-productslist").html(rese[0]);
-                        $(".navigation_productslist").html(rese[1]);
-
-                        $("#token_display").val(rese[3]);
-                    } else if (length == 1) { //csrf error
-                        $("#token_display").val(rese[0]);
-
-                    } else {
-                        //refresh page;
-                        location.reload();
-                    }
+                // console.log(rese[0]);
+                let length = rese.length;
 
 
+                if (length == 4) { //success
+                    $(".table-body-productslist").html(rese[0]);
+                    $(".navigation_productslist").html(rese[1]);
 
+                    $("#token_display").val(rese[3]);
+                } else if (length == 1) { //csrf error
+                    $("#token_display").val(rese[0]);
+
+                } else {
+                    //refresh page;
+                    location.reload();
                 }
 
 
-            })
+
+            }
+
+
+        })
+    }
+
+    //category FILTER
+    $(".filter_productslist").on("click", function(event) {
+        resetStatusFilter();
+
+        displayProductsList();
+    })
+
+
+    //NUMBERS DISPLAYED PER PAGE
+    $(".productslist_number_options button").on("click", function(event) {
+
+        console.log("G");
+
+        var number = event.currentTarget.textContent;
+        $(".active-productslist-number").text(number);
+
+        let id = $(".status_.active").attr("id");
+
+        let status = 'all';
+
+        if (id == "status_active") {
+            status = "active";
+        } else if (id == "status_inactive") {
+            status = "inactive";
         }
 
-        //category FILTER
-        $(".filter_productslist").on("click", function (event) {
-            resetStatusFilter();
+        displayProductsList(1, status);
+    })
 
-            displayProductsList();
-        })
+    function resetStatusFilter() {
+        $(".status_").css("opacity", 1);
+        $(".status_").removeClass("active");
+        $("#status_all").addClass("active");
+    }
 
 
-        //NUMBERS DISPLAYED PER PAGE
-        $(".productslist_number_options button").on("click", function (event) {
+    //status filter
+    $(".status_").click(function(event) {
+        let status = '';
+        let id = $(event.currentTarget).attr("id");
+        if (id == "status_all") {
+            $(".status_").css("opacity", 1);
 
-            console.log("G");
+            $(".status_").removeClass("active");
+            $(this).addClass("active");
 
-            var number = event.currentTarget.textContent;
-            $(".active-productslist-number").text(number);
+            status = "all";
 
-            let id = $(".status_.active").attr("id");
-
-            let status = 'all';
+        } else {
+            $(".status_").css("opacity", 0.2);
+            $(this).css("opacity", 1);
 
             if (id == "status_active") {
                 status = "active";
@@ -384,57 +416,25 @@ include __DIR__ . '/../../includes/partials/_authorization.php';
                 status = "inactive";
             }
 
-            displayProductsList(1, status);
-        })
-
-        function resetStatusFilter() {
-            $(".status_").css("opacity", 1);
             $(".status_").removeClass("active");
-            $("#status_all").addClass("active");
+            $(this).addClass("active");
         }
 
+        displayProductsList(1, status);
 
-        //status filter
-        $(".status_").click(function (event) {
-            let status = '';
-            let id = $(event.currentTarget).attr("id");
-            if (id == "status_all") {
-                $(".status_").css("opacity", 1);
-
-                $(".status_").removeClass("active");
-                $(this).addClass("active");
-
-                status = "all";
-
-            } else {
-                $(".status_").css("opacity", 0.2);
-                $(this).css("opacity", 1);
-
-                if (id == "status_active") {
-                    status = "active";
-                } else if (id == "status_inactive") {
-                    status = "inactive";
-                }
-
-                $(".status_").removeClass("active");
-                $(this).addClass("active");
-            }
-
-            displayProductsList(1, status);
-
-        })
+    })
 
 
 
 
-        document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('DOMContentLoaded', (event) => {
 
-            displayProductsList(0);
-            // clearModalInvalidFeedbacks();
+        displayProductsList(0);
+        // clearModalInvalidFeedbacks();
 
 
 
-        });
+    });
     </script>
 </body>
 

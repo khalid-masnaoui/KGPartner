@@ -24,13 +24,13 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
                 "username" => [
                     "unique" => "partner_users",
-                    "pattern" => ["rule" => '/^.{1,30}$/', "msg" => 'Field is required and should be {1 to 30} characters long.']
+                    "pattern" => ["rule" => '/^.{1,30}$/', "msg" => '1~30자를 입력하세요.']
                 ],
                 "password" => [
-                    "pattern" => ["rule" => '/^.{8,30}$/', "msg" => 'Field is required and should be {8 to 30} characters long.']
+                    "pattern" => ["rule" => '/^.{8,30}$/', "msg" => ' 8~30자를 입력하세요.']
                 ],
                 "partnerRate" => [
-                    "pattern" => ["rule" => '/^[0-9]{1,2}\.[0-9]{2}$/', "msg" => 'Not a valid Rate number. MUST be a DECIMAL number from 0-99. Example : 45.30.'],
+                    "pattern" => ["rule" => '/^[0-9]{1,2}\.[0-9]{2}$/', "msg" => '본인의 요율보다 같거나 높게 입력해 주세요.'],
                     "notEmpty" => true,
                     "biggerThan" => 0,
 

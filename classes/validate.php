@@ -198,7 +198,7 @@ class validate
                             $parentRate = $rule_value["parentRate"];
 
                             if ($partnerRate < $parentRate) {
-                                $this->addError("The Client Rate must be bigger than that of his Parent [You]", $item);
+                                $this->addError("본인의 요율보다 같거나 높게 입력해 주세요.", $item);
                             }
 
                             break;

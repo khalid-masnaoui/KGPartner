@@ -44,7 +44,7 @@ $ProvidersNameMapping = config::get("providersNameMappings");
 
 $providersCasinoOptions = "";
 $providersSlotOptions = "";
-$providersOptions = "<option value='all'>All</option>";
+$providersOptions = "<option value='all'>전체</option>";
 
 
 
@@ -243,7 +243,7 @@ foreach ($activeSlotProviders as $key => $value) {
                 <div class="app-main__inner">
 
                     <!-- inner header section  -->
-                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '정산관리', 'title_text' => '서머리 리포트', 'icon' => "news-paper")); ?>
+                    <?php includeWithVariables('./../../../includes/partials/_innerheader.php', array('title' => '정산관리', 'title_text' => '요약보고서', 'icon' => "news-paper")); ?>
 
                     <!-- main content -->
                     <section class="main">
@@ -310,7 +310,7 @@ foreach ($activeSlotProviders as $key => $value) {
                                         <div class="clslct">
                                             <select type="select" id="clientSelect" name="clientSelect"
                                                 class="custom-select">
-                                                <option value="all">All</option>
+                                                <option value="all">전체</option>
                                                 <?php
                                                 echo $options;
 
@@ -340,7 +340,7 @@ foreach ($activeSlotProviders as $key => $value) {
                                         <span>
 
 
-                                            서머리 리포트
+                                            요약보고서
 
                                             <button class="mb-0 ml-2 btn btn-light ExcelBtn">엑셀 다운로드<span
                                                     class="badge badge-pill badge-light"><i
@@ -365,7 +365,7 @@ foreach ($activeSlotProviders as $key => $value) {
                                                 </button>
                                                 <button id="status_all" class='status_ active align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-focus">
-                                                        모두</div>
+                                                        전체</div>
                                                 </button>
 
 

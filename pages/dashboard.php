@@ -113,8 +113,8 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                             <div class="widget-content-outer">
                                                 <div class="widget-content-wrapper">
                                                     <div class="widget-content-left">
-                                                        <div class="widget-heading">클라이언트</div>
-                                                        <div class="widget-subheading">총 클라이언트 수</div>
+                                                        <div class="widget-heading">고객사</div>
+                                                        <div class="widget-subheading">총 고객사 수</div>
                                                     </div>
                                                     <div class="widget-content-right">
                                                         <div class="widget-numbers text-success"> <span
@@ -152,7 +152,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                             <div class="widget-content-outer">
                                                 <div class="widget-content-wrapper">
                                                     <div class="widget-content-left">
-                                                        <div class="widget-heading">활동 클라이언트</div>
+                                                        <div class="widget-heading">활동 고객사</div>
                                                         <div class="widget-subheading">퍼센트
                                                         </div>
                                                     </div>
@@ -366,7 +366,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                 <ul class="nav">
                                     <li class="nav-item"><a href="javascript:void(0);"
                                             class="active nav-link second-tab-toggle turnover turnover-current"
-                                            data-period='current'>측정하다</a>
+                                            data-period='current'>이번주</a>
                                     </li>
                                     <li class="nav-item"><a href="javascript:void(0);"
                                             class="nav-link turnover turnover-last" data-period='last'>지난주</a>

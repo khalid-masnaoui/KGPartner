@@ -156,12 +156,12 @@ $modal_body = '<form class="">
                         <div class="invalid-feedback"></div>
     </div>
 </div>
-<div class="position-relative row form-group"><label for="name" class="col-sm-2 col-form-label">고객명</label>
+<div class="position-relative row form-group"><label for="name" class="col-sm-2 col-form-label"> 프리픽스 : 아이디 앞에 붙는 고객별 고유 식별단어입니다.</label>
     <div class="col-sm-10"><input name="name" id="name" placeholder="고객명" type="text" class="form-control shadow-none">
     <div class="invalid-feedback"></div>
     </div>
 </div>
-<div class="position-relative row form-group"><label for="client_prefix" class="col-sm-2 col-form-label">프리픽스</label>
+<div class="position-relative row form-group"><label for="client_prefix" class="col-sm-2 col-form-label">엔드포인트 : https:// </label>
     <div class="col-sm-10"><input name="client_prefix" id="client_prefix" placeholder="프리픽스" type="text" class="form-control shadow-none">
                                     <div class="invalid-feedback"></div>
     </div>
@@ -211,7 +211,7 @@ $modal_body = '<form class="">
         <button class="btn btn-secondary" id="add_client" onclick="addClient(event)">저장</button>
     </div>
     <div class="col-sm-10 text-center text-sm-left">
-    <button class="btn btn-secondary" id="edit_client" onclick="editClient(event)">클라이언트 수정</button>
+    <button class="btn btn-secondary" id="edit_client" onclick="editClient(event)">수정</button>
 </div>
 </div>
 </form> ';
@@ -345,7 +345,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                                 </button>
                                                 <button id="status_all" class='status_ active align-self-end'>
                                                     <div class="mb-2 mr-2 badge badge-pill badge-focus">
-                                                        모두</div>
+                                                        전체</div>
                                                 </button>
 
 
@@ -381,8 +381,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                     </div>
                                     <div class="btn_read ml-3">
                                         <button class="mb-2 mt-2 ml-2 btn btn-success active" data-toggle="modal"
-                                            data-target=".add_client" onclick=hideEditableInputsAndShow()>A신규
-                                            고객사</button>
+                                            data-target=".add_client" onclick=hideEditableInputsAndShow()>신규 고객사
+                                            생성</button>
 
                                         <button class="mb-2 mt-2 ml-2 btn btn-light active" data-toggle="modal"
                                             data-target=".add_deposit" onclick=hideEditableInputsAndShow2()>포인트 지급 <span
@@ -523,7 +523,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             $("button#add_client").show();
             $("button#edit_client").hide();
 
-            $("#exampleModalLongTitle").text("Add Client");
+            $("#exampleModalLongTitle").text("고객 추가");
 
             $("#username").prop('disabled', false);
             $("#name").prop('disabled', false);
@@ -547,7 +547,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             $("button#add_client").hide();
             $("button#edit_client").show();
 
-            $("#exampleModalLongTitle").text("Edit Client's Rate");
+            $("#exampleModalLongTitle").text("고객사 요율 수정");
 
 
             $("#username").prop('disabled', true);
@@ -603,7 +603,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             $("button#edit_deposit").hide();
             $("button#deduct").hide();
 
-            $("#exampleModalLongTitle").text("Make Deposit");
+            $("#exampleModalLongTitle").text(" 포인트(알) 전송");
             $("#depositLabel").text("금액 (원)");
 
 
@@ -627,7 +627,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             $("button#deduct").show();
 
 
-            $("#exampleModalLongTitle").text("Deduct");
+            $("#exampleModalLongTitle").text("포인트(알) 차감");
             $("#depositLabel").text("금액 (원)");
 
             $("#clientSelectAdd").prop('disabled', false);
@@ -868,7 +868,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     length: {
                         minimum: 1,
                         maximum: 30,
-                        message: "Field is required and should be {1 to 30} characters long."
+                        message: "^1~30자를 입력하세요.."
                     },
                 },
                 password: {
@@ -876,7 +876,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     length: {
                         minimum: 8,
                         maximum: 30,
-                        message: "Field is required and should be {8 to 30} characters long."
+                        message: "^8~30자를 입력하세요."
                     },
                 },
                 name: {
@@ -884,19 +884,19 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     length: {
                         minimum: 1,
                         maximum: 20,
-                        message: "Field is required and should be {1 to 20} characters long."
+                        message: "^ 1~20자를 입력하세요."
                     },
                 },
                 client_prefix: {
                     presence: true,
-                    length: {
-                        minimum: 1,
-                        maximum: 8,
-                        message: "Field is required and should be {1 to 8} characters long."
-                    },
+                    // length: {
+                    //     minimum: 1,
+                    //     maximum: 8,
+                    //     message: "Field is required and should be {1 to 8} characters long."
+                    // },
                     format: {
                         pattern: "^[A-Za-z][A-Za-z0-9]{1,8}$",
-                        message: "MUST Begins with a letter and the characters ALLOWED are numbers , latin letters {uppercase and lowercase}"
+                        message: "^1~8자를 입력하세요. 영어 + 숫자를 조합할 수 있습니다."
                     }
                 },
                 end_point: {
@@ -904,11 +904,11 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     length: {
                         minimum: 1,
                         maximum: 100,
-                        message: "Field is required and should be {1 to 100} characters long",
+                        message: "^엔드포인트는 필수 항목이며 1~100자를 입력하세요. ",
                     },
                     url: {
                         allowDataUrl: false,
-                        message: "not a valid URL. The value should start with schema http(s)://"
+                        message: '^"http(s)://" 형태로 입력해 주세요. '
 
                     }
                 },
@@ -917,10 +917,11 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     numericality: {
                         greaterThanOrEqualTo: 0,
                         lessThanOrEqualTo: 100,
+                        // message : "^"
                     },
                     format: {
                         pattern: "^[0-9]{1,2}\.[0-9]{2}$",
-                        message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
+                        message: "^본인의 요율보다 같거나 높게 입력해 주세요."
                     }
                 },
 
@@ -1028,8 +1029,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
                             $("button.close").trigger("click");
                             $("#token").val(received_token);
-                            vt.success(`You successfully added a new Client : ${username}.`, {
-                                title: "New Client Added!",
+                            vt.success(`신규 고객사 ${username} 가 추가 완료 되었습니다.`, {
+                                title: "신규 고객사 추가 완료!",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1049,8 +1050,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                             $("#token").val(received_token);
 
                             vt.error(
-                                `This can be a CSRF error!, if you see this error please contact our support about it.`, {
-                                title: "CSRF Error",
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+                                title: "CSRF 에러.",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1064,8 +1065,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
                             vt.error(
-                                `We could not process your request due to an unknown error!, please try again.`, {
-                                title: "Unknown error",
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                                title: "알수 없는 에러",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1188,8 +1189,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
                             $("button.close").trigger("click");
                             $("#token_make").val(received_token);
-                            vt.success(`You successfully added a new Deposit for the Client : ${client}.`, {
-                                title: "New Deposit Added!",
+                            vt.success(`${client} 충전 완료 되었습니다.`, {
+                                title: "충전 완료!",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1207,8 +1208,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                             $("#token_make").val(received_token);
 
                             vt.error(
-                                `This can be a CSRF error!, if this error persists,  please contact our support about it.`, {
-                                title: "CSRF Error",
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+                                title: "CSRF 에러.",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1223,8 +1224,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
                             vt.error(
-                                `We could not process your request due to an unknown error!, please try again.`, {
-                                title: "Unknown error",
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                                title: "알수 없는 에러",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1332,9 +1333,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
                             $("button.close").trigger("click");
                             $("#token_deduct").val(received_token);
-                            vt.success(
-                                `You successfully deduct the amount from the Client : ${client}.`, {
-                                title: "Deduction Success!",
+                            vt.success(`${client} 차감 완료 되었습니다.`, {
+                                title: "차감 완료!",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1352,8 +1352,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                             $("#token_deduct").val(received_token);
 
                             vt.error(
-                                `This can be a CSRF error!, if this error persists, please contact our support about it.`, {
-                                title: "CSRF Error",
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+                                title: "CSRF 에러.",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1368,8 +1368,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
                             vt.error(
-                                `We could not process your request due to an unknown error!, please try again.`, {
-                                title: "Unknown error",
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                                title: "알수 없는 에러",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1519,8 +1519,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
                             $("button.close").trigger("click");
                             $("#token").val(received_token);
-                            vt.success(`You successfully updated the client's Rate : ${username}.`, {
-                                title: "Client's Rate Updated!",
+                            vt.success(`'${username}' 의 요율 수정이 완료 되었습니다.`, {
+                                title: "요율 수정 완료!",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1540,8 +1540,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                             $("#token").val(received_token);
 
                             vt.error(
-                                `This can be a CSRF error!, if you see this error please contact our support about it.`, {
-                                title: "CSRF Error",
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+                                title: "CSRF 에러.",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
@@ -1555,8 +1555,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
                             vt.error(
-                                `We could not process your request due to an unknown error!, please try again.`, {
-                                title: "Unknown error",
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                                title: "알수 없는 에러",
                                 duration: 6000,
                                 closable: true,
                                 focusable: true,
