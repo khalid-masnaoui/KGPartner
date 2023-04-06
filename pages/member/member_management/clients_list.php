@@ -604,10 +604,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             $("button#deduct").hide();
 
 
-            $("#exampleModalLongTitle").text(" 포인트(알) 전송dd");
+            $(".add_deposit #exampleModalLongTitle").text(" 포인트(알) 전송dd");
             $("#depositLabel").text("금액 (원)");
-
-            $("#exampleModalLongTitle").text("고객 추가ss");
 
             $("#clientSelectAdd").prop('disabled', false);
 
@@ -629,7 +627,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             $("button#deduct").show();
 
 
-            $("#exampleModalLongTitle").text("포인트(알) 차감");
+            $(".add_deposit #exampleModalLongTitle").text("포인트(알) 차감");
             $("#depositLabel").text("금액 (원)");
 
             $("#clientSelectAdd").prop('disabled', false);
