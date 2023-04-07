@@ -156,18 +156,18 @@ $modal_body = '<form class="">
                         <div class="invalid-feedback"></div>
     </div>
 </div>
-<div class="position-relative row form-group"><label for="name" class="col-sm-2 col-form-label"> 프리픽스 : 아이디 앞에 붙는 고객별 고유 식별단어입니다.</label>
+<div class="position-relative row form-group"><label for="name" class="col-sm-2 col-form-label">  고객명</label>
     <div class="col-sm-10"><input name="name" id="name" placeholder="고객명" type="text" class="form-control shadow-none">
     <div class="invalid-feedback"></div>
     </div>
 </div>
-<div class="position-relative row form-group"><label for="client_prefix" class="col-sm-2 col-form-label">엔드포인트 : https:// </label>
+<div class="position-relative row form-group"><label for="client_prefix" class="col-sm-2 col-form-label">고객명 </label>
     <div class="col-sm-10"><input name="client_prefix" id="client_prefix" placeholder="프리픽스" type="text" class="form-control shadow-none">
                                     <div class="invalid-feedback"></div>
     </div>
 </div>
-<div class="position-relative row form-group end_point"><label for="end_point" class="col-sm-2 col-form-label">엔드포인트</label>
-    <div class="col-sm-10"><input name="end_point" id="end_point" placeholder="엔드포인트" type="text" class="form-control shadow-none">
+<div class="position-relative row form-group end_point"><label for="end_point" class="col-sm-2 col-form-label">프리픽스</label>
+    <div class="col-sm-10"><input name="end_point" id="end_point" placeholder="https://" type="text" class="form-control shadow-none">
                 <div class="invalid-feedback"></div>
     </div>
 </div>
@@ -604,7 +604,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             $("button#deduct").hide();
 
 
-            $(".add_deposit #exampleModalLongTitle").text(" 포인트(알) 전송dd");
+            $(".add_deposit #exampleModalLongTitle").text(" 포인트(알) 전송");
             $("#depositLabel").text("금액 (원)");
 
             $("#clientSelectAdd").prop('disabled', false);
