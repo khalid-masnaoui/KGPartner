@@ -975,6 +975,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
         //getting data
         var client = $("#clientSelectAdd").val();
+        var username = $('#clientSelectAdd').find(":selected").text();
         var depositAmount = $("#depositAmount").val().replace(/,/g, '');
         var token = $("#token_make").val();
 
@@ -1051,16 +1052,15 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
                         $("button.close").trigger("click");
                         $("#token_make").val(received_token);
-                        vt.success(
-                            `${client} 충전 완료 되었습니다.`, {
-                                title: "지급 완료!",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
+                        vt.success(`${username}에게 포인트 지급 완료되었습니다.`, {
+                            title: "지급 완료!",
+                            duration: 6000,
+                            closable: true,
+                            focusable: true,
+                            callback: () => {
+                                console.log("completed");
+                            }
+                        });
 
                         var activePage = $(".navigation_partner li.page-item.active a").text();
                         displayPartners(activePage);
@@ -1120,6 +1120,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
         //getting data
         var client = $("#clientSelectAdd").val();
+        var username = $('#clientSelectAdd').find(":selected").text();
         var depositAmount = $("#depositAmount").val().replace(/,/g, '');
         var token = $("#token_deduct").val();
 
@@ -1196,7 +1197,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
                         $("button.close").trigger("click");
                         $("#token_deduct").val(received_token);
-                        vt.success(`${client} 차감 완료 되었습니다.`, {
+                        vt.success(`${username}으로부터 포인트 차감 완료되었습니다.`, {
                             title: "차감 완료!",
                             duration: 6000,
                             closable: true,

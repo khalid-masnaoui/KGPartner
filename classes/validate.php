@@ -120,7 +120,7 @@ class validate
                             break;
                         case "matches":
                             if ($value != $source[$rule_value]) {
-                                $this->addError("the passwords must be matched", $item);
+                                $this->addError("비밀번호가 일치하지 않습니다", $item);
                             }
 
                             break;
