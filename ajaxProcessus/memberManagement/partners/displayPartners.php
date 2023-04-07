@@ -44,7 +44,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
 
-        $partners = $db->query("SELECT * from partner_users where 1=1 $partnerFilter  $statusFilterQuery $nameFilterQuery order by id desc limit $limit offset $offset", $queryParameters)->results();
+        $partners = $db->query("SELECT * from partner_users where 1=1 $partnerFilter  $statusFilterQuery $nameFilterQuery order by id  limit $limit offset $offset", $queryParameters)->results();
 
         // print_r($partners);
         // die;
