@@ -68,7 +68,7 @@ if (cookie::exists(config::get("remember/cookie_name")) && !session::exists(conf
 
 //number formatter
 $fmt = new NumberFormatter('en_US', NumberFormatter::DECIMAL);
-$fmt->setAttribute(NumberFormatter::FRACTION_DIGITS, 2);
+$fmt->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
 
 
 ?>

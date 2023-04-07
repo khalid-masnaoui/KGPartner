@@ -153,7 +153,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                                 <div class="widget-content-wrapper">
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">활동 고객사</div>
-                                                        <div class="widget-subheading">퍼센트
+                                                        <div class="widget-subheading">활동고객 비율
                                                         </div>
                                                     </div>
                                                     <div class="widget-content-right"
@@ -211,7 +211,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                                                 <div class="widget-content-wrapper">
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">취소 거래 </div>
-                                                        <div class="widget-subheading">퍼센트
+                                                        <div class="widget-subheading">활동고객 비율
                                                         </div>
                                                     </div>
                                                     <div class="widget-content-right"
