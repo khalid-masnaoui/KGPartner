@@ -1,123 +1,123 @@
 <style>
-    /*delete modal*/
-    #delete_modal {
-        position: fixed;
-        top: 0%;
-        left: 0%;
-        /* transform: translate(-50%, -25%); */
-        z-index: 2000;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        outline: 0;
-    }
+/*delete modal*/
+#delete_modal {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    /* transform: translate(-50%, -25%); */
+    z-index: 2000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
 
-    .modal-confirm {
-        color: #636363;
-        width: 400px;
-    }
+.modal-confirm {
+    color: #636363;
+    width: 400px;
+}
 
-    .modal-confirm .modal-content {
-        padding: 20px;
-        border-radius: 5px;
-        border: none;
-        text-align: center;
-        font-size: 14px;
-    }
+.modal-confirm .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+}
 
-    .modal-confirm .modal-header {
-        border-bottom: none;
-        position: relative;
-    }
+.modal-confirm .modal-header {
+    border-bottom: none;
+    position: relative;
+}
 
-    .modal-confirm h4 {
-        text-align: center;
-        font-size: 26px;
-        margin: 30px 0 -10px;
-    }
+.modal-confirm h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -10px;
+}
 
-    .modal-confirm .close {
-        position: absolute;
-        top: -5px;
-        right: -2px;
-    }
+.modal-confirm .close {
+    position: absolute;
+    top: -5px;
+    right: -2px;
+}
 
-    .modal-confirm .modal-body {
-        color: #999;
-    }
+.modal-confirm .modal-body {
+    color: #999;
+}
 
-    .modal-confirm .modal-footer {
-        border: none;
-        text-align: center;
-        border-radius: 5px;
-        font-size: 13px;
-        padding: 10px 15px 25px;
-    }
+.modal-confirm .modal-footer {
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 10px 15px 25px;
+}
 
-    .modal-confirm .modal-footer a {
-        color: #999;
-    }
+.modal-confirm .modal-footer a {
+    color: #999;
+}
 
-    .modal-confirm .icon-box {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto;
-        border-radius: 50%;
-        z-index: 9;
-        text-align: center;
-        border: 3px solid #f15e5e;
-    }
+.modal-confirm .icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 9;
+    text-align: center;
+    border: 3px solid #f15e5e;
+}
 
-    .modal-confirm .icon-box i {
-        color: #f15e5e;
-        font-size: 46px;
-        display: inline-block;
-        margin-top: 13px;
-    }
+.modal-confirm .icon-box i {
+    color: #f15e5e;
+    font-size: 46px;
+    display: inline-block;
+    margin-top: 13px;
+}
 
-    .modal-confirm .btn,
-    .modal-confirm .btn:active {
-        color: #fff;
-        border-radius: 4px;
-        background: #60c7c1;
-        text-decoration: none;
-        transition: all 0.4s;
-        line-height: normal;
-        min-width: 120px;
-        border: none;
-        min-height: 40px;
-        border-radius: 3px;
-        margin: 0 5px;
-    }
+.modal-confirm .btn,
+.modal-confirm .btn:active {
+    color: #fff;
+    border-radius: 4px;
+    background: #60c7c1;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    min-width: 120px;
+    border: none;
+    min-height: 40px;
+    border-radius: 3px;
+    margin: 0 5px;
+}
 
-    .modal-confirm .btn-secondary {
-        background: #c1c1c1;
-    }
+.modal-confirm .btn-secondary {
+    background: #c1c1c1;
+}
 
-    .modal-confirm .btn-secondary:hover,
-    .modal-confirm .btn-secondary:focus {
-        background: #a8a8a8;
-    }
+.modal-confirm .btn-secondary:hover,
+.modal-confirm .btn-secondary:focus {
+    background: #a8a8a8;
+}
 
-    .modal-confirm .btn-danger {
-        background: #f15e5e;
-    }
+.modal-confirm .btn-danger {
+    background: #f15e5e;
+}
 
-    .modal-confirm .btn-danger:hover,
-    .modal-confirm .btn-danger:focus {
-        background: #ee3535;
-    }
+.modal-confirm .btn-danger:hover,
+.modal-confirm .btn-danger:focus {
+    background: #ee3535;
+}
 
-    /* .trigger-btn {
+/* .trigger-btn {
         display: inline-block;
         margin: 100px auto;
     } */
-    @media (max-width: 415px) {
-        .modal-confirm {
-            width: 320px;
-            margin: auto;
-        }
+@media (max-width: 415px) {
+    .modal-confirm {
+        width: 320px;
+        margin: auto;
     }
+}
 
 </style>
 <div id="delete_modal" class="delete_modal fade d-none">
@@ -157,7 +157,7 @@
 
                 <button type="button" class="btn btn-danger btn_confirmed_action confirm_pt_setting" data-id=''
                     onclick=addMemberPt(event)>확인</button>
-                확인
+
                 <button type="button" class="btn btn-danger btn_confirmed_action confirm_commission" data-id=''
                     onclick=editCommission(event)>확인</button>
 
@@ -198,42 +198,42 @@
     </div>
 </div>
 <script>
-    function resetDeleteModalScheme() {
+function resetDeleteModalScheme() {
+    //reset delete modal scheme
+    $(".modal-confirm .icon-box").css("border", "3px solid #f15e5e");
+    $(".modal-confirm .icon-box i").css("color", "#f15e5e");
+    $(".modal-confirm .btn-danger").css("background", "#f15e5e");
+    $(".modal-confirm .icon-box i").attr("class", "pe-7s-close");
+}
+$("#delete_modal button.close").click(function(event) {
+
+    //reset delete modal scheme
+    resetDeleteModalScheme()
+
+    $("#delete_modal").removeClass("show");
+    $("#delete_modal").addClass("d-none");
+
+});
+$("#delete_modal button.cancel").click(function(event) {
+
+    //reset delete modal scheme
+    resetDeleteModalScheme()
+
+    $("#delete_modal").removeClass("show");
+    $("#delete_modal").addClass("d-none");
+
+});
+$("#delete_modal").click(function(event) {
+    // $("#delete_modal").removeClass("show");
+    // $("#delete_modal").addClass("d-none");
+
+    if (event.target == this) { // only if the target itself has been clicked
+
         //reset delete modal scheme
-        $(".modal-confirm .icon-box").css("border", "3px solid #f15e5e");
-        $(".modal-confirm .icon-box i").css("color", "#f15e5e");
-        $(".modal-confirm .btn-danger").css("background", "#f15e5e");
-        $(".modal-confirm .icon-box i").attr("class", "pe-7s-close");
+        resetDeleteModalScheme()
+
+        $("#delete_modal").removeClass("show");
+        $("#delete_modal").addClass("d-none");
     }
-    $("#delete_modal button.close").click(function (event) {
-
-        //reset delete modal scheme
-        resetDeleteModalScheme()
-
-        $("#delete_modal").removeClass("show");
-        $("#delete_modal").addClass("d-none");
-
-    });
-    $("#delete_modal button.cancel").click(function (event) {
-
-        //reset delete modal scheme
-        resetDeleteModalScheme()
-
-        $("#delete_modal").removeClass("show");
-        $("#delete_modal").addClass("d-none");
-
-    });
-    $("#delete_modal").click(function (event) {
-        // $("#delete_modal").removeClass("show");
-        // $("#delete_modal").addClass("d-none");
-
-        if (event.target == this) { // only if the target itself has been clicked
-
-            //reset delete modal scheme
-            resetDeleteModalScheme()
-
-            $("#delete_modal").removeClass("show");
-            $("#delete_modal").addClass("d-none");
-        }
-    });
+});
 </script>
