@@ -32,7 +32,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         $partnerFilter = " AND  (pt_id = ? OR pt_id REGEXP ?)";
         $queryParameters[] = "$partnerPtId";
-        $queryParameters[] = "^$partnerPtId/[0-9]*$";
+        $queryParameters[] = "^$partnerPtId/[0-9/]*$";
 
         if ($statusFilter != '') {
             $statusFilterQuery .= " AND status = ? ";
