@@ -467,7 +467,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             //reset
             $("#clientSelectAdd").val('');
             $("#clientSelectAdd").select2().select2('val', '');
-            $("#depositAmount").val('0.00');
+            $("#depositAmount").val('0');
 
 
             $("button#add_deposit").show();
@@ -490,7 +490,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             //reset
             // $("#clientSelectAdd").val('');
             $("#clientSelectAdd").select2().select2('val', '');
-            $("#depositAmount").val('0.00');
+            $("#depositAmount").val('0');
 
 
             $("button#add_deposit").hide();
@@ -555,10 +555,10 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             var number = $(this).val();
 
             if (number == '') {
-                $(this).val("0.00");
+                $(this).val("0");
 
             } else {
-                var d = number_format(number, 2, ".", ",");
+                var d = number_format(number, 0, ".", ",");
 
                 $(this).val(d);
             }
