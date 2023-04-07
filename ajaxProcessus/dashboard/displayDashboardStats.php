@@ -41,7 +41,13 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $balanceAndDepositData = $db->query($clientsBalanceAndDepositSql, $parametersQuery)->first();
 
         $dashboardStatsData["clientsBalance"] = $fmt->format($balanceAndDepositData["balanceTotal"]);
-        $dashboardStatsData["clientsDeposit"] = $fmt->format($balanceAndDepositData["depositTotal"]);
+        // $dashboardStatsData["clientsDeposit"] = $fmt->format($balanceAndDepositData["depositTotal"]);
+
+
+        $partnersTotalDepositSql = "SELECT sum(amount) as depositTotal FROM deposits WHERE admin_id = ?";
+        $partnersTotalDepositData = $db->query($partnersTotalDepositSql, ["p:$partnerId"])->first();
+        $dashboardStatsData["clientsDeposit"] = $fmt->format($partnersTotalDepositData["depositTotal"]);
+
 
         //current partner balance --- TO CHANGE TO WA BALANCE
         // $partnersBalanceSql = "SELECT sum(pb.balance) as balanceTotal FROM partners_balance pb WHERE pb.partner_id = ?";
