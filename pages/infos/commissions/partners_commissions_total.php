@@ -12,7 +12,7 @@ $partnerPtId = $partner->data()["pt_id"];
 // $partners = $db->query($sql, ["$partnerPtId", "$partnerPtId/%"])->results();
 
 $sql = "SELECT id,pt_id,username FROM partner_users WHERE pt_id = ? OR pt_id REGEXP ?";
-$partners = $db->query($sql, ["$partnerPtId", "^$partnerPtId/[0-9]*$"])->results();
+$partners = $db->query($sql, ["$partnerPtId", "^$partnerPtId/[0-9/]*$"])->results();
 
 $options = "";
 

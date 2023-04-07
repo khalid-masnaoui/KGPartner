@@ -14,7 +14,7 @@ $partnerPtId = $partner->data()["pt_id"];
 
 // $sql = "SELECT id,username FROM partner_users WHERE pt_id != ? AND pt_id REGEXP ?";
 $sql = "SELECT id,username FROM partner_users WHERE pt_id = ? OR pt_id REGEXP ?";
-$partners = $db->query($sql, ["$partnerPtId", "^$partnerPtId/[0-9]*$"])->results();
+$partners = $db->query($sql, ["$partnerPtId", "^$partnerPtId/[0-9/]*$"])->results();
 
 $options = "";
 $optionsDropDown = "";

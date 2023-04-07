@@ -34,7 +34,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         //current self partner
         $filterQuery = " AND (pu.pt_id = ? OR pu.pt_id REGEXP ?)";
         $parametersQuery[] = "$partnerPtId";
-        $parametersQuery[] = "^$partnerPtId/[0-9]*$";
+        $parametersQuery[] = "^$partnerPtId/[0-9/]*$";
 
         if ($partner != 'all') {
             $filterQuery .= " AND pu.id = ?";
