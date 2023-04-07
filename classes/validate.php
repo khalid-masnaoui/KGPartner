@@ -188,7 +188,7 @@ class validate
                                 $user_pass = $this->_db->get("password", "partner_users", [["username", "=", $source["username"]]])->first();
                                 $password_inp = $source[$item];
                                 if (!password_verify($password_inp, $user_pass["password"])) {
-                                    $this->addError("the password is incorrect", $item);
+                                    $this->addError("비밀번호를 다시 확인해주세요", $item);
                                 }
                             }
                             break;
