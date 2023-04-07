@@ -13,10 +13,6 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
     if (token::check(input::get(config::get("session/token_name")), "edit_password")) {
 
-        $data = json_encode(["response" => 4, "errors" => [], "token" => token::generate("edit_password")]);
-        print_r($data);
-        exit();
-
         $partner = new user();
         $partner_id = $partner->data()["id"];
         $partnerUserName = $partner->data()["username"];
