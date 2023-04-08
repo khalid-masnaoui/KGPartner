@@ -1,0 +1,499 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+@font-face {
+	font-family: HJ;
+	font-display: swap;
+	src: url(/assets/fonts/HJ.woff);
+}
+
+@font-face {
+	font-family: HancomEQN;
+	font-display: swap;
+	src: url(/assets/fonts/HancomEQN.woff);
+}
+
+@font-face {
+	font-family: MyriadProRegular;
+	font-display: swap;
+	src: url(/assets/fonts/MyriadPro-Regular.woff);
+}
+
+@font-face {
+	font-family: Gulim;
+	font-display: swap;
+	src: url(/assets/fonts/Gulim.woff);
+}
+
+@font-face {
+	font-family: HJ2;
+	font-display: swap;
+	src: url(/assets/fonts/HJ2.woff);
+}
+
+@font-face {
+	font-family: TmonMonsori;
+	font-display: swap;
+	src: url(/assets/fonts/TmonMonsori.woff);
+}
+
+
+html {
+	scroll-behavior: smooth !important;
+}
+
+html, body {
+	-webkit-text-size-adjust: none;
+}
+
+
+body {
+	/* height: 455px; */
+	word-wrap: break-word;
+	font-family: HJ;
+
+	/* Disable text selection */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.yellow-text {
+	color: #fcff00;
+}
+
+.mb-4 {
+	margin-bottom: 4px;
+}
+
+.mb-8 {
+	margin-bottom: 8px;
+}
+
+.mb-12 {
+	margin-bottom: 12px;
+}
+
+.mb-32 {
+	margin-bottom: 32px;
+}
+
+
+.container {
+	color: white;
+	width: 1136px;
+	height: 646px;
+	background-image: url("/assets/images/betDetails/bg.png");
+	background-color: rgb(139, 12, 21);
+}
+
+#cancel-btn {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	display: block;
+	width: 36px;
+	height: 36px;
+	position: relative;
+	top: 9px;
+	left: 10px;
+	color: #F9F5FA;
+	opacity: 0.8;
+	border-radius: 100%;
+	border: 2px solid #64635f;
+	padding: 6px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.top-info {
+	color: white;
+	font-size: 18px;
+	left: 60px;
+	top: 14px;
+	position: absolute;
+	line-height: 22px;
+}
+
+#dealer-name {
+	top: 40px;
+	left: 570px;
+	position: absolute;
+	font-size: 18px;
+	color: white;
+	background: #9b9197;
+	min-width: 80px;
+	padding: 4px 4px;
+	text-align: center;
+	box-shadow: 5px 5px  7px 0px  rgba(0, 0, 0, 0.71);
+}
+
+#outcome {
+	left: 534px;
+	top: 136px;
+	font-size: 24px;
+	position: absolute;
+	font-family: MyriadProRegular;
+	font-weight: bold;
+}
+
+#outcome-image {
+	top: 120px;
+	left: 367px;
+	position: absolute;
+}
+
+#bottom-left {
+	position: absolute;
+	left: 44px;
+	top: 332px;
+	width: 190px;
+	/* border: 1px solid yellow; */
+}
+
+#debit-account{
+	font-family: HJ;
+	font-size: 18px;
+}
+
+
+
+.chip-container {
+	position: relative;
+	text-align: center;
+	color: white;
+	background-size: cover;  
+	background-image: url("/assets/images/betDetails/chips.png");
+	width: 65px;
+	height: 65px;
+	z-index: 4;
+}
+
+.yellow-chip-container {
+	position: relative;
+	text-align: center;
+	color: white;
+	background-size: cover;  
+	background-image: url("/assets/images/betDetails/yellow-chip.png");
+	width: 65px;
+	height: 65px;
+	z-index: 4;
+}
+
+.chip-text {
+	color: black;
+	font-family: TmonMonsori;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+	font-size: 12px;
+	position: absolute;
+	margin-left: -2px;
+	margin-top: -3px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#player-pair-chip {
+	position: absolute;
+	left: 260px;
+	top: 565px;
+	opacity: 0.5;
+}
+
+#player-bonus-chip{
+	position: absolute;
+	left: 260px;
+	top: 440px;
+	opacity: 0.5;
+}
+
+#perfect-pair-chip {
+	position: absolute;
+	left: 260px;
+	top: 500px;
+	opacity: 0.5;
+}
+
+#player-chip {
+	position: absolute;
+	left: 386px;
+	top: 503px;
+}
+
+#tie-chip {
+	position: absolute;
+	left: 538px;
+	top: 458px;
+}
+
+#banker-chip {
+	position: absolute;
+	left: 693px;
+	top: 501px;
+}
+
+#banker-pair-chip {
+	position: absolute;
+	left: 820px;
+	top: 566px;
+	opacity: 0.5;
+}
+
+#super-six-chip {
+	position: absolute;
+	left: 540px;
+	top: 580px;
+	opacity: 0.5;
+}
+
+#banker-bonus-chip {
+	position: absolute;
+	left: 820px;
+	top: 442px;
+	opacity: 0.5;
+}
+
+#either-pair-chip {
+	position: absolute;
+	left: 819px;
+	top: 504px;
+	opacity: 0.5;
+}
+
+.win-table {
+	z-index: 1;
+	position: absolute;
+}
+
+.table-text {
+	color: white;
+	position: absolute;
+	font-family: HancomEQN;
+	font-size: 24px;
+	font-weight: bold;
+	z-index: 3;
+}
+
+
+
+
+
+#player-pair-win-text {
+	left: 260px;
+	top: 518px;
+}
+
+#player-pair-win-table {
+	left: 243px;
+	top: 442px;
+	display: none;
+}
+
+
+
+
+
+
+#banker-pair-win-text {
+	left: 815px;
+	top: 518px;
+}
+
+#banker-pair-win-table {
+	left: 800px;
+	top: 442px;
+	/*display: none;*/
+}
+
+
+
+
+
+
+
+#player-win-text {
+	left: 362px;
+	top: 585px;
+}
+
+#player-win-table {
+	left: 343px;
+	top: 442px;
+	/*display: none;*/
+}
+
+#tie-win-table {
+	left: 492px;
+	top: 452px;
+	/*display: none;*/
+}
+
+#tie-win-text {
+	left: 546px;
+	top: 587px;
+}
+
+#banker-win-table {
+	left: 568px;
+	top: 442px;
+	/*display: none;*/
+}
+
+#banker-win-text {
+	left: 668px;
+	top: 587px;
+}
+
+
+.datetimes {
+	font-size: 12px;
+	font-family: Gulim;
+	line-height: 20px;
+}
+
+
+.side-btn {
+	font-family: Gulim;
+	width: 152px;
+	height: 36px;
+	font-size: 14px;
+	padding-top: 2px;
+	line-height: 16px;
+	border: 1px solid #64635f;
+	background: #191010;
+	border-radius: 30px;
+	padding-left: 8px;
+	padding-right: 8px;
+	text-align: center;
+}
+
+.side-btn-left-image {
+	height: 27px;
+	position: relative;
+	margin-bottom: 10px;
+	top: -26px;
+	left: -63px;
+}
+
+.card {
+	width: 70px;
+	height: auto;
+	margin: 1px;
+}
+
+.rotate-card-90deg {
+	transform: rotate(90deg);
+	margin-right: 16px;
+	margin-left: 16px;
+	position: relative;
+	top: 16px;
+}
+
+.rotate-card-270deg {
+	transform: rotate(270deg);
+	margin-right: 16px;
+	margin-left: 16px;
+	position: relative;
+	top: 16px;
+}
+
+#player-cards {
+	top: 254px;
+	left: 243px;
+	position: absolute;
+	width: 274px;	
+	max-width: 274px;	
+	text-align: right;
+}
+
+#banker-cards {
+	top: 254px;
+	left: 620px;
+	position: absolute;
+	width: 274px;	
+	max-width: 274px;	
+	text-align: left;
+}
+
+.scores {
+	position: absolute;
+	top: 363px;
+	font-size: 66px;
+	font-family: HJ2;
+}
+
+#player-score {
+	left: 462px;
+}
+
+#banker-score {
+	left: 638px;
+}
+
+
+/* Payout chips */
+#player-pair-payout {
+	position: absolute;
+	left: 196px;
+	top: 550px;
+}
+
+#player-payout {
+	position: absolute;
+	left: 385px;
+	top: 441px;
+}
+
+#tie-payout {
+	position: absolute;
+	left: 538px;
+	top: 396px;
+}
+
+#banker-payout {
+	position: absolute;
+	left: 693px;
+	top: 438px;
+}
+
+#banker-pair-payout {
+	position: absolute;
+	left: 880px;
+	top: 550px;
+}
+
+#perfect-pair-payout {
+	position: absolute;
+	left: 196px;
+	top: 484px;
+}
+
+#player-bonus-payout {
+	position: absolute;
+	left: 196px;
+	top: 406px;
+}
+
+#super-six-payout {
+	position: absolute;
+	left: 538px;
+	top: 518px;
+}
+
+#banker-bonus-payout {
+	position: absolute;
+	left: 880px;
+	top: 422px;
+}
+
+#either-pair-payout {
+	position: absolute;
+	left: 880px;
+	top: 486px;
+}
