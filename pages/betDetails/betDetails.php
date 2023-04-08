@@ -37,12 +37,12 @@ $betDetailsResponseDecoded = json_decode($betDetailsResponse, true);
 
 //check bet details are presents
 if (!isset($betDetailsResponseDecoded["data"]["transaction_list"]) || $betDetailsResponseDecoded["data"]["transaction_list"] == []) {
-    echo '<script>alert("Bet Details are still not yet present for the moment for this transaction, please try again later!.")</script>';
+    echo '<script>alert("베팅 상세내역 업데이트중입니다. 잠시후 다시 시도해 주세요.")</script>';
     die;
 }
 
 if (!isset($betDetailsResponseDecoded["data"]["transaction_list"][0]["detail"]) || $betDetailsResponseDecoded["data"]["transaction_list"][0]["detail"] == null || !isset($betDetailsResponseDecoded["data"]["transaction_list"][1]["detail"]) || $betDetailsResponseDecoded["data"]["transaction_list"][1]["detail"] == null) {
-    echo '<script>alert("Bet Details are still not yet present for the moment for this transaction, please try again later!.")</script>';
+    echo '<script>alert("베팅 상세내역 업데이트중입니다. 잠시후 다시 시도해 주세요.")</script>';
     die;
 }
 
@@ -66,9 +66,9 @@ curl_close($curl);
 </head>
 
 <style>
-img {
-    pointer-events: none;
-}
+    img {
+        pointer-events: none;
+    }
 
 </style>
 
@@ -242,13 +242,13 @@ img {
     </div>
 
     <script type="text/javascript">
-    var betDetailsData = <?php echo $betDetailsResponse; ?>;
-    let allImages = document.querySelectorAll("img");
-    allImages.forEach((value) => {
-        value.oncontextmenu = (e) => {
-            e.preventDefault();
-        }
-    })
+        var betDetailsData = <?php echo $betDetailsResponse; ?>;
+        let allImages = document.querySelectorAll("img");
+        allImages.forEach((value) => {
+            value.oncontextmenu = (e) => {
+                e.preventDefault();
+            }
+        })
     </script>
     <script src="/assets/scripts/betDetails.js?v=1.02"></script>
 </body>
