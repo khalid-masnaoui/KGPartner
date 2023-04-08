@@ -88,6 +88,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $columnDebitProvider = $prefix . '_debit.prd_id';
             $columnDebitGame = $prefix . '_debit.game_name_id';
             $columnGameName = "games_list.game_name_en";
+            $columnGameType = "games_list.game_subtype";
             $columnGameId = "games_list.id";
             $columnDebitDate = $prefix . '_debit.timestamp';
             $columnDebitUser = $prefix . '_debit.user_id';
@@ -147,13 +148,13 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             if ($transactionStatus == 'pending') {
 
-                $transactionHistoryData = $db->query("SELECT '-' AS creditAmount,  $columnDebitAmount AS debitAmount, $columnDebitDate, $columnGameName AS gameName, $columnDebitProvider as gameProviderId, $columnDebitUser, $joininAttribute1, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId, 'pending' as status, $columnUsersUsername
+                $transactionHistoryData = $db->query("SELECT '-' AS creditAmount,  $columnDebitAmount AS debitAmount, $columnDebitDate, $columnGameName AS gameName , $columnCreditDate AS resultDate, $columnGameType AS gameType, $columnDebitProvider as gameProviderId, $columnDebitUser, $joininAttribute1, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId, 'pending' as status, $columnUsersUsername
                 FROM $debitTableName JOIN $usersTableName ON $columnUsersId = $columnDebitUser LEFT JOIN $gamesListTableName ON $columnDebitGame = $columnGameId WHERE 1=1 $filterQuery AND NOT EXISTS (SELECT 1 FROM $creditTableName 
                   WHERE txn_id = $joininAttribute1)", $queryParameters)->results();
 
             } else if ($transactionStatus == 'proceeded') {
 
-                $transactionHistoryData = $db->query("SELECT $columnCreditAmount AS creditAmount,  $columnDebitAmount AS debitAmount, $columnDebitDate, $columnGameName AS gameName, $columnDebitProvider as gameProviderId, $columnDebitUser, $joininAttribute1, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId,
+                $transactionHistoryData = $db->query("SELECT $columnCreditAmount AS creditAmount,  $columnDebitAmount AS debitAmount, $columnDebitDate, $columnGameName AS gameName ,$columnGameType AS gameType, $columnCreditDate AS resultDate, $columnDebitProvider as gameProviderId, $columnDebitUser, $joininAttribute1, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId,
                 CASE WHEN $columnCreditType = 'x' THEN 'cancel'
                 WHEN $columnDebitAmount > $columnCreditAmount THEN 'win'
                 WHEN $columnDebitAmount = $columnCreditAmount THEN 'tie'
@@ -162,7 +163,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                     FROM $debitTableName JOIN  $creditTableName ON $joininAttribute1 = $joininAttribute2 JOIN $usersTableName ON $columnUsersId = $columnDebitUser LEFT JOIN $gamesListTableName ON $columnDebitGame = $columnGameId WHERE 1=1 $filterQuery $creditTypeFilterQuery ", $queryParameters)->results();
 
             } else {
-                $transactionHistoryData = $db->query("SELECT $columnCreditAmount AS creditAmount,  $columnDebitAmount AS debitAmount, $columnDebitDate, $columnGameName AS gameName, $columnDebitProvider as gameProviderId, $columnDebitUser, $joininAttribute1, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId,
+                $transactionHistoryData = $db->query("SELECT $columnCreditAmount AS creditAmount,  $columnDebitAmount AS debitAmount, $columnDebitDate, $columnGameName AS gameName ,$columnGameType AS gameType, $columnCreditDate AS resultDate, $columnDebitProvider as gameProviderId, $columnDebitUser, $joininAttribute1, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId,
                 CASE WHEN $columnCreditType = 'x' THEN 'cancel'
                 WHEN $columnDebitAmount > $columnCreditAmount THEN 'win'
                 WHEN $columnDebitAmount = $columnCreditAmount THEN 'tie'
@@ -259,11 +260,32 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             }
 
 
+            $resultTime = strtotime($value["resultDate"]);
+            $now = strtotime("now");
+
+            $differenceInSeconds = $now - $resultTime;
+
 
             $tableBody .= '<tr>';
 
             $tableBody .= '<td class="text-center text-muted">' . $i . '</td>';
-            $tableBody .= '<td class="text-center">' . escape($value["txn_id"]) . '</td>';
+
+            if ($value["gameProviderId"] == 1 && $status != "pending" && in_array($value["gameType"], ["Baccarat", "RNG Baccarat"]) && $differenceInSeconds > 60) {
+
+                if (strpos($value["txn_id"], ":s") !== false) {
+                    $transactionId = str_replace(":s", "", $value["txn_id"]);
+                    $tableBody .= '<td class="text-center">' . escape($value["txn_id"]) . ' <img src="/assets/images/betDetails/betDetails.png" width="15" height="15" onclick=showBetDetails("' . $transactionId . '") style="cursor: pointer;"> </td>';
+
+                } else {
+                    $tableBody .= '<td class="text-center">' . escape($value["txn_id"]) . '</td>';
+
+                }
+
+            } else {
+                $tableBody .= '<td class="text-center">' . escape($value["txn_id"]) . '</td>';
+
+            }
+
             $tableBody .= '<td class="text-center">' . escape($value["clientName"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($parentName) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["user_id"]) . '</td>';

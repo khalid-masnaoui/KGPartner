@@ -577,6 +577,23 @@ foreach ($activeProviders as $key => $value) {
 
     })
 
+
+    function popItUp(url, windowName) {
+        let newWindow = window.open(url, windowName, 'height=646,width=1136');
+        if (window.focus) {
+            newWindow.focus()
+        }
+        return false;
+    }
+
+    function showBetDetails(transactionId) {
+        // console.log("bet details");
+        // console.log(transactionId);
+
+        popItUp(`https://koreagaming.live/pages/betDetails/betDetails.php?transactionId=${transactionId}`,
+            "betDetails");
+    }
+
     document.addEventListener('DOMContentLoaded', (event) => {
 
         displayTransactions(0);
