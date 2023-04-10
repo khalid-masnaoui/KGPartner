@@ -586,11 +586,15 @@ foreach ($activeProviders as $key => $value) {
         return false;
     }
 
-    function showBetDetails(transactionId) {
+    function showBetDetails(transactionId, type) {
         // console.log("bet details");
-        // console.log(transactionId);
+        console.log(type);
+        let betDetailsType = type;
+        if (type == "BC") {
+            betDetailsType = "";
+        }
 
-        popItUp(`https://koreagaming.live/pages/betDetails/betDetails.php?transactionId=${transactionId}`,
+        popItUp(`https://koreagaming.live/pages/betDetails/betDetails${betDetailsType}.php?transactionId=${transactionId}`,
             "betDetails");
     }
 

@@ -37,16 +37,17 @@ $betDetailsResponseDecoded = json_decode($betDetailsResponse, true);
 
 //check bet details are presents
 if (!isset($betDetailsResponseDecoded["data"]["transaction_list"]) || $betDetailsResponseDecoded["data"]["transaction_list"] == []) {
-    echo '<script>alert("베팅 상세내역 업데이트중입니다. 잠시후 다시 시도해 주세요.")</script>';
+    echo '<script>alert("Bet Details are still not yet present for the moment for this transaction, please try again later!.")</script>';
     die;
 }
 
 if (!isset($betDetailsResponseDecoded["data"]["transaction_list"][0]["detail"]) || $betDetailsResponseDecoded["data"]["transaction_list"][0]["detail"] == null || !isset($betDetailsResponseDecoded["data"]["transaction_list"][1]["detail"]) || $betDetailsResponseDecoded["data"]["transaction_list"][1]["detail"] == null) {
-    echo '<script>alert("베팅 상세내역 업데이트중입니다. 잠시후 다시 시도해 주세요.")</script>';
+    echo '<script>alert("Bet Details are still not yet present for the moment for this transaction, please try again later!.")</script>';
     die;
 }
 
 curl_close($curl);
+
 ?>
 
 <!DOCTYPE html>
@@ -60,11 +61,10 @@ curl_close($curl);
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <link rel="stylesheet" href="/assets/css/betDetails/betDetails.css">
+    <link rel="stylesheet" href="/assets/css/betDetails/betDetailsDT.css">
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png?v=1.00" />
     <title>Bet Details</title>
 </head>
-
 <style>
 img {
     pointer-events: none;
@@ -85,7 +85,7 @@ img {
 
         <div id="dealer-name"></div>
         <img src="" id="outcome-image" alt="">
-        <span id="outcome"></span>
+        <!-- <span id="outcome"></span> -->
 
         <div id="bottom-left">
             <p id="debit-account" class="mb-12"></p>
@@ -107,7 +107,7 @@ img {
             <div class="side-btn mb-32">
                 <p>배팅금액</p>
                 <p id="debit-amount"></p>
-                <img src="/assets/images/betDetails/btn-coins.png" class="side-btn-left-image">
+                <img src="/assets/images/betDetails/dragonTiger/btn-coins.png" class="side-btn-left-image">
             </div>
 
             <div class="side-btn mb-4">
@@ -122,121 +122,71 @@ img {
         </div>
 
         <!-- Cards -->
-        <div class="text-center" id="player-cards"></div>
-        <div class="text-center" id="banker-cards"></div>
+        <div class="text-center" id="dragon-cards"></div>
+        <div class="text-center" id="tiger-cards"></div>
 
         <!-- Scores -->
 
-        <span class="scores" id="player-score"></span>
-        <span class="scores" id="banker-score"></span>
+        <span class="scores" id="dragon-score"></span>
+        <span class="scores" id="tiger-score"></span>
 
         <!-- Chips -->
-
-
-
-        <div class="chip-container" id="player-bonus-chip">
-            <span class="chip-text" id="player-bonus"></span>
-        </div>
-
-
-        <div class="chip-container" id="perfect-pair-chip">
-            <span class="chip-text" id="perfect-pair"></span>
-        </div>
-
-
-
-        <div class="chip-container" id="player-pair-chip">
-            <span class="chip-text" id="player-pair"></span>
-        </div>
-
-
-        <div class="chip-container" id="player-chip">
-            <span class="chip-text" id="player"></span>
+        <div class="chip-container" id="dragon-chip">
+            <span class="chip-text" id="dragon"></span>
         </div>
 
         <div class="chip-container" id="tie-chip">
             <span class="chip-text" id="tie"></span>
         </div>
 
-        <div class="chip-container" id="banker-chip">
-            <span class="chip-text" id="banker"></span>
+        <div class="chip-container" id="suited-tie-chip">
+            <span class="chip-text" id="suited-tie"></span>
         </div>
 
-        <div class="chip-container" id="banker-pair-chip">
-            <span class="chip-text" id="banker-pair"></span>
-        </div>
-
-        <div class="chip-container" id="super-six-chip">
-            <span class="chip-text" id="super-six"></span>
-        </div>
-
-
-        <div class="chip-container" id="banker-bonus-chip">
-            <span class="chip-text" id="banker-bonus"></span>
-        </div>
-
-        <div class="chip-container" id="either-pair-chip">
-            <span class="chip-text" id="either-pair"></span>
+        <div class="chip-container" id="tiger-chip">
+            <span class="chip-text" id="tiger"></span>
         </div>
 
 
 
+        <!-- dragon table -->
+        <img src="/assets/images/betDetails/dragonTiger/dragon-win-table.png" alt="" id="dragon-win-table"
+            class="win-table">
 
+        <!-- tie1 table -->
+        <img src="/assets/images/betDetails/dragonTiger/tie-win-table.png" alt="" id="tie-win-table" class="win-table">
+        <span class="table-text" id="tie-win-text">무</span>
 
+        <!-- suited table -->
+        <img src="/assets/images/betDetails/dragonTiger/suited-tie-win-table.png" alt="" id="suited-tie-win-table"
+            class="win-table">
+        <span class="table-text" id="suited-tie-win-text">적절한무</span>
 
-        <!-- Player table wins -->
-        <img src="/assets/images/betDetails/player-win-table.png" alt="" id="player-win-table" class="win-table">
-
-
-        <!-- Tie table wins -->
-        <img src="/assets/images/betDetails/tie-win-table.png" alt="" id="tie-win-table" class="win-table">
-
-
-        <!-- Banker table wins -->
-        <img src="/assets/images/betDetails/banker-win-table.png" alt="" id="banker-win-table" class="win-table">
+        <!-- tiger table -->
+        <img src="/assets/images/betDetails/dragonTiger/tiger-win-table.png" alt="" id="tiger-win-table"
+            class="win-table">
 
 
         <!-- Payout chips -->
-
-        <div class="yellow-chip-container" id="player-bonus-payout">
-            <span class="chip-text" id="player-bonus-payout-text"></span>
-        </div>
-
-        <div class="yellow-chip-container" id="perfect-pair-payout">
-            <span class="chip-text" id="perfect-pair-payout-text"></span>
-        </div>
-
-        <div class="yellow-chip-container" id="player-pair-payout">
-            <span class="chip-text" id="player-pair-payout-text"></span>
-        </div>
-
-        <div class="yellow-chip-container" id="player-payout">
-            <span class="chip-text" id="player-payout-text"></span>
+        <div class="yellow-chip-container" id="dragon-payout">
+            <span class="chip-text" id="dragon-payout-text"></span>
         </div>
 
         <div class="yellow-chip-container" id="tie-payout">
             <span class="chip-text" id="tie-payout-text"></span>
         </div>
 
-        <div class="yellow-chip-container" id="banker-payout">
-            <span class="chip-text" id="banker-payout-text"></span>
+        <div class="yellow-chip-container" id="suited-tie-payout">
+            <span class="chip-text" id="suited-tie-payout-text"></span>
         </div>
 
-        <div class="yellow-chip-container" id="banker-pair-payout">
-            <span class="chip-text" id="banker-pair-payout-text"></span>
+        <div class="yellow-chip-container" id="tiger-payout">
+            <span class="chip-text" id="tiger-payout-text"></span>
         </div>
 
-        <div class="yellow-chip-container" id="super-six-payout">
-            <span class="chip-text" id="super-six-payout-text"></span>
-        </div>
 
-        <div class="yellow-chip-container" id="banker-bonus-payout">
-            <span class="chip-text" id="banker-bonus-payout-text"></span>
-        </div>
 
-        <div class="yellow-chip-container" id="either-pair-payout">
-            <span class="chip-text" id="either-pair-payout-text"></span>
-        </div>
+
 
 
     </div>
@@ -250,7 +200,7 @@ img {
         }
     })
     </script>
-    <script src="/assets/scripts/betDetails/betDetails.js?v=1.02"></script>
+    <script src="/assets/scripts/betDetails/betDetailsDT.js?v=1.04"></script>
 </body>
 
 </html>
