@@ -26,7 +26,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             array(
 
                 "depositAmount" => [
-                    "pattern" => ["rule" => '/^[0-9]+\.[0-9]{2}$/', "msg" => 'Field is required and should have correct format!.'],
+                    "pattern" => ["rule" => '/^[0-9]+$/', "msg" => 'Field is required and should have correct format!.'],
                     "biggerThan" => 0,
                     "lessThanOrEqual" => $partner->data()["wa_balance"],
                 ]

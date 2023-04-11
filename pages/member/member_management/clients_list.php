@@ -1131,7 +1131,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     greaterThan: 0,
                 },
                 format: {
-                    pattern: "^[0-9]+\.[0-9]{2}$",
+                    pattern: "^[0-9]+$",
                     message: "Is Not a valid deposit amount!"
                 }
             }
@@ -1276,7 +1276,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     greaterThan: 0,
                 },
                 format: {
-                    pattern: "^[0-9]+\.[0-9]{2}$",
+                    pattern: "^[0-9]+$",
                     message: "Is Not a valid deposit amount!"
                 }
             }
