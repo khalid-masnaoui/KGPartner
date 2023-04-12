@@ -57,7 +57,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         foreach ($partners as $key => $value) {
             $i++;
 
-            $value["rate"] = $fmt->format($value["rate"]);
+            // $value["rate"] = $fmt->format($value["rate"]);
 
             //get parent
             $parent = 'self';

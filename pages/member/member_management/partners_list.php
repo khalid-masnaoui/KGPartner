@@ -625,7 +625,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         var number = $(this).val();
 
         if (number == '') {
-            $(this).val("0");
+            $(this).val("0.00");
         } else {
             var d = number_format(number, 2, ".", "");
 
