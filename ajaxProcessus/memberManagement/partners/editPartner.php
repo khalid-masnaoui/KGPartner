@@ -34,7 +34,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             array(
 
                 "partnerRate" => [
-                    "pattern" => ["rule" => '/^[0-9]{1,2}{2}$/', "msg" => 'Not a valid Rate number. MUST be a DECIMAL number from 0-99. Example : 45.30.'],
+                    "pattern" => ["rule" => '/^[0-9]{1,2}\.[0-9]{2}$/', "msg" => '본인의 요율보다 같거나 높게 입력해 주세요.'],
                     "notEmpty" => true,
                     "biggerThan" => 0,
 

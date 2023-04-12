@@ -513,7 +513,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         $("#name").val('');
         $("#client_prefix").val('');
         $("#end_point").val('');
-        $("#partnerRate").val('0');
+        $("#partnerRate").val('0.00');
         $("#skinSelect").val('1');
 
 
@@ -679,7 +679,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         if (number == '') {
             $(this).val("0");
         } else {
-            var d = number_format(number, 0, ".", "");
+            var d = number_format(number, 2, ".", "");
 
             $(this).val(d);
         }
@@ -920,7 +920,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     message: "^"
                 },
                 format: {
-                    pattern: "^[0-9]{1,2}$",
+                    pattern: "^[0-9]{1,2}\.[0-9]{2}$",
                     message: "^본인의 요율보다 같거나 높게 입력해 주세요."
                 }
             },
@@ -1455,7 +1455,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                 },
                 format: {
                     pattern: "^[0-9]{1,2}\.[0-9]{2}$",
-                    message: "Is Not a valid commission number. MUST be a DECIMAL number from 0-99. Example : 45.30."
+                    message: "본인의 요율보다 같거나 높게 입력해 주세요."
                 }
             },
         };
