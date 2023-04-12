@@ -143,7 +143,7 @@
                     onclick=deletePlayer(event)>Delete</button>
 
                 <button type="button" class="btn btn-danger btn_confirmed_action edit_partner" data-id=''
-                    onclick=editPartner(event)>Edit</button>
+                    onclick=editPartner(event)>수정</button>
 
                 <button type="button" class="btn btn-danger btn_confirmed_action kick_player" data-id=''
                     onclick=KickPlayer(event)>KickPlayer</button>
