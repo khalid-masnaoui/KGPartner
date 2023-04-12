@@ -228,7 +228,7 @@ class validate
                             }
 
                             if (min($rates) <= $partnerRate) {
-                                $this->addError("요율은 하부라인의 요율보다 같거나 낮아야 합니다", $item);
+                                $this->addError("하부라인의 요율보다 같거나 낮게 입력해 주세요.", $item);
                             }
 
                             break;
