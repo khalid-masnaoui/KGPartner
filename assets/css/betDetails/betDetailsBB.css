@@ -1,0 +1,360 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+@font-face {
+	font-family: HJ;
+	font-display: swap;
+	src: url(/assets/fonts/HJ.woff);
+}
+
+@font-face {
+	font-family: HancomEQN;
+	font-display: swap;
+	src: url(/assets/fonts/HancomEQN.woff);
+}
+
+@font-face {
+	font-family: MyriadProRegular;
+	font-display: swap;
+	src: url(/assets/fonts/MyriadPro-Regular.woff);
+}
+
+@font-face {
+	font-family: Gulim;
+	font-display: swap;
+	src: url(/assets/fonts/Gulim.woff);
+}
+
+@font-face {
+	font-family: HJ2;
+	font-display: swap;
+	src: url(/assets/fonts/HJ2.woff);
+}
+
+@font-face {
+	font-family: TmonMonsori;
+	font-display: swap;
+	src: url(/assets/fonts/TmonMonsori.woff);
+}
+
+
+html {
+	scroll-behavior: smooth !important;
+}
+
+html, body {
+	-webkit-text-size-adjust: none;
+}
+
+
+body {
+	/* height: 455px; */
+	word-wrap: break-word;
+	font-family: HJ;
+
+	/* Disable text selection */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.yellow-text {
+	color: #fcff00;
+}
+
+.mb-4 {
+	margin-bottom: 4px;
+}
+
+.mb-8 {
+	margin-bottom: 8px;
+}
+
+.mb-12 {
+	margin-bottom: 12px;
+}
+
+.mb-32 {
+	margin-bottom: 32px;
+}
+
+
+.container {
+	color: white;
+	width: 1136px;
+	height: 646px;
+	background-image: url("/assets/images/betDetails/bacBo/bg.png");
+	background-color: rgb(139, 12, 21);
+}
+
+#cancel-btn {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	display: block;
+	width: 36px;
+	height: 36px;
+	position: relative;
+	top: 9px;
+	left: 10px;
+	color: white;
+	opacity: 0.8;
+	border-radius: 100%;
+	border: 2px solid #64635f;
+	padding: 6px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.top-info {
+	color: white;
+	font-size: 18px;
+	left: 60px;
+	top: 14px;
+	position: absolute;
+	line-height: 22px;
+}
+
+#dealer-name {
+	top: 40px;
+	left: 570px;
+	position: absolute;
+	font-size: 18px;
+	color: white;
+	background: #9b9197;
+	min-width: 80px;
+	padding: 4px 4px;
+	text-align: center;
+	box-shadow: 5px 5px  7px 0px  rgba(0, 0, 0, 0.71);
+}
+
+#outcome {
+	left: 534px;
+	top: 136px;
+	font-size: 24px;
+	position: absolute;
+	font-family: MyriadProRegular;
+	font-weight: bold;
+}
+
+#outcome-image {
+	top: 120px;
+	left: 374px;
+	position: absolute;
+}
+
+#bottom-left {
+	position: absolute;
+	left: 44px;
+	top: 332px;
+	width: 190px;
+}
+
+#debit-account{
+	font-family: HJ;
+	font-size: 18px;
+}
+
+
+
+.chip-container {
+	position: relative;
+	text-align: center;
+	color: white;
+	background-size: cover;  
+	background-image: url("/assets/images/betDetails/bacBo/chips.png");
+	width: 80px;
+	height: 80px;
+	z-index: 4;
+}
+
+.yellow-chip-container {
+	position: relative;
+	text-align: center;
+	color: white;
+	background-size: cover;  
+	background-image: url("/assets/images/betDetails/bacBo/yellow-chip.png");
+	width: 80px;
+	height: 80px;
+	z-index: 4;
+}
+
+.chip-text {
+	color: black;
+	font-family: TmonMonsori;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+	font-size: 12px;
+	position: absolute;
+	margin-left: -2px;
+	margin-top: -3px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#player-chip {
+	position: absolute;
+	left: 386px;
+	top: 496px;
+}
+
+#tie-chip {
+	position: absolute;
+	left: 532px;
+	top: 496px;
+}
+
+#banker-chip {
+	position: absolute;
+	left: 693px;
+	top: 496px;
+}
+
+.win-table {
+	z-index: 1;
+	position: absolute;
+}
+
+.table-text {
+	color: white;
+	position: absolute;
+	font-family: HancomEQN;
+	font-size: 24px;
+	font-weight: bold;
+	z-index: 3;
+}
+
+#player-win-table {
+	left: 323px;
+	top: 459px;
+}
+
+#tie-win-table {
+	left: 503px;
+	top: 471px;
+}
+
+#banker-win-table {
+	left: 572px;
+	top: 459px;
+}
+
+.datetimes {
+	font-size: 12px;
+	font-family: Gulim;
+	line-height: 20px;
+}
+
+
+.side-btn {
+	font-family: Gulim;
+	width: 152px;
+	height: 36px;
+	font-size: 14px;
+	padding-top: 2px;
+	line-height: 16px;
+	border: 1px solid #64635f;
+	background: #2D2219;
+	border-radius: 30px;
+	padding-left: 8px;
+	padding-right: 8px;
+	text-align: center;
+}
+
+.side-btn-left-image {
+	height: 27px;
+	position: relative;
+	margin-bottom: 10px;
+	top: -26px;
+	left: -63px;
+}
+
+.card {
+	width: 70px;
+	height: auto;
+	margin: 1px;
+}
+
+.rotate-card-90deg {
+	transform: rotate(90deg);
+	margin-right: 16px;
+	margin-left: 16px;
+	position: relative;
+	top: 16px;
+}
+
+.rotate-card-270deg {
+	transform: rotate(270deg);
+	margin-right: 16px;
+	margin-left: 16px;
+	position: relative;
+	top: 16px;
+}
+
+
+.scores {
+	position: absolute;
+	top: 236px;
+	font-size: 66px;
+	font-family: HJ2;
+}
+
+#player-score {
+	left: 290px;
+}
+
+#banker-score {
+	left: 814px;
+}
+
+
+/* Payout chips */
+#player-payout {
+	position: absolute;
+	left: 385px;
+	top: 420px;
+}
+
+#tie-payout {
+	position: absolute;
+	left: 532px;
+	top: 378px;
+}
+
+#banker-payout {
+	position: absolute;
+	left: 693px;
+	top: 420px;
+}
+
+
+
+#firstPlayerDice {
+	position: absolute;
+	left: 445px;
+	top: 188px;
+}
+
+#secondPlayerDice {
+	position: absolute;
+	left: 432px;
+	top: 306px;
+}
+
+#firstBankerDice {
+	position: absolute;
+	left: 632px;
+	top: 187px;
+}
+
+#secondBankerDice {
+	position: absolute;
+	left: 640px;
+	top: 306px;
+}

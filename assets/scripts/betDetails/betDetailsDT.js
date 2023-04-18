@@ -74,8 +74,6 @@ let suitedTiePayoutText = document.getElementById("suited-tie-payout-text")
 
 let debitData = {}
 let creditData = {}
-
-// console.log({betDetailsData})
 	
 let transactionList = betDetailsData.data.transaction_list
 
@@ -153,8 +151,6 @@ function updateBetsRelatedData(bets) {
 		}
 	})
 	
-	
-	// console.log({bets})
 
 	//  0.9
 	let noWinChipsOpacity = 0.7

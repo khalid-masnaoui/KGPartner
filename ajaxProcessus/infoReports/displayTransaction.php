@@ -270,12 +270,16 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $tableBody .= '<td class="text-center text-muted">' . $i . '</td>';
 
-            if ($value["gameProviderId"] == 1 && $status != "pending" && in_array($value["gameType"], ["Baccarat", "RNG Baccarat", "RNG Dragon Tiger", "Dragon Tiger"]) && $differenceInSeconds > 60) {
+            if ($value["gameProviderId"] == 1 && $status != "pending" && in_array($value["gameType"], ["Baccarat", "RNG Baccarat", "RNG Dragon Tiger", "Dragon Tiger", "Bac Bo"]) && $differenceInSeconds > 60) {
 
                 if (strpos($value["txn_id"], ":s") !== false) {
                     $type = "BC";
                     if (in_array($value["gameType"], ["RNG Dragon Tiger", "Dragon Tiger"])) {
                         $type = "DT";
+                    }
+
+                    if (in_array($value["gameType"], ["Bac Bo"])) {
+                        $type = "BB";
                     }
 
 

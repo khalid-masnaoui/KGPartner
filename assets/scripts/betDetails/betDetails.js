@@ -213,8 +213,6 @@ function updateBetsRelatedData(bets) {
 		}
 	})
 	
-	// console.log({bets})
-
 
 	let noWinChipsOpacity = 0.82
 	let winChipsOpacity = 1
