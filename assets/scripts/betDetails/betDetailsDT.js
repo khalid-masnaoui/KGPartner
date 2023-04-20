@@ -43,8 +43,8 @@ let suitedTieWinTable = document.getElementById("suited-tie-win-table")
 let tigerWinTable = document.getElementById("tiger-win-table")
 
 
-let tieWinText = document.getElementById("tie-win-text")
-let suitedTieWinText = document.getElementById("suited-tie-win-text")
+// let tieWinText = document.getElementById("tie-win-text")
+// let suitedTieWinText = document.getElementById("suited-tie-win-text")
 
 let dragonChip = document.getElementById("dragon-chip")
 let tigerChip = document.getElementById("tiger-chip")
@@ -205,7 +205,7 @@ if(foundData.DT_Tiger){
 
 if(foundData.DT_Tie){
 	showElement(tieChip)
-		hideElement(tieWinText)
+		// hideElement(tieWinText)
 	tie.innerHTML = formatMoney(foundData.DT_Tie.stake, 0)
 
 	if(foundData.DT_Tie.payout > 0){
@@ -223,13 +223,13 @@ if(foundData.DT_Tie){
 		hideElement(tiePayoutChip)
 		hideElement(tieChip)
 		hideElement(tieWinTable)
-		showElement(tieWinText)
+		// showElement(tieWinText)
 }
 
  
 if(foundData.DT_SuitedTie){
 	showElement(suitedTieChip)
-	hideElement(suitedTieWinText)
+	// hideElement(suitedTieWinText)
 	
 	suitedTie.innerHTML = formatMoney(foundData.DT_SuitedTie.stake, 0)
 

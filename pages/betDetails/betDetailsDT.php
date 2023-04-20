@@ -66,9 +66,9 @@ curl_close($curl);
     <title>Bet Details</title>
 </head>
 <style>
-    img {
-        pointer-events: none;
-    }
+img {
+    pointer-events: none;
+}
 
 </style>
 
@@ -155,12 +155,12 @@ curl_close($curl);
 
         <!-- tie1 table -->
         <img src="/assets/images/betDetails/dragonTiger/tie-win-table.png" alt="" id="tie-win-table" class="win-table">
-        <span class="table-text" id="tie-win-text">무</span>
+        <!-- <span class="table-text" id="tie-win-text">무</span> -->
 
         <!-- suited table -->
         <img src="/assets/images/betDetails/dragonTiger/suited-tie-win-table.png" alt="" id="suited-tie-win-table"
             class="win-table">
-        <span class="table-text" id="suited-tie-win-text">적절한무</span>
+        <!-- <span class="table-text" id="suited-tie-win-text">적절한무</span> -->
 
         <!-- tiger table -->
         <img src="/assets/images/betDetails/dragonTiger/tiger-win-table.png" alt="" id="tiger-win-table"
@@ -192,13 +192,13 @@ curl_close($curl);
     </div>
 
     <script type="text/javascript">
-        var betDetailsData = <?php echo $betDetailsResponse; ?>;
-        let allImages = document.querySelectorAll("img");
-        allImages.forEach((value) => {
-            value.oncontextmenu = (e) => {
-                e.preventDefault();
-            }
-        })
+    var betDetailsData = <?php echo $betDetailsResponse; ?>;
+    let allImages = document.querySelectorAll("img");
+    allImages.forEach((value) => {
+        value.oncontextmenu = (e) => {
+            e.preventDefault();
+        }
+    })
     </script>
     <script src="/assets/scripts/betDetails/betDetailsDT.js?v=1.04"></script>
 </body>
