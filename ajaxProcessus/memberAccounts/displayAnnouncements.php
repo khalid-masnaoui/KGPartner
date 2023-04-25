@@ -5,7 +5,7 @@ require_once __DIR__ . "/../../functions/encryptDecrypt.php";
 require_once __DIR__ . "/../../vendor/autoload.php";
 
 
-if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' && isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == "https://koreagaming.live/pages/member/accounts/announcements.php") {
+if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' && isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == "https://koreagaming.info/pages/member/accounts/announcements.php") {
 
     if (token::check(input::get("token"), "display_announcements")) {
 

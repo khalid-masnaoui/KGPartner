@@ -5,7 +5,7 @@ require_once __DIR__ . "/../../../functions/encryptDecrypt.php";
 
 
 
-if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' && isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == "https://koreagaming.live/pages/infos/deposit_withdraw/wa_balance_transaction.php") {
+if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' && isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == "https://koreagaming.info/pages/infos/deposit_withdraw/wa_balance_transaction.php") {
 
     if (token::check(input::get("token"), "display_waBalance_transactions")) {
 

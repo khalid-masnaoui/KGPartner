@@ -594,7 +594,7 @@ foreach ($activeProviders as $key => $value) {
             betDetailsType = "";
         }
 
-        popItUp(`https://koreagaming.live/pages/betDetails/betDetails${betDetailsType}.php?transactionId=${transactionId}`,
+        popItUp(`https://koreagaming.info/pages/betDetails/betDetails${betDetailsType}.php?transactionId=${transactionId}`,
             "betDetails");
     }
 
