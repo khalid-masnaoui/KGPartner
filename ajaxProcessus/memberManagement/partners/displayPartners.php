@@ -63,7 +63,8 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $parent = 'self';
             $parentName = 'site';
             $partnerId = $value["pt_id"];
-            if (strpos($partnerId, "/") !== false) {
+            if (strpos($partnerId, "/") !== false && substr($partnerId, 0, 1) != "/") {
+
                 $parentsArray = explode("/", $partnerId);
                 $length = count($parentsArray);
 
