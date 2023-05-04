@@ -80,7 +80,12 @@ $GLOBALS["config"] = array(
             "gmw" => "",
             "ag slot" => "",
             "sw" => "",
-            "upg" => ""
+            "upg" => "",
+            "eplay" => "",
+            "rplay" => "",
+            "fnt" => "",
+            "boom" => "",
+            "4tp" => ""
         ),
         "activeProviders" => array()
     ),
@@ -134,7 +139,12 @@ $GLOBALS["config"] = array(
         "gmw" => "Game Media Works Slot",
         "ag slot" => "Asian Gaming Slot",
         "sw" => "SkyWind Slot",
-        "upg" => "Ultimate Play Gaming Slot"
+        "upg" => "Ultimate Play Gaming Slot",
+        "eplay" => "Evo Play Slot",
+        "rplay" => "Reel Play Slot ",
+        "fnt" => "Fantasma Slot",
+        "boom" => "Boomerang Slot",
+        "4tp" => "4the Player Slot"
     ),
     "providersNameMappings" => array(
         "evo" => "에볼루션",
@@ -165,7 +175,7 @@ $GLOBALS["config"] = array(
         "bp" => "블루프린트",
         "dr" => "드래곤소프트",
         "els" => "엘리시움",
-        "mg slot" => "마이크로게이밍 슬롯  ",
+        "mg slot" => "마이크로게이밍 슬롯",
         "qs" => "퀵스핀",
         "rx" => "릴렉스",
         "rr" => "레드레이크",
@@ -186,7 +196,12 @@ $GLOBALS["config"] = array(
         "gmw" => "GMW",
         "ag slot" => "아시아게이밍 슬롯",
         "sw" => "스카이윈드",
-        "upg" => "UPG"
+        "upg" => "UPG",
+        "eplay" => "에보플레이",
+        "rplay" => "릴플레이",
+        "fnt" => "판타즈마",
+        "boom" => "부메랑",
+        "4tp" => "포더플레이어"
     ),
     "providersProductIdMappings" => array(
         "evo" => 1,
@@ -238,7 +253,12 @@ $GLOBALS["config"] = array(
         "gmw" => 131,
         "ag slot" => 132,
         "sw" => 133,
-        "upg" => 134
+        "upg" => 134,
+        "eplay" => 135,
+        "rplay" => 136,
+        "fnt" => 137,
+        "boom" => 138,
+        "4tp" => 139
 
 
     ),

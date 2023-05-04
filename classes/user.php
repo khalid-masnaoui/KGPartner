@@ -65,7 +65,7 @@ class user
      * find
      *
      * @param  mixed $user
-     * @return void
+     * @return bool
      */
     public function find($user = null): bool
     {
@@ -133,10 +133,12 @@ class user
                         if (!$hashCheck->error()) {
                             if (!$hashCheck->count()) {
                                 $hash = hash::unique();
-                                $this->_db->insert("partner_users_session", array(
-                                    "partner_users_id" => $this->_data["id"],
-                                    "hash" => $hash
-                                )
+                                $this->_db->insert(
+                                    "partner_users_session",
+                                    array(
+                                        "partner_users_id" => $this->_data["id"],
+                                        "hash" => $hash
+                                    )
                                 );
                             } else {
                                 $hash = $hashCheck->first()["hash"];

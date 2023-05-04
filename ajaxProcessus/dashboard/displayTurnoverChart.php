@@ -277,6 +277,21 @@ function getTurnoverChartsColor($key)
         case 'upg':
             return "rgba(159, 130, 145, 0.8)";
 
+        case 'eplay':
+            return "rgba(159, 130, 145, 0.8)";
+
+        case 'rplay':
+            return "rgba(159, 130, 145, 0.8)";
+
+        case 'fnt':
+            return "rgba(159, 130, 145, 0.8)";
+
+        case 'boom':
+            return "rgba(159, 130, 145, 0.8)";
+
+        case '4tp':
+            return "rgba(159, 130, 145, 0.8)";
+
 
         default:
             # code...
