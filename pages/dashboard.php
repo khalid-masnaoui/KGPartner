@@ -576,7 +576,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                 token
             },
             cache: false,
-            timeout: 10000,
+            timeout: 30000,
             success: function (data) {
 
                 if (data == 'unauthorized' || data == '') {
@@ -875,7 +875,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                 token
             },
             cache: false,
-            timeout: 10000,
+            timeout: 40000,
             success: function (data) {
 
                 if (data == 'unauthorized' || data == '') {
@@ -945,7 +945,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                 token
             },
             cache: false,
-            timeout: 10000,
+            timeout: 40000,
             success: function (data) {
 
                 if (data == 'unauthorized' || data == '') {
@@ -1013,7 +1013,7 @@ include __DIR__ . '/../includes/partials/_authorization.php';
                 token
             },
             cache: false,
-            timeout: 10000,
+            timeout: 20000,
             success: function (data) {
 
                 if (data == 'unauthorized' || data == '') {

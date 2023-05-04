@@ -392,7 +392,7 @@ foreach ($clients as $key => $value) {
             // contentType: false,
             // processData: false, 
             cache: false,
-            timeout: 10000,
+            timeout: 40000,
             // cache: false,
             // dataType: 'json', 
 
