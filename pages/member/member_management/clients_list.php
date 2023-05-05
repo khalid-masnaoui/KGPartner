@@ -1963,6 +1963,16 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         }
     }
 
+    //product activation
+    $(".quiz-answer").click(function() {
+        $(this).toggleClass("active");
+
+        //removing the invalid feedback
+        $(`.quizimgblock`).next(".invalid-feedback").text("");
+        $(`.quizimgblock`).next(".invalid-feedback").css("display", "none");
+        $(`.quizimgblock`).removeClass("invalid");
+    });
+
     document.addEventListener('DOMContentLoaded', (event) => {
 
         displayClients(0);
