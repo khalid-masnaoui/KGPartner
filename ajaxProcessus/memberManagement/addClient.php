@@ -17,6 +17,10 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $parentPtId = $partner->data()["pt_id"];
         $parentRate = $partner->data()["rate"];
 
+        if (!isset($_POST["activatedProducts"]) || $_POST["activatedProducts"] == null) {
+            $_POST["activatedProducts"] = array();
+        }
+
         $validate = new validate();
         $validation = $validate->check(
             $_POST,
@@ -57,6 +61,12 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                     "inclusion" => [
                         "list" => ["1", "2", "3", "4", "5"],
                         "msg" => "please select valid option from the purposed options list!"
+                    ]
+                ],
+                "activatedProducts" => [
+                    "arrayIncludes" => [
+                        "list" => array_values(config::get("providersProductIdMappings")),
+                        "msg" => "Some ACtivated products are not valid!."
                     ]
                 ],
 
@@ -110,7 +120,8 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $rates = $ratesBuilder->upsertCommissionsRates($parentPtId, $clientId, input::get("partnerRate"));
 
             //insert activated products
-            $activatedProducts = config::get("providersProductIdMappings");
+            // $activatedProducts = config::get("providersProductIdMappings");
+            $activatedProducts = input::get("activatedProducts");
             $sql = "INSERT INTO client_products VALUES ";
             $queryParameters = [];
 

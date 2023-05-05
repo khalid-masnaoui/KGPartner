@@ -30,6 +30,12 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
 
         $validate = new validate();
+        if (!isset($_POST["activatedProducts"]) || $_POST["activatedProducts"] == null) {
+            $_POST["activatedProducts"] = array();
+        }
+
+
+
         $validation = $validate->check(
             $_POST,
             array(
@@ -55,6 +61,12 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                         "msg" => "please select valid option from the purposed options list!"
                     ]
                 ],
+                "activatedProducts" => [
+                    "arrayIncludes" => [
+                        "list" => array_values(config::get("providersProductIdMappings")),
+                        "msg" => "Some ACtivated products are not valid!."
+                    ]
+                ],
 
             )
         );
@@ -77,6 +89,28 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             }
 
 
+            //insert activated products
+            //-->first we delete client existed activated products
+            $activatedProductsOriginalValues = $db->get("product_id", "client_products", [["client_id", "=", "$id"]])->results();
+            $db->delete("client_products", [["client_id", "=", "$id"]]);
+
+            $activatedProducts = input::get("activatedProducts");
+            $sql = "INSERT INTO client_products VALUES ";
+            $queryParameters = [];
+
+            foreach ($activatedProducts as $key => $value) {
+                $sql .= " (?,?),";
+
+                $queryParameters[] = $id;
+                $queryParameters[] = $value;
+            }
+            // last commas deletion
+            $sql = substr($sql, 0, -1);
+
+            if ($activatedProducts != []) {
+                $insertActivatedProducts = $db->query($sql, $queryParameters);
+            }
+
             //log the action
             $log = new ActivityLogger();
 
@@ -89,6 +123,15 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
                 $originalValue = $originalData[$key];
                 $details .= "--$key" . "[" . $originalValue . "]->[" . $value . "]";
+            }
+
+            //activation of products
+            $activatedProductsOriginalValues = array_map(function ($el) {
+                return $el["product_id"];
+            }, $activatedProductsOriginalValues);
+
+            if (!compareIsEqualArray($activatedProductsOriginalValues, $activatedProducts)) {
+                $details .= "--activatedProducts" . "[" . json_encode($activatedProductsOriginalValues) . "]->[" . json_encode($activatedProducts) . "]";
             }
 
             if ($details != "") {
@@ -120,5 +163,10 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 } else {
     echo "unauthorized";
     // header('Location: /pages/errors/403.php');      
+}
+
+function compareIsEqualArray(array $array1, array $array2): bool
+{
+    return (array_diff($array1, $array2) == [] && array_diff($array2, $array1) == []);
 }
 ?>
