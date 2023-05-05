@@ -52,8 +52,10 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $i = 0;
         $i = ($activePage - 1) * $activeNumber;
 
+        $i = count($clients);
+
         foreach ($clients as $key => $value) {
-            $i++;
+            // $i++;
 
             $value["balance"] = $fmt->format($value["balance"]);
 
@@ -102,6 +104,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $tableBody .= '</tr>';
 
+            $i--;
         }
 
         //navigation

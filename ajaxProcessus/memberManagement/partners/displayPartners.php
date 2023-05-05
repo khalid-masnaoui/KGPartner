@@ -54,8 +54,10 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $i = 0;
         $i = ($activePage - 1) * $activeNumber;
 
+        $i = count($partners);
+
         foreach ($partners as $key => $value) {
-            $i++;
+            // $i++;
 
             // $value["rate"] = $fmt->format($value["rate"]);
 
@@ -114,6 +116,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $tableBody .= '</tr>';
 
+            $i--;
         }
 
         //navigation
