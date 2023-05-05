@@ -43,11 +43,12 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $db = DB::getInstance();
 
             // $password = encrypt(input::get("newPassword"));
+            $password = encrypt(input::get("newPassword"));
             $hashed_password = password_hash(input::get("newPassword"), PASSWORD_DEFAULT);
 
 
             // $array = ["password" => $hashed_password, "raw_ps" => $password];
-            $array = ["password" => $hashed_password];
+            $array = ["password" => $hashed_password, "raw_ps" => $password];
 
 
             $inserted = $db->update('partner_users', [["id", "=", $partner_id]], $array);
