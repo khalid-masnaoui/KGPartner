@@ -21,7 +21,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         $db = DB::getInstance();
 
-        $originalData = $db->get("rate, status, spadeEvoSkin, prefix", "clients", array(["id", "=", $id]))->first();
+        $originalData = $db->get("rate, status, spadeEvoSkin, prefix, DgSkin, DwSkin, WmSkin, OrSkin, AgSkin, BgSkin", "clients", array(["id", "=", $id]))->first();
 
         if (!count($originalData)) {
             $data = json_encode(["response" => 4, "errors" => [], "token" => token::generate()]);
@@ -62,6 +62,42 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                         "msg" => "please select valid option from the purposed options list!"
                     ]
                 ],
+                "skinSelectDG" => [
+                    "inclusion" => [
+                        "list" => ["1", "2", "3", "4", "5"],
+                        "msg" => "please select valid option from the purposed options list!"
+                    ]
+                ],
+                "skinSelectDW" => [
+                    "inclusion" => [
+                        "list" => ["1", "2", "3", "4", "5", "6", "7"],
+                        "msg" => "please select valid option from the purposed options list!"
+                    ]
+                ],
+                "skinSelectWM" => [
+                    "inclusion" => [
+                        "list" => ["1", "2", "3", "4", "5", "6", "7"],
+                        "msg" => "please select valid option from the purposed options list!"
+                    ]
+                ],
+                "skinSelectOR" => [
+                    "inclusion" => [
+                        "list" => ["1", "2", "3", "4", "5", "6", "7"],
+                        "msg" => "please select valid option from the purposed options list!"
+                    ]
+                ],
+                "skinSelectAG" => [
+                    "inclusion" => [
+                        "list" => ["1", "2"],
+                        "msg" => "please select valid option from the purposed options list!"
+                    ]
+                ],
+                "skinSelectBG" => [
+                    "inclusion" => [
+                        "list" => ["1", "2", "3", "4", "5", "6"],
+                        "msg" => "please select valid option from the purposed options list!"
+                    ]
+                ],
                 "activatedProducts" => [
                     "arrayIncludes" => [
                         "list" => array_values(config::get("providersProductIdMappings")),
@@ -75,7 +111,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             //edit client in db;
 
-            $array = ["rate" => input::get("partnerRate"), "status" => input::get("status"), "spadeEvoSkin" => input::get("skinSelect")];
+            $array = ["rate" => input::get("partnerRate"), "status" => input::get("status"), "spadeEvoSkin" => input::get("skinSelect"), "DgSkin" => input::get("skinSelectDG"), "DwSkin" => input::get("skinSelectDW"), "WmSkin" => input::get("skinSelectWM"), "OrSkin" => input::get("skinSelectOR"), "AgSkin" => input::get("skinSelectAG"), "BgSkin" => input::get("skinSelectBG")];
 
             $updated = $db->update('clients', [["id", "=", $id]], $array);
             if ($updated->error()) {
