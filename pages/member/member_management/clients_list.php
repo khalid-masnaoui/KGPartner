@@ -468,7 +468,7 @@ $modal_body = '<form class="">
     </div>
 </div>
 
-<div class="position-relative row form-group skinSelectDG"><label style="font-weight:bold" for="skinSelectDG" class="col-sm-2 col-form-label">DreamGaming Skin (Limit)</label>
+<div class="position-relative row form-group skinSelectDG"><label style="font-weight:bold" for="skinSelectDG" class="col-sm-2 col-form-label">드림게이밍 스킨 선택</label>
     <div class="col-sm-10">
         <select type="select" id="skinSelectDG" name="skinSelectDG"
             class="custom-select">
@@ -482,7 +482,7 @@ $modal_body = '<form class="">
     </div>
 </div>
 
-<div class="position-relative row form-group skinSelectDW"><label style="font-weight:bold" for="skinSelectDW" class="col-sm-2 col-form-label">Dowinn Skin (Limit)</label>
+<div class="position-relative row form-group skinSelectDW"><label style="font-weight:bold" for="skinSelectDW" class="col-sm-2 col-form-label">두윈 스킨 선택</label>
     <div class="col-sm-10">
         <select type="select" id="skinSelectDW" name="skinSelectDW"
             class="custom-select">
@@ -498,7 +498,7 @@ $modal_body = '<form class="">
     </div>
 </div>
 
-<div class="position-relative row form-group skinSelectWM"><label style="font-weight:bold" for="skinSelectWM" class="col-sm-2 col-form-label">WorldMatch Skin (Limit)</label>
+<div class="position-relative row form-group skinSelectWM"><label style="font-weight:bold" for="skinSelectWM" class="col-sm-2 col-form-label">WM 스킨 선택</label>
     <div class="col-sm-10">
         <select type="select" id="skinSelectWM" name="skinSelectWM"
             class="custom-select">
@@ -514,7 +514,7 @@ $modal_body = '<form class="">
     </div>
 </div>
 
-<div class="position-relative row form-group skinSelectOR"><label style="font-weight:bold" for="skinSelectOR" class="col-sm-2 col-form-label">Oriental Skin (Limit)</label>
+<div class="position-relative row form-group skinSelectOR"><label style="font-weight:bold" for="skinSelectOR" class="col-sm-2 col-form-label">오리엔탈게이밍 스킨 선택</label>
     <div class="col-sm-10">
         <select type="select" id="skinSelectOR" name="skinSelectOR"
             class="custom-select">
@@ -530,7 +530,7 @@ $modal_body = '<form class="">
     </div>
 </div>
 
-<div class="position-relative row form-group skinSelectAG"><label style="font-weight:bold" for="skinSelectAG" class="col-sm-2 col-form-label">AsiaGaming Skin (Limit)</label>
+<div class="position-relative row form-group skinSelectAG"><label style="font-weight:bold" for="skinSelectAG" class="col-sm-2 col-form-label">오리엔탈게이밍 스킨 선택</label>
     <div class="col-sm-10">
         <select type="select" id="skinSelectAG" name="skinSelectAG"
             class="custom-select">
@@ -541,7 +541,7 @@ $modal_body = '<form class="">
     </div>
 </div>
 
-<div class="position-relative row form-group skinSelectBG"><label style="font-weight:bold" for="skinSelectBG" class="col-sm-2 col-form-label">BigGaming Skin (Limit)</label>
+<div class="position-relative row form-group skinSelectBG"><label style="font-weight:bold" for="skinSelectBG" class="col-sm-2 col-form-label">빅게이밍 스킨 선택</label>
     <div class="col-sm-10">
         <select type="select" id="skinSelectBG" name="skinSelectBG"
             class="custom-select">
