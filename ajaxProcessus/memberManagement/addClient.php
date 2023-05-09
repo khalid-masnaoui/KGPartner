@@ -3,6 +3,7 @@ require_once __DIR__ . "/../../core/ini.php";
 require_once __DIR__ . "/../../core/constants.php";
 require_once __DIR__ . "/../../functions/randomString.php";
 require_once __DIR__ . "/../../functions/encryptDecrypt.php";
+require_once __DIR__ . "/../../core/mysqli_conn.php";
 
 
 if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' && isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == "https://koreagaming.info/pages/member/member_management/clients_list.php") {
@@ -111,6 +112,13 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                 exit();
             }
             $clientId = $inserted->lastId();
+
+            //insert client record into resource server
+            $stmt = $conn2->prepare("INSERT INTO clients (username, prefix,name, end_point, api_key, secret_key, status) VALUES (?,?,?,?,?,?,?)");
+            $stmt->bind_param("ssssssi", $array["username"], $array["prefix"], $array["name"], $array["end_point"], $array["api_key"], $array["secret_key"], $array["status"]);
+            $stmt->execute();
+            $stmt->close();
+            $conn2->close();
 
             //insert records{0.00} into balance/deposit table 
             $inserted2 = $db->insert('clients_balance', ["client_id" => $clientId, "balance" => 0.00, "deposit" => 0.00]);

@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../../core/ini.php";
 require_once __DIR__ . "/../../core/constants.php";
 require_once __DIR__ . "/../../functions/randomString.php";
+require_once __DIR__ . "/../../core/mysqli_conn.php";
 
 
 if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' && isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == "https://koreagaming.info/pages/member/member_management/clients_list.php") {
@@ -20,7 +21,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         $db = DB::getInstance();
 
-        $originalData = $db->get("rate, status, spadeEvoSkin", "clients", array(["id", "=", $id]))->first();
+        $originalData = $db->get("rate, status, spadeEvoSkin, prefix", "clients", array(["id", "=", $id]))->first();
 
         if (!count($originalData)) {
             $data = json_encode(["response" => 4, "errors" => [], "token" => token::generate()]);
@@ -82,6 +83,14 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                 print_r($data);
                 exit();
             }
+
+            //update client in resource server
+            $stmt = $conn2->prepare("UPDATE clients set status = ? WHERE prefix = ?");
+            $stmt->bind_param("is", $array["status"], $originalData["prefix"]);
+            $stmt->execute();
+            $stmt->close();
+            $conn2->close();
+
             //update records to rate table if rate if updated
             if (input::get("partnerRate") != $originalData["rate"]) {
                 $ratesBuilder = new Rates();
@@ -116,6 +125,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $action = "Client Edited";
 
+            unset($originalData["prefix"]);
             $diffArray = array_diff_assoc($array, $originalData);
 
             $details = "";
