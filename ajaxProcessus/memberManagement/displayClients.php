@@ -87,12 +87,12 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $tableBody .= '<tr>';
 
             $tableBody .= '<td class="text-center text-muted">' . $i . '</td>';
+            $tableBody .= '<td class="text-center">' . escape($value["parent"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["username"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["name"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["prefix"]) . '</td>';
             $tableBody .= '<td class="text-center" style="color:' . $balanceColor . '">' . escape($value["balance"]) . ' 원</td>';
             $tableBody .= '<td class="text-center">' . escape($value["rate"]) . ' %</td>';
-            $tableBody .= '<td class="text-center">' . escape($value["parent"]) . '</td>';
             $tableBody .= '<td class="text-center">' . $statusHtml . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["register_date"]) . '</td>';
 
