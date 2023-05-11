@@ -97,14 +97,19 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $tableBody .= '<td class="text-center">' . escape($value["register_date"]) . '</td>';
 
 
-            if ($value["parent"] === $partnerPtName) {
-                $tableBody .= '<td class="text-center">
+            // if ($value["parent"] === $partnerPtName) {
+            //     $tableBody .= '<td class="text-center">
+            //     <button class="mb-2 mr-2 btn-transition  btn btn-outline-primary btn_action_edit" data-toggle="modal"
+            //     data-target=".add_client" data-values=' . $jsonValues . ' onclick=showClientData(event)><i class="pe-7s-edit"> </i></button>
+            //     </td>';
+            // } else {
+            //     $tableBody .= '<td class="text-center">-</td>';
+            // }
+
+            $tableBody .= '<td class="text-center">
                 <button class="mb-2 mr-2 btn-transition  btn btn-outline-primary btn_action_edit" data-toggle="modal"
                 data-target=".add_client" data-values=' . $jsonValues . ' onclick=showClientData(event)><i class="pe-7s-edit"> </i></button>
                 </td>';
-            } else {
-                $tableBody .= '<td class="text-center">-</td>';
-            }
 
             $tableBody .= '</tr>';
 
