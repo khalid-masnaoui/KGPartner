@@ -9,8 +9,8 @@ $db = DB::getInstance();
 $partner = new user();
 $partnerPtId = $partner->data()["pt_id"];
 
-$sql = "SELECT id,username,prefix FROM clients WHERE pt_id = ? ";
-$clients = $db->query($sql, ["$partnerPtId"])->results();
+$sql = "SELECT id,username,prefix FROM clients WHERE pt_id = ? OR pt_id REGEXP ? ";
+$clients = $db->query($sql, ["$partnerPtId", "^$partnerPtId/[0-9/]*$"])->results();
 
 $options = "";
 

@@ -113,7 +113,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             //     $tableBody .= '<td class="text-center">-</td>';
             // }
 
-             if ($partnerPtName !== $value["username"]) {
+            if ($partnerPtName !== $value["username"]) {
                 $tableBody .= '<td class="text-center">
                 <button class="mb-2 mr-2 btn-transition  btn btn-outline-primary btn_action_edit" data-toggle="modal"
                 data-target=".add_partner" data-values=' . $jsonValues . ' onclick=showPartnerData(event)><i class="pe-7s-edit"> </i></button>

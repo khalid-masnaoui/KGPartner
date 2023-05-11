@@ -30,8 +30,9 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $partnerPtName = $partner->data()["username"];
 
 
-        $partnerFilter = " AND cl.pt_id = ?";
+        $partnerFilter = " AND  (cl.pt_id = ? OR cl.pt_id REGEXP ?)";
         $queryParameters[] = "$partnerPtId";
+        $queryParameters[] = "^$partnerPtId/[0-9/]*$";
 
 
 
