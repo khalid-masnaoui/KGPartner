@@ -67,10 +67,10 @@ class user
      * @param  mixed $user
      * @return bool
      */
-    public function find($user = null): bool
+    public function find($user = null, $id = true): bool
     {
         if ($user) {
-            $field = (is_numeric($user) ? "id" : "username");
+            $field = (is_numeric($user) && $id == true ? "id" : "username");
             $data = $this->_db->get("*", "partner_users", array([$field, "=", $user]));
             if ($data->count()) {
 
@@ -112,7 +112,7 @@ class user
             // session::put($this->_roleName,$this->data()["role_id"]);  //equivalent to loggedin=true (using $user= new user())
             return true;
         } else {
-            $user = $this->find($username);
+            $user = $this->find($username, false);
             if ($user) {
                 $pass = $password;
                 if (password_verify($pass, $this->_data["password"])) {
