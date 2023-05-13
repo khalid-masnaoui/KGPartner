@@ -93,8 +93,8 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $tableBody .= '<td class="text-center">' . escape($value["prefix"]) . '</td>';
             $tableBody .= '<td class="text-center" style="color:' . $balanceColor . '">' . escape($value["balance"]) . ' 원</td>';
             $tableBody .= '<td class="text-center">' . escape($value["rate"]) . ' %</td>';
-            $tableBody .= '<td class="text-center">' . $statusHtml . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["register_date"]) . '</td>';
+            $tableBody .= '<td class="text-center">' . $statusHtml . '</td>';
 
 
             // if ($value["parent"] === $partnerPtName) {
