@@ -102,7 +102,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $tableBody .= '<td class="text-center">' . escape($value["username"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["wa_balance"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["rate"]) . ' %</td>';
-            $tableBody .= '<td class="text-center">' . escape($value["created_at"]) . ' %</td>';
+            $tableBody .= '<td class="text-center">' . escape($value["created_at"]) . '</td>';
             $tableBody .= '<td class="text-center">' . $statusHtml . '</td>';
 
             // if ($parentName === $partnerPtName) {
