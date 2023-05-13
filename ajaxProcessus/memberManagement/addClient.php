@@ -51,7 +51,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                 "partnerRate" => [
                     "pattern" => ["rule" => '/^[0-9]{1,2}\.[0-9]{2}$/', "msg" => '본인의 요율보다 같거나 높게 입력해 주세요.'],
                     "notEmpty" => true,
-                    "biggerThan" => 0,
+                    "biggerThanOrEqual" => 7,
 
                     //check that the partner rate is bigger than that of the parent
                     "RateBiggerOfPartner" => [

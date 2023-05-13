@@ -832,9 +832,9 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             partnerRate: {
                 presence: true,
                 numericality: {
-                    greaterThanOrEqualTo: 0,
+                    greaterThanOrEqualTo: 7,
                     lessThanOrEqualTo: 100,
-                    message: "^"
+                    message: "^요율은 7% 이상으로만 설정 가능합니다"
 
                 },
                 format: {
@@ -1331,8 +1331,9 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
             partnerRate: {
                 presence: true,
                 numericality: {
-                    greaterThanOrEqualTo: 0,
+                    greaterThanOrEqualTo: 7,
                     lessThanOrEqualTo: 100,
+                    message: "^요율은 7% 이상으로만 설정 가능합니다"
                 },
                 format: {
                     pattern: "^[0-9]{1,2}\.[0-9]{2}$",
