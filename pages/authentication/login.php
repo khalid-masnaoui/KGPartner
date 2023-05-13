@@ -50,7 +50,12 @@ if (input::exists("post")) {
 
         $array = ["ip_address" => $ip, "username" => $username, "password" => $password, "att_date" => $date, "att_time" => $time];
 
-        $userStatus = $db->get("status", "partner_users", [["username", "=", input::get("username")]])->first()["status"];
+        $userStatus = $db->get("status", "partner_users", [["username", "=", input::get("username")]]);
+        if ($userStatus->count()) {
+            $userStatus = $userStatus->first()["status"];
+        } else {
+            $userStatus = 0;
+        }
         if ($userStatus == 3) {
             $_GLOBALS["ERR"]["global"] = "you are BLOCKED!";
             insertLoginAttempt($db, $array, 0, "the user is BLOCKED");
