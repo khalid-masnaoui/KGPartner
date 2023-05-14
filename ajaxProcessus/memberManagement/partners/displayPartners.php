@@ -19,6 +19,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $nameFilter = escape($nameFilter);
 
         $statusFilter = input::get("status");
+        $sort = input::get("sort");
 
         $db = DB::getInstance();
 
@@ -44,7 +45,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
 
-        $partners = $db->query("SELECT * from partner_users where 1=1 $partnerFilter  $statusFilterQuery $nameFilterQuery order by id  limit $limit offset $offset", $queryParameters)->results();
+        $partners = $db->query("SELECT * from partner_users where 1=1 $partnerFilter  $statusFilterQuery $nameFilterQuery order by id $sort limit $limit offset $offset", $queryParameters)->results();
 
         // print_r($partners);
         // die;
@@ -54,11 +55,13 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $i = 0;
         $i = ($activePage - 1) * $activeNumber;
 
-        $i = count($partners);
+        $i = $sort == "DESC" ? count($partners) : 0;
 
         foreach ($partners as $key => $value) {
             // $i++;
-
+            if ($sort == "ASC") {
+                $i++;
+            }
             // $value["rate"] = $fmt->format($value["rate"]);
 
             //get parent
@@ -125,7 +128,9 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $tableBody .= '</tr>';
 
-            $i--;
+            if ($sort == "DESC") {
+                $i--;
+            }
         }
 
         //navigation

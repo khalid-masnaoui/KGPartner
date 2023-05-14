@@ -401,6 +401,59 @@ foreach ($activeSlotProviders as $key => $value) {
         margin-left: 15px;
     }
 
+    .header-cell {
+        padding: 10px 30px 10px 10px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .header-cell::before,
+    .header-cell::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        border: 4px solid transparent;
+    }
+
+    .header-cell::before {
+        border-bottom-color: #bdbdbd;
+        margin-top: -8px;
+    }
+
+    .header-cell::after {
+        border-top-color: #bdbdbd;
+        margin-top: 1px;
+    }
+
+    .header-cell.sort-asc::before {
+        border-width: 6px;
+        margin-top: -9px;
+        right: 10px;
+        border-bottom-color: #3f3f3f;
+    }
+
+    .header-cell.sort-asc::after {
+        content: none;
+    }
+
+    .header-cell.sort-desc::before {
+        content: none;
+    }
+
+    .header-cell.sort-desc::after {
+        border-width: 6px;
+        margin-top: -2px;
+        right: 10px;
+        border-top-color: #3f3f3f;
+    }
+
+    .header-cell div {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     </style>
 </head>
 
@@ -801,7 +854,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                                     <th class="text-center">프리픽스 </th>
                                                     <th class="text-center"> 포인트(알) </th>
                                                     <th class="text-center">요율 </th>
-                                                    <th class="text-center">등록일 </th>
+                                                    <th class="text-center header-cell">등록일 </th>
                                                     <th class="text-center">상태 </th>
                                                     <th class="text-center">요율수정</th>
 
@@ -1117,7 +1170,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
 
 
     // --- DISPLAY CLIENTS ----
-    function displayClients(N = 1, status = '') {
+    function displayClients(N = 1, status = '', firstReload = false) {
 
         var activePage = $(".navigation_clients li.page-item.active a").text();
         var activeNumber = $(".active-clients-number").text();
@@ -1126,6 +1179,11 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         var text = $("#client_name_filtered").val();
 
         var token = $("#token_display").val();
+
+        var dateSort = "DESC";
+        if (!$(".header-cell").hasClass('sort-desc') && !firstReload) {
+            dateSort = "ASC";
+        }
 
         $.ajax({
             url: '/ajaxProcessus/memberManagement/displayClients.php',
@@ -1136,6 +1194,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                 "number": activeNumber,
                 "nameFilter": text,
                 "status": status,
+                "sort": dateSort,
                 token
             },
 
@@ -2099,9 +2158,26 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         $(`.quizimgblock`).removeClass("invalid");
     });
 
+    //sort
+    $('.header-cell').click(function() {
+        var isSortedAsc = $(this).hasClass('sort-asc');
+        var isSortedDesc = $(this).hasClass('sort-desc');
+        var isUnsorted = !isSortedAsc && !isSortedDesc;
+
+        $('.header-cell').removeClass('sort-asc sort-desc');
+
+        if (isUnsorted || isSortedDesc) {
+            $(this).addClass('sort-asc');
+            displayClients();
+        } else if (isSortedAsc) {
+            $(this).addClass('sort-desc');
+            displayClients();
+        }
+    });
+
     document.addEventListener('DOMContentLoaded', (event) => {
 
-        displayClients(0);
+        displayClients(0, '', true);
         // clearModalInvalidFeedbacks();
 
 
