@@ -117,7 +117,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $tableBody .= '</tr>';
 
-            if ($sort == "ASC") {
+            if ($sort == "DESC") {
                 $i--;
             }
         }
