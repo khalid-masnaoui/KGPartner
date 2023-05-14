@@ -148,7 +148,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             if ($transactionStatus == 'pending') {
 
-                $transactionHistoryData = $db->query("SELECT '-' AS creditAmount,  $columnDebitAmount AS debitAmount, $columnDebitDate, $columnGameName AS gameName , $columnCreditDate AS resultDate, $columnGameType AS gameType, $columnDebitProvider as gameProviderId, $columnDebitUser, $joininAttribute1, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId, 'pending' as status, $columnUsersUsername
+                $transactionHistoryData = $db->query("SELECT '-' AS creditAmount,  $columnDebitAmount AS debitAmount, $columnDebitDate, $columnGameName AS gameName ,  $columnGameType AS gameType, $columnDebitProvider as gameProviderId, $columnDebitUser, $joininAttribute1, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId, 'pending' as status, $columnUsersUsername
                 FROM $debitTableName JOIN $usersTableName ON $columnUsersId = $columnDebitUser LEFT JOIN $gamesListTableName ON $columnDebitGame = $columnGameId WHERE 1=1 $filterQuery AND NOT EXISTS (SELECT 1 FROM $creditTableName 
                   WHERE txn_id = $joininAttribute1)", $queryParameters)->results();
 
@@ -260,9 +260,13 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             }
 
 
-            $resultTime = strtotime($value["resultDate"]);
             $now = strtotime("now");
 
+            if ($transactionStatus == 'pending') {
+                $resultTime = $now;
+            } else {
+                $resultTime = strtotime($value["resultDate"]);
+            }
             $differenceInSeconds = $now - $resultTime;
 
 
