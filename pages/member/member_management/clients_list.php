@@ -1961,7 +1961,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         $("#skinSelectOR").val(data["OrSkin"]);
         $("#skinSelectAG").val(data["AgSkin"]);
         $("#skinSelectBG").val(data["BgSkin"]);
-        $("#skinSelectBT").val(data["skinSelectBT"]);
+        $("#skinSelectBT").val(data["BtSkin"]);
 
 
         var activatedProducts = data["productsIds"];
