@@ -47,7 +47,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
 
-        $clients = $db->query("SELECT  cl.id,cl.rate, cl.username,cl.name,cl.prefix,cl.register_date, cl.status,cl.spadeEvoSkin, cl.DgSkin, cl.DwSkin, cl.WmSkin, cl.OrSkin, cl.AgSkin, cl.BgSkin, pu.username as parent, IFNULL(cb.balance, '0.00') as balance , GROUP_CONCAT(cp.product_id SEPARATOR ',') as productsIds from clients cl LEFT JOIN clients_balance  cb ON cl.id = cb.client_id LEFT JOIN client_products cp ON cl.id = cp.client_id  JOIN partner_users pu ON cl.pt_id = pu.pt_id $partnerFilter where 1=1 $statusFilterQuery  $nameFilterQuery group by cl.id ,pu.username order by id $sort limit $limit offset $offset", $queryParameters)->results();
+        $clients = $db->query("SELECT  cl.id,cl.rate, cl.username,cl.name,cl.prefix,cl.register_date, cl.status,cl.spadeEvoSkin, cl.DgSkin, cl.DwSkin, cl.WmSkin, cl.OrSkin, cl.AgSkin, cl.BgSkin, cl.BtSkin, pu.username as parent, IFNULL(cb.balance, '0.00') as balance , GROUP_CONCAT(cp.product_id SEPARATOR ',') as productsIds from clients cl LEFT JOIN clients_balance  cb ON cl.id = cb.client_id LEFT JOIN client_products cp ON cl.id = cp.client_id  JOIN partner_users pu ON cl.pt_id = pu.pt_id $partnerFilter where 1=1 $statusFilterQuery  $nameFilterQuery group by cl.id ,pu.username order by id $sort limit $limit offset $offset", $queryParameters)->results();
 
 
         $tableBody = '';

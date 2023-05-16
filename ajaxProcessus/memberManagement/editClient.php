@@ -21,7 +21,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         $db = DB::getInstance();
 
-        $originalData = $db->get("rate, status, spadeEvoSkin, prefix, DgSkin, DwSkin, WmSkin, OrSkin, AgSkin, BgSkin", "clients", array(["id", "=", $id]))->first();
+        $originalData = $db->get("rate, status, spadeEvoSkin, prefix, DgSkin, DwSkin, WmSkin, OrSkin, AgSkin, BgSkin, BtSkin", "clients", array(["id", "=", $id]))->first();
 
         if (!count($originalData)) {
             $data = json_encode(["response" => 4, "errors" => [], "token" => token::generate()]);
@@ -104,6 +104,12 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                         "msg" => "Some ACtivated products are not valid!."
                     ]
                 ],
+                "skinSelectBt" => [
+                    "inclusion" => [
+                        "list" => ["1", "2", "3", "4", "5", "6", "7"],
+                        "msg" => "please select valid option from the purposed options list!"
+                    ]
+                ],
 
             )
         );
@@ -111,7 +117,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             //edit client in db;
 
-            $array = ["rate" => input::get("partnerRate"), "status" => input::get("status"), "spadeEvoSkin" => input::get("skinSelect"), "DgSkin" => input::get("skinSelectDG"), "DwSkin" => input::get("skinSelectDW"), "WmSkin" => input::get("skinSelectWM"), "OrSkin" => input::get("skinSelectOR"), "AgSkin" => input::get("skinSelectAG"), "BgSkin" => input::get("skinSelectBG")];
+            $array = ["rate" => input::get("partnerRate"), "status" => input::get("status"), "spadeEvoSkin" => input::get("skinSelect"), "DgSkin" => input::get("skinSelectDG"), "DwSkin" => input::get("skinSelectDW"), "WmSkin" => input::get("skinSelectWM"), "OrSkin" => input::get("skinSelectOR"), "AgSkin" => input::get("skinSelectAG"), "BgSkin" => input::get("skinSelectBG"), "BtSkin" => input::get("skinSelectBT")];
 
             $updated = $db->update('clients', [["id", "=", $id]], $array);
             if ($updated->error()) {

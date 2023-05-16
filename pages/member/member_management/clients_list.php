@@ -609,6 +609,22 @@ $modal_body = '<form class="">
     </div>
 </div>
 
+<div class="position-relative row form-group skinSelectBT"><label style="font-weight:bold" for="skinSelectBT" class="col-sm-2 col-form-label">보타 스킨 선택</label>
+    <div class="col-sm-10">
+        <select type="select" id="skinSelectBT" name="skinSelectBT"
+            class="custom-select">
+            <option value="1" selected = "selected">1 [1,000,000₩]</option>
+            <option value="2">2 [3,000,000₩]</option>
+            <option value="3">3 [5,000,000₩]</option>
+            <option value="4">4 [10,000,000₩]</option>
+            <option value="5">5 [20,000,000₩]</option>
+            <option value="6">6 [30,000,000₩]</option>
+            <option value="7">7 [50,000,000₩]</option>
+        </select>
+        <div class="invalid-feedback"></div>
+    </div>
+</div>
+
 <div class="position-relative row form-group">
     <label style="font-weight:bold" for="activated_products" class="col-sm-2 col-form-label">게임사 활성화
     <label class="form-check-label" style="margin-top: 5px;display: flex; align-items: center;"><input name="allProducts" id="allProducts" type="checkbox" value="1">
@@ -967,6 +983,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         $("#skinSelectOR").val('1');
         $("#skinSelectAG").val('1');
         $("#skinSelectBG").val('1');
+        $("#skinSelectBT").val('1');
 
 
         // $("#whitelist_ips").val('');
@@ -1335,6 +1352,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         var skinSelectOR = $("#skinSelectOR").val();
         var skinSelectAG = $("#skinSelectAG").val();
         var skinSelectBG = $("#skinSelectBG").val();
+        var skinSelectBT = $("#skinSelectBT").val();
+
 
         var activatedProducts = $(".product-activation-items.active").map(function() {
             return $(this).attr("data-productId");
@@ -1510,6 +1529,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     skinSelectOR,
                     skinSelectAG,
                     skinSelectBG,
+                    skinSelectBT,
                     'activatedProducts': activatedProducts
                 },
                 cache: false,
@@ -1941,6 +1961,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         $("#skinSelectOR").val(data["OrSkin"]);
         $("#skinSelectAG").val(data["AgSkin"]);
         $("#skinSelectBG").val(data["BgSkin"]);
+        $("#skinSelectBT").val(data["skinSelectBT"]);
+
 
         var activatedProducts = data["productsIds"];
         if (activatedProducts != null && activatedProducts != []) {
@@ -1972,6 +1994,8 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
         var skinSelectOR = $("#skinSelectOR").val().trim();
         var skinSelectAG = $("#skinSelectAG").val().trim();
         var skinSelectBG = $("#skinSelectBG").val().trim();
+        var skinSelectBT = $("#skinSelectBT").val();
+
 
         var activatedProducts = $(".product-activation-items.active").map(function() {
             return $(this).attr("data-productId");
@@ -2057,6 +2081,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                     skinSelectOR,
                     skinSelectAG,
                     skinSelectBG,
+                    skinSelectBT,
                     'activatedProducts': activatedProducts
                 },
                 cache: false,

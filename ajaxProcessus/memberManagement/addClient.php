@@ -106,6 +106,12 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                         "msg" => "Some ACtivated products are not valid!."
                     ]
                 ],
+                "skinSelectBt" => [
+                    "inclusion" => [
+                        "list" => ["1", "2", "3", "4", "5", "6", "7"],
+                        "msg" => "please select valid option from the purposed options list!"
+                    ]
+                ],
 
             )
         );
@@ -139,7 +145,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $hashed_password = password_hash(input::get("password"), PASSWORD_DEFAULT);
 
 
-            $array = ["pt_id" => $parentPtId, "username" => input::get("username"), "password" => $hashed_password, "name" => input::get("name"), "end_point" => input::get("end_point"), "prefix" => input::get("prefix"), "status" => input::get("status"), "secret_key" => $secret_key, "api_key" => $api_key, 'raw_ak' => $visible_ak, "raw_ps" => $password, "rate" => input::get("partnerRate"), "spadeEvoSkin" => input::get("skinSelect"), "DgSkin" => input::get("skinSelectDG"), "DwSkin" => input::get("skinSelectDW"), "WmSkin" => input::get("skinSelectWM"), "OrSkin" => input::get("skinSelectOR"), "AgSkin" => input::get("skinSelectAG"), "BgSkin" => input::get("skinSelectBG")];
+            $array = ["pt_id" => $parentPtId, "username" => input::get("username"), "password" => $hashed_password, "name" => input::get("name"), "end_point" => input::get("end_point"), "prefix" => input::get("prefix"), "status" => input::get("status"), "secret_key" => $secret_key, "api_key" => $api_key, 'raw_ak' => $visible_ak, "raw_ps" => $password, "rate" => input::get("partnerRate"), "spadeEvoSkin" => input::get("skinSelect"), "DgSkin" => input::get("skinSelectDG"), "DwSkin" => input::get("skinSelectDW"), "WmSkin" => input::get("skinSelectWM"), "OrSkin" => input::get("skinSelectOR"), "AgSkin" => input::get("skinSelectAG"), "BgSkin" => input::get("skinSelectBG"), "BtSkin" => input::get("skinSelectBT")];
 
             $inserted = $db->insert('clients', $array);
             if ($inserted->error()) {
