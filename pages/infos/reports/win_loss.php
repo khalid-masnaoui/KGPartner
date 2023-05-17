@@ -196,7 +196,7 @@ foreach ($activeProviders as $key => $value) {
                                                 </select>
                                             </div>
 
-                                            <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3  ml-1 pl-0 pr-0 ml-4"
+                                            <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3 mt-2 mt-md-0  mt-xl-0   ml-1 pl-0 pr-0 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">시작일</span></div>
@@ -206,7 +206,7 @@ foreach ($activeProviders as $key => $value) {
                                             </div>
 
 
-                                            <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3  mt-2 ml-1 pl-0 pr-0 ml-4"
+                                            <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3  mt-2 mt-xl-0 ml-1 pl-0 pr-0 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">종료일</span></div>
