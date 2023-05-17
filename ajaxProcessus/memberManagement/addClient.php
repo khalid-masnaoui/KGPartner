@@ -46,7 +46,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                     "pattern" => ["rule" => '/^.{8,30}$/', "msg" => '8~30자를 입력하세요.']
                 ],
                 "name" => [
-                    "pattern" => ["rule" => '/^.{1,20}$/', "msg" => ' 1~20자를 입력하세요.']
+                    "pattern" => ["rule" => '/^.{1,20}$/', "msg" => '영문은 1~20, 한글은 1~6 글자까지 입력 가능합니다.']
                 ],
                 "partnerRate" => [
                     "pattern" => ["rule" => '/^[0-9]{1,2}\.[0-9]{2}$/', "msg" => '본인의 요율보다 같거나 높게 입력해 주세요.'],

@@ -1389,7 +1389,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                 length: {
                     minimum: 1,
                     maximum: 20,
-                    message: "^ 1~20자를 입력하세요."
+                    message: "^ 영문은 1~20, 한글은 1~6 글자까지 입력 가능합니다."
                 },
             },
             client_prefix: {
