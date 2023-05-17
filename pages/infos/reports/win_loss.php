@@ -6,7 +6,6 @@ include __DIR__ . '/../../../includes/partials/_authorization.php';
 
 $db = DB::getInstance();
 
-
 $partner = new user();
 $partnerPtId = $partner->data()["pt_id"];
 
@@ -19,6 +18,24 @@ foreach ($clients as $key => $value) {
 
     $options .= "<option value=" . $value['id'] . " data-prefix=" . $value['prefix'] . ">" . $value["username"] . "</option>";
 
+}
+
+//providers options
+$activeProviders = config::get("display/activeProviders");
+$ProvidersNameMapping = config::get("providersNameMappings");
+
+$providersOptions = "<option value='all'>All</option>";
+
+foreach ($activeProviders as $key => $value) {
+    if (!isset($ProvidersNameMapping[$value])) {
+        continue;
+    }
+
+    if ($value == "evo") {
+        $providersOptions .= "<option value='" . $value . "' selected>" . $ProvidersNameMapping[$value] . "</option>";
+    } else {
+        $providersOptions .= "<option value='" . $value . "'>" . $ProvidersNameMapping[$value] . "</option>";
+    }
 }
 ?>
 
@@ -170,6 +187,15 @@ foreach ($clients as $key => $value) {
                                     <div class="d-flex filter-wrapper">
                                         <div class="row mt-2 row_filter_wrapper mb-3">
 
+                                            <div
+                                                class="select-provider input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3 col-10  ml-1 pl-0 pr-0 ml-4">
+                                                <div class="input-group-prepend"><span
+                                                        class="input-group-text">게임사</span></div> <select type="select"
+                                                    id="providerSelect" name="providerSelect" class="custom-select">
+                                                    <?= $providersOptions; ?>
+                                                </select>
+                                            </div>
+
                                             <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3  ml-1 pl-0 pr-0 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
@@ -180,14 +206,14 @@ foreach ($clients as $key => $value) {
                                             </div>
 
 
-                                            <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3  mt-2 mt-sm-0 ml-1 pl-0 pr-0 ml-4 ml-sm-1"
+                                            <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5 col-lg-4 col-xl-3  mt-2 ml-1 pl-0 pr-0 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">종료일</span></div>
                                                 <input placeholder="" type="date"
                                                     class="form-control shadow-none enddate" value=<?= date("Y-m-d") ?>>
                                             </div>
-                                            <div class="f1 input-group col-md-5 col-lg-4 col-xl-3 ml-1 pl-0 pr-0  mt-2 mt-xl-0 ml-4 ml-xl-1"
+                                            <div class="f1 input-group col-md-5 col-lg-4 col-xl-3 ml-1 pl-0 pr-0  mt-2 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">아이디</span></div>
@@ -195,7 +221,7 @@ foreach ($clients as $key => $value) {
                                                     class="form-control shadow-none">
                                             </div>
                                             <button
-                                                class="btn btn-primary filter_winloss filter_btn mt-2 ml-4 mt-xl-0">검색</button>
+                                                class="btn btn-primary filter_winloss filter_btn mt-2 ml-4">검색</button>
 
                                         </div>
 
@@ -369,6 +395,8 @@ foreach ($clients as $key => $value) {
         var text = $("#player_name_filtered").val();
         var startDate = $(".startdate").val();
         var endDate = $(".enddate").val();
+        var provider = $("#providerSelect").val();
+
 
         var client = $("#clientSelect").val()
 
@@ -386,6 +414,7 @@ foreach ($clients as $key => $value) {
                 startDate,
                 endDate,
                 client,
+                provider,
                 "status": status,
                 token
             },

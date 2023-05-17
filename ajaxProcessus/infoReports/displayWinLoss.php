@@ -29,6 +29,14 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $from .= ' 00:00:00';
         $to .= ' 23:59:59';
 
+        $productsIds = config::get("providersProductIdMappings");
+        //we will construct the logic based on the provider --> which table , naming conventions..
+        $provider = input::get("provider");
+        $productsId = 0;
+        if ($provider != 'all') {
+            $productsId = $productsIds[$provider];
+        }
+
         $db = DB::getInstance();
 
         $winLoss = [];
@@ -73,7 +81,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $columnCreditType = $prefix . '_credit.type';
 
             $columnDebitAmount = $prefix . '_debit.amount';
-            $columnDebitGame = $prefix . '_debit.prd_id';
+            $columnDebitProvider = $prefix . '_debit.prd_id';
             $columnDebitUser = $prefix . '_debit.user_id';
 
             $usersTableName = $prefix . '_users';
@@ -83,9 +91,16 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             //filters 
             $filterQuery = "";
             $queryParameters = [];
+
+            //product_id filter
+            if ($provider != 'all') {
+                $filterQuery .= " AND $columnDebitProvider = ? ";
+                $queryParameters = ["c", $productsId, $from, $to];
+            } else {
+                $queryParameters = ["c", $from, $to];
+            }
             // date filter
             $filterQuery .= " AND $columnCreditDate >= ? AND $columnCreditDate <= ?";
-            $queryParameters = ["c", $from, $to];
 
             // player username filter
             if ($nameFilter != '') {
