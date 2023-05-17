@@ -24,7 +24,7 @@ foreach ($clients as $key => $value) {
 $activeProviders = config::get("display/activeProviders");
 $ProvidersNameMapping = config::get("providersNameMappings");
 
-$providersOptions = "<option value='all'>All</option>";
+$providersOptions = "<option value='all'>전체</option>";
 
 foreach ($activeProviders as $key => $value) {
     if (!isset($ProvidersNameMapping[$value])) {
