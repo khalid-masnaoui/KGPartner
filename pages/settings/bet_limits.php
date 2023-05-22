@@ -92,149 +92,149 @@ foreach ($games as $key => $value) {
 
     <?php include __DIR__ . '/../../includes/files/_stylesheets.php'; ?>
     <style>
-    .filter-wrapper {
-        /* margin-top: 20px;
+        .filter-wrapper {
+            /* margin-top: 20px;
         margin-bottom: 20px;
         margin-left: 20px; */
-        /* width:100%; */
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+            /* width:100%; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
 
-    }
+        }
 
-    .row_filter_wrapper {
-        flex: 2;
-        width: 100%;
+        .row_filter_wrapper {
+            flex: 2;
+            width: 100%;
 
-    }
-
-    .clslct {
-        margin-right: 10px;
-
-    }
-
-    .filter_btn {
-        margin-left: 20px;
-    }
-
-    .btn_action {
-        width: max-content;
-    }
-
-    .status_ {
-        border: none;
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-    }
-
-    @media (max-width: 1000px) {
-        .filter-wrapper {
-            flex-direction: column;
-            align-items: flex-start;
         }
 
         .clslct {
-            margin-bottom: 20px;
-            margin-left: 10px;
-
-        }
-    }
-
-
-    @media (max-width: 767px) {
-        .f-user {
-            margin-top: 0.5rem !important;
+            margin-right: 10px;
 
         }
 
-    }
-
-    @media (max-width: 576px) {
-        .row_filter_wrapper>div {
-
-
-            width: 88% !important;
-            /* flex-direction:column; */
+        .filter_btn {
+            margin-left: 20px;
         }
 
-    }
-
-    @media (max-width: 710px) {
-        .card-header2 {
-            flex-direction: column;
-            height: 6.2rem !important;
+        .btn_action {
+            width: max-content;
         }
 
-        .status_number_wrapper {
-            margin-top: 10px;
+        .status_ {
+            border: none;
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
         }
-    }
 
-    /* .notice {
+        @media (max-width: 1000px) {
+            .filter-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .clslct {
+                margin-bottom: 20px;
+                margin-left: 10px;
+
+            }
+        }
+
+
+        @media (max-width: 767px) {
+            .f-user {
+                margin-top: 0.5rem !important;
+
+            }
+
+        }
+
+        @media (max-width: 576px) {
+            .row_filter_wrapper>div {
+
+
+                width: 88% !important;
+                /* flex-direction:column; */
+            }
+
+        }
+
+        @media (max-width: 710px) {
+            .card-header2 {
+                flex-direction: column;
+                height: 6.2rem !important;
+            }
+
+            .status_number_wrapper {
+                margin-top: 10px;
+            }
+        }
+
+        /* .notice {
         width: 45%;
     } */
 
-    @media (max-width: 480px) {
-        /* .card-header2 {
+        @media (max-width: 480px) {
+            /* .card-header2 {
             height: 7.8rem !important;
         } */
 
-        /* .notice {
+            /* .notice {
             width: 45%;
         } */
 
-        .status_number_wrapper {
-            flex-direction: column;
+            .status_number_wrapper {
+                flex-direction: column;
 
+            }
         }
-    }
 
-    @media (max-width: 390px) {
-        /* .card-header2 {
+        @media (max-width: 390px) {
+            /* .card-header2 {
             height: 9.2rem !important;
         } */
-    }
-
-    @media (max-width: 990px) {
-        .table-summary {
-            max-width: unset !important;
         }
-    }
 
-    .nav-tabs .nav-link.active {
-        color: #fff;
-        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
-        /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
-    }
+        @media (max-width: 990px) {
+            .table-summary {
+                max-width: unset !important;
+            }
+        }
 
-    .nav-tabs .nav-link.active:hover {
-        color: #fff !important;
-    }
+        .nav-tabs .nav-link.active {
+            color: #fff;
+            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
+            /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
+        }
 
-    table.summary thead th {
-        background-color: rgba(63, 106, 216, 0.9) !important;
-        color: white !important;
-    }
+        .nav-tabs .nav-link.active:hover {
+            color: #fff !important;
+        }
 
-    table.summary th,
-    td {
-        width: unset !important;
-        height: unset !important;
-    }
+        table.summary thead th {
+            background-color: rgba(63, 106, 216, 0.9) !important;
+            color: white !important;
+        }
 
-    /* .total-row td {
+        table.summary th,
+        td {
+            width: unset !important;
+            height: unset !important;
+        }
+
+        /* .total-row td {
         background-color: rgba(247, 176, 36, 0.6) !important;
     } */
 
-    .app-wrapper-footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
+        .app-wrapper-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
 
     </style>
 </head>
@@ -540,312 +540,188 @@ includeWithVariables(
     <?php includeWithVariables('./../../includes/modals/_deleteModal.php'); ?>
 
     <script>
-    function clearModalInvalidFeedbacks() {
-        var array = ["clientModalSelect", "providerModalSelect", "gameModalSelect", "limitAmount"];
+        function clearModalInvalidFeedbacks() {
+            var array = ["clientModalSelect", "providerModalSelect", "gameModalSelect", "limitAmount"];
 
-        array.forEach(element => {
-            let target = $(`#${element}`);
+            array.forEach(element => {
+                let target = $(`#${element}`);
 
-            target.next(".invalid-feedback").text("");
-            target.next(".invalid-feedback").css("display", "none");
-            target.removeClass("invalid");
-        });
-    }
-
-    function clearModalInvalidFeedbacksOnKeyUp() {
-
-        $("#clientModalSelect").change(function(e) {
-
-            $(this).next(".invalid-feedback").text("");
-            $(this).next(".invalid-feedback").css("display", "none");
-            $(this).removeClass("invalid");
-        })
-
-        $("#providerModalSelect").change(function(e) {
-
-            $(this).next(".invalid-feedback").text("");
-            $(this).next(".invalid-feedback").css("display", "none");
-            $(this).removeClass("invalid");
-        })
-
-        $("#gameModalSelect").change(function(e) {
-
-            $(this).next(".invalid-feedback").text("");
-            $(this).next(".invalid-feedback").css("display", "none");
-            $(this).removeClass("invalid");
-        })
-
-        $("#limitAmount").keyup(function(e) {
-
-            $(this).next(".invalid-feedback").text("");
-            $(this).next(".invalid-feedback").css("display", "none");
-            $(this).removeClass("invalid");
-        })
-
-    }
-
-    clearModalInvalidFeedbacksOnKeyUp();
-
-
-    function hideEditeableInputsAndShow() {
-
-        clearModalInvalidFeedbacks();
-
-        $("#clientModalSelect").prop('disabled', false);
-        $("#providerModalSelect").prop('disabled', false);
-        $("#gameModalSelect").prop('disabled', false);
-
-        //reset
-        $('#clientModalSelect option[value="all"]').prop('selected', true);
-        $('#providerModalSelect option[value="1"]').prop('selected', true);
-        $("#gameModalSelect").html("<?= $providersOptions . $gamesOptions; ?>");
-        $('#gameModalSelect option[value="all"]').prop('selected', true);
-        $("#limitAmount").val('0.00');
-
-        $("button#add_limit").show();
-        $("button#edit_limit").hide();
-
-        $("#exampleModalLongTitle").text("Add Bet Limit");
-    }
-
-    function showEditeableInputsAndHide() {
-
-        clearModalInvalidFeedbacks();
-
-        $("#clientModalSelect").prop('disabled', true);
-        $("#providerModalSelect").prop('disabled', true);
-        $("#gameModalSelect").prop('disabled', true);
-
-        $("button#add_limit").hide();
-        $("button#edit_limit").show();
-
-        $("#exampleModalLongTitle").text("Edit Bet Limit");
-
-    }
-
-    function number_format(number, decimals, dec_point, thousands_sep) {
-        // Strip all characters but numerical ones.
-        number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
-        var n = !isFinite(+number) ? 0 : +number,
-            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-            sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-            dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
-            s = '',
-            toFixedFix = function(n, prec) {
-                var k = Math.pow(10, prec);
-                return '' + Math.round(n * k) / k;
-            };
-        // Fix for IE parseFloat(0.55).toFixed(0) = 0;
-        s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
-        if (s[0].length > 3) {
-            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
-        }
-        if ((s[1] || '').length < prec) {
-            s[1] = s[1] || '';
-            s[1] += new Array(prec - s[1].length + 1).join('0');
-        }
-        return s.join(dec);
-    }
-
-    $("#limitAmount").focusout(function(event) {
-        var number = $(this).val();
-
-        if (number == '') {
-            $(this).val("0.00");
-
-        } else {
-            var d = number_format(number, 2, ".", ",");
-
-            $(this).val(d);
-        }
-    })
-
-    // --- DISPLAY Bets Limits ----
-    function displayLimits(N = 1) {
-
-        var activePage = $(".navigation_limits li.page-item.active a").text();
-        var activeNumber = $(".active-limits-number").text();
-        activeNumber = activeNumber.trim();
-
-        // if (N == true) {
-        //     N = activePage;
-        // }
-        var provider = $("#providerSelect").val();
-        var category = $("#categorySelect").val();
-
-        var gameId = $("#gameSelect").val();
-
-        var client = $("#clientSelect").val()
-
-        var token = $("#token_display").val();
-
-        $.ajax({
-            url: '/ajaxProcessus/settings/displayLimits.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                "page": N,
-                "number": activeNumber,
-                provider,
-                category,
-                gameId,
-                client,
-                token,
-            },
-            // contentType: false,
-            // processData: false, 
-            cache: false,
-            // timeout: 300000,
-            // cache: false,
-            // dataType: 'json', 
-
-            success: function(data) {
-                // var num = data.indexOf("<!DOCTYPE html>");
-                // var rese = data.substr(0, num);
-                // rese = rese.trim();
-                // console.log(data);
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
-                }
-                rese = JSON.parse(data);
-
-                // console.log(rese[0]);
-                let length = rese.length;
-
-
-                if (length == 4) { //success
-                    $(".table-body-limits").html(rese[0]);
-                    $(".navigation_limits").html(rese[1]);
-
-                    $("#token_display").val(rese[3]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display").val(rese[0]);
-
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
-            }
-        })
-    }
-
-    //Category change -> change providers lists
-    $("#categorySelect").on("change", function(event) {
-        let category = $(this).val();
-        if (category == "casino") {
-            $("#providerSelect").html("<?= $providersOptions . $providersCasinoOptions; ?>")
-            $('#providerSelect option[value="all"]').prop('selected', true);
-            $('#gameSelect option[value="all"]').prop('selected', true);
-            $('#gameSelect').find('option').not(':first').remove();
+                target.next(".invalid-feedback").text("");
+                target.next(".invalid-feedback").css("display", "none");
+                target.removeClass("invalid");
+            });
         }
 
-        if (category == "slot") {
-            $("#providerSelect").html("<?= $providersOptions . $providersSlotOptions; ?>")
-            $('#providerSelect option[value="all"]').prop('selected', true);
-            $('#gameSelect option[value="all"]').prop('selected', true);
-            $('#gameSelect').find('option').not(':first').remove();
+        function clearModalInvalidFeedbacksOnKeyUp() {
 
-        }
+            $("#clientModalSelect").change(function (e) {
 
-        if (category == "all") {
-            $("#providerSelect").html(
-                "<?= $providersOptions . $providersCasinoOptions . $providersSlotOptions; ?>");
-            $('#providerSelect option[value="all"]').prop('selected', true);
-            $('#gameSelect option[value="all"]').prop('selected', true);
-            $('#gameSelect').find('option').not(':first').remove();
-        }
-    })
-
-    //provider change -> change games lists
-    $("#providerSelect").on("change", function(event) {
-        let provider = $(this).val();
-        if (provider == "all") {
-            $('#gameSelect option[value="all"]').prop('selected', true);
-            $('#gameSelect').find('option').not(':first').remove();
-        } else {
-
-            //get provider games list
-            var token = $("#token_get_games").val();
-            $.ajax({
-                url: '/ajaxProcessus/settings/getGamesList.php',
-                type: 'POST',
-                data: {
-                    provider,
-                    token
-                },
-
-                cache: false,
-                // timeout: 10000,
-                success: function(data) {
-
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-                    // window.open("/", "_blank");
-                    rese = JSON.parse(data);
-
-                    // console.log(rese);
-                    let length = rese.length;
-
-                    if (length == 2) { //success
-                        $("#token_get_games").val(rese[1]);
-                        $('#gameSelect option[value="all"]').prop('selected', true);
-                        $('#gameSelect').find('option').not(':first').remove();
-                        $('#gameSelect').append(rese[0]);
-
-                    } else if (length == 1) {
-                        $("#token_get_games").val(rese[0]);
-                    } else {
-                        //refresh page;
-                        location.reload();
-                    }
-                }
+                $(this).next(".invalid-feedback").text("");
+                $(this).next(".invalid-feedback").css("display", "none");
+                $(this).removeClass("invalid");
             })
-        }
-    })
 
-    //provider modal change -> change games lists
-    $("#providerModalSelect").on("change", function(event) {
-        let provider = $(this).val();
-        if (provider == "all") {
+            $("#providerModalSelect").change(function (e) {
+
+                $(this).next(".invalid-feedback").text("");
+                $(this).next(".invalid-feedback").css("display", "none");
+                $(this).removeClass("invalid");
+            })
+
+            $("#gameModalSelect").change(function (e) {
+
+                $(this).next(".invalid-feedback").text("");
+                $(this).next(".invalid-feedback").css("display", "none");
+                $(this).removeClass("invalid");
+            })
+
+            $("#limitAmount").keyup(function (e) {
+
+                $(this).next(".invalid-feedback").text("");
+                $(this).next(".invalid-feedback").css("display", "none");
+                $(this).removeClass("invalid");
+            })
+
+        }
+
+        clearModalInvalidFeedbacksOnKeyUp();
+
+
+        function hideEditeableInputsAndShow() {
+
+            clearModalInvalidFeedbacks();
+
+            $("#clientModalSelect").prop('disabled', false);
+            $("#providerModalSelect").prop('disabled', false);
+            $("#gameModalSelect").prop('disabled', false);
+
+            //reset
+            $('#clientModalSelect option[value="all"]').prop('selected', true);
+            $('#providerModalSelect option[value="1"]').prop('selected', true);
+            $("#gameModalSelect").html("<?= $providersOptions . $gamesOptions; ?>");
             $('#gameModalSelect option[value="all"]').prop('selected', true);
-            $('#gameModalSelect').find('option').not(':first').remove();
-        } else {
+            $("#limitAmount").val('0.00');
 
-            //get provider games list
-            var token = $("#token_get_games").val();
+            $("button#add_limit").show();
+            $("button#edit_limit").hide();
+
+            $("#exampleModalLongTitle").text("Add Bet Limit");
+        }
+
+        function showEditeableInputsAndHide() {
+
+            clearModalInvalidFeedbacks();
+
+            $("#clientModalSelect").prop('disabled', true);
+            $("#providerModalSelect").prop('disabled', true);
+            $("#gameModalSelect").prop('disabled', true);
+
+            $("button#add_limit").hide();
+            $("button#edit_limit").show();
+
+            $("#exampleModalLongTitle").text("Edit Bet Limit");
+
+        }
+
+        function number_format(number, decimals, dec_point, thousands_sep) {
+            // Strip all characters but numerical ones.
+            number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+            var n = !isFinite(+number) ? 0 : +number,
+                prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+                sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+                dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+                s = '',
+                toFixedFix = function (n, prec) {
+                    var k = Math.pow(10, prec);
+                    return '' + Math.round(n * k) / k;
+                };
+            // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+            s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+            if (s[0].length > 3) {
+                s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+            }
+            if ((s[1] || '').length < prec) {
+                s[1] = s[1] || '';
+                s[1] += new Array(prec - s[1].length + 1).join('0');
+            }
+            return s.join(dec);
+        }
+
+        $("#limitAmount").focusout(function (event) {
+            var number = $(this).val();
+
+            if (number == '') {
+                $(this).val("0.00");
+
+            } else {
+                var d = number_format(number, 2, ".", ",");
+
+                $(this).val(d);
+            }
+        })
+
+        // --- DISPLAY Bets Limits ----
+        function displayLimits(N = 1) {
+
+            var activePage = $(".navigation_limits li.page-item.active a").text();
+            var activeNumber = $(".active-limits-number").text();
+            activeNumber = activeNumber.trim();
+
+            // if (N == true) {
+            //     N = activePage;
+            // }
+            var provider = $("#providerSelect").val();
+            var category = $("#categorySelect").val();
+
+            var gameId = $("#gameSelect").val();
+
+            var client = $("#clientSelect").val()
+
+            var token = $("#token_display").val();
+
             $.ajax({
-                url: '/ajaxProcessus/settings/getGamesList.php',
+                url: '/ajaxProcessus/settings/displayLimits.php',
                 type: 'POST',
                 data: {
+                    "display": true,
+                    "page": N,
+                    "number": activeNumber,
                     provider,
-                    token
+                    category,
+                    gameId,
+                    client,
+                    token,
                 },
-
+                // contentType: false,
+                // processData: false, 
                 cache: false,
-                // timeout: 10000,
-                success: function(data) {
+                // timeout: 300000,
+                // cache: false,
+                // dataType: 'json', 
 
+                success: function (data) {
+                    // var num = data.indexOf("<!DOCTYPE html>");
+                    // var rese = data.substr(0, num);
+                    // rese = rese.trim();
+                    // console.log(data);
                     if (data == 'unauthorized' || data == '') {
                         window.location.href = '/pages/errors/403.php';
                         return;
                     }
-                    // window.open("/", "_blank");
                     rese = JSON.parse(data);
 
-                    // console.log(rese);
+                    // console.log(rese[0]);
                     let length = rese.length;
 
-                    if (length == 2) { //success
-                        $("#token_get_games").val(rese[1]);
-                        $('#gameModalSelect option[value="all"]').prop('selected', true);
-                        $('#gameModalSelect').find('option').not(':first').remove();
-                        $('#gameModalSelect').append(rese[0]);
 
-                    } else if (length == 1) {
-                        $("#token_get_games").val(rese[0]);
+                    if (length == 4) { //success
+                        $(".table-body-limits").html(rese[0]);
+                        $(".navigation_limits").html(rese[1]);
+
+                        $("#token_display").val(rese[3]);
+                    } else if (length == 1) { //csrf error
+                        $("#token_display").val(rese[0]);
+
                     } else {
                         //refresh page;
                         location.reload();
@@ -853,506 +729,630 @@ includeWithVariables(
                 }
             })
         }
-    })
 
-
-    //NUMBERS DISPLAYED PER PAGE
-    $(".limits_number_options button").on("click", function(event) {
-
-        var number = event.currentTarget.textContent;
-        $(".active-limits-number").text(number);
-
-        let id = $(".status_.active").attr("id");
-
-        let status = 'all';
-
-        if (id == "status_win") {
-            status = "win";
-        } else if (id == "status_loss") {
-            status = "loss";
-        } else if (id == "status_tie") {
-            status = "tie";
-        }
-
-        displayLimits(1);
-    })
-
-
-
-    //FILTERs
-    $(".filter_limits").on("click", function(event) {
-        displayLimits();
-    })
-
-    //CLIENT SELECT
-    $("#clientSelect").change(function(event) {
-        displayLimits();
-    })
-
-
-
-    //ADD BET Limit
-
-    function addBetLimit(event) {
-        event.preventDefault();
-
-        //getting data
-        var client = $("#clientModalSelect").val();
-        var provider = $("#providerModalSelect").val();
-        var gameId = $("#gameModalSelect").val();
-        var limitAmount = $("#limitAmount").val().replace(/,/g, '');
-        var token = $("#token_add").val();
-
-        //validating & sanitizing data
-
-        var constraints = {
-            clientModalSelect: {
-                presence: {
-                    allowEmpty: false
-                },
-                exclusion: {
-                    within: {
-                        all: "All",
-                    },
-                    message: "^Please Select A client"
-                },
-                numericality: {
-                    onlyInteger: true,
-                    greaterThan: 0,
-                }
-            },
-            providerModalSelect: {
-                presence: {
-                    allowEmpty: false
-                },
-                exclusion: {
-                    within: {
-                        all: "All",
-                    },
-                    message: "^Please Select A Product"
-                },
-                numericality: {
-                    onlyInteger: true,
-                    greaterThan: 0,
-                    lessThanOrEqualTo: 300
-                }
-            },
-            gameModalSelect: {
-                presence: {
-                    allowEmpty: false
-                },
-                // exclusion: {
-                //     within: {
-                //         all: "All",
-                //     },
-                //     message: "^Please Select A Table"
-                // }
-            },
-            limitAmount: {
-                numericality: {
-                    greaterThan: 0,
-                },
-                format: {
-                    pattern: "^[0-9]+\.[0-9]{2}$",
-                    message: "Is Not a valid limit!"
-                }
+        //Category change -> change providers lists
+        $("#categorySelect").on("change", function (event) {
+            let category = $(this).val();
+            if (category == "casino") {
+                $("#providerSelect").html("<?= $providersOptions . $providersCasinoOptions; ?>")
+                $('#providerSelect option[value="all"]').prop('selected', true);
+                $('#gameSelect option[value="all"]').prop('selected', true);
+                $('#gameSelect').find('option').not(':first').remove();
             }
-        };
 
+            if (category == "slot") {
+                $("#providerSelect").html("<?= $providersOptions . $providersSlotOptions; ?>")
+                $('#providerSelect option[value="all"]').prop('selected', true);
+                $('#gameSelect option[value="all"]').prop('selected', true);
+                $('#gameSelect').find('option').not(':first').remove();
 
-        var errors = validate({
-            "clientModalSelect": client,
-            "providerModalSelect": provider,
-            "gameModalSelect": gameId,
-            limitAmount
-
-        }, constraints);
-
-        if (typeof errors != undefined && errors != undefined) {
-            // console.log(errors);
-            for (var key in errors) {
-                let key2 = key;
-
-                $(`#${key2}`).addClass("invalid");
-                $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
-                $(`#${key2}`).next(".invalid-feedback").css("display", "block");
             }
-        } else {
-            //sanitize
 
-            client = DOMPurify.sanitize(client, {
-                SAFE_FOR_JQUERY: true
-            });
-            provider = DOMPurify.sanitize(provider, {
-                SAFE_FOR_JQUERY: true
-            });
-            gameId = DOMPurify.sanitize(gameId, {
-                SAFE_FOR_JQUERY: true
-            });
-            limitAmount = DOMPurify.sanitize(limitAmount, {
-                SAFE_FOR_JQUERY: true
-            });
-
-
-            $.ajax({
-                url: '/ajaxProcessus/settings/addBetLimit.php',
-                type: 'POST',
-                data: {
-                    client,
-                    provider,
-                    gameId,
-                    limitAmount,
-                    token
-                },
-                cache: false,
-                timeout: 10000,
-
-                success: function(data) {
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-                    rese = JSON.parse(data);
-                    var response = rese.response
-                    var received_token = rese.token
-                    var serverGeneratedErrors = rese.errors
-
-                    if (response == 1) { //added
-                        $("button.close").trigger("click");
-                        $("#token_add").val(received_token);
-                        vt.success(`You successfully set a new Bet-Limit for the Client : ${client}.`, {
-                            title: "New Bet-Limit Added!",
-                            duration: 6000,
-                            closable: true,
-                            focusable: true,
-                            callback: () => {
-                                console.log("completed");
-                            }
-                        });
-
-                        var activePage = $(".navigation_limits li.page-item.active a").text();
-                        displayLimits(activePage);
-                        // clearModalInvalidFeedbacks();
-
-                    } else if (response == 2) { //csrf error
-                        $("button.close").trigger("click");
-                        $("#token_add").val(received_token);
-
-                        vt.error(
-                            `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
-                                title: "CSRF Error",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
-                        location.reload();
-                    } else if (response == 4) { //db error
-                        $("button.close").trigger("click");
-                        $("#token_add").val(received_token);
-
-
-                        vt.error(
-                            `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
-                                title: "알수 없는 에러",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
-                    } else if (response == 0) { //serverGeneratedErrors
-                        // $("button.close").trigger("click");
-                        $("#token_add").val(received_token);
-
-                        for (var key in serverGeneratedErrors) {
-                            var msg = serverGeneratedErrors[key];
-
-                            var key2 = key;
-
-                            key2 = key == "client" ? 'clientModalSelect' : key2;
-                            key2 = key == "provider" ? 'providerModalSelect' : key2;
-                            key2 = key == "gameId" ? 'gameModalSelect' : key2;
-
-                            // console.log($(`#${key}`));
-                            $(`#${key2}`).addClass("invalid");
-                            $(`#${key2}`).next(".invalid-feedback").text(msg);
-                            $(`#${key2}`).next(".invalid-feedback").css("display", "block");
-                        }
-                    }
-                }
-            })
-        }
-    }
-
-    //EDIT BET Limit
-
-    // ----EDIT----
-    function showBetLimitsData(event) {
-        showEditeableInputsAndHide();
-
-        let data = event.currentTarget.getAttribute("data-values");
-
-        //populating modal with data
-
-        data = data.replace(new RegExp("&&xx&&", "g"), " ");
-
-        data = JSON.parse(data);
-
-        // console.log(data);
-
-        $("#clientModalSelect").val(data["client_id"]);
-        $("#providerModalSelect").val(data["product_id"]);
-
-        var gameNameId = data["game_name_en"] + "(" + data["game_code"] + ")";
-
-        if (!data["game_name_en"]) {
-            gameNameId = "All";
-        }
-
-        var gameOptionTag = "<option value=" + data['game_code'] + ">" + gameNameId + "</option>";
-
-        $("#gameModalSelect").html(gameOptionTag);
-        $("#gameModalSelect").val(data["game_code"]);
-
-
-        $("#limitAmount").val(data["max_amount"]);
-
-        $("#limit_id").val(data["id"]);
-    }
-
-
-    function editBetLimit(event) {
-        event.preventDefault();
-
-        //getting data
-        var client = $("#clientModalSelect").val();
-        var limitAmount = $("#limitAmount").val().replace(/,/g, '');
-        var token = $("#token_edit").val();
-
-        var limitId = $("#limit_id").val();
-
-        //validating & sanitizing data
-
-        var constraints = {
-            limitAmount: {
-                numericality: {
-                    greaterThan: 0,
-                },
-                format: {
-                    pattern: "^[0-9]+\.[0-9]{2}$",
-                    message: "Is Not a valid limit!"
-                }
-            }
-        };
-
-
-        var errors = validate({
-            limitAmount
-
-        }, constraints);
-
-        if (typeof errors != undefined && errors != undefined) {
-            // console.log(errors);
-            for (var key in errors) {
-                let key2 = key;
-
-                $(`#${key2}`).addClass("invalid");
-                $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
-                $(`#${key2}`).next(".invalid-feedback").css("display", "block");
-            }
-        } else {
-            //sanitize
-            limitAmount = DOMPurify.sanitize(limitAmount, {
-                SAFE_FOR_JQUERY: true
-            });
-
-
-            $.ajax({
-                url: '/ajaxProcessus/settings/editBetLimit.php',
-                type: 'POST',
-                data: {
-                    limitId,
-                    limitAmount,
-                    token
-                },
-                cache: false,
-                timeout: 10000,
-
-                success: function(data) {
-                    if (data == 'unauthorized' || data == '') {
-                        window.location.href = '/pages/errors/403.php';
-                        return;
-                    }
-                    rese = JSON.parse(data);
-                    var response = rese.response
-                    var received_token = rese.token
-                    var serverGeneratedErrors = rese.errors
-
-                    if (response == 1) { //added
-                        $("button.close").trigger("click");
-                        $("#token_edit").val(received_token);
-                        vt.success(`You successfully updated the Bet-Limit for the Client : ${client}.`, {
-                            title: "Bet-Limit Updated!",
-                            duration: 6000,
-                            closable: true,
-                            focusable: true,
-                            callback: () => {
-                                console.log("completed");
-                            }
-                        });
-
-                        var activePage = $(".navigation_limits li.page-item.active a").text();
-                        displayLimits(activePage);
-                        // clearModalInvalidFeedbacks();
-
-                    } else if (response == 2) { //csrf error
-                        $("button.close").trigger("click");
-                        $("#token_edit").val(received_token);
-
-                        vt.error(
-                            `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
-                                title: "CSRF Error",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
-                        location.reload();
-                    } else if (response == 4) { //db error
-                        $("button.close").trigger("click");
-                        $("#token_edit").val(received_token);
-
-
-                        vt.error(
-                            `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
-                                title: "알수 없는 에러",
-                                duration: 6000,
-                                closable: true,
-                                focusable: true,
-                                callback: () => {
-                                    console.log("completed");
-                                }
-                            });
-                    } else if (response == 0) { //serverGeneratedErrors
-                        // $("button.close").trigger("click");
-                        $("#token_edit").val(received_token);
-
-                        for (var key in serverGeneratedErrors) {
-                            var msg = serverGeneratedErrors[key];
-
-                            var key2 = key;
-                            key2 = key == "client" ? 'clientModalSelect' : key2;
-
-                            // console.log($(`#${key}`));
-                            $(`#${key2}`).addClass("invalid");
-                            $(`#${key2}`).next(".invalid-feedback").text(msg);
-                            $(`#${key2}`).next(".invalid-feedback").css("display", "block");
-                        }
-                    }
-                }
-            })
-        }
-    }
-
-    //DELETE BET LIMIT
-    function confirmDeleteBetLimit(event) {
-        let id = event.currentTarget.getAttribute("data-id");
-        $("#delete_modal button.delete_bet_limit").attr("data-id", id);
-
-
-
-        $("#delete_modal button.btn_confirmed_action").hide();
-        $("#delete_modal button.delete_bet_limit").show();
-
-        $("#delete_modal #text").text("설정을 삭제하시겟습니까?");
-
-        $("#delete_modal").addClass("show");
-        // $("body").addClass("deleteModalOn");
-        $("#delete_modal").removeClass("d-none");
-
-    }
-
-    function deleteBetLimit(event) {
-        let id = event.currentTarget.getAttribute("data-id");
-
-        var token = $("#token_delete").val();
-
-
-        $.ajax({
-            url: '/ajaxProcessus/settings/deleteBetLimits.php',
-            type: 'POST',
-            data: {
-                id,
-                token
-            },
-
-            cache: false,
-            timeout: 10000,
-
-
-            success: function(data) {
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
-                }
-
-                // console.log(data);
-                data = data.split("###");
-
-                if (data.length == 2) {
-                    received_token = data[1];
-                    $("#token_delete").val(received_token);
-                }
-
-                data = data[0];
-
-                if (data == 1) {
-                    $("#delete_modal").removeClass("show");
-                    $("#delete_modal").addClass("d-none");
-
-                    vt.success(`You successfully Deleted The Bet-Limit.`, {
-                        title: "Bet-Limit Removed!",
-                        duration: 6000,
-                        closable: true,
-                        focusable: true,
-                        callback: () => {
-                            console.log("completed");
-                        }
-                    });
-
-                    // var activePage = $(".navigation_clients li.page-item.active a").text();
-                    displayLimits();
-
-                } else {
-                    $("#delete_modal").removeClass("show");
-                    $("#delete_modal").addClass("d-none")
-
-                    vt.error(`There has been an error while processing your delete request!.`, {
-                        title: "Bet-Limit is not Removed!",
-                        duration: 6000,
-                        closable: true,
-                        focusable: true,
-                        callback: () => {
-                            console.log("completed");
-                        }
-                    });
-                }
+            if (category == "all") {
+                $("#providerSelect").html(
+                    "<?= $providersOptions . $providersCasinoOptions . $providersSlotOptions; ?>");
+                $('#providerSelect option[value="all"]').prop('selected', true);
+                $('#gameSelect option[value="all"]').prop('selected', true);
+                $('#gameSelect').find('option').not(':first').remove();
             }
         })
-    }
+
+        //provider change -> change games lists
+        $("#providerSelect").on("change", function (event) {
+            let provider = $(this).val();
+            if (provider == "all") {
+                $('#gameSelect option[value="all"]').prop('selected', true);
+                $('#gameSelect').find('option').not(':first').remove();
+            } else {
+
+                //get provider games list
+                var token = $("#token_get_games").val();
+                $.ajax({
+                    url: '/ajaxProcessus/settings/getGamesList.php',
+                    type: 'POST',
+                    data: {
+                        provider,
+                        token
+                    },
+
+                    cache: false,
+                    // timeout: 10000,
+                    success: function (data) {
+
+                        if (data == 'unauthorized' || data == '') {
+                            window.location.href = '/pages/errors/403.php';
+                            return;
+                        }
+                        // window.open("/", "_blank");
+                        rese = JSON.parse(data);
+
+                        // console.log(rese);
+                        let length = rese.length;
+
+                        if (length == 2) { //success
+                            $("#token_get_games").val(rese[1]);
+                            $('#gameSelect option[value="all"]').prop('selected', true);
+                            $('#gameSelect').find('option').not(':first').remove();
+                            $('#gameSelect').append(rese[0]);
+
+                        } else if (length == 1) {
+                            $("#token_get_games").val(rese[0]);
+                        } else {
+                            //refresh page;
+                            location.reload();
+                        }
+                    }
+                })
+            }
+        })
+
+        //provider modal change -> change games lists
+        $("#providerModalSelect").on("change", function (event) {
+            let provider = $(this).val();
+            if (provider == "all") {
+                $('#gameModalSelect option[value="all"]').prop('selected', true);
+                $('#gameModalSelect').find('option').not(':first').remove();
+            } else {
+
+                //get provider games list
+                var token = $("#token_get_games").val();
+                $.ajax({
+                    url: '/ajaxProcessus/settings/getGamesList.php',
+                    type: 'POST',
+                    data: {
+                        provider,
+                        token
+                    },
+
+                    cache: false,
+                    // timeout: 10000,
+                    success: function (data) {
+
+                        if (data == 'unauthorized' || data == '') {
+                            window.location.href = '/pages/errors/403.php';
+                            return;
+                        }
+                        // window.open("/", "_blank");
+                        rese = JSON.parse(data);
+
+                        // console.log(rese);
+                        let length = rese.length;
+
+                        if (length == 2) { //success
+                            $("#token_get_games").val(rese[1]);
+                            $('#gameModalSelect option[value="all"]').prop('selected', true);
+                            $('#gameModalSelect').find('option').not(':first').remove();
+                            $('#gameModalSelect').append(rese[0]);
+
+                        } else if (length == 1) {
+                            $("#token_get_games").val(rese[0]);
+                        } else {
+                            //refresh page;
+                            location.reload();
+                        }
+                    }
+                })
+            }
+        })
+
+
+        //NUMBERS DISPLAYED PER PAGE
+        $(".limits_number_options button").on("click", function (event) {
+
+            var number = event.currentTarget.textContent;
+            $(".active-limits-number").text(number);
+
+            let id = $(".status_.active").attr("id");
+
+            let status = 'all';
+
+            if (id == "status_win") {
+                status = "win";
+            } else if (id == "status_loss") {
+                status = "loss";
+            } else if (id == "status_tie") {
+                status = "tie";
+            }
+
+            displayLimits(1);
+        })
 
 
 
-    document.addEventListener('DOMContentLoaded', (event) => {
-        $('#providerSelect option[value="1"]').prop('selected', true);
-        displayLimits(0);
-    });
+        //FILTERs
+        $(".filter_limits").on("click", function (event) {
+            displayLimits();
+        })
+
+        //CLIENT SELECT
+        $("#clientSelect").change(function (event) {
+            displayLimits();
+        })
+
+
+
+        //ADD BET Limit
+
+        function addBetLimit(event) {
+            event.preventDefault();
+
+            //getting data
+            var client = $("#clientModalSelect").val();
+            var provider = $("#providerModalSelect").val();
+            var gameId = $("#gameModalSelect").val();
+            var limitAmount = $("#limitAmount").val().replace(/,/g, '');
+            var token = $("#token_add").val();
+
+            //validating & sanitizing data
+
+            var constraints = {
+                clientModalSelect: {
+                    presence: {
+                        allowEmpty: false
+                    },
+                    exclusion: {
+                        within: {
+                            all: "All",
+                        },
+                        message: "^Please Select A client"
+                    },
+                    numericality: {
+                        onlyInteger: true,
+                        greaterThan: 0,
+                    }
+                },
+                providerModalSelect: {
+                    presence: {
+                        allowEmpty: false
+                    },
+                    exclusion: {
+                        within: {
+                            all: "All",
+                        },
+                        message: "^Please Select A Product"
+                    },
+                    numericality: {
+                        onlyInteger: true,
+                        greaterThan: 0,
+                        lessThanOrEqualTo: 300
+                    }
+                },
+                gameModalSelect: {
+                    presence: {
+                        allowEmpty: false
+                    },
+                    // exclusion: {
+                    //     within: {
+                    //         all: "All",
+                    //     },
+                    //     message: "^Please Select A Table"
+                    // }
+                },
+                limitAmount: {
+                    numericality: {
+                        greaterThan: 0,
+                    },
+                    format: {
+                        pattern: "^[0-9]+\.[0-9]{2}$",
+                        message: "Is Not a valid limit!"
+                    }
+                }
+            };
+
+
+            var errors = validate({
+                "clientModalSelect": client,
+                "providerModalSelect": provider,
+                "gameModalSelect": gameId,
+                limitAmount
+
+            }, constraints);
+
+            if (typeof errors != undefined && errors != undefined) {
+                // console.log(errors);
+                for (var key in errors) {
+                    let key2 = key;
+
+                    $(`#${key2}`).addClass("invalid");
+                    $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
+                    $(`#${key2}`).next(".invalid-feedback").css("display", "block");
+                }
+            } else {
+                //sanitize
+
+                client = DOMPurify.sanitize(client, {
+                    SAFE_FOR_JQUERY: true
+                });
+                provider = DOMPurify.sanitize(provider, {
+                    SAFE_FOR_JQUERY: true
+                });
+                gameId = DOMPurify.sanitize(gameId, {
+                    SAFE_FOR_JQUERY: true
+                });
+                limitAmount = DOMPurify.sanitize(limitAmount, {
+                    SAFE_FOR_JQUERY: true
+                });
+
+
+                $.ajax({
+                    url: '/ajaxProcessus/settings/addBetLimit.php',
+                    type: 'POST',
+                    data: {
+                        client,
+                        provider,
+                        gameId,
+                        limitAmount,
+                        token
+                    },
+                    cache: false,
+                    timeout: 10000,
+
+                    success: function (data) {
+                        if (data == 'unauthorized' || data == '') {
+                            window.location.href = '/pages/errors/403.php';
+                            return;
+                        }
+                        rese = JSON.parse(data);
+                        var response = rese.response
+                        var received_token = rese.token
+                        var serverGeneratedErrors = rese.errors
+
+                        if (response == 1) { //added
+                            $("button.close").trigger("click");
+                            $("#token_add").val(received_token);
+                            vt.success(`You successfully set a new Bet-Limit for the Client : ${client}.`, {
+                                title: "New Bet-Limit Added!",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+
+                            var activePage = $(".navigation_limits li.page-item.active a").text();
+                            displayLimits(activePage);
+                            // clearModalInvalidFeedbacks();
+
+                        } else if (response == 2) { //csrf error
+                            $("button.close").trigger("click");
+                            $("#token_add").val(received_token);
+
+                            vt.error(
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+                                title: "CSRF Error",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+                            location.reload();
+                        } else if (response == 4) { //db error
+                            $("button.close").trigger("click");
+                            $("#token_add").val(received_token);
+
+
+                            vt.error(
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                                title: "알수 없는 에러",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+                        } else if (response == 0) { //serverGeneratedErrors
+                            // $("button.close").trigger("click");
+                            $("#token_add").val(received_token);
+
+                            for (var key in serverGeneratedErrors) {
+                                var msg = serverGeneratedErrors[key];
+
+                                var key2 = key;
+
+                                key2 = key == "client" ? 'clientModalSelect' : key2;
+                                key2 = key == "provider" ? 'providerModalSelect' : key2;
+                                key2 = key == "gameId" ? 'gameModalSelect' : key2;
+
+                                // console.log($(`#${key}`));
+                                $(`#${key2}`).addClass("invalid");
+                                $(`#${key2}`).next(".invalid-feedback").text(msg);
+                                $(`#${key2}`).next(".invalid-feedback").css("display", "block");
+                            }
+                        }
+                    }
+                })
+            }
+        }
+
+        //EDIT BET Limit
+
+        // ----EDIT----
+        function showBetLimitsData(event) {
+            showEditeableInputsAndHide();
+
+            let data = event.currentTarget.getAttribute("data-values");
+
+            //populating modal with data
+
+            data = data.replace(new RegExp("&&xx&&", "g"), " ");
+
+            data = JSON.parse(data);
+
+            // console.log(data);
+
+            $("#clientModalSelect").val(data["client_id"]);
+            $("#providerModalSelect").val(data["product_id"]);
+
+            var gameNameId = data["game_name_en"] + "(" + data["game_code"] + ")";
+
+            if (!data["game_name_en"]) {
+                gameNameId = "All";
+            }
+
+            var gameOptionTag = "<option value=" + data['game_code'] + ">" + gameNameId + "</option>";
+
+            $("#gameModalSelect").html(gameOptionTag);
+            $("#gameModalSelect").val(data["game_code"]);
+
+
+            $("#limitAmount").val(data["max_amount"]);
+
+            $("#limit_id").val(data["id"]);
+        }
+
+
+        function editBetLimit(event) {
+            event.preventDefault();
+
+            //getting data
+            var client = $("#clientModalSelect").val();
+            var limitAmount = $("#limitAmount").val().replace(/,/g, '');
+            var token = $("#token_edit").val();
+
+            var limitId = $("#limit_id").val();
+
+            //validating & sanitizing data
+
+            var constraints = {
+                limitAmount: {
+                    numericality: {
+                        greaterThan: 0,
+                    },
+                    format: {
+                        pattern: "^[0-9]+\.[0-9]{2}$",
+                        message: "Is Not a valid limit!"
+                    }
+                }
+            };
+
+
+            var errors = validate({
+                limitAmount
+
+            }, constraints);
+
+            if (typeof errors != undefined && errors != undefined) {
+                // console.log(errors);
+                for (var key in errors) {
+                    let key2 = key;
+
+                    $(`#${key2}`).addClass("invalid");
+                    $(`#${key2}`).next(".invalid-feedback").text(errors[key]);
+                    $(`#${key2}`).next(".invalid-feedback").css("display", "block");
+                }
+            } else {
+                //sanitize
+                limitAmount = DOMPurify.sanitize(limitAmount, {
+                    SAFE_FOR_JQUERY: true
+                });
+
+
+                $.ajax({
+                    url: '/ajaxProcessus/settings/editBetLimit.php',
+                    type: 'POST',
+                    data: {
+                        limitId,
+                        limitAmount,
+                        token
+                    },
+                    cache: false,
+                    timeout: 10000,
+
+                    success: function (data) {
+                        if (data == 'unauthorized' || data == '') {
+                            window.location.href = '/pages/errors/403.php';
+                            return;
+                        }
+                        rese = JSON.parse(data);
+                        var response = rese.response
+                        var received_token = rese.token
+                        var serverGeneratedErrors = rese.errors
+
+                        if (response == 1) { //added
+                            $("button.close").trigger("click");
+                            $("#token_edit").val(received_token);
+                            vt.success(`You successfully updated the Bet-Limit for the Client : ${client}.`, {
+                                title: "Bet-Limit Updated!",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+
+                            var activePage = $(".navigation_limits li.page-item.active a").text();
+                            displayLimits(activePage);
+                            // clearModalInvalidFeedbacks();
+
+                        } else if (response == 2) { //csrf error
+                            $("button.close").trigger("click");
+                            $("#token_edit").val(received_token);
+
+                            vt.error(
+                                `CSRF 에러 입니다. 관리자에게 문의 주시기 바랍니다.`, {
+                                title: "CSRF Error",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+                            location.reload();
+                        } else if (response == 4) { //db error
+                            $("button.close").trigger("click");
+                            $("#token_edit").val(received_token);
+
+
+                            vt.error(
+                                `알수 없는 에러로 처리를  할 수 없습니다. 다시 시도해 주세요.`, {
+                                title: "알수 없는 에러",
+                                duration: 6000,
+                                closable: true,
+                                focusable: true,
+                                callback: () => {
+                                    console.log("completed");
+                                }
+                            });
+                        } else if (response == 0) { //serverGeneratedErrors
+                            // $("button.close").trigger("click");
+                            $("#token_edit").val(received_token);
+
+                            for (var key in serverGeneratedErrors) {
+                                var msg = serverGeneratedErrors[key];
+
+                                var key2 = key;
+                                key2 = key == "client" ? 'clientModalSelect' : key2;
+
+                                // console.log($(`#${key}`));
+                                $(`#${key2}`).addClass("invalid");
+                                $(`#${key2}`).next(".invalid-feedback").text(msg);
+                                $(`#${key2}`).next(".invalid-feedback").css("display", "block");
+                            }
+                        }
+                    }
+                })
+            }
+        }
+
+        //DELETE BET LIMIT
+        function confirmDeleteBetLimit(event) {
+            let id = event.currentTarget.getAttribute("data-id");
+            $("#delete_modal button.delete_bet_limit").attr("data-id", id);
+
+
+
+            $("#delete_modal button.btn_confirmed_action").hide();
+            $("#delete_modal button.delete_bet_limit").show();
+
+            $("#delete_modal #text").text("설정을 삭제하시겟습니까?");
+
+            $("#delete_modal").addClass("show");
+            // $("body").addClass("deleteModalOn");
+            $("#delete_modal").removeClass("d-none");
+
+        }
+
+        function deleteBetLimit(event) {
+            let id = event.currentTarget.getAttribute("data-id");
+
+            var token = $("#token_delete").val();
+
+
+            $.ajax({
+                url: '/ajaxProcessus/settings/deleteBetLimits.php',
+                type: 'POST',
+                data: {
+                    id,
+                    token
+                },
+
+                cache: false,
+                timeout: 10000,
+
+
+                success: function (data) {
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
+                    }
+
+                    // console.log(data);
+                    data = data.split("###");
+
+                    if (data.length == 2) {
+                        received_token = data[1];
+                        $("#token_delete").val(received_token);
+                    }
+
+                    data = data[0];
+
+                    if (data == 1) {
+                        $("#delete_modal").removeClass("show");
+                        $("#delete_modal").addClass("d-none");
+
+                        vt.success(`You successfully Deleted The Bet-Limit.`, {
+                            title: "Bet-Limit Removed!",
+                            duration: 6000,
+                            closable: true,
+                            focusable: true,
+                            callback: () => {
+                                console.log("completed");
+                            }
+                        });
+
+                        // var activePage = $(".navigation_clients li.page-item.active a").text();
+                        displayLimits();
+
+                    } else {
+                        $("#delete_modal").removeClass("show");
+                        $("#delete_modal").addClass("d-none")
+
+                        vt.error(`There has been an error while processing your delete request!.`, {
+                            title: "Bet-Limit is not Removed!",
+                            duration: 6000,
+                            closable: true,
+                            focusable: true,
+                            callback: () => {
+                                console.log("completed");
+                            }
+                        });
+                    }
+                }
+            })
+        }
+
+
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            $('#providerSelect option[value="1"]').prop('selected', true);
+            displayLimits(0);
+        });
     </script>
 </body>
 
