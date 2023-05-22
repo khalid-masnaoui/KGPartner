@@ -1270,7 +1270,7 @@ includeWithVariables(
         $("#delete_modal button.btn_confirmed_action").hide();
         $("#delete_modal button.delete_bet_limit").show();
 
-        $("#delete_modal #text").text("Do you really want to delete this Bet-Limit? This process cannot be undone.");
+        $("#delete_modal #text").text("설정을 삭제하시겟습니까?");
 
         $("#delete_modal").addClass("show");
         // $("body").addClass("deleteModalOn");
