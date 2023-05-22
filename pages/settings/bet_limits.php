@@ -37,7 +37,7 @@ $providersProductIdMappings = config::get("providersProductIdMappings");
 $providersCasinoOptions = "";
 $providersSlotOptions = "";
 
-$providersOptions = "<option value='all'>All</option>";
+$providersOptions = "<option value='all'>전체</option>";
 
 
 foreach ($activeCasinoProviders as $key => $value) {
@@ -271,7 +271,7 @@ $modal_body = '<form class="">
     <div class="col-sm-10">
         <select type="select" id="gameModalSelect"
             name="gameModalSelect" class="custom-select">
-            <option value="all">All</option>
+            <option value="all">전체</option>
             ' . $gamesOptions . '
         </select>
         <div class="invalid-feedback"></div>
@@ -353,7 +353,7 @@ includeWithVariables(
                                                         class="input-group-text">Category</span></div> <select
                                                     type="select" id="categorySelect" name="categorySelect"
                                                     class="custom-select">
-                                                    <option value='all'>All</option>
+                                                    <option value='all'>전체</option>
                                                     <option value="casino">Casinos</option>
                                                     <option value="slot">Slots</option>
                                                 </select>
@@ -374,7 +374,7 @@ includeWithVariables(
                                                 <div class="input-group-prepend"><span class="input-group-text">Table
                                                         (gameId)</span></div> <select type="select" id="gameSelect"
                                                     name="gameSelect" class="custom-select">
-                                                    <option value='all'>All</option>
+                                                    <option value='all'>전체</option>
                                                     <?php
                                                     echo $gamesOptions;
 
@@ -390,7 +390,7 @@ includeWithVariables(
                                         <div class="clslct">
                                             <select type="select" id="clientSelect" name="clientSelect"
                                                 class="custom-select">
-                                                <option value="all">All</option>
+                                                <option value="all">전체</option>
                                                 <?php
                                                 echo $options;
 
