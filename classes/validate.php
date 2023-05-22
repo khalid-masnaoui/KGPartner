@@ -93,7 +93,7 @@ class validate
 
                             $allowedValueList = $rule_value["list"];
 
-                            if (!in_array($value, $allowedValueList)) {
+                            if (in_array($value, $allowedValueList)) {
                                 $this->addError($rule_value["msg"], $item);
                             }
                             break;

@@ -335,6 +335,12 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                 </a>
                 <ul class=<?= strpos($_SERVER['REQUEST_URI'], 'settings/') !== false ? "mm-collapse mm-show" : ""; ?>>
                     <li>
+                        <a href="/pages/settings/bet_limits.php"
+                            class=<?= strpos($_SERVER['REQUEST_URI'], 'bet_limits.php') !== false ? "mm-active" : ""; ?>>
+                            <i class="metismenu-icon pe-7s-photo-gallery"> </i>Bet Limits
+                        </a>
+                    </li>
+                    <li>
                         <a href="/pages/settings/products.php"
                             class=<?= strpos($_SERVER['REQUEST_URI'], 'products.php') !== false ? "mm-active" : ""; ?>>
                             <i class="metismenu-icon pe-7s-photo-gallery"> </i>게임사 리스트
