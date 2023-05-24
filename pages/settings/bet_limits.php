@@ -1106,7 +1106,8 @@ includeWithVariables(
         $("#clientModalSelect").val(data["client_id"]);
         $("#providerModalSelect").val(data["product_id"]);
 
-        var gameNameId = data["game_name_en"] + "(" + data["game_code"] + ")";
+        // var gameNameId = data["game_name_en"] + "(" + data["game_code"] + ")";
+        var gameNameId = data["game_name_kr"];
 
         if (!data["game_name_en"]) {
             gameNameId = "All";
