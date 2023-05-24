@@ -118,11 +118,20 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             // }
 
             if ($partnerPtName !== $value["username"]) {
+
+                $tableBody .= '<td class="text-center"><button class="mb-2 mt-2 ml-2 btn btn-light active" data-toggle="modal"
+                data-target=".add_deposit" onclick=hideEditableInputsAndShow2();setTheCP(' . $value["id"] . ');> <span style="font-weight: bolder;color: black;">+</span></button>
+                <button class="mb-2 mt-2 ml-2 btn btn-light active" data-toggle="modal"
+                                                data-target=".add_deposit" onclick=hideEditableInputsAndShowDeduct();setTheCP(' . $value["id"] . ');>
+                                                <span style="font-weight: bolder;color: black;">-</span> </button>
+                                                </td>';
+
                 $tableBody .= '<td class="text-center">
                 <button class="mb-2 mr-2 btn-transition  btn btn-outline-primary btn_action_edit" data-toggle="modal"
                 data-target=".add_partner" data-values=' . $jsonValues . ' onclick=showPartnerData(event)><i class="pe-7s-edit"> </i></button>
                 </td>';
             } else {
+                $tableBody .= '<td class="text-center">-</td>';
                 $tableBody .= '<td class="text-center">-</td>';
             }
 
@@ -186,7 +195,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
         if ($tableBody == '') {
-            $tableBody = '<tr> <td class="text-center" colspan="8">데이터 없음!</td> </tr>';
+            $tableBody = '<tr> <td class="text-center" colspan="9">데이터 없음!</td> </tr>';
         }
 
 

@@ -872,6 +872,7 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                                                     <th class="text-center">요율 </th>
                                                     <th class="text-center header-cell">등록일 </th>
                                                     <th class="text-center">상태 </th>
+                                                    <th class="text-center">+/- 포인트(알) </th>
                                                     <th class="text-center">요율수정</th>
 
 
@@ -2171,6 +2172,12 @@ includeWithVariables('./../../../includes/modals/_modal.php', array('class' => '
                 }
             })
         }
+    }
+
+    function setTheCP(clientId) {
+        $("#clientSelectAdd").val(clientId);
+        $("#clientSelectAdd").select2().select2('val', clientId);
+
     }
 
     //product activation
