@@ -251,7 +251,7 @@ $modal_body = '<form class="">
     <div class="col-sm-10">
         <select type="select" id="clientModalSelect" name="clientModalSelect"
             class="custom-select">
-            <option value="all">Pick A Client</option>
+            <option value="all">고객사 선택</option>
             ' . $options . '
         </select>
         <div class="invalid-feedback"></div>
