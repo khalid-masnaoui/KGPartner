@@ -337,7 +337,7 @@ $unSeenMails = $MailBuilder->checkUnseenMails();
                     <li>
                         <a href="/pages/settings/bet_limits.php"
                             class=<?= strpos($_SERVER['REQUEST_URI'], 'bet_limits.php') !== false ? "mm-active" : ""; ?>>
-                            <i class="metismenu-icon pe-7s-photo-gallery"> </i>Bet Limits
+                            <i class="metismenu-icon pe-7s-photo-gallery"> </i>최대베팅금 제한
                         </a>
                     </li>
                     <li>

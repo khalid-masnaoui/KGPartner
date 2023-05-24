@@ -54,7 +54,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         $db = DB::getInstance();
 
-        $games = $db->query("SELECT bl.*, gl.game_name_en, cl.username FROM bet_limits bl LEFT JOIN clients cl ON bl.client_id = cl.id LEFT JOIN games_list gl ON bl.game_code = gl.game_code AND bl.product_id = gl.product_id WHERE 1=1 $filerQuery ORDER BY id DESC LIMIT $limit OFFSET $offset", $queryParameters)->results();
+        $games = $db->query("SELECT bl.*, gl.game_name_en, gl.game_name_kr, cl.username FROM bet_limits bl LEFT JOIN clients cl ON bl.client_id = cl.id LEFT JOIN games_list gl ON bl.game_code = gl.game_code AND bl.product_id = gl.product_id WHERE 1=1 $filerQuery ORDER BY id DESC LIMIT $limit OFFSET $offset", $queryParameters)->results();
 
 
         $tableBody = '';
@@ -95,7 +95,8 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             $providerName = $productsNames[$providerShortName];
 
-            $gameNameId = escape($value["game_name_en"]) . '(' . escape($value["game_code"]) . ')';
+            // $gameNameId = escape($value["game_name_en"]) . '(' . escape($value["game_code"]) . ')';
+            $gameNameId = escape($value["game_name_kr"]);
 
             if (is_null($value["game_name_en"])) {
                 $gameNameId = "ALL";
@@ -104,7 +105,6 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $tableBody .= '<tr>';
 
             $tableBody .= '<td class="text-center text-muted">' . $i . '</td>';
-            $tableBody .= '<td class="text-center">' . escape($value["client_id"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($value["username"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($providerName) . '</td>';
             $tableBody .= '<td class="text-center">' . $gameNameId . '</td>';
@@ -180,7 +180,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         }
 
         if ($tableBody == '') {
-            $j = 9;
+            $j = 8;
             $tableBody = '<tr> <td class="text-center" colspan="' . $j . '">No Data Available!</td> </tr>';
         }
 

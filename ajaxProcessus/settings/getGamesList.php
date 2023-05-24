@@ -13,11 +13,13 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         $db = DB::getInstance();
 
-        $games = $db->get("game_code, game_name_en", "games_list", [["product_id", "=", $provider]])->results();
+        $games = $db->get("game_code, game_name_kr", "games_list", [["product_id", "=", $provider]])->results();
         $gamesOptions = "";
 
         foreach ($games as $key => $value) {
-            $gamesOptions .= "<option value=" . $value['game_code'] . ">" . $value["game_name_en"] . "(" . $value["game_code"] . ")" . "</option>";
+            // $gamesOptions .= "<option value=" . $value['game_code'] . ">" . $value["game_name_kr"] . "(" . $value["game_code"] . ")" . "</option>";
+            $gamesOptions .= "<option value=" . $value['game_code'] . ">" . $value["game_name_kr"] . "</option>";
+
         }
 
         $token = token::generate("get_games");
