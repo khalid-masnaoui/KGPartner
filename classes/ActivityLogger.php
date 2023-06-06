@@ -37,7 +37,7 @@ class ActivityLogger
     {
 
         //prepare logs data
-        $page = basename($_SERVER['HTTP_REFERER']);
+        $page = isset($_SERVER['HTTP_REFERER']) ? basename($_SERVER['HTTP_REFERER']) : '';
         $page = explode('.', $page);
         $page = $page[0];
 
