@@ -47,21 +47,27 @@ $providersSlotOptions = "";
 $providersOptions = "<option value='all'>전체</option>";
 
 
-
 foreach ($activeCasinoProviders as $key => $value) {
     if (!isset($ProvidersNameMapping[$value])) {
         continue;
     }
-    $providersCasinoOptions .= "<option value=" . $value . ">" . $ProvidersNameMapping[$value] . "</option>";
+    if ($value == "evo") {
+        $providersCasinoOptions .= "<option value='" . $value . "' selected>" . $ProvidersNameMapping[$value] . "</option>";
+    } else {
+        $providersCasinoOptions .= "<option value='" . $value . "'>" . $ProvidersNameMapping[$value] . "</option>";
+    }
 }
 
 foreach ($activeSlotProviders as $key => $value) {
     if (!isset($ProvidersNameMapping[$value])) {
         continue;
     }
-    $providersSlotOptions .= "<option value=" . $value . ">" . $ProvidersNameMapping[$value] . "</option>";
+    if ($value == "cq9") {
+        $providersSlotOptions .= "<option value='" . $value . "' selected>" . $ProvidersNameMapping[$value] . "</option>";
+    } else {
+        $providersSlotOptions .= "<option value='" . $value . "'>" . $ProvidersNameMapping[$value] . "</option>";
+    }
 }
-
 
 
 ?>
