@@ -22,6 +22,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
 
         $activeProviders = config::get("display/activeProviders"); //order matters
+        $productsIds = config::get("providersProductIdMappings");
         //same order on the page --> same order for data collectors/groupers to have for display order
 
         $summaryDataCollector = [];
@@ -51,6 +52,35 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         $partner = new user();
         $partnerPtId = $partner->data()["pt_id"];
+
+        $productsId = 0;
+        if ($provider != 'all') {
+            $productsId = $productsIds[$provider];
+        }
+
+        if ($provider == 'all') {
+            if ($category == "casino") {
+                $casinoProviders = config::get("config/display/casinos");
+                $activeCasinoProviders = [];
+                foreach ($casinoProviders as $key => $value) {
+                    $value === "" ? array_push($activeCasinoProviders, $productsIds[$key]) : '';
+                }
+
+                $productsId = $activeCasinoProviders;
+
+            }
+
+            if ($category == "slot") {
+                $slotProviders = config::get("config/display/slots");
+                $activeSlotProviders = [];
+                foreach ($slotProviders as $key => $value) {
+                    $value === "" ? array_push($activeSlotProviders, $productsIds[$key]) : '';
+                }
+
+                $productsId = $activeSlotProviders;
+
+            }
+        }
 
         $clientQuery = '';
         $parametersQuery = [];
@@ -91,6 +121,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $columnCreditType = $prefix . '_credit.type';
 
             $columnDebitAmount = $prefix . '_debit.amount';
+            $columnDebitProvider = $prefix . '_debit.prd_id';
             $columnDebitGame = $prefix . '_debit.prd_id';
             $columnDebitDate = $prefix . '_debit.timestamp';
             $columnDebitUser = $prefix . '_debit.user_id';
@@ -100,6 +131,24 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             //filters
             $filterQuery = "";
             $queryParameters = [];
+
+            //product_id filter
+            if ($productsId != 0) {
+                if ($provider != 'all') {
+                    $filterQuery .= " AND $columnDebitProvider = ? ";
+                    $queryParameters = [$productsId, $from, $to];
+                } else {
+                    $placeHolders = array_map(function ($val) {
+                        return '?';
+                    }, $productsId);
+                    $placeHolders = implode(", ", $placeHolders);
+                    $filterQuery .= " AND $columnDebitProvider IN ($placeHolders) ";
+                    $queryParameters = [...$productsId, $from, $to];
+                }
+
+            } else {
+                $queryParameters = [$from, $to];
+            }
 
             // date filter
             $filterQuery .= " AND ($columnDebitDate >= ? AND $columnDebitDate <= ?) OR $columnDebitDate is NULL ";
@@ -115,9 +164,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             }
 
 
-            $queryParameters = [$from, $to];
-
-            $summaryHistoryData = $db->query("SELECT count($columnCreditAmount) as wagerCount,  sum(CASE WHEN $columnCreditAmount is not null then $columnCreditAmount ELSE 0 end) AS creditAmount,  sum(CASE WHEN $columnCreditAmount is not null then $columnDebitAmount ELSE 0 end) AS debitAmount, $joininAttribute4, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId ,$columnUsersUsername FROM $usersTableName LEFT JOIN  $debitTableName ON $joininAttribute4 = $joininAttribute3 $filterQuery LEFT JOIN $creditTableName ON $joininAttribute1 = $joininAttribute2   WHERE 1=1 AND $columnCreditType = 'c' OR $columnCreditType IS NULL group by $joininAttribute4 $winLossQuery", $queryParameters)->results();
+            $summaryHistoryData = $db->query("SELECT count($columnCreditAmount) as wagerCount,  sum(CASE WHEN $columnCreditAmount is not null then $columnCreditAmount ELSE 0 end) AS creditAmount,  sum(CASE WHEN $columnCreditAmount is not null then $columnDebitAmount ELSE 0 end) AS debitAmount, $joininAttribute4, '$prefix' AS prefix, '$clientName' AS clientName, '$parentId' AS parentId ,$columnUsersUsername , $columnDebitProvider as gameProviderId FROM $usersTableName LEFT JOIN  $debitTableName ON $joininAttribute4 = $joininAttribute3 $filterQuery LEFT JOIN $creditTableName ON $joininAttribute1 = $joininAttribute2   WHERE 1=1 AND $columnCreditType = 'c' OR $columnCreditType IS NULL group by $joininAttribute4,$columnDebitProvider $winLossQuery", $queryParameters)->results();
 
             $summaryHistory = array_merge($summaryHistory, $summaryHistoryData);
 
@@ -146,10 +193,14 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             //populate others provider empty data  for each user
             foreach ($activeProviders as $key => $value) {
-                $summaryHistoryPartialGrouped[$element['prefix'] . '_' . $element['user_id']][$value] = []; //order matters
-
+                if (!isset($summaryHistoryPartialGrouped[$element['prefix'] . '_' . $element['user_id']][$value])) {
+                    $summaryHistoryPartialGrouped[$element['prefix'] . '_' . $element['user_id']][$value] = []; //order matters
+                }
             }
-            $summaryHistoryPartialGrouped[$element['prefix'] . '_' . $element['user_id']]["evo"] = $element;
+
+            $provider = array_search($element["gameProviderId"], $productsIds);
+
+            $summaryHistoryPartialGrouped[$element['prefix'] . '_' . $element['user_id']][$provider] = $element;
 
         }
 
@@ -160,23 +211,18 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
         foreach ($summaryDataCollector as $player => $summaryPlayerData) {
 
-            $playerRaw = explode("_", $player)[1];
-            $prefix = explode("_", $player)[0];
-
-            $playerRaw = $summaryPlayerData["evo"]["user_id"];
-            $playerName = $summaryPlayerData["evo"]["username"];
-            $clientName = $summaryPlayerData["evo"]["clientName"];
-
             // $parentName = $db->get("username", "partner_users", array(["id", "=", $summaryPlayerData["evo"]["parentId"]]))->first()["username"];
 
 
-            $tableBody .= '<tr>';
-            $tableBody .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($playerRaw) . '</td>';
-            $tableBody .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($playerName) . '</td>';
-            $tableBody .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($clientName) . '</td>';
-            // $tableBody .= '<td class="text-center">' . escape($parentName) . '</td>';
+            $playerRaw = explode("_", $player)[1];
+            $prefix = explode("_", $player)[0];
 
+            // $playerRaw = isset($summaryPlayerData[0]["user_id"]) ? $summaryPlayerData[0]["user_id"] : '';
+            // $playerName = isset($summaryPlayerData[0]["username"]) ? $summaryPlayerData[0]["username"] : '';
+            // $clientName = isset($summaryPlayerData[0]["clientName"]) ? $summaryPlayerData[0]["clientName"] : '';
 
+            $tableBodyX = '';
+            $first = 0;
 
             $playerTotalWagerCount = 0;
             $playerTotalDebitAmount = 0;
@@ -185,16 +231,45 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             //row
             foreach ($summaryPlayerData as $key => $value) {
 
+                if ($key == 0) {
+                    $tableBodyFirst = '<tr>';
+                    $tableBodyFirst .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($value["user_id"]) . '</td>';
+                    $tableBodyFirst .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($value["username"]) . '</td>';
+                    $tableBodyFirst .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($value["clientName"]) . '</td>';
+
+                    $tableBodyX = $tableBodyFirst . $tableBodyX;
+
+                    $first = 1;
+
+                    continue;
+                }
+
                 //for this example --> real example would be populated with values from mysql
-                $data = !empty($value) ? $value : array(
-                    "wagerCount" => 0,
-                    "creditAmount" => 0,
-                    "debitAmount" => 0,
-                    "user_id" => $playerRaw,
-                    "prefix" => '',
-                    "clientName" => '',
-                    "username" => $playerName,
-                );
+                if (!empty($value)) {
+                    $data = $value;
+                    if ($first == 0) {
+                        $tableBodyFirst = '<tr>';
+                        $tableBodyFirst .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($value["user_id"]) . '</td>';
+                        $tableBodyFirst .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($value["username"]) . '</td>';
+                        $tableBodyFirst .= '<td class="text-center 3f-cells" style="font-weight:bold">' . escape($value["clientName"]) . '</td>';
+
+                        $tableBodyX = $tableBodyFirst . $tableBodyX;
+
+                        $first = 1;
+                    }
+
+                } else {
+                    $data = array(
+                        "wagerCount" => 0,
+                        "creditAmount" => 0,
+                        "debitAmount" => 0,
+                        //"user_id" => $playerRaw,
+                        "prefix" => '',
+                        "clientName" => '',
+                        //"username" => $playerName,
+                    );
+                }
+
 
                 //player -> row total
                 $playerTotalWagerCount += $data["wagerCount"];
@@ -215,9 +290,9 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                 $winLoss = $fmt->format($winLoss);
 
 
-                $tableBody .= '<td class="text-center">' . escape($data["wagerCount"]) . '</td>';
-                $tableBody .= '<td class="text-center">' . escape($data["debitAmount"]) . '</td>';
-                $tableBody .= '<td class="text-center" style="color:' . $winLossColor . '">' . escape($winLoss) . '</td>';
+                $tableBodyX .= '<td class="text-center">' . escape($data["wagerCount"]) . '</td>';
+                $tableBodyX .= '<td class="text-center">' . escape($data["debitAmount"]) . '</td>';
+                $tableBodyX .= '<td class="text-center" style="color:' . $winLossColor . '">' . escape($winLoss) . '</td>';
             }
 
             $playerTotalWinLoss = $playerTotalCreditAmount - $playerTotalDebitAmount;
@@ -227,17 +302,20 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $playerTotalDebitAmount = $fmt->format($playerTotalDebitAmount);
             $playerTotalWinLoss = $fmt->format($playerTotalWinLoss);
 
-            $tableBody .= '<td class="text-center" style="font-weight:bold">' . escape($playerTotalWagerCount) . '</td>';
-            $tableBody .= '<td class="text-center" style="font-weight:bold">' . escape($playerTotalDebitAmount) . '</td>';
-            $tableBody .= '<td class="text-center" style="font-weight:bold;color:' . $playerTotalWinLossColor . '">' . escape($playerTotalWinLoss) . '</td>';
+            $tableBodyX .= '<td class="text-center" style="font-weight:bold">' . escape($playerTotalWagerCount) . '</td>';
+            $tableBodyX .= '<td class="text-center" style="font-weight:bold">' . escape($playerTotalDebitAmount) . '</td>';
+            $tableBodyX .= '<td class="text-center" style="font-weight:bold;color:' . $playerTotalWinLossColor . '">' . escape($playerTotalWinLoss) . '</td>';
 
-            $tableBody .= '</tr>';
+            $tableBodyX .= '</tr>';
+
+            $tableBody .= $tableBodyX;
 
 
 
 
 
         }
+
 
         //navigation
         $pagination = '';
