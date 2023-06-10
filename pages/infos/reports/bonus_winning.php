@@ -232,7 +232,8 @@ foreach ($activeProviders as $key => $value) {
                                             $timestamp = time();
                                             $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
                                             $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
-                                            $timeRFC = $dt->format('Y-m-d\TH:i:s');
+                                            $timeRFC = $dt->format('Y-m-d\T00:00:00');
+                                            $timeRFC2 = $dt->format('Y-m-d\23:59:59');
                                             // date("Y-m-d\TH:i:s") //local
                                             ?>
 
@@ -250,7 +251,7 @@ foreach ($activeProviders as $key => $value) {
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">EndDate</span></div>
                                                 <input placeholder="" type="datetime-local"
-                                                    class="form-control shadow-none enddate" value=<?= $timeRFC ?>>
+                                                    class="form-control shadow-none enddate" value=<?= $timeRFC2 ?>>
                                             </div>
 
                                             <div

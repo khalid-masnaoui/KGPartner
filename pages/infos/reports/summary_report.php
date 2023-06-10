@@ -93,148 +93,148 @@ foreach ($activeSlotProviders as $key => $value) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css?ver=5.2.4">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
     <style>
-    .filter-wrapper {
-        /* margin-top: 20px;
+        .filter-wrapper {
+            /* margin-top: 20px;
         margin-bottom: 20px;
         margin-left: 20px; */
-        /* width:100%; */
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+            /* width:100%; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
 
-    }
+        }
 
-    .row_filter_wrapper {
-        flex: 2;
-        width: 100%;
+        .row_filter_wrapper {
+            flex: 2;
+            width: 100%;
 
-    }
-
-    .clslct {
-        margin-right: 10px;
-
-    }
-
-    .filter_btn {
-        margin-left: 20px;
-    }
-
-    .btn_action {
-        width: max-content;
-    }
-
-    .status_ {
-        border: none;
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-    }
-
-    @media (max-width: 1500px) {
-        .filter-wrapper {
-            flex-direction: column;
-            align-items: flex-start;
         }
 
         .clslct {
-            margin-bottom: 20px;
-            margin-left: 10px;
-
-        }
-    }
-
-    @media (max-width: 767px) {
-        .f-user {
-            margin-top: 0.5rem !important;
+            margin-right: 10px;
 
         }
 
-    }
-
-    @media (max-width: 576px) {
-        .row_filter_wrapper>div {
-
-
-            width: 88% !important;
-            /* flex-direction:column; */
+        .filter_btn {
+            margin-left: 20px;
         }
 
-    }
-
-    @media (max-width: 710px) {
-        .card-header2 {
-            flex-direction: column;
-            height: 6.2rem !important;
+        .btn_action {
+            width: max-content;
         }
 
-        .status_number_wrapper {
-            margin-top: 10px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .card-header2 {
-            height: 7.8rem !important;
+        .status_ {
+            border: none;
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
         }
 
-        .status_number_wrapper {
-            flex-direction: column;
+        @media (max-width: 1500px) {
+            .filter-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .clslct {
+                margin-bottom: 20px;
+                margin-left: 10px;
+
+            }
+        }
+
+        @media (max-width: 767px) {
+            .f-user {
+                margin-top: 0.5rem !important;
+
+            }
 
         }
-    }
 
-    @media (max-width: 390px) {
-        .card-header2 {
-            height: 9.2rem !important;
+        @media (max-width: 576px) {
+            .row_filter_wrapper>div {
+
+
+                width: 88% !important;
+                /* flex-direction:column; */
+            }
+
         }
-    }
 
-    @media (max-width: 990px) {
-        .table-summary {
-            max-width: unset !important;
+        @media (max-width: 710px) {
+            .card-header2 {
+                flex-direction: column;
+                height: 6.2rem !important;
+            }
+
+            .status_number_wrapper {
+                margin-top: 10px;
+            }
         }
-    }
 
-    .nav-tabs .nav-link.active {
-        color: #fff;
-        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
-        /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
-    }
+        @media (max-width: 480px) {
+            .card-header2 {
+                height: 7.8rem !important;
+            }
 
-    .nav-tabs .nav-link.active:hover {
-        color: #fff !important;
-    }
+            .status_number_wrapper {
+                flex-direction: column;
 
-    table.summary thead th {
-        background-color: rgba(63, 106, 216, 0.9) !important;
-        color: white !important;
-    }
+            }
+        }
 
-    table.summary th,
-    td {
-        width: unset !important;
-        height: unset !important;
-    }
+        @media (max-width: 390px) {
+            .card-header2 {
+                height: 9.2rem !important;
+            }
+        }
 
-    /* .total-row td {
+        @media (max-width: 990px) {
+            .table-summary {
+                max-width: unset !important;
+            }
+        }
+
+        .nav-tabs .nav-link.active {
+            color: #fff;
+            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
+            /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
+        }
+
+        .nav-tabs .nav-link.active:hover {
+            color: #fff !important;
+        }
+
+        table.summary thead th {
+            background-color: rgba(63, 106, 216, 0.9) !important;
+            color: white !important;
+        }
+
+        table.summary th,
+        td {
+            width: unset !important;
+            height: unset !important;
+        }
+
+        /* .total-row td {
         background-color: rgba(247, 176, 36, 0.6) !important;
     } */
 
-    .app-wrapper-footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
+        .app-wrapper-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
 
-    .startdate,
-    .enddate {
-        background: url(https://img.icons8.com/cotton/64/000000/calendar.png) no-repeat;
-        background-size: 21px 21px;
-        background-position-x: right;
-        background-position-y: center;
-    }
+        .startdate,
+        .enddate {
+            background: url(https://img.icons8.com/cotton/64/000000/calendar.png) no-repeat;
+            background-size: 21px 21px;
+            background-position-x: right;
+            background-position-y: center;
+        }
 
     </style>
 </head>
@@ -279,7 +279,8 @@ foreach ($activeSlotProviders as $key => $value) {
                                             $timestamp = time();
                                             $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
                                             $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
-                                            $timeRFC = $dt->format('Y-m-d\TH:i:s');
+                                            $timeRFC = $dt->format('Y-m-d\T00:00:00');
+                                            $timeRFC2 = $dt->format('Y-m-d\23:59:59');
                                             // date("Y-m-d\TH:i:s") //local
                                             ?>
 
@@ -297,7 +298,7 @@ foreach ($activeSlotProviders as $key => $value) {
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">종료일</span></div>
                                                 <input placeholder="" type="datetime-local"
-                                                    class="form-control shadow-none enddate" value=<?= $timeRFC ?>>
+                                                    class="form-control shadow-none enddate" value=<?= $timeRFC2 ?>>
                                             </div>
 
                                             <div
@@ -517,175 +518,130 @@ foreach ($activeSlotProviders as $key => $value) {
 
 
     <script>
-    // document.querySelector(".startdate").value="2022-03-05";
-    // document.querySelector(".enddate").value="2022-03-05";
+        // document.querySelector(".startdate").value="2022-03-05";
+        // document.querySelector(".enddate").value="2022-03-05";
 
 
-    $(".startdate, .enddate").flatpickr({
-        enableTime: true,
-        dateFormat: "Y-m-d H:i:S",
-        time_24hr: true,
-        locale: "ko",
-        allowInput: true
-    });
+        $(".startdate, .enddate").flatpickr({
+            enableTime: true,
+            dateFormat: "Y-m-d H:i:S",
+            time_24hr: true,
+            locale: "ko",
+            allowInput: true
+        });
 
 
-    // --- DISPLAY Summary Report ----
-    function displaySummary(N = 1, status = 'all') {
+        // --- DISPLAY Summary Report ----
+        function displaySummary(N = 1, status = 'all') {
 
-        var activePage = $(".navigation_summary li.page-item.active a").text();
-        var activeNumber = $(".active-summary-number").text();
-        activeNumber = activeNumber.trim();
+            var activePage = $(".navigation_summary li.page-item.active a").text();
+            var activeNumber = $(".active-summary-number").text();
+            activeNumber = activeNumber.trim();
 
-        // if (N == true) {
-        //     N = activePage;
-        // }
-        var provider = $("#providerSelect").val();
-        var category = $("#categorySelect").val();
+            // if (N == true) {
+            //     N = activePage;
+            // }
+            var provider = $("#providerSelect").val();
+            var category = $("#categorySelect").val();
 
-        var startDate = $(".startdate").val();
-        var endDate = $(".enddate").val();
-
-
-        var client = $("#clientSelect").val()
+            var startDate = $(".startdate").val();
+            var endDate = $(".enddate").val();
 
 
-        var token = $("#token_display").val();
+            var client = $("#clientSelect").val()
 
-        $.ajax({
-            url: '/ajaxProcessus/infoReports/displaySummary.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                "page": N,
-                "number": activeNumber,
-                provider,
-                category,
-                startDate,
-                endDate,
-                client,
-                status,
-                token
-            },
-            // contentType: false,
-            // processData: false, 
-            cache: false,
-            timeout: 300000,
-            // cache: false,
-            // dataType: 'json', 
 
-            success: function(data) {
-                // var num = data.indexOf("<!DOCTYPE html>");
-                // var rese = data.substr(0, num);
-                // rese = rese.trim();
-                // console.log(data);
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
+            var token = $("#token_display").val();
+
+            $.ajax({
+                url: '/ajaxProcessus/infoReports/displaySummary.php',
+                type: 'POST',
+                data: {
+                    "display": true,
+                    "page": N,
+                    "number": activeNumber,
+                    provider,
+                    category,
+                    startDate,
+                    endDate,
+                    client,
+                    status,
+                    token
+                },
+                // contentType: false,
+                // processData: false, 
+                cache: false,
+                timeout: 300000,
+                // cache: false,
+                // dataType: 'json', 
+
+                success: function (data) {
+                    // var num = data.indexOf("<!DOCTYPE html>");
+                    // var rese = data.substr(0, num);
+                    // rese = rese.trim();
+                    // console.log(data);
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
+                    }
+                    rese = JSON.parse(data);
+
+                    // console.log(rese[0]);
+                    let length = rese.length;
+
+
+                    if (length == 4) { //success
+                        $(".table-body-summary").html(rese[0]);
+                        $(".navigation_summary").html(rese[1]);
+
+                        $("#token_display").val(rese[3]);
+                    } else if (length == 1) { //csrf error
+                        $("#token_display").val(rese[0]);
+
+                    } else {
+                        //refresh page;
+                        location.reload();
+                    }
+
+
+
                 }
-                rese = JSON.parse(data);
-
-                // console.log(rese[0]);
-                let length = rese.length;
 
 
-                if (length == 4) { //success
-                    $(".table-body-summary").html(rese[0]);
-                    $(".navigation_summary").html(rese[1]);
+            })
+        }
 
-                    $("#token_display").val(rese[3]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display").val(rese[0]);
+        //Category change -> change providers lists
+        $("#categorySelect").on("change", function (event) {
+            let category = $(this).val();
 
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
+            if (category == "casino") {
+                $("#providerSelect").html("<?= $providersOptions . $providersCasinoOptions; ?>")
+            }
 
+            if (category == "slot") {
+                $("#providerSelect").html("<?= $providersOptions . $providersSlotOptions; ?>")
+            }
 
+            if (category == "all") {
+                $("#providerSelect").html(
+                    "<?= $providersOptions . $providersCasinoOptions . $providersSlotOptions; ?>")
+                $('#providerSelect option[value="evo"]').prop('selected', true);
 
             }
 
-
         })
-    }
-
-    //Category change -> change providers lists
-    $("#categorySelect").on("change", function(event) {
-        let category = $(this).val();
-
-        if (category == "casino") {
-            $("#providerSelect").html("<?= $providersOptions . $providersCasinoOptions; ?>")
-        }
-
-        if (category == "slot") {
-            $("#providerSelect").html("<?= $providersOptions . $providersSlotOptions; ?>")
-        }
-
-        if (category == "all") {
-            $("#providerSelect").html(
-                "<?= $providersOptions . $providersCasinoOptions . $providersSlotOptions; ?>")
-            $('#providerSelect option[value="evo"]').prop('selected', true);
-
-        }
-
-    })
 
 
-    //NUMBERS DISPLAYED PER PAGE
-    $(".summary_number_options button").on("click", function(event) {
+        //NUMBERS DISPLAYED PER PAGE
+        $(".summary_number_options button").on("click", function (event) {
 
-        var number = event.currentTarget.textContent;
-        $(".active-summary-number").text(number);
+            var number = event.currentTarget.textContent;
+            $(".active-summary-number").text(number);
 
-        let id = $(".status_.active").attr("id");
+            let id = $(".status_.active").attr("id");
 
-        let status = 'all';
-
-        if (id == "status_win") {
-            status = "win";
-        } else if (id == "status_loss") {
-            status = "loss";
-        } else if (id == "status_tie") {
-            status = "tie";
-        }
-
-        displaySummary(1, status);
-    })
-
-    function resetStatusFilter() {
-        $(".status_").css("opacity", 1);
-        $(".status_").removeClass("active");
-        $("#status_all").addClass("active");
-    }
-
-    //FILTERs
-    $(".filter_summary").on("click", function(event) {
-        resetStatusFilter();
-
-        displaySummary();
-    })
-
-    //CLIENT SELECT
-    $("#clientSelect").change(function(event) {
-        displaySummary();
-    })
-
-    //status filter
-    $(".status_").click(function(event) {
-        let status = '';
-        let id = $(event.currentTarget).attr("id");
-        if (id == "status_all") {
-            $(".status_").css("opacity", 1);
-
-            $(".status_").removeClass("active");
-            $(this).addClass("active");
-
-            status = "all";
-
-        } else {
-            $(".status_").css("opacity", 0.2);
-            $(this).css("opacity", 1);
+            let status = 'all';
 
             if (id == "status_win") {
                 status = "win";
@@ -695,104 +651,149 @@ foreach ($activeSlotProviders as $key => $value) {
                 status = "tie";
             }
 
+            displaySummary(1, status);
+        })
+
+        function resetStatusFilter() {
+            $(".status_").css("opacity", 1);
             $(".status_").removeClass("active");
-            $(this).addClass("active");
+            $("#status_all").addClass("active");
         }
 
-        displaySummary(1, status);
+        //FILTERs
+        $(".filter_summary").on("click", function (event) {
+            resetStatusFilter();
 
-    })
-
-
-    //excel download
-    $(".ExcelBtn").on("click", function(event) {
-
-        $("table.summary th").css({
-            "text-align": "center",
-            "background-color": "black",
-            "font-weight": "Bold",
-            "color": "white",
-            "height": "30px"
-        });
-
-        $("table.summary td").css({
-            "text-align": "center",
-            "height": "20px",
-            "width": "80px"
-
-        });
-        $(".3f-cells").css({
-            "width": "120px"
-
-        });
-        $(".total-row td").css({
-            "background-color": "beige",
-            "height": "25px"
-
+            displaySummary();
         })
-        // "background-color": "rgba(63, 106, 216, 0.9)",
 
-        // return;
-        var htmlTable = $(".table-summary").html();
-        var token = $("#token_download").val();
+        //CLIENT SELECT
+        $("#clientSelect").change(function (event) {
+            displaySummary();
+        })
 
-        // console.log(token);
-        $.ajax({
-            url: '/ajaxProcessus/infoReports/excels/downloadSummary.php',
-            type: 'POST',
-            htmlTable,
-            data: {
-                htmlTable,
-                token
-            },
+        //status filter
+        $(".status_").click(function (event) {
+            let status = '';
+            let id = $(event.currentTarget).attr("id");
+            if (id == "status_all") {
+                $(".status_").css("opacity", 1);
 
-            cache: false,
-            timeout: 10000,
-            success: function(data) {
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
 
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
-                }
-                // window.open("/", "_blank");
-                rese = JSON.parse(data);
+                status = "all";
 
-                // console.log(rese);
+            } else {
+                $(".status_").css("opacity", 0.2);
+                $(this).css("opacity", 1);
 
-
-                // console.log(rese[0]);
-                let length = rese.length;
-
-
-                if (length == 3) { //success
-                    $("#token_download").val(rese[0]);
-                    //download the file
-                    var $a = $("<a>");
-                    $a.attr("href", rese[1]);
-                    $("body").append($a);
-                    $a.attr("download", rese[2] + ".xls");
-                    $a[0].click();
-                    $a.remove();
-                } else if (length == 1) {
-                    $("#token_download").val(rese[0]);
-                } else {
-                    //refresh page;
-                    location.reload();
+                if (id == "status_win") {
+                    status = "win";
+                } else if (id == "status_loss") {
+                    status = "loss";
+                } else if (id == "status_tie") {
+                    status = "tie";
                 }
 
-
-
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
             }
 
+            displaySummary(1, status);
 
         })
 
-    })
 
-    document.addEventListener('DOMContentLoaded', (event) => {
+        //excel download
+        $(".ExcelBtn").on("click", function (event) {
 
-        displaySummary(0);
-    });
+            $("table.summary th").css({
+                "text-align": "center",
+                "background-color": "black",
+                "font-weight": "Bold",
+                "color": "white",
+                "height": "30px"
+            });
+
+            $("table.summary td").css({
+                "text-align": "center",
+                "height": "20px",
+                "width": "80px"
+
+            });
+            $(".3f-cells").css({
+                "width": "120px"
+
+            });
+            $(".total-row td").css({
+                "background-color": "beige",
+                "height": "25px"
+
+            })
+            // "background-color": "rgba(63, 106, 216, 0.9)",
+
+            // return;
+            var htmlTable = $(".table-summary").html();
+            var token = $("#token_download").val();
+
+            // console.log(token);
+            $.ajax({
+                url: '/ajaxProcessus/infoReports/excels/downloadSummary.php',
+                type: 'POST',
+                htmlTable,
+                data: {
+                    htmlTable,
+                    token
+                },
+
+                cache: false,
+                timeout: 10000,
+                success: function (data) {
+
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
+                    }
+                    // window.open("/", "_blank");
+                    rese = JSON.parse(data);
+
+                    // console.log(rese);
+
+
+                    // console.log(rese[0]);
+                    let length = rese.length;
+
+
+                    if (length == 3) { //success
+                        $("#token_download").val(rese[0]);
+                        //download the file
+                        var $a = $("<a>");
+                        $a.attr("href", rese[1]);
+                        $("body").append($a);
+                        $a.attr("download", rese[2] + ".xls");
+                        $a[0].click();
+                        $a.remove();
+                    } else if (length == 1) {
+                        $("#token_download").val(rese[0]);
+                    } else {
+                        //refresh page;
+                        location.reload();
+                    }
+
+
+
+                }
+
+
+            })
+
+        })
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+            displaySummary(0);
+        });
     </script>
 </body>
 
