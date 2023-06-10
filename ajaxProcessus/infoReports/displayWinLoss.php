@@ -26,8 +26,8 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
         $from = input::get("startDate");
         $to = input::get("endDate");
 
-        $from .= ' 00:00:00';
-        $to .= ' 23:59:59';
+        // $from .= ' 00:00:00';
+        // $to .= ' 23:59:59';
 
         $productsIds = config::get("providersProductIdMappings");
         //we will construct the logic based on the provider --> which table , naming conventions..

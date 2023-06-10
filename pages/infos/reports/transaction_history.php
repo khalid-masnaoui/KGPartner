@@ -53,108 +53,118 @@ foreach ($activeProviders as $key => $value) {
 
 
     <?php include __DIR__ . '/../../../includes/files/_stylesheets.php'; ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css?ver=5.2.4">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
     <style>
-    .filter-wrapper {
-        /* margin-top: 20px;
+        .filter-wrapper {
+            /* margin-top: 20px;
         margin-bottom: 20px;
         margin-left: 20px; */
-        /* width:100%; */
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+            /* width:100%; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
 
-    }
+        }
 
-    .row_filter_wrapper {
-        flex: 2;
-        width: 100%;
+        .row_filter_wrapper {
+            flex: 2;
+            width: 100%;
 
-    }
-
-    .clslct {
-        margin-right: 10px;
-
-    }
-
-    .filter_btn {
-        margin-left: 20px;
-    }
-
-    .btn_action {
-        width: max-content;
-    }
-
-    .status_ {
-        border: none;
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-    }
-
-    @media (max-width: 1500px) {
-        .filter-wrapper {
-            flex-direction: column;
-            align-items: flex-start;
         }
 
         .clslct {
-            margin-bottom: 20px;
-            margin-left: 10px;
-
-        }
-    }
-
-    @media (max-width: 767px) {
-        .f-user {
-            margin-top: 0.5rem !important;
+            margin-right: 10px;
 
         }
 
-    }
-
-    @media (max-width: 576px) {
-        .row_filter_wrapper>div {
-
-
-            width: 88% !important;
-            /* flex-direction:column; */
+        .filter_btn {
+            margin-left: 20px;
         }
 
-    }
-
-    @media (max-width: 595px) {
-        .card-header2 {
-            flex-direction: column;
-            height: 5.4rem !important;
-        }
-    }
-
-    @media (max-width: 410px) {
-        .card-header2 {
-            height: 6.4rem !important;
+        .btn_action {
+            width: max-content;
         }
 
-        .card-header2 {
-            height: 6.4rem !important;
+        .status_ {
+            border: none;
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
         }
 
-        .status_number_wrapper {
-            flex-direction: column;
+        @media (max-width: 1500px) {
+            .filter-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .clslct {
+                margin-bottom: 20px;
+                margin-left: 10px;
+
+            }
+        }
+
+        @media (max-width: 767px) {
+            .f-user {
+                margin-top: 0.5rem !important;
+
+            }
 
         }
-    }
 
-    .nav-tabs .nav-link.active {
-        color: #fff;
-        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
-        /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
-    }
+        @media (max-width: 576px) {
+            .row_filter_wrapper>div {
 
-    .nav-tabs .nav-link.active:hover {
-        color: #fff !important;
-    }
+
+                width: 88% !important;
+                /* flex-direction:column; */
+            }
+
+        }
+
+        @media (max-width: 595px) {
+            .card-header2 {
+                flex-direction: column;
+                height: 5.4rem !important;
+            }
+        }
+
+        @media (max-width: 410px) {
+            .card-header2 {
+                height: 6.4rem !important;
+            }
+
+            .card-header2 {
+                height: 6.4rem !important;
+            }
+
+            .status_number_wrapper {
+                flex-direction: column;
+
+            }
+        }
+
+        .nav-tabs .nav-link.active {
+            color: #fff;
+            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
+            /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
+        }
+
+        .nav-tabs .nav-link.active:hover {
+            color: #fff !important;
+        }
+
+        .startdate,
+        .enddate {
+            background: url(https://img.icons8.com/cotton/64/000000/calendar.png) no-repeat;
+            background-size: 21px 21px;
+            background-position-x: right;
+            background-position-y: center;
+        }
 
     </style>
 </head>
@@ -219,13 +229,21 @@ foreach ($activeProviders as $key => $value) {
                                                     class="form-control shadow-none">
                                             </div>
 
+                                            <?php
+                                            $tz = 'Asia/Seoul';
+                                            $timestamp = time();
+                                            $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+                                            $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
+                                            $timeRFC = $dt->format('Y-m-d\TH:i:s');
+                                            // date("Y-m-d\TH:i:s") //local
+                                            ?>
+
                                             <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5  col-10 col-lg-4 col-xl-3 mt-2  ml-1 pl-0 pr-0 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">시작일</span></div>
-                                                <input placeholder="" type="date"
-                                                    class="form-control shadow-none startdate"
-                                                    value=<?= date("Y-m-d") ?>>
+                                                <input placeholder="" type="datetime-local"
+                                                    class="form-control shadow-none startdate" value=<?= $timeRFC ?>>
                                             </div>
 
 
@@ -233,8 +251,8 @@ foreach ($activeProviders as $key => $value) {
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">종료일</span></div>
-                                                <input placeholder="" type="date"
-                                                    class="form-control shadow-none enddate" value=<?= date("Y-m-d") ?>>
+                                                <input placeholder="" type="datetime-local"
+                                                    class="form-control shadow-none enddate" value=<?= $timeRFC ?>>
                                             </div>
 
                                             <div
@@ -409,154 +427,119 @@ foreach ($activeProviders as $key => $value) {
         </div>
     </div>
     <?php include __DIR__ . '/../../../includes/files/_scripts.php'; ?>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr?ver=5.2.4"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+
 
     <script>
-    // document.querySelector(".startdate").value="2022-03-05";
-    // document.querySelector(".enddate").value="2022-03-05";
+        // document.querySelector(".startdate").value="2022-03-05";
+        // document.querySelector(".enddate").value="2022-03-05";
 
 
-    // --- DISPLAY WIN/LOSS TRANSACTIONS ----
-    function displayTransactions(N = 1, status = 'all') {
-
-        var activePage = $(".navigation_transaction li.page-item.active a").text();
-        var activeNumber = $(".active-transaction-number").text();
-        activeNumber = activeNumber.trim();
-
-        // if (N == true) {
-        //     N = activePage;
-        // }
-        var provider = $("#providerSelect").val();
-        var transaction = $("#transaction_filtered").val();
-        var text = $("#player_name_filtered").val();
-        var startDate = $(".startdate").val();
-        var endDate = $(".enddate").val();
-
-        var transactionStatus = $("#statusSelect").val();
-
-        var client = $("#clientSelect").val()
+        $(".startdate, .enddate").flatpickr({
+            enableTime: true,
+            dateFormat: "Y-m-d H:i:S",
+            time_24hr: true,
+            locale: "ko",
+            allowInput: true
+        });
 
 
-        var token = $("#token_display").val();
 
-        $.ajax({
-            url: '/ajaxProcessus/infoReports/displayTransaction.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                "page": N,
-                "number": activeNumber,
-                provider,
-                transaction,
-                "nameFilter": text,
-                startDate,
-                endDate,
-                transactionStatus,
-                client,
-                status,
-                token
-            },
-            // contentType: false,
-            // processData: false, 
-            cache: false,
-            timeout: 40000,
-            // cache: false,
-            // dataType: 'json', 
+        // --- DISPLAY WIN/LOSS TRANSACTIONS ----
+        function displayTransactions(N = 1, status = 'all') {
 
-            success: function(data) {
-                // var num = data.indexOf("<!DOCTYPE html>");
-                // var rese = data.substr(0, num);
-                // rese = rese.trim();
-                // console.log(data);
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
+            var activePage = $(".navigation_transaction li.page-item.active a").text();
+            var activeNumber = $(".active-transaction-number").text();
+            activeNumber = activeNumber.trim();
+
+            // if (N == true) {
+            //     N = activePage;
+            // }
+            var provider = $("#providerSelect").val();
+            var transaction = $("#transaction_filtered").val();
+            var text = $("#player_name_filtered").val();
+            var startDate = $(".startdate").val();
+            var endDate = $(".enddate").val();
+
+            var transactionStatus = $("#statusSelect").val();
+
+            var client = $("#clientSelect").val()
+
+
+            var token = $("#token_display").val();
+
+            $.ajax({
+                url: '/ajaxProcessus/infoReports/displayTransaction.php',
+                type: 'POST',
+                data: {
+                    "display": true,
+                    "page": N,
+                    "number": activeNumber,
+                    provider,
+                    transaction,
+                    "nameFilter": text,
+                    startDate,
+                    endDate,
+                    transactionStatus,
+                    client,
+                    status,
+                    token
+                },
+                // contentType: false,
+                // processData: false, 
+                cache: false,
+                timeout: 40000,
+                // cache: false,
+                // dataType: 'json', 
+
+                success: function (data) {
+                    // var num = data.indexOf("<!DOCTYPE html>");
+                    // var rese = data.substr(0, num);
+                    // rese = rese.trim();
+                    // console.log(data);
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
+                    }
+                    rese = JSON.parse(data);
+
+                    // console.log(rese[0]);
+                    let length = rese.length;
+
+
+                    if (length == 4) { //success
+                        $(".table-body-transaction").html(rese[0]);
+                        $(".navigation_transaction").html(rese[1]);
+
+                        $("#token_display").val(rese[3]);
+                    } else if (length == 1) { //csrf error
+                        $("#token_display").val(rese[0]);
+
+                    } else {
+                        //refresh page;
+                        location.reload();
+                    }
+
+
+
                 }
-                rese = JSON.parse(data);
-
-                // console.log(rese[0]);
-                let length = rese.length;
 
 
-                if (length == 4) { //success
-                    $(".table-body-transaction").html(rese[0]);
-                    $(".navigation_transaction").html(rese[1]);
-
-                    $("#token_display").val(rese[3]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display").val(rese[0]);
-
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
-
-
-
-            }
-
-
-        })
-    }
-
-
-    //NUMBERS DISPLAYED PER PAGE
-    $(".transaction_number_options button").on("click", function(event) {
-
-        var number = event.currentTarget.textContent;
-        $(".active-transaction-number").text(number);
-
-        let id = $(".status_.active").attr("id");
-
-        let status = 'all';
-
-        if (id == "status_win") {
-            status = "win";
-        } else if (id == "status_loss") {
-            status = "loss";
-        } else if (id == "status_tie") {
-            status = "tie";
-
-        } else if (id == "status_cancel") {
-            status = "cancel";
-
+            })
         }
 
-        displayTransactions(1, status);
-    })
 
-    function resetStatusFilter() {
-        $(".status_").css("opacity", 1);
-        $(".status_").removeClass("active");
-        $("#status_all").addClass("active");
-    }
+        //NUMBERS DISPLAYED PER PAGE
+        $(".transaction_number_options button").on("click", function (event) {
 
-    //FILTERs
-    $(".filter_transaction").on("click", function(event) {
-        resetStatusFilter();
+            var number = event.currentTarget.textContent;
+            $(".active-transaction-number").text(number);
 
-        displayTransactions();
-    })
+            let id = $(".status_.active").attr("id");
 
-    //CLIENT SELECT
-    $("#clientSelect").change(function(event) {
-        displayTransactions();
-    })
-
-    //status filter
-    $(".status_").click(function(event) {
-        let status = '';
-        let id = $(event.currentTarget).attr("id");
-        if (id == "status_all") {
-            $(".status_").css("opacity", 1);
-
-            $(".status_").removeClass("active");
-            $(this).addClass("active");
-
-            status = "all";
-
-        } else {
-            $(".status_").css("opacity", 0.2);
-            $(this).css("opacity", 1);
+            let status = 'all';
 
             if (id == "status_win") {
                 status = "win";
@@ -564,45 +547,94 @@ foreach ($activeProviders as $key => $value) {
                 status = "loss";
             } else if (id == "status_tie") {
                 status = "tie";
+
             } else if (id == "status_cancel") {
                 status = "cancel";
 
             }
 
+            displayTransactions(1, status);
+        })
+
+        function resetStatusFilter() {
+            $(".status_").css("opacity", 1);
             $(".status_").removeClass("active");
-            $(this).addClass("active");
+            $("#status_all").addClass("active");
         }
 
-        displayTransactions(1, status);
+        //FILTERs
+        $(".filter_transaction").on("click", function (event) {
+            resetStatusFilter();
 
-    })
+            displayTransactions();
+        })
+
+        //CLIENT SELECT
+        $("#clientSelect").change(function (event) {
+            displayTransactions();
+        })
+
+        //status filter
+        $(".status_").click(function (event) {
+            let status = '';
+            let id = $(event.currentTarget).attr("id");
+            if (id == "status_all") {
+                $(".status_").css("opacity", 1);
+
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
+
+                status = "all";
+
+            } else {
+                $(".status_").css("opacity", 0.2);
+                $(this).css("opacity", 1);
+
+                if (id == "status_win") {
+                    status = "win";
+                } else if (id == "status_loss") {
+                    status = "loss";
+                } else if (id == "status_tie") {
+                    status = "tie";
+                } else if (id == "status_cancel") {
+                    status = "cancel";
+
+                }
+
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
+            }
+
+            displayTransactions(1, status);
+
+        })
 
 
-    function popItUp(url, windowName) {
-        let newWindow = window.open(url, windowName, 'height=646,width=1136');
-        if (window.focus) {
-            newWindow.focus()
+        function popItUp(url, windowName) {
+            let newWindow = window.open(url, windowName, 'height=646,width=1136');
+            if (window.focus) {
+                newWindow.focus()
+            }
+            return false;
         }
-        return false;
-    }
 
-    function showBetDetails(transactionId, type) {
-        // console.log("bet details");
-        console.log(type);
-        let betDetailsType = type;
-        if (type == "BC") {
-            betDetailsType = "";
+        function showBetDetails(transactionId, type) {
+            // console.log("bet details");
+            console.log(type);
+            let betDetailsType = type;
+            if (type == "BC") {
+                betDetailsType = "";
+            }
+
+            popItUp(`https://koreagaming.info/pages/betDetails/betDetails${betDetailsType}.php?transactionId=${transactionId}`,
+                "betDetails");
         }
 
-        popItUp(`https://koreagaming.info/pages/betDetails/betDetails${betDetailsType}.php?transactionId=${transactionId}`,
-            "betDetails");
-    }
+        document.addEventListener('DOMContentLoaded', (event) => {
 
-    document.addEventListener('DOMContentLoaded', (event) => {
+            displayTransactions(0);
 
-        displayTransactions(0);
-
-    });
+        });
     </script>
 </body>
 

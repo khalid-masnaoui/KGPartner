@@ -90,6 +90,8 @@ foreach ($activeSlotProviders as $key => $value) {
 
 
     <?php include __DIR__ . '/../../../includes/files/_stylesheets.php'; ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css?ver=5.2.4">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
     <style>
     .filter-wrapper {
         /* margin-top: 20px;
@@ -226,6 +228,14 @@ foreach ($activeSlotProviders as $key => $value) {
         width: 100%;
     }
 
+    .startdate,
+    .enddate {
+        background: url(https://img.icons8.com/cotton/64/000000/calendar.png) no-repeat;
+        background-size: 21px 21px;
+        background-position-x: right;
+        background-position-y: center;
+    }
+
     </style>
 </head>
 
@@ -264,15 +274,21 @@ foreach ($activeSlotProviders as $key => $value) {
                                     <div class="d-flex filter-wrapper">
                                         <div class="row mt-2 row_filter_wrapper mb-3">
 
-
+                                            <?php
+                                            $tz = 'Asia/Seoul';
+                                            $timestamp = time();
+                                            $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+                                            $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
+                                            $timeRFC = $dt->format('Y-m-d\TH:i:s');
+                                            // date("Y-m-d\TH:i:s") //local
+                                            ?>
 
                                             <div class="input-group  d-flex ml-1 pl-0 pr-0 col-md-5  col-10 col-lg-4 col-xl-3 mt-2  ml-1 pl-0 pr-0 ml-4"
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">시작일</span></div>
-                                                <input placeholder="" type="date"
-                                                    class="form-control shadow-none startdate"
-                                                    value=<?= date("Y-m-d") ?>>
+                                                <input placeholder="" type="datetime-local"
+                                                    class="form-control shadow-none startdate" value=<?= $timeRFC ?>>
                                             </div>
 
 
@@ -280,8 +296,8 @@ foreach ($activeSlotProviders as $key => $value) {
                                                 style='width:unset;'>
                                                 <div class="input-group-prepend"><span
                                                         class="input-group-text">종료일</span></div>
-                                                <input placeholder="" type="date"
-                                                    class="form-control shadow-none enddate" value=<?= date("Y-m-d") ?>>
+                                                <input placeholder="" type="datetime-local"
+                                                    class="form-control shadow-none enddate" value=<?= $timeRFC ?>>
                                             </div>
 
                                             <div
@@ -495,10 +511,24 @@ foreach ($activeSlotProviders as $key => $value) {
         </div>
     </div>
     <?php include __DIR__ . '/../../../includes/files/_scripts.php'; ?>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr?ver=5.2.4"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+
 
     <script>
     // document.querySelector(".startdate").value="2022-03-05";
     // document.querySelector(".enddate").value="2022-03-05";
+
+
+    $(".startdate, .enddate").flatpickr({
+        enableTime: true,
+        dateFormat: "Y-m-d H:i:S",
+        time_24hr: true,
+        locale: "ko",
+        allowInput: true
+    });
+
 
     // --- DISPLAY Summary Report ----
     function displaySummary(N = 1, status = 'all') {
