@@ -60,104 +60,104 @@ foreach ($activeProviders as $key => $value) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css?ver=5.2.4">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
     <style>
-    .filter-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-
-    }
-
-    .row_filter_wrapper {
-        flex: 2;
-        width: 100%;
-
-    }
-
-    .clslct {
-        margin-right: 10px;
-
-    }
-
-    .filter_btn {
-        margin-left: 20px;
-    }
-
-    .btn_action {
-        width: max-content;
-    }
-
-    .status_ {
-        border: none;
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-    }
-
-    @media (max-width: 1500px) {
         .filter-wrapper {
-            flex-direction: column;
-            align-items: flex-start;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+        }
+
+        .row_filter_wrapper {
+            flex: 2;
+            width: 100%;
+
         }
 
         .clslct {
-            margin-bottom: 20px;
-            margin-left: 10px;
+            margin-right: 10px;
 
         }
-    }
 
-
-    @media (max-width: 576px) {
-        .row_filter_wrapper>div {
-
-
-            width: 88% !important;
-            /* flex-direction:column; */
+        .filter_btn {
+            margin-left: 20px;
         }
 
-    }
-
-    @media (max-width: 540px) {
-        .card-header2 {
-            flex-direction: column;
-            height: 5.4rem !important;
-        }
-    }
-
-    @media (max-width: 440px) {
-        .card-header2 {
-            height: 6.4rem !important;
+        .btn_action {
+            width: max-content;
         }
 
-        .card-header2 {
-            height: 6.4rem !important;
+        .status_ {
+            border: none;
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
         }
 
-        .status_number_wrapper {
-            flex-direction: column;
+        @media (max-width: 1500px) {
+            .filter-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .clslct {
+                margin-bottom: 20px;
+                margin-left: 10px;
+
+            }
+        }
+
+
+        @media (max-width: 576px) {
+            .row_filter_wrapper>div {
+
+
+                width: 88% !important;
+                /* flex-direction:column; */
+            }
 
         }
-    }
 
-    .nav-tabs .nav-link.active {
-        color: #fff;
-        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
-        /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
-    }
+        @media (max-width: 540px) {
+            .card-header2 {
+                flex-direction: column;
+                height: 5.4rem !important;
+            }
+        }
 
-    .nav-tabs .nav-link.active:hover {
-        color: #fff !important;
-    }
+        @media (max-width: 440px) {
+            .card-header2 {
+                height: 6.4rem !important;
+            }
 
-    .startdate,
-    .enddate {
-        background: url(https://img.icons8.com/cotton/64/000000/calendar.png) no-repeat;
-        background-size: 21px 21px;
-        background-position-x: right;
-        background-position-y: center;
-    }
+            .card-header2 {
+                height: 6.4rem !important;
+            }
+
+            .status_number_wrapper {
+                flex-direction: column;
+
+            }
+        }
+
+        .nav-tabs .nav-link.active {
+            color: #fff;
+            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
+            /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
+        }
+
+        .nav-tabs .nav-link.active:hover {
+            color: #fff !important;
+        }
+
+        .startdate,
+        .enddate {
+            background: url(https://img.icons8.com/cotton/64/000000/calendar.png) no-repeat;
+            background-size: 21px 21px;
+            background-position-x: right;
+            background-position-y: center;
+        }
 
     </style>
 </head>
@@ -212,7 +212,7 @@ foreach ($activeProviders as $key => $value) {
                                             $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
                                             $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
                                             $timeRFC = $dt->format('Y-m-d\T00:00:00');
-                                            $timeRFC2 = $dt->format('Y-m-d\23:59:59');
+                                            $timeRFC2 = $dt->format('Y-m-d\T23:59:59');
                                             // date("Y-m-d\TH:i:s") //local
                                             ?>
 
@@ -401,154 +401,109 @@ foreach ($activeProviders as $key => $value) {
 
 
     <script>
-    // document.querySelector(".startdate").value="2022-03-05";
-    // document.querySelector(".enddate").value="2022-03-05";
+        // document.querySelector(".startdate").value="2022-03-05";
+        // document.querySelector(".enddate").value="2022-03-05";
 
 
-    $(".startdate, .enddate").flatpickr({
-        enableTime: true,
-        dateFormat: "Y-m-d H:i:S",
-        time_24hr: true,
-        locale: "ko",
-        allowInput: true
-    });
+        $(".startdate, .enddate").flatpickr({
+            enableTime: true,
+            dateFormat: "Y-m-d H:i:S",
+            time_24hr: true,
+            locale: "ko",
+            allowInput: true
+        });
 
 
 
-    // --- DISPLAY WIN/LOSS TRANSACTIONS ----
-    function displayWinLoss(N = 1, status = 'all') {
+        // --- DISPLAY WIN/LOSS TRANSACTIONS ----
+        function displayWinLoss(N = 1, status = 'all') {
 
-        var activePage = $(".navigation_winloss li.page-item.active a").text();
-        var activeNumber = $(".active-winloss-number").text();
-        activeNumber = activeNumber.trim();
+            var activePage = $(".navigation_winloss li.page-item.active a").text();
+            var activeNumber = $(".active-winloss-number").text();
+            activeNumber = activeNumber.trim();
 
-        // if (N == true) {
-        //     N = activePage;
-        // }
-        var text = $("#player_name_filtered").val();
-        var startDate = $(".startdate").val();
-        var endDate = $(".enddate").val();
-        var provider = $("#providerSelect").val();
-
-
-        var client = $("#clientSelect").val()
+            // if (N == true) {
+            //     N = activePage;
+            // }
+            var text = $("#player_name_filtered").val();
+            var startDate = $(".startdate").val();
+            var endDate = $(".enddate").val();
+            var provider = $("#providerSelect").val();
 
 
-        var token = $("#token_display").val();
+            var client = $("#clientSelect").val()
 
-        $.ajax({
-            url: '/ajaxProcessus/infoReports/displayWinLoss.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                "page": N,
-                "number": activeNumber,
-                "nameFilter": text,
-                startDate,
-                endDate,
-                client,
-                provider,
-                "status": status,
-                token
-            },
-            // contentType: false,
-            // processData: false, 
-            cache: false,
-            timeout: 40000,
-            // cache: false,
-            // dataType: 'json', 
 
-            success: function(data) {
-                // var num = data.indexOf("<!DOCTYPE html>");
-                // var rese = data.substr(0, num);
-                // rese = rese.trim();
-                // console.log(data);
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
+            var token = $("#token_display").val();
+
+            $.ajax({
+                url: '/ajaxProcessus/infoReports/displayWinLoss.php',
+                type: 'POST',
+                data: {
+                    "display": true,
+                    "page": N,
+                    "number": activeNumber,
+                    "nameFilter": text,
+                    startDate,
+                    endDate,
+                    client,
+                    provider,
+                    "status": status,
+                    token
+                },
+                // contentType: false,
+                // processData: false, 
+                cache: false,
+                timeout: 40000,
+                // cache: false,
+                // dataType: 'json', 
+
+                success: function (data) {
+                    // var num = data.indexOf("<!DOCTYPE html>");
+                    // var rese = data.substr(0, num);
+                    // rese = rese.trim();
+                    // console.log(data);
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
+                    }
+                    rese = JSON.parse(data);
+
+                    // console.log(rese[0]);
+                    let length = rese.length;
+
+
+                    if (length == 4) { //success
+                        $(".table-body-winloss").html(rese[0]);
+                        $(".navigation_winloss").html(rese[1]);
+
+                        $("#token_display").val(rese[3]);
+                    } else if (length == 1) { //csrf error
+                        $("#token_display").val(rese[0]);
+
+                    } else {
+                        //refresh page;
+                        location.reload();
+                    }
+
+
+
                 }
-                rese = JSON.parse(data);
-
-                // console.log(rese[0]);
-                let length = rese.length;
 
 
-                if (length == 4) { //success
-                    $(".table-body-winloss").html(rese[0]);
-                    $(".navigation_winloss").html(rese[1]);
-
-                    $("#token_display").val(rese[3]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display").val(rese[0]);
-
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
-
-
-
-            }
-
-
-        })
-    }
-
-
-    //NUMBERS DISPLAYED PER PAGE
-    $(".winloss_number_options button").on("click", function(event) {
-
-        var number = event.currentTarget.textContent;
-        $(".active-winloss-number").text(number);
-
-        let id = $(".status_.active").attr("id");
-
-        let status = 'all';
-
-        if (id == "status_win") {
-            status = "win";
-        } else if (id == "status_loss") {
-            status = "loss";
-        } else if (id == "status_tie") {
-            status = "tie";
+            })
         }
 
-        displayWinLoss(1, status);
-    })
 
-    function resetStatusFilter() {
-        $(".status_").css("opacity", 1);
-        $(".status_").removeClass("active");
-        $("#status_all").addClass("active");
-    }
+        //NUMBERS DISPLAYED PER PAGE
+        $(".winloss_number_options button").on("click", function (event) {
 
-    //USERNAME FILTER
-    $(".filter_winloss").on("click", function(event) {
-        resetStatusFilter();
+            var number = event.currentTarget.textContent;
+            $(".active-winloss-number").text(number);
 
-        displayWinLoss();
-    })
+            let id = $(".status_.active").attr("id");
 
-    //CLIENT SELECT
-    $("#clientSelect").change(function(event) {
-        displayWinLoss();
-    })
-
-    //status filter
-    $(".status_").click(function(event) {
-        let status = '';
-        let id = $(event.currentTarget).attr("id");
-        if (id == "status_all") {
-            $(".status_").css("opacity", 1);
-
-            $(".status_").removeClass("active");
-            $(this).addClass("active");
-
-            status = "all";
-
-        } else {
-            $(".status_").css("opacity", 0.2);
-            $(this).css("opacity", 1);
+            let status = 'all';
 
             if (id == "status_win") {
                 status = "win";
@@ -558,22 +513,67 @@ foreach ($activeProviders as $key => $value) {
                 status = "tie";
             }
 
+            displayWinLoss(1, status);
+        })
+
+        function resetStatusFilter() {
+            $(".status_").css("opacity", 1);
             $(".status_").removeClass("active");
-            $(this).addClass("active");
+            $("#status_all").addClass("active");
         }
 
-        displayWinLoss(1, status);
+        //USERNAME FILTER
+        $(".filter_winloss").on("click", function (event) {
+            resetStatusFilter();
 
-    })
+            displayWinLoss();
+        })
 
-    document.addEventListener('DOMContentLoaded', (event) => {
+        //CLIENT SELECT
+        $("#clientSelect").change(function (event) {
+            displayWinLoss();
+        })
 
-        displayWinLoss(0);
-        // clearModalInvalidFeedbacks();
+        //status filter
+        $(".status_").click(function (event) {
+            let status = '';
+            let id = $(event.currentTarget).attr("id");
+            if (id == "status_all") {
+                $(".status_").css("opacity", 1);
+
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
+
+                status = "all";
+
+            } else {
+                $(".status_").css("opacity", 0.2);
+                $(this).css("opacity", 1);
+
+                if (id == "status_win") {
+                    status = "win";
+                } else if (id == "status_loss") {
+                    status = "loss";
+                } else if (id == "status_tie") {
+                    status = "tie";
+                }
+
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
+            }
+
+            displayWinLoss(1, status);
+
+        })
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+            displayWinLoss(0);
+            // clearModalInvalidFeedbacks();
 
 
 
-    });
+        });
     </script>
 </body>
 

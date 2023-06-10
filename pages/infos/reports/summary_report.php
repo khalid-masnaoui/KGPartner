@@ -280,7 +280,7 @@ foreach ($activeSlotProviders as $key => $value) {
                                             $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
                                             $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
                                             $timeRFC = $dt->format('Y-m-d\T00:00:00');
-                                            $timeRFC2 = $dt->format('Y-m-d\23:59:59');
+                                            $timeRFC2 = $dt->format('Y-m-d\T23:59:59');
                                             // date("Y-m-d\TH:i:s") //local
                                             ?>
 

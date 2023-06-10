@@ -53,115 +53,115 @@ foreach ($activeProviders as $key => $value) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css?ver=5.2.4">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
     <style>
-    .filter-wrapper {
-        /* margin-top: 20px;
+        .filter-wrapper {
+            /* margin-top: 20px;
         margin-bottom: 20px;
         margin-left: 20px; */
-        /* width:100%; */
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+            /* width:100%; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
 
-    }
+        }
 
-    .row_filter_wrapper {
-        flex: 2;
-        width: 100%;
+        .row_filter_wrapper {
+            flex: 2;
+            width: 100%;
 
-    }
-
-    .clslct {
-        margin-right: 10px;
-
-    }
-
-    .filter_btn {
-        margin-left: 20px;
-    }
-
-    .btn_action {
-        width: max-content;
-    }
-
-    .status_ {
-        border: none;
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-    }
-
-    @media (max-width: 1500px) {
-        .filter-wrapper {
-            flex-direction: column;
-            align-items: flex-start;
         }
 
         .clslct {
-            margin-bottom: 20px;
-            margin-left: 10px;
-
-        }
-    }
-
-    @media (max-width: 767px) {
-        .f-user {
-            margin-top: 0.5rem !important;
+            margin-right: 10px;
 
         }
 
-    }
-
-    @media (max-width: 576px) {
-        .row_filter_wrapper>div {
-
-
-            width: 88% !important;
-            /* flex-direction:column; */
+        .filter_btn {
+            margin-left: 20px;
         }
 
-    }
-
-    @media (max-width: 595px) {
-        .card-header2 {
-            flex-direction: column;
-            height: 5.4rem !important;
-        }
-    }
-
-    @media (max-width: 410px) {
-        .card-header2 {
-            height: 6.4rem !important;
+        .btn_action {
+            width: max-content;
         }
 
-        .card-header2 {
-            height: 6.4rem !important;
+        .status_ {
+            border: none;
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
         }
 
-        .status_number_wrapper {
-            flex-direction: column;
+        @media (max-width: 1500px) {
+            .filter-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .clslct {
+                margin-bottom: 20px;
+                margin-left: 10px;
+
+            }
+        }
+
+        @media (max-width: 767px) {
+            .f-user {
+                margin-top: 0.5rem !important;
+
+            }
 
         }
-    }
 
-    .nav-tabs .nav-link.active {
-        color: #fff;
-        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
-        /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
-    }
+        @media (max-width: 576px) {
+            .row_filter_wrapper>div {
 
-    .nav-tabs .nav-link.active:hover {
-        color: #fff !important;
-    }
 
-    .startdate,
-    .enddate {
-        background: url(https://img.icons8.com/cotton/64/000000/calendar.png) no-repeat;
-        background-size: 21px 21px;
-        background-position-x: right;
-        background-position-y: center;
-    }
+                width: 88% !important;
+                /* flex-direction:column; */
+            }
+
+        }
+
+        @media (max-width: 595px) {
+            .card-header2 {
+                flex-direction: column;
+                height: 5.4rem !important;
+            }
+        }
+
+        @media (max-width: 410px) {
+            .card-header2 {
+                height: 6.4rem !important;
+            }
+
+            .card-header2 {
+                height: 6.4rem !important;
+            }
+
+            .status_number_wrapper {
+                flex-direction: column;
+
+            }
+        }
+
+        .nav-tabs .nav-link.active {
+            color: #fff;
+            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%) !important;
+            /* background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important; */
+        }
+
+        .nav-tabs .nav-link.active:hover {
+            color: #fff !important;
+        }
+
+        .startdate,
+        .enddate {
+            background: url(https://img.icons8.com/cotton/64/000000/calendar.png) no-repeat;
+            background-size: 21px 21px;
+            background-position-x: right;
+            background-position-y: center;
+        }
 
     </style>
 </head>
@@ -233,7 +233,7 @@ foreach ($activeProviders as $key => $value) {
                                             $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
                                             $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
                                             $timeRFC = $dt->format('Y-m-d\T00:00:00');
-                                            $timeRFC2 = $dt->format('Y-m-d\23:59:59');
+                                            $timeRFC2 = $dt->format('Y-m-d\T23:59:59');
                                             // date("Y-m-d\TH:i:s") //local
                                             ?>
 
@@ -424,156 +424,113 @@ foreach ($activeProviders as $key => $value) {
 
 
     <script>
-    // document.querySelector(".startdate").value="2022-03-05";
-    // document.querySelector(".enddate").value="2022-03-05";
+        // document.querySelector(".startdate").value="2022-03-05";
+        // document.querySelector(".enddate").value="2022-03-05";
 
 
-    $(".startdate, .enddate").flatpickr({
-        enableTime: true,
-        dateFormat: "Y-m-d H:i:S",
-        time_24hr: true,
-        locale: "ko",
-        allowInput: true
-    });
+        $(".startdate, .enddate").flatpickr({
+            enableTime: true,
+            dateFormat: "Y-m-d H:i:S",
+            time_24hr: true,
+            locale: "ko",
+            allowInput: true
+        });
 
 
 
-    // --- DISPLAY BONUS HISTORY ----
-    function displayBonuses(N = 1, status = 'all') {
+        // --- DISPLAY BONUS HISTORY ----
+        function displayBonuses(N = 1, status = 'all') {
 
-        var activePage = $(".navigation_bonus li.page-item.active a").text();
-        var activeNumber = $(".active-bonus-number").text();
-        activeNumber = activeNumber.trim();
+            var activePage = $(".navigation_bonus li.page-item.active a").text();
+            var activeNumber = $(".active-bonus-number").text();
+            activeNumber = activeNumber.trim();
 
-        // if (N == true) {
-        //     N = activePage;
-        // }
-        var provider = $("#providerSelect").val();
-        var memberID = $("#member_id_filtered").val();
-        var text = $("#player_name_filtered").val();
-        var startDate = $(".startdate").val();
-        var endDate = $(".enddate").val();
+            // if (N == true) {
+            //     N = activePage;
+            // }
+            var provider = $("#providerSelect").val();
+            var memberID = $("#member_id_filtered").val();
+            var text = $("#player_name_filtered").val();
+            var startDate = $(".startdate").val();
+            var endDate = $(".enddate").val();
 
-        var BonusType = $("#typeSelect").val();
+            var BonusType = $("#typeSelect").val();
 
-        var client = $("#clientSelect").val()
+            var client = $("#clientSelect").val()
 
 
-        var token = $("#token_display").val();
+            var token = $("#token_display").val();
 
-        $.ajax({
-            url: '/ajaxProcessus/infoReports/displayBonus.php',
-            type: 'POST',
-            data: {
-                "display": true,
-                "page": N,
-                "number": activeNumber,
-                provider,
-                memberID,
-                "nameFilter": text,
-                startDate,
-                endDate,
-                BonusType,
-                client,
-                status,
-                token
-            },
-            // contentType: false,
-            // processData: false, 
-            cache: false,
-            timeout: 10000,
-            // cache: false,
-            // dataType: 'json', 
+            $.ajax({
+                url: '/ajaxProcessus/infoReports/displayBonus.php',
+                type: 'POST',
+                data: {
+                    "display": true,
+                    "page": N,
+                    "number": activeNumber,
+                    provider,
+                    memberID,
+                    "nameFilter": text,
+                    startDate,
+                    endDate,
+                    BonusType,
+                    client,
+                    status,
+                    token
+                },
+                // contentType: false,
+                // processData: false, 
+                cache: false,
+                timeout: 10000,
+                // cache: false,
+                // dataType: 'json', 
 
-            success: function(data) {
-                // var num = data.indexOf("<!DOCTYPE html>");
-                // var rese = data.substr(0, num);
-                // rese = rese.trim();
-                // console.log(data);
-                if (data == 'unauthorized' || data == '') {
-                    window.location.href = '/pages/errors/403.php';
-                    return;
+                success: function (data) {
+                    // var num = data.indexOf("<!DOCTYPE html>");
+                    // var rese = data.substr(0, num);
+                    // rese = rese.trim();
+                    // console.log(data);
+                    if (data == 'unauthorized' || data == '') {
+                        window.location.href = '/pages/errors/403.php';
+                        return;
+                    }
+                    rese = JSON.parse(data);
+
+                    // console.log(rese[0]);
+                    let length = rese.length;
+
+
+                    if (length == 4) { //success
+                        $(".table-body-bonus").html(rese[0]);
+                        $(".navigation_bonus").html(rese[1]);
+
+                        $("#token_display").val(rese[3]);
+                    } else if (length == 1) { //csrf error
+                        $("#token_display").val(rese[0]);
+
+                    } else {
+                        //refresh page;
+                        location.reload();
+                    }
+
+
+
                 }
-                rese = JSON.parse(data);
-
-                // console.log(rese[0]);
-                let length = rese.length;
 
 
-                if (length == 4) { //success
-                    $(".table-body-bonus").html(rese[0]);
-                    $(".navigation_bonus").html(rese[1]);
-
-                    $("#token_display").val(rese[3]);
-                } else if (length == 1) { //csrf error
-                    $("#token_display").val(rese[0]);
-
-                } else {
-                    //refresh page;
-                    location.reload();
-                }
-
-
-
-            }
-
-
-        })
-    }
-
-
-    //NUMBERS DISPLAYED PER PAGE
-    $(".bonus_number_options button").on("click", function(event) {
-
-        var number = event.currentTarget.textContent;
-        $(".active-bonus-number").text(number);
-
-        let id = $(".status_.active").attr("id");
-
-        let status = 'all';
-
-        if (id == "status_accepted") {
-            status = "accepted";
-        } else if (id == "status_error") {
-            status = "error";
+            })
         }
 
-        displayBonuses(1, status);
-    })
 
-    function resetStatusFilter() {
-        $(".status_").css("opacity", 1);
-        $(".status_").removeClass("active");
-        $("#status_all").addClass("active");
-    }
+        //NUMBERS DISPLAYED PER PAGE
+        $(".bonus_number_options button").on("click", function (event) {
 
-    //FILTERs
-    $(".filter_bonus").on("click", function(event) {
-        resetStatusFilter();
+            var number = event.currentTarget.textContent;
+            $(".active-bonus-number").text(number);
 
-        displayBonuses();
-    })
+            let id = $(".status_.active").attr("id");
 
-    //CLIENT SELECT
-    $("#clientSelect").change(function(event) {
-        displayBonuses();
-    })
-
-    //status filter
-    $(".status_").click(function(event) {
-        let status = '';
-        let id = $(event.currentTarget).attr("id");
-        if (id == "status_all") {
-            $(".status_").css("opacity", 1);
-
-            $(".status_").removeClass("active");
-            $(this).addClass("active");
-
-            status = "all";
-
-        } else {
-            $(".status_").css("opacity", 0.2);
-            $(this).css("opacity", 1);
+            let status = 'all';
 
             if (id == "status_accepted") {
                 status = "accepted";
@@ -581,19 +538,62 @@ foreach ($activeProviders as $key => $value) {
                 status = "error";
             }
 
+            displayBonuses(1, status);
+        })
+
+        function resetStatusFilter() {
+            $(".status_").css("opacity", 1);
             $(".status_").removeClass("active");
-            $(this).addClass("active");
+            $("#status_all").addClass("active");
         }
 
-        displayBonuses(1, status);
+        //FILTERs
+        $(".filter_bonus").on("click", function (event) {
+            resetStatusFilter();
 
-    })
+            displayBonuses();
+        })
 
-    document.addEventListener('DOMContentLoaded', (event) => {
+        //CLIENT SELECT
+        $("#clientSelect").change(function (event) {
+            displayBonuses();
+        })
 
-        displayBonuses(0);
+        //status filter
+        $(".status_").click(function (event) {
+            let status = '';
+            let id = $(event.currentTarget).attr("id");
+            if (id == "status_all") {
+                $(".status_").css("opacity", 1);
 
-    });
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
+
+                status = "all";
+
+            } else {
+                $(".status_").css("opacity", 0.2);
+                $(this).css("opacity", 1);
+
+                if (id == "status_accepted") {
+                    status = "accepted";
+                } else if (id == "status_error") {
+                    status = "error";
+                }
+
+                $(".status_").removeClass("active");
+                $(this).addClass("active");
+            }
+
+            displayBonuses(1, status);
+
+        })
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+            displayBonuses(0);
+
+        });
     </script>
 </body>
 
