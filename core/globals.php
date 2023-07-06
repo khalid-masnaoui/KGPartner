@@ -85,7 +85,15 @@ $GLOBALS["config"] = array(
             "rplay" => "",
             "fnt" => "",
             "boom" => "",
-            "4tp" => ""
+            "4tp" => "",
+            "thg" => "",
+            "fg" => "",
+            "bgm" => "",
+            "fl" => "",
+            "inb" => "",
+            "spn" => "",
+            "rb" => "",
+            "trp" => ""
         ),
         "activeProviders" => array()
     ),
@@ -144,7 +152,15 @@ $GLOBALS["config"] = array(
         "rplay" => "Reel Play Slot ",
         "fnt" => "Fantasma Slot",
         "boom" => "Boomerang Slot",
-        "4tp" => "4the Player Slot"
+        "4tp" => "4the Player Slot",
+        "thg" => "TomHorn Gaming Slot",
+        "fg" => "Fugaso Slot",
+        "bgm" => "BGaming Slot",
+        "fl" => "Felix Slot",
+        "inb" => "Inbet Slot",
+        "spn" => "Spinomenal Slot",
+        "rb" => "RubyPlay Slot",
+        "trp" => "Turbo Slot"
     ),
     "providersNameMappings" => array(
         "evo" => "에볼루션",
@@ -201,7 +217,15 @@ $GLOBALS["config"] = array(
         "rplay" => "릴플레이",
         "fnt" => "판타즈마",
         "boom" => "부메랑",
-        "4tp" => "포더플레이어"
+        "4tp" => "포더플레이어",
+        "thg" => "톰호른 슬롯",
+        "fg" => "푸가소 슬롯",
+        "bgm" => "B게이밍 슬롯",
+        "fl" => "펠릭스 슬롯",
+        "inb" => "인벳 슬롯",
+        "spn" => "스피노메날 슬롯",
+        "rb" => "루비플레이 슬롯",
+        "trp" => "터보 슬롯"
     ),
     "providersProductIdMappings" => array(
         "evo" => 1,
@@ -258,7 +282,15 @@ $GLOBALS["config"] = array(
         "rplay" => 136,
         "fnt" => 137,
         "boom" => 138,
-        "4tp" => 139
+        "4tp" => 139,
+        "thg" => 140,
+        "fg" => 141,
+        "bgm" => 142,
+        "fl" => 143,
+        "inb" => 144,
+        "spn" => 145,
+        "rb" => 146,
+        "trp" => 147
 
 
     ),
