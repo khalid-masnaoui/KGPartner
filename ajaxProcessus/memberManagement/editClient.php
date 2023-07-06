@@ -58,7 +58,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
                 ],
                 "skinSelect" => [
                     "inclusion" => [
-                        "list" => ["1", "2", "3", "4", "5", "6", "7", "8"],
+                        "list" => ["1", "2", "3", "4"],
                         "msg" => "please select valid option from the purposed options list!"
                     ]
                 ],
