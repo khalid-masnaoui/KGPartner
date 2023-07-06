@@ -2,34 +2,63 @@
 
 require_once __DIR__ . "/../../core/ini.php";
 include __DIR__ . '/../../includes/partials/_authorization.php';
+require_once __DIR__ . "/../../functions/encryptDecrypt.php";
+
+
+$db = DB::getInstance();
 
 //get bet details json files
 $transactionId = $_GET['transactionId'] ?? "";
+$prefix = $_GET['prefix'] ?? "";
 
 if ($transactionId == "") {
     echo '<script>alert("No TransactionId specified")</script>';
     die;
 }
 
+//get apiKey
+$apiKey = $db->get("raw_ak", "clients", [["prefix", "=", $prefix]])->first()["raw_ak"];
+$apiKey = decrypt($apiKey);
+
+
 $curl = curl_init();
 
-curl_setopt_array(
-    $curl,
-    array(
-        CURLOPT_URL => "https://api.spadeapi.org/api/transaction-relation?transaction_id=$transactionId",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'GET',
-        CURLOPT_HTTPHEADER => array(
-            'Accept: application/json',
-            'Authorization: Bearer 6f26bd84-bc9d-40d6-8475-5049ad231ce7'
-        ),
-    )
-);
+if ($apiKey == "Shg9irtE1z1xpMk6a8x1") {
+    curl_setopt_array(
+        $curl,
+        array(
+            CURLOPT_URL => "https://api.spadeapi.org/api/transaction-relation?transaction_id=$transactionId",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Accept: application/json',
+                'Authorization: Bearer 6f26bd84-bc9d-40d6-8475-5049ad231ce7'
+            ),
+        )
+    );
+} else {
+    curl_setopt_array(
+        $curl,
+        array(
+            CURLOPT_URL => "https://details.was365api.com/game/orderDetailsJson?productId=1&transactionId=$transactionId",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                "X-WA-API-KEY: $apiKey",
+            ),
+        )
+    );
+}
 
 $betDetailsResponse = curl_exec($curl);
 

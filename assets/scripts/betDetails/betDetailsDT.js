@@ -78,12 +78,10 @@ let creditData = {}
 let transactionList = betDetailsData.data.transaction_list
 
 transactionList.forEach(matchData => {
-    if(matchData.transaction_id.startsWith("D")){
-        debitData = matchData
-    }
-    
-    if(matchData.transaction_id.startsWith("C")){
+    if (index == 0) {
         creditData = matchData
+    } else {
+        debitData = matchData
     }
 })
 

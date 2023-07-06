@@ -224,6 +224,7 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
             $i++;
 
             $status = escape($value["status"]);
+            $prefix = escape($value["prefix"]);
 
             $statusHtml = '';
             if ($status == 'win') {
@@ -276,29 +277,29 @@ if (input::exists("post") && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpReques
 
             if ($value["gameProviderId"] == 1 && $status != "pending" && in_array($value["gameType"], ["Baccarat", "RNG Baccarat", "RNG Dragon Tiger", "Dragon Tiger", "Bac Bo"]) && $differenceInSeconds > 60) {
 
-                if (strpos($value["txn_id"], ":s") !== false) {
-                    $type = "BC";
-                    if (in_array($value["gameType"], ["RNG Dragon Tiger", "Dragon Tiger"])) {
-                        $type = "DT";
-                    }
-
-                    if (in_array($value["gameType"], ["Bac Bo"])) {
-                        $type = "BB";
-                    }
-
-
-                    $transactionId = str_replace(":s", "", $value["txn_id"]);
-                    $tableBody .= '<td class="text-center">' . escape($value["txn_id"]) . ' <img src="/assets/images/betDetails/betDetails.png" width="15" height="15" onclick=showBetDetails("' . $transactionId . '","' . $type . '") style="cursor: pointer;"> </td>';
-
-                } else {
-                    $tableBody .= '<td class="text-center">' . escape($value["txn_id"]) . '</td>';
-
+                // if (strpos($value["txn_id"], ":s") !== false) {
+                $type = "BC";
+                if (in_array($value["gameType"], ["RNG Dragon Tiger", "Dragon Tiger"])) {
+                    $type = "DT";
                 }
+
+                if (in_array($value["gameType"], ["Bac Bo"])) {
+                    $type = "BB";
+                }
+
+
+                $transactionId = str_replace(":s", "", $value["txn_id"]);
+                $tableBody .= '<td class="text-center">' . escape($value["txn_id"]) . ' <img src="/assets/images/betDetails/betDetails.png" width="15" height="15" onclick=showBetDetails("' . $transactionId . '","' . $type . '","' . $prefix . '") style="cursor: pointer;"> </td>';
 
             } else {
                 $tableBody .= '<td class="text-center">' . escape($value["txn_id"]) . '</td>';
 
             }
+
+            // } else {
+            //     $tableBody .= '<td class="text-center">' . escape($value["txn_id"]) . '</td>';
+
+            // }
 
             $tableBody .= '<td class="text-center">' . escape($value["clientName"]) . '</td>';
             $tableBody .= '<td class="text-center">' . escape($parentName) . '</td>';
