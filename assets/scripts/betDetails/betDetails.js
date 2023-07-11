@@ -104,7 +104,7 @@ let creditData = {}
 
 let transactionList = betDetailsData.data.transaction_list
 
-transactionList.forEach(matchData => {
+transactionList.forEach((matchData,index) => {
     if (index == 0) {
         creditData = matchData
     } else {
