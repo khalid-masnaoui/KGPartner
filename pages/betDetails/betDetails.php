@@ -95,9 +95,9 @@ curl_close($curl);
 </head>
 
 <style>
-    img {
-        pointer-events: none;
-    }
+img {
+    pointer-events: none;
+}
 
 </style>
 
@@ -271,15 +271,15 @@ curl_close($curl);
     </div>
 
     <script type="text/javascript">
-        var betDetailsData = <?php echo $betDetailsResponse; ?>;
-        let allImages = document.querySelectorAll("img");
-        allImages.forEach((value) => {
-            value.oncontextmenu = (e) => {
-                e.preventDefault();
-            }
-        })
+    var betDetailsData = <?php echo $betDetailsResponse; ?>;
+    let allImages = document.querySelectorAll("img");
+    allImages.forEach((value) => {
+        value.oncontextmenu = (e) => {
+            e.preventDefault();
+        }
+    })
     </script>
-    <script src="/assets/scripts/betDetails/betDetails.js?v=1.02"></script>
+    <script src="/assets/scripts/betDetails/betDetails.js?v=1.03"></script>
 </body>
 
 </html>
